@@ -1,4 +1,5 @@
-# demoted packages from focal to impish
+# demoted packages from focal to jammy
+app-install-data
 apparmor-notify
 appstream-doc
 appstream-glib-doc
@@ -40,6 +41,7 @@ gfxboot-dev
 gir1.2-amtk-5
 gir1.2-appindicator3-0.1
 gir1.2-appstreamglib-1.0
+gir1.2-handy-0.0
 gnome-software
 gnome-software-common
 gnome-software-dev
@@ -55,6 +57,10 @@ golang-github-snapcore-snapd-dev
 golang-github-ubuntu-core-snappy-dev
 golang-redhat-audit-dev
 gutenprint-doc
+handy-0.0-examples
+heimdal-dev
+heimdal-docs
+heimdal-multidev
 initramfs-tools-devices
 isolinux
 jasper
@@ -84,6 +90,7 @@ libasan5-arm64-cross
 libasan5-armhf-cross
 libasan5-ppc64el-cross
 libasan5-s390x-cross
+libasn1-8-heimdal
 libasync-mergepoint-perl
 libboost-filesystem-dev
 libboost-system-dev
@@ -102,11 +109,23 @@ libgcc-9-dev-s390x-cross
 libgfortran-9-dev
 libgo-9-dev
 libgo14
+libgssapi3-heimdal
 libgutenprint-dev
 libgutenprint-doc
+libhandy-0.0-0
+libhcrypto4-heimdal
+libhdb9-heimdal
+libheimbase1-heimdal
+libheimntlm0-heimdal
+libhx509-5-heimdal
 libio-async-loop-epoll-perl
 libio-async-perl
 libjs-modernizr
+libkadm5clnt7-heimdal
+libkadm5srv8-heimdal
+libkafs0-heimdal
+libkdc2-heimdal
+libkrb5-26-heimdal
 liblinux-epoll-perl
 libllvm9
 liblua5.2-0
@@ -117,9 +136,12 @@ libnss-myhostname
 libnvidia-extra-440
 libopenobex2
 libopenobex2-dev
+libotp0-heimdal
 libpfm4
 libpfm4-dev
+libroken18-heimdal
 libsereal-perl
+libsl0-heimdal
 libsss-sudo
 libstdc++-9-dev
 libstdc++-9-dev-arm64-cross
@@ -135,6 +157,7 @@ libtest-fatal-perl
 libtest-refcount-perl
 libtext-levenshtein-perl
 libvirt-daemon-driver-storage-rbd
+libwind0-heimdal
 libx32asan5
 libx32gcc-9-dev
 libx32gfortran-9-dev
@@ -150,6 +173,7 @@ lilo-doc
 lua5.2-doc
 lz4
 mutter
+neutron-fwaas-common
 nvidia-opencl-icd-340
 ocl-icd-dev
 ocl-icd-libopencl1
@@ -167,6 +191,7 @@ python3-genshi
 python3-kazoo
 python3-lazy-object-proxy
 python3-logilab-common
+python3-neutron-fwaas
 python3-nine
 python3-pep8
 python3-polib
@@ -178,6 +203,8 @@ python3-testrepository
 python3-zake
 qemu
 seccomp
+sharutils
+sharutils-doc
 syslinux
 tegaki-zinnia-japanese
 tgt
