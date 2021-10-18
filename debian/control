@@ -43,7 +43,8 @@ Depends: ${python3:Depends},
          python3-distro-info,
          gpgv,
          lsb-release,
-         sensible-utils
+         sensible-utils,
+         procps
 Replaces: python3-update-manager (<< 1:0.165)
 Breaks: python3-update-manager (<< 1:0.165)
 Description: manage release upgrades

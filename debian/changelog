@@ -1,3 +1,10 @@
+ubuntu-release-upgrader (1:22.04.1) UNRELEASED; urgency=medium
+
+  * debian/control: have python3-distupgrade depend on procps which provides
+    pgrep. (LP: #1947333)
+
+ -- Brian Murray <brian@ubuntu.com>  Mon, 18 Oct 2021 10:03:54 -0700
+
 ubuntu-release-upgrader (1:21.10.8) impish; urgency=medium
 
   [ Olivier Tilloy ]
