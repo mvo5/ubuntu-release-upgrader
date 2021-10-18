@@ -107,7 +107,7 @@ LogDir=/var/log/dist-upgrade/
 
 [Sources]
 From=focal
-To=impish
+To=jammy
 ValidOrigin=Ubuntu
 ValidMirrors = mirrors.cfg
 Components=main,restricted,universe,multiverse

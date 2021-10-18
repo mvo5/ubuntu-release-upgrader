@@ -111,10 +111,10 @@ class DistUpgradeQuirks(object):
         logging.debug("running Quirks.PreCacheOpen")
 
     # individual quirks handler that run *after* the cache is opened
-    def impishPostInitialUpdate(self):
+    def jammyPostInitialUpdate(self):
         # PreCacheOpen would be better but controller.abort fails terribly
         """ run after the apt cache is opened the first time """
-        logging.debug("running Quirks.impishPostInitialUpdate")
+        logging.debug("running Quirks.jammyPostInitialUpdate")
         self._get_from_and_to_version()
         self._test_and_fail_on_i386()
         self._test_and_fail_on_aufs()
@@ -133,8 +133,8 @@ class DistUpgradeQuirks(object):
         if self._snapstore_reachable:
             self._calculateSnapSizeRequirements()
 
-    def impishPostUpgrade(self):
-        logging.debug("running Quirks.impishPostUpgrade")
+    def jammyPostUpgrade(self):
+        logging.debug("running Quirks.jammyPostUpgrade")
         cache = self.controller.cache
         if 'snapd' not in cache:
             logging.debug("package required for Quirk not in cache")

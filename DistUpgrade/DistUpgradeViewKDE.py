@@ -641,7 +641,7 @@ class DistUpgradeViewKDE(DistUpgradeView):
             name = "Kubuntu"
         title_string = self.window_main.label_title.text()
         title_string = title_string.replace("Ubuntu", name)
-        title_string = title_string.replace("%s", "21.10")
+        title_string = title_string.replace("%s", "22.04")
         self.window_main.label_title.setText(title_string)
 
         # setup terminal text in hidden by default spot

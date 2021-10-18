@@ -1,5 +1,6 @@
 ubuntu-release-upgrader (1:22.04.1) UNRELEASED; urgency=medium
 
+  * Update for 21.10 -> 22.04.
   * debian/control: have python3-distupgrade depend on procps which provides
     pgrep. (LP: #1947333)
 
