@@ -5,7 +5,7 @@ ubuntu-release-upgrader (1:22.04.2) jammy; urgency=medium
     a socket for system activation or if snapd was already running. This
     resolves failures to upgrade under WSL. (LP: #1926267)
 
- -- Brian Murray <brian@ubuntu.com>  Fri, 29 Oct 2021 09:37:26 -0700
+ -- Brian Murray <brian@ubuntu.com>  Fri, 29 Oct 2021 09:59:29 -0700
 
 ubuntu-release-upgrader (1:22.04.1) jammy; urgency=medium
 
