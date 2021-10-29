@@ -125,7 +125,9 @@ class DistUpgradeQuirks(object):
         if 'snapd' not in cache:
             logging.debug("package required for Quirk not in cache")
             return
-        if cache['snapd'].is_installed:
+        if cache['snapd'].is_installed and \
+                (os.path.exists('/run/snapd.socket') or
+                 os.path.exists('/run/snapd-snap.socket')):
             self._checkStoreConnectivity()
         # If the snap store is accessible, at the same time calculate the
         # extra size needed by to-be-installed snaps.  This also prepares
