@@ -1,3 +1,12 @@
+ubuntu-release-upgrader (1:22.04.2) UNRELEASED; urgency=medium
+
+  [ Didier Roche ]
+  * DistUpgrade/DistUpgradeQuirks.py: Only try to connect to snapd if there is
+    a socket for system activation or if snapd was already running. This
+    resolves failures to upgrade under WSL. (LP: #1926267)
+
+ -- Brian Murray <brian@ubuntu.com>  Fri, 29 Oct 2021 09:34:21 -0700
+
 ubuntu-release-upgrader (1:22.04.1) jammy; urgency=medium
 
   * Update for 21.10 -> 22.04.
