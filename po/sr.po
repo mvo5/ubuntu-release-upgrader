@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: update-manager\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2021-10-18 15:55-0700\n"
+"POT-Creation-Date: 2021-10-29 09:52-0700\n"
 "PO-Revision-Date: 2013-05-22 11:00+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
@@ -1015,12 +1015,12 @@ msgstr "Молим убаците „%s“ у оптички уређај „%s�
 msgid "Media Change"
 msgstr "Промена медијума"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:233
+#: ../DistUpgrade/DistUpgradeQuirks.py:235
 msgid "Your graphics hardware may not be fully supported in Ubuntu 14.04."
 msgstr ""
 "Ваша графичка картица можда није у потпуности подржана у Убунтуу 14.04."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:235
+#: ../DistUpgrade/DistUpgradeQuirks.py:237
 msgid ""
 "Running the 'unity' desktop environment is not fully supported by your "
 "graphics hardware. You will maybe end up in a very slow environment after "
@@ -1036,11 +1036,11 @@ msgstr ""
 "UpdateManagerWarningForUnity3D“. Да ли и даље желите да наставите са "
 "надоградњом?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:259
+#: ../DistUpgrade/DistUpgradeQuirks.py:261
 msgid "Your graphics hardware may not be fully supported in Ubuntu 12.04 LTS."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:261
+#: ../DistUpgrade/DistUpgradeQuirks.py:263
 msgid ""
 "The support in Ubuntu 12.04 LTS for your Intel graphics hardware is limited "
 "and you may encounter problems after the upgrade. For more information see "
@@ -1052,7 +1052,7 @@ msgstr ""
 "информација на „https://wiki.ubuntu.com/X/Bugs/UpdateManagerWarningForI8xx“. "
 "Да ли желите да наставите са надоградњом?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:281
+#: ../DistUpgrade/DistUpgradeQuirks.py:283
 msgid ""
 "Upgrading may reduce desktop effects, and performance in games and other "
 "graphically intensive programs."
@@ -1060,7 +1060,7 @@ msgstr ""
 "Надоградња може смањити ефекте радне површине, перформансе игрица и других "
 "графички захтевних програма."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:285
+#: ../DistUpgrade/DistUpgradeQuirks.py:287
 msgid ""
 "This computer is currently using the AMD 'fglrx' graphics driver. No version "
 "of this driver is available that works with your hardware in Ubuntu 10.04 "
@@ -1074,11 +1074,11 @@ msgstr ""
 "\n"
 "Да ли желите да наставите?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:324
+#: ../DistUpgrade/DistUpgradeQuirks.py:326
 msgid "Sorry, no more upgrades for this system"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:325
+#: ../DistUpgrade/DistUpgradeQuirks.py:327
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases for this system's 'i386' "
@@ -1087,11 +1087,11 @@ msgid ""
 "Updates for Ubuntu %s will continue until %s."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:340
+#: ../DistUpgrade/DistUpgradeQuirks.py:342
 msgid "No ARMv6 CPU"
 msgstr "Нема „ARMv6“ процесора"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:341
+#: ../DistUpgrade/DistUpgradeQuirks.py:343
 msgid ""
 "Your system uses an ARM CPU that is older than the ARMv6 architecture. All "
 "packages in karmic were built with optimizations requiring ARMv6 as the "
@@ -1103,12 +1103,12 @@ msgstr ""
 "минималну архитектуру. Није могуће надоградити ваш систем на ново Убунту "
 "издање са овим хардвером."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:361
+#: ../DistUpgrade/DistUpgradeQuirks.py:363
 msgid ""
 "Sorry, this storage driver is not supported in kernels for newer releases"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:363
+#: ../DistUpgrade/DistUpgradeQuirks.py:365
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases that provide kernel support "
@@ -1118,11 +1118,11 @@ msgid ""
 "driver, remove the directory %s and try again."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:383
+#: ../DistUpgrade/DistUpgradeQuirks.py:385
 msgid "No init available"
 msgstr "Инит није доступан"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:384
+#: ../DistUpgrade/DistUpgradeQuirks.py:386
 msgid ""
 "Your system appears to be a virtualised environment without an init daemon, "
 "e.g. Linux-VServer. Ubuntu 10.04 LTS cannot function within this type of "
@@ -1137,11 +1137,11 @@ msgstr ""
 "\n"
 "Да ли сте сигурни да желите на наставите?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:425
+#: ../DistUpgrade/DistUpgradeQuirks.py:427
 msgid "The Robot Operating System (ROS) is installed"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:426
+#: ../DistUpgrade/DistUpgradeQuirks.py:428
 msgid ""
 "It appears that ROS is currently installed. Each ROS release is very strict "
 "about the versions of Ubuntu it supports, and Ubuntu upgrades can fail if "
@@ -1158,11 +1158,11 @@ msgid ""
 "Are you sure you want to continue?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:557
+#: ../DistUpgrade/DistUpgradeQuirks.py:559
 msgid "Connection to the Snap Store failed"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:558
+#: ../DistUpgrade/DistUpgradeQuirks.py:560
 msgid ""
 "You have the package lxd installed but your system is unable to reach the "
 "Snap Store. lxd is now provided via a snap and the release upgrade will fail "
@@ -1172,11 +1172,11 @@ msgid ""
 "may want to configure a Snap Store proxy."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:573
+#: ../DistUpgrade/DistUpgradeQuirks.py:575
 msgid "Connection to Snap Store failed"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:574
+#: ../DistUpgrade/DistUpgradeQuirks.py:576
 msgid ""
 "Your system does not have a connection to the Snap Store. For the best "
 "upgrade experience make sure that your system can connect to api.snapcraft."
@@ -1184,11 +1184,11 @@ msgid ""
 "Do you still want to continue with the upgrade?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:583
+#: ../DistUpgrade/DistUpgradeQuirks.py:585
 msgid "Outdated snapd package"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:584
+#: ../DistUpgrade/DistUpgradeQuirks.py:586
 msgid ""
 "Your system does not have the latest version of snapd. Please update the "
 "version of snapd on your system to improve the upgrade experience.\n"
@@ -1197,34 +1197,34 @@ msgstr ""
 
 #. now perform direct API calls to the store, requesting size
 #. information for each of the snaps needing installation
-#: ../DistUpgrade/DistUpgradeQuirks.py:609
+#: ../DistUpgrade/DistUpgradeQuirks.py:611
 msgid "Calculating snap size requirements"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:640
+#: ../DistUpgrade/DistUpgradeQuirks.py:642
 msgid "Processing snap replacements"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:646
+#: ../DistUpgrade/DistUpgradeQuirks.py:648
 #, python-format
 msgid "refreshing snap %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:650
+#: ../DistUpgrade/DistUpgradeQuirks.py:652
 #, python-format
 msgid "removing snap %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:653
+#: ../DistUpgrade/DistUpgradeQuirks.py:655
 #, python-format
 msgid "installing snap %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:682
+#: ../DistUpgrade/DistUpgradeQuirks.py:684
 msgid "PAE not enabled"
 msgstr "ПАЕ није укључено"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:683
+#: ../DistUpgrade/DistUpgradeQuirks.py:685
 msgid ""
 "Your system uses a CPU that does not have PAE enabled. Ubuntu only supports "
 "non-PAE systems up to Ubuntu 12.04. To upgrade to a later version of Ubuntu, "
@@ -1236,11 +1236,11 @@ msgstr ""
 "Убунтуа, морате да укључите ПАЕ (ако је могуће), видите:\n"
 "http://help.ubuntu.com/community/EnablingPAE"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:979
+#: ../DistUpgrade/DistUpgradeQuirks.py:981
 msgid "universe component not enabled"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:980
+#: ../DistUpgrade/DistUpgradeQuirks.py:982
 #, python-format
 msgid ""
 "You have the package %s installed which is a python2 package. python2 has "
@@ -1252,7 +1252,7 @@ msgid ""
 "universe component in /etc/apt/sources.list or remove %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1081
+#: ../DistUpgrade/DistUpgradeQuirks.py:1083
 msgid "Checking for installed snaps"
 msgstr ""
 
