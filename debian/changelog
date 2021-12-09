@@ -1,3 +1,11 @@
+ubuntu-release-upgrader (1:22.04.3) UNRELEASED; urgency=medium
+
+  * DistUpgrade/DistUpgradeController.py: switch from using os.readlink to
+    os.path.realpath when checking for the default python version. Thanks to
+    Nico Schlömer. (LP: #1953135)
+
+ -- Brian Murray <brian@ubuntu.com>  Thu, 09 Dec 2021 09:42:15 -0800
+
 ubuntu-release-upgrader (1:22.04.2) jammy; urgency=medium
 
   [ Didier Roche ]
