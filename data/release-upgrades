@@ -13,4 +13,4 @@
 #           the currently-running one.  Note that if this option is used and
 #           the currently-running release is not itself an LTS release the
 #           upgrader will assume prompt was meant to be normal.
-Prompt=normal
+Prompt=lts
