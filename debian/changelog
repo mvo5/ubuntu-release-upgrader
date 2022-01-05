@@ -1,4 +1,4 @@
-ubuntu-release-upgrader (1:22.04.3) UNRELEASED; urgency=medium
+ubuntu-release-upgrader (1:22.04.3) jammy; urgency=medium
 
   * DistUpgrade/DistUpgradeController.py: switch from using os.readlink to
     os.path.realpath when checking for the default python version. Thanks to
@@ -6,7 +6,7 @@ ubuntu-release-upgrader (1:22.04.3) UNRELEASED; urgency=medium
   * data/release-upgrades: set Prompt to lts as jammy is an LTS release.
     (LP: #1955843)
 
- -- Brian Murray <brian@ubuntu.com>  Thu, 09 Dec 2021 09:42:15 -0800
+ -- Brian Murray <brian@ubuntu.com>  Wed, 05 Jan 2022 14:27:07 -0800
 
 ubuntu-release-upgrader (1:22.04.2) jammy; urgency=medium
 
