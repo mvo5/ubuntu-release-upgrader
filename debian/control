@@ -14,7 +14,7 @@ Build-Depends: debhelper (>= 9),
 Build-Depends-Indep: libxml-parser-perl, 
                      intltool
 Standards-Version: 4.3.0
-Vcs-Git: https://git.launchpad.net/ubuntu-release-upgrader -b ubuntu/master
+Vcs-Git: https://git.launchpad.net/ubuntu-release-upgrader -b ubuntu/main
 
 Package: ubuntu-release-upgrader-core
 Architecture: all

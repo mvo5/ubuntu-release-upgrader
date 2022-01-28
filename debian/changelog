@@ -1,3 +1,9 @@
+ubuntu-release-upgrader (1:22.04.5) UNRELEASED; urgency=medium
+
+  * debian/control: rename the main branch
+
+ -- Brian Murray <brian@ubuntu.com>  Fri, 28 Jan 2022 13:43:11 -0800
+
 ubuntu-release-upgrader (1:22.04.4) jammy; urgency=medium
 
   [ Steve Langasek ]
