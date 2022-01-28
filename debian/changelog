@@ -1,4 +1,4 @@
-ubuntu-release-upgrader (1:22.04.5) UNRELEASED; urgency=medium
+ubuntu-release-upgrader (1:22.04.4) jammy; urgency=medium
 
   [ Steve Langasek ]
   * DistUpgrade/DistUpgradeController.py: remove references to
@@ -6,9 +6,9 @@ ubuntu-release-upgrader (1:22.04.5) UNRELEASED; urgency=medium
 
   [ Brian Murray ]
   * tests/test_sources_list.py: update the tests which expected / utilized the
-    archive.canonical.com partner repository. 
+    archive.canonical.com partner repository.
 
- -- Steve Langasek <steve.langasek@ubuntu.com>  Thu, 27 Jan 2022 23:18:00 -0800
+ -- Brian Murray <brian@ubuntu.com>  Fri, 28 Jan 2022 11:39:24 -0800
 
 ubuntu-release-upgrader (1:22.04.3) jammy; urgency=medium
 
