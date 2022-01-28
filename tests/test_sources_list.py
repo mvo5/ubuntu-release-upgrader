@@ -374,12 +374,12 @@ deb http://security.ubuntu.com/ubuntu gutsy-security main restricted # auto gene
              apt_pkg.config.find_file("Dir::Etc::sourcelist") + ".distUpgrade"
              ]))
 
-    def test_commercial_transition(self):
+    def test_partner_deprecation(self):
         """
-        test transition of pre-gutsy archive.canonical.com archives
+        test removal of partner archive
         """
         shutil.copy(os.path.join(self.testdir,
-                                 "sources.list.commercial-transition"),
+                                 "sources.list.partner-deprecation"),
                     os.path.join(self.testdir, "sources.list"))
         apt_pkg.config.set("Dir::Etc::sourceparts",
                            os.path.join(self.testdir, "sources.list.d"))
@@ -391,7 +391,6 @@ deb http://security.ubuntu.com/ubuntu gutsy-security main restricted # auto gene
 
         # now test the result
         self._verifySources("""
-deb http://archive.canonical.com/ubuntu gutsy partner
 """)
 
     @unittest.skipUnless(ARCH in ('amd64', 'i386'), "extras was not for ports")
@@ -626,28 +625,6 @@ deb http://ports.ubuntu.com/ubuntu-ports/ %s-security main restricted universe m
 """ % (to_dist, to_dist, to_dist))
 
     @mock.patch("DistUpgrade.DistUpgradeController.DistUpgradeController._sourcesListEntryDownloadable")
-    def test_partner_update(self, mock_sourcesListEntryDownloadable):
-        """
-        test transition partner repository updates
-        """
-        shutil.copy(os.path.join(self.testdir, "sources.list.partner"),
-                    os.path.join(self.testdir, "sources.list"))
-        apt_pkg.config.set("Dir::Etc::sourceparts",
-                           os.path.join(self.testdir, "sources.list.d"))
-        v = DistUpgradeViewNonInteractive()
-        d = DistUpgradeController(v, datadir=self.testdir)
-        d.openCache(lock=False)
-        mock_sourcesListEntryDownloadable.return_value = True
-        res = d.updateSourcesList()
-        self.assertTrue(mock_sourcesListEntryDownloadable.called)
-        self.assertTrue(res)
-
-        # now test the result
-        self._verifySourcesLine("""
-deb http://archive.canonical.com/ubuntu gutsy partner
-""")
-
-    @mock.patch("DistUpgrade.DistUpgradeController.DistUpgradeController._sourcesListEntryDownloadable")
     def test_private_ppa_transition(self, mock_sourcesListEntryDownloadable):
         if "RELEASE_UPGRADER_ALLOW_THIRD_PARTY" in os.environ:
             del os.environ["RELEASE_UPGRADER_ALLOW_THIRD_PARTY"]
@@ -714,7 +691,6 @@ deb https://user:pass@private-ppa.launchpad.net/commercial-ppa-uploaders gutsy m
         # now test the result
         self._verifySources("""
 deb http://localhost:9977/security.ubuntu.com/ubuntu gutsy-security main restricted universe multiverse
-deb http://localhost:9977/archive.canonical.com/ubuntu gutsy partner
 deb http://localhost:9977/us.archive.ubuntu.com/ubuntu/ gutsy main
 deb http://localhost:9977/archive.ubuntu.com/ubuntu/ gutsy main
 
@@ -723,8 +699,6 @@ deb-src http://archive.ubuntu.com/ubuntu gutsy main restricted multiverse
 
 deb http://security.ubuntu.com/ubuntu/ gutsy-security main restricted
 deb http://security.ubuntu.com/ubuntu/ gutsy-security universe
-
-deb http://archive.canonical.com/ubuntu gutsy partner
 """)
 
     def test_unicode_comments(self):

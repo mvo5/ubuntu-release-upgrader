@@ -5,4 +5,4 @@ deb http://de.archive.ubuntu.com/ubuntu/ feisty main restricted multiverse
 deb-src http://archive.ubuntu.com/ubuntu feisty main restricted multiverse
 
 # the commercial repo (feisty)
-deb http://archive.canonical.com/ubuntu feisty-commercial main 
+deb http://archive.canonical.com/ubuntu feisty partner
