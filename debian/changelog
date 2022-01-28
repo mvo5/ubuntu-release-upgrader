@@ -1,3 +1,10 @@
+ubuntu-release-upgrader (1:22.04.3ubuntu1) UNRELEASED; urgency=medium
+
+  * DistUpgrade/DistUpgradeController.py: remove references to
+    archive.canonical.com from sources.list on upgrade.  LP: #1959343.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Thu, 27 Jan 2022 23:18:00 -0800
+
 ubuntu-release-upgrader (1:22.04.3) jammy; urgency=medium
 
   * DistUpgrade/DistUpgradeController.py: switch from using os.readlink to

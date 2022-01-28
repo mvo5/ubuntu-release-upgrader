@@ -1,6 +1,6 @@
 # DistUpgradeController.py 
 #  
-#  Copyright (c) 2004-2008 Canonical
+#  Copyright (c) 2004-2022 Canonical Ltd.
 #  
 #  Author: Michael Vogt <michael.vogt@ubuntu.com>
 # 
@@ -550,6 +550,18 @@ class DistUpgradeController(object):
             if entry.line.startswith(
                     "## developers who want to ship their latest software."):
                 continue
+            if ('/archive.canonical.com' in entry.line or
+                entry.line.startswith(
+                    "## Uncomment the following two lines to add software from Canonical's") or
+                entry.line.startswith(
+                    "## 'partner' repository.") or
+                entry.line.startswith(
+                    "## This software is not part of Ubuntu, but is offered by Canonical and the") or
+                entry.line.startswith(
+                    "## respective vendors as a service to Ubuntu users")
+               ):
+                continue
+
             new_list.append(entry)
         self.sources.list = new_list
 
