@@ -1,7 +1,12 @@
-ubuntu-release-upgrader (1:22.04.3ubuntu1) UNRELEASED; urgency=medium
+ubuntu-release-upgrader (1:22.04.5) UNRELEASED; urgency=medium
 
+  [ Steve Langasek ]
   * DistUpgrade/DistUpgradeController.py: remove references to
     archive.canonical.com from sources.list on upgrade.  LP: #1959343.
+
+  [ Brian Murray ]
+  * tests/test_sources_list.py: update the tests which expected / utilized the
+    archive.canonical.com partner repository. 
 
  -- Steve Langasek <steve.langasek@ubuntu.com>  Thu, 27 Jan 2022 23:18:00 -0800
 
