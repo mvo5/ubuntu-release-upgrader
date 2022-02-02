@@ -167,10 +167,10 @@ class AcquireProgress(apt.progress.base.AcquireProgress):
   def estimatedDownloadTime(self, required_download):
     """ get the estimated download time """
     if self.est_speed == 0:
-      timeModem = required_download/(56*1024/8)  # 56 kbit 
-      timeDSL = required_download/(1024*1024/8)  # 1Mbit = 1024 kbit
-      s= _("This download will take about %s with a 1Mbit DSL connection "
-           "and about %s with a 56k modem.") % (FuzzyTimeToStr(timeDSL), FuzzyTimeToStr(timeModem))
+      time5Mbit = required_download/(5*1000*1000/8)  # 1Mbit = 1000 kbit
+      time40Mbit = required_download/(40*1000*1000/8)
+      s= _("This download will take about %s with a 40Mbit connection "
+           "and about %s with a 5Mbit connection.") % (FuzzyTimeToStr(time40Mbit), FuzzyTimeToStr(time5Mbit))
       return s
     # if we have a estimated speed, use it
     s = _("This download will take about %s with your connection. ") % FuzzyTimeToStr(required_download/self.est_speed)

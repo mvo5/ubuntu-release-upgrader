@@ -1,6 +1,10 @@
 ubuntu-release-upgrader (1:22.04.5) UNRELEASED; urgency=medium
 
+  [ Brian Murray ]
   * debian/control: rename the main branch
+
+  [ Nick Rosbrook ]
+  * DistUpgrade: update download rates in estimated download message (LP: #1947581)
 
  -- Brian Murray <brian@ubuntu.com>  Fri, 28 Jan 2022 13:43:11 -0800
 
