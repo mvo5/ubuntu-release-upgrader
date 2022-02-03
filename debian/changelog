@@ -2,6 +2,9 @@ ubuntu-release-upgrader (1:22.04.5) UNRELEASED; urgency=medium
 
   [ Brian Murray ]
   * debian/control: rename the main branch
+  * Increase the fallback KERNEL_INITRD_SIZE so that there is room for
+    commonly used modules in the initramfs subsequently some upgrades may be
+    disallowed due to a lack of free space in /boot.
 
   [ Nick Rosbrook ]
   * DistUpgrade: update download rates in estimated download message (LP: #1947581)
