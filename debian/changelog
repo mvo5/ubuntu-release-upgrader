@@ -5,11 +5,12 @@ ubuntu-release-upgrader (1:22.04.5) UNRELEASED; urgency=medium
   * Increase the fallback KERNEL_INITRD_SIZE so that there is room for
     commonly used modules in the initramfs subsequently some upgrades may be
     disallowed due to a lack of free space in /boot.
+  * Run pre-build.sh: updating mirrors, demotions, and translations.
 
   [ Nick Rosbrook ]
   * Update download rates in estimated download message (LP: #1947581)
 
- -- Brian Murray <brian@ubuntu.com>  Fri, 28 Jan 2022 13:43:11 -0800
+ -- Brian Murray <brian@ubuntu.com>  Mon, 07 Feb 2022 11:00:53 -0800
 
 ubuntu-release-upgrader (1:22.04.4) jammy; urgency=medium
 

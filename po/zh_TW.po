@@ -1,9 +1,9 @@
-#: ../DistUpgrade/DistUpgradeController.py:1045
+#: ../DistUpgrade/DistUpgradeController.py:1057
 msgid ""
 msgstr ""
 "Project-Id-Version: update-manager 0.41.1\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2021-10-29 09:52-0700\n"
+"POT-Creation-Date: 2022-02-07 11:08-0800\n"
 "PO-Revision-Date: 2019-06-18 17:54+0000\n"
 "Last-Translator: Walter Cheuk <wwycheuk@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <zh-l10n@linux.org.tw>\n"
@@ -292,21 +292,21 @@ msgstr ""
 "無法寫入您的系統目錄「%s」。升級程序無法繼續。\n"
 "請確認該系統目錄可以寫入。"
 
-#: ../DistUpgrade/DistUpgradeController.py:617
+#: ../DistUpgrade/DistUpgradeController.py:629
 #, python-format
 msgid "Not for humans during development stage of release %s"
 msgstr "正處於 %s 發行版的開發階段，不適合普通人使用"
 
-#: ../DistUpgrade/DistUpgradeController.py:717
+#: ../DistUpgrade/DistUpgradeController.py:729
 #, python-format
 msgid "disabled on upgrade to %s"
 msgstr "因升級至 %s 停用"
 
-#: ../DistUpgrade/DistUpgradeController.py:776
+#: ../DistUpgrade/DistUpgradeController.py:788
 msgid "No valid sources.list entry found"
 msgstr "找不到有效的 sources.list 項目"
 
-#: ../DistUpgrade/DistUpgradeController.py:777
+#: ../DistUpgrade/DistUpgradeController.py:789
 #, python-format
 msgid ""
 "While scanning your repository information no entry about %s could be "
@@ -322,11 +322,11 @@ msgstr ""
 "\n"
 "仍然繼續？"
 
-#: ../DistUpgrade/DistUpgradeController.py:787
+#: ../DistUpgrade/DistUpgradeController.py:799
 msgid "No valid mirror found"
 msgstr "找不到有效的鏡像站"
 
-#: ../DistUpgrade/DistUpgradeController.py:788
+#: ../DistUpgrade/DistUpgradeController.py:800
 #, python-format
 msgid ""
 "While scanning your repository information no mirror entry for the upgrade "
@@ -344,11 +344,11 @@ msgstr ""
 "如選「否」則會取消升級。"
 
 #. hm, still nothing useful ...
-#: ../DistUpgrade/DistUpgradeController.py:808
+#: ../DistUpgrade/DistUpgradeController.py:820
 msgid "Generate default sources?"
 msgstr "產生預設的來源？"
 
-#: ../DistUpgrade/DistUpgradeController.py:809
+#: ../DistUpgrade/DistUpgradeController.py:821
 #, python-format
 msgid ""
 "After scanning your 'sources.list' no valid entry for '%s' was found.\n"
@@ -360,18 +360,18 @@ msgstr ""
 "\n"
 "要新增「%s」的預設項目嗎？如果您選擇「否」則會取消升級。"
 
-#: ../DistUpgrade/DistUpgradeController.py:844
-#: ../DistUpgrade/DistUpgradeController.py:850
+#: ../DistUpgrade/DistUpgradeController.py:856
+#: ../DistUpgrade/DistUpgradeController.py:862
 msgid "Repository information invalid"
 msgstr "軟體庫資料無效"
 
-#: ../DistUpgrade/DistUpgradeController.py:845
+#: ../DistUpgrade/DistUpgradeController.py:857
 msgid ""
 "Upgrading the repository information resulted in a invalid file so a bug "
 "reporting process is being started."
 msgstr "升級軟體庫資訊導致檔案無效，因此正在啟動臭蟲回報程序"
 
-#: ../DistUpgrade/DistUpgradeController.py:851
+#: ../DistUpgrade/DistUpgradeController.py:863
 msgid ""
 "Upgrading the repository information resulted in a invalid file. To report a "
 "bug install apport and then execute 'apport-bug ubuntu-release-upgrader'."
@@ -379,11 +379,11 @@ msgstr ""
 "升級軟體庫資訊導致某個檔案變成無效。要回報此錯誤，請安裝 apport 並執行"
 "「apport-bug ubuntu-release-upgrader」。"
 
-#: ../DistUpgrade/DistUpgradeController.py:860
+#: ../DistUpgrade/DistUpgradeController.py:872
 msgid "Third party sources disabled"
 msgstr "已停用第三方來源"
 
-#: ../DistUpgrade/DistUpgradeController.py:861
+#: ../DistUpgrade/DistUpgradeController.py:873
 msgid ""
 "Some third party entries in your sources.list were disabled. You can re-"
 "enable them after the upgrade with the 'software-properties' tool or your "
@@ -392,12 +392,12 @@ msgstr ""
 "sources.list 中的某些第三方項目已停用。升級完成後可以「軟體來源」工具或軟體包"
 "管理員將之重新啟用。"
 
-#: ../DistUpgrade/DistUpgradeController.py:903
+#: ../DistUpgrade/DistUpgradeController.py:915
 msgid "Package in inconsistent state"
 msgid_plural "Packages in inconsistent state"
 msgstr[0] "軟體包狀態不一致"
 
-#: ../DistUpgrade/DistUpgradeController.py:906
+#: ../DistUpgrade/DistUpgradeController.py:918
 #, python-format
 msgid ""
 "The package '%s' is in an inconsistent state and needs to be reinstalled, "
@@ -411,22 +411,22 @@ msgstr[0] ""
 "這個「%s」軟體包狀態不一致而需要重新安裝，但找不到它的軟體包。請手動地重新安"
 "裝軟體包或將它由系統中移除。"
 
-#: ../DistUpgrade/DistUpgradeController.py:969
+#: ../DistUpgrade/DistUpgradeController.py:981
 msgid "Error during update"
 msgstr "更新時發生錯誤"
 
-#: ../DistUpgrade/DistUpgradeController.py:970
+#: ../DistUpgrade/DistUpgradeController.py:982
 msgid ""
 "A problem occurred during the update. This is usually some sort of network "
 "problem, please check your network connection and retry."
 msgstr "更新時發生錯誤。這可能是某些網路問題，試檢查網路連線後再試。"
 
-#: ../DistUpgrade/DistUpgradeController.py:1013
-#: ../DistUpgrade/DistUpgradeController.py:1018
+#: ../DistUpgrade/DistUpgradeController.py:1025
+#: ../DistUpgrade/DistUpgradeController.py:1030
 msgid "EFI System Partition (ESP) not usable"
 msgstr "EFI 系統分割磁區 (ESP) 不可用"
 
-#: ../DistUpgrade/DistUpgradeController.py:1014
+#: ../DistUpgrade/DistUpgradeController.py:1026
 msgid ""
 "Your EFI System Partition (ESP) is not mounted at /boot/efi. Please ensure "
 "that it is properly configured and try again."
@@ -434,7 +434,7 @@ msgstr ""
 "您的 EFI 系統分割磁區 (ESP) 並未掛載於 /boot/efi。請在確定它有被正確好後重"
 "試。"
 
-#: ../DistUpgrade/DistUpgradeController.py:1019
+#: ../DistUpgrade/DistUpgradeController.py:1031
 msgid ""
 "The EFI System Partition (ESP) mounted at /boot/efi is not writable. Please "
 "mount this partition read-write and try again."
@@ -442,13 +442,13 @@ msgstr ""
 "無法寫入掛載於 /boot/efi 的 EFI 系統分割磁區 (ESP)。請將此磁區重新掛載為可讀"
 "寫狀態後重試。"
 
-#: ../DistUpgrade/DistUpgradeController.py:1026
+#: ../DistUpgrade/DistUpgradeController.py:1038
 msgid "Not enough free disk space"
 msgstr "磁碟空間不足"
 
 #. TRANSLATORS: you can change the order of the sentence,
 #. make sure to keep all {str_*} string untranslated.
-#: ../DistUpgrade/DistUpgradeController.py:1029
+#: ../DistUpgrade/DistUpgradeController.py:1041
 #, python-brace-format
 msgid ""
 "The upgrade has aborted. The upgrade needs a total of {str_total} free space "
@@ -459,12 +459,12 @@ msgstr ""
 "在 '{str_dir}' 上清出至少 {str_needed} 的可用空間。{str_remedy}"
 
 #. specific ways to resolve lack of free space
-#: ../DistUpgrade/DistUpgradeController.py:1034
+#: ../DistUpgrade/DistUpgradeController.py:1046
 msgid ""
 "Remove temporary packages of former installations using 'sudo apt clean'."
 msgstr "使用 'sudo apt clean' 移除先前安裝所遺留的暫存軟體包。"
 
-#: ../DistUpgrade/DistUpgradeController.py:1036
+#: ../DistUpgrade/DistUpgradeController.py:1048
 msgid ""
 "You can remove old kernels using 'sudo apt autoremove' and you could also "
 "set COMPRESS=xz in /etc/initramfs-tools/initramfs.conf to reduce the size of "
@@ -474,53 +474,53 @@ msgstr ""
 "initramfs-tools/initramfs.conf 中設定 COMPRESS=xz 以減少您的 initramfs 檔案大"
 "小。"
 
-#: ../DistUpgrade/DistUpgradeController.py:1041
+#: ../DistUpgrade/DistUpgradeController.py:1053
 msgid ""
 "Empty your trash and remove temporary packages of former installations using "
 "'sudo apt-get clean'."
 msgstr ""
 "清空您的垃圾桶並以 'sudo apt-get clean' 指令移除先前安裝所遺留的暫存軟體包。"
 
-#: ../DistUpgrade/DistUpgradeController.py:1044
+#: ../DistUpgrade/DistUpgradeController.py:1056
 msgid "Reboot to clean up files in /tmp."
 msgstr "重新開機以清理 /tmp 中的檔案。"
 
 #. calc the dist-upgrade and see if the removals are ok/expected
 #. do the dist-upgrade
-#: ../DistUpgrade/DistUpgradeController.py:1083
-#: ../DistUpgrade/DistUpgradeController.py:1925
-#: ../DistUpgrade/DistUpgradeController.py:1977
+#: ../DistUpgrade/DistUpgradeController.py:1095
+#: ../DistUpgrade/DistUpgradeController.py:1937
+#: ../DistUpgrade/DistUpgradeController.py:1989
 msgid "Calculating the changes"
 msgstr "正在推算所有的更動"
 
 #. ask the user
-#: ../DistUpgrade/DistUpgradeController.py:1127
+#: ../DistUpgrade/DistUpgradeController.py:1139
 msgid "Do you want to start the upgrade?"
 msgstr "要開始升級嗎？"
 
-#: ../DistUpgrade/DistUpgradeController.py:1146
+#: ../DistUpgrade/DistUpgradeController.py:1158
 #, python-format
 msgid ""
 "Livepatch security updates are not available for Ubuntu %s. If you upgrade, "
 "Livepatch will turn off."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:1218
+#: ../DistUpgrade/DistUpgradeController.py:1230
 msgid "Upgrade canceled"
 msgstr "升級取消了"
 
-#: ../DistUpgrade/DistUpgradeController.py:1219
+#: ../DistUpgrade/DistUpgradeController.py:1231
 msgid ""
 "The upgrade will cancel now and the original system state will be restored. "
 "You can resume the upgrade at a later time."
 msgstr "現在將取消升級，並且將系統還原至原來狀態。您可以在之後再進行升級。"
 
-#: ../DistUpgrade/DistUpgradeController.py:1225
-#: ../DistUpgrade/DistUpgradeController.py:1370
+#: ../DistUpgrade/DistUpgradeController.py:1237
+#: ../DistUpgrade/DistUpgradeController.py:1382
 msgid "Could not download the upgrades"
 msgstr "無法下載升級軟體包"
 
-#: ../DistUpgrade/DistUpgradeController.py:1226
+#: ../DistUpgrade/DistUpgradeController.py:1238
 msgid ""
 "The upgrade has aborted. Please check your Internet connection or "
 "installation media and try again. All files downloaded so far have been kept."
@@ -530,27 +530,27 @@ msgstr ""
 
 #. FIXME: strings are not good, but we are in string freeze
 #. currently
-#: ../DistUpgrade/DistUpgradeController.py:1319
-#: ../DistUpgrade/DistUpgradeController.py:1358
-#: ../DistUpgrade/DistUpgradeController.py:1474
+#: ../DistUpgrade/DistUpgradeController.py:1331
+#: ../DistUpgrade/DistUpgradeController.py:1370
+#: ../DistUpgrade/DistUpgradeController.py:1486
 msgid "Error during commit"
 msgstr "提交時發生錯誤"
 
 #. generate a new cache
-#: ../DistUpgrade/DistUpgradeController.py:1321
-#: ../DistUpgrade/DistUpgradeController.py:1360
-#: ../DistUpgrade/DistUpgradeController.py:1519
+#: ../DistUpgrade/DistUpgradeController.py:1333
+#: ../DistUpgrade/DistUpgradeController.py:1372
+#: ../DistUpgrade/DistUpgradeController.py:1531
 msgid "Restoring original system state"
 msgstr "回復原有系統狀態"
 
-#: ../DistUpgrade/DistUpgradeController.py:1322
-#: ../DistUpgrade/DistUpgradeController.py:1337
-#: ../DistUpgrade/DistUpgradeController.py:1361
+#: ../DistUpgrade/DistUpgradeController.py:1334
+#: ../DistUpgrade/DistUpgradeController.py:1349
+#: ../DistUpgrade/DistUpgradeController.py:1373
 msgid "Could not install the upgrades"
 msgstr "無法安裝升級"
 
 #. invoke the frontend now and show a error message
-#: ../DistUpgrade/DistUpgradeController.py:1327
+#: ../DistUpgrade/DistUpgradeController.py:1339
 msgid ""
 "The upgrade has aborted. Your system could be in an unusable state. A "
 "recovery will run now (dpkg --configure -a)."
@@ -558,7 +558,7 @@ msgstr ""
 "已放棄升級。您的系統可能處於不穩定狀態。現在將執行復原程序 (dpkg --configure "
 "-a)。"
 
-#: ../DistUpgrade/DistUpgradeController.py:1332
+#: ../DistUpgrade/DistUpgradeController.py:1344
 #, python-format
 msgid ""
 "\n"
@@ -575,30 +575,30 @@ msgstr ""
 "報告上。\n"
 "%s"
 
-#: ../DistUpgrade/DistUpgradeController.py:1371
+#: ../DistUpgrade/DistUpgradeController.py:1383
 msgid ""
 "The upgrade has aborted. Please check your Internet connection or "
 "installation media and try again. "
 msgstr "已放棄升級。請檢查您的網際網路連線或安裝媒體，接著再試一次。 "
 
-#: ../DistUpgrade/DistUpgradeController.py:1399
+#: ../DistUpgrade/DistUpgradeController.py:1411
 msgid "Searching for obsolete software"
 msgstr "搜尋廢棄的軟體中"
 
-#: ../DistUpgrade/DistUpgradeController.py:1462
+#: ../DistUpgrade/DistUpgradeController.py:1474
 msgid "Remove obsolete packages?"
 msgstr "移除廢棄的軟體包？"
 
-#: ../DistUpgrade/DistUpgradeController.py:1463
+#: ../DistUpgrade/DistUpgradeController.py:1475
 #: ../data/gtkbuilder/DistUpgrade.ui.h:8
 msgid "_Keep"
 msgstr "保留(_K)"
 
-#: ../DistUpgrade/DistUpgradeController.py:1463
+#: ../DistUpgrade/DistUpgradeController.py:1475
 msgid "_Remove"
 msgstr "移除(_R)"
 
-#: ../DistUpgrade/DistUpgradeController.py:1475
+#: ../DistUpgrade/DistUpgradeController.py:1487
 msgid ""
 "A problem occurred during the clean-up. Please see the below message for "
 "more information. "
@@ -606,34 +606,34 @@ msgstr "在清理時發生一些問題。詳情請參閱以下訊息。 "
 
 #. FIXME: instead of error out, fetch and install it
 #. here
-#: ../DistUpgrade/DistUpgradeController.py:1557
+#: ../DistUpgrade/DistUpgradeController.py:1569
 msgid "Required depends is not installed"
 msgstr "必需的依賴軟體包未被安裝"
 
-#: ../DistUpgrade/DistUpgradeController.py:1558
+#: ../DistUpgrade/DistUpgradeController.py:1570
 #, python-format
 msgid "The required dependency '%s' is not installed. "
 msgstr "必需的依賴軟體包「%s」未被安裝。 "
 
 #. sanity check (check for ubuntu-desktop, brokenCache etc)
 #. then open the cache (again)
-#: ../DistUpgrade/DistUpgradeController.py:1791
-#: ../DistUpgrade/DistUpgradeController.py:1875
+#: ../DistUpgrade/DistUpgradeController.py:1803
+#: ../DistUpgrade/DistUpgradeController.py:1887
 msgid "Checking package manager"
 msgstr "正在檢查軟體包管理員"
 
-#: ../DistUpgrade/DistUpgradeController.py:1797
-#: ../DistUpgrade/DistUpgradeController.py:1803
+#: ../DistUpgrade/DistUpgradeController.py:1809
+#: ../DistUpgrade/DistUpgradeController.py:1815
 msgid "Preparing the upgrade failed"
 msgstr "準備升級失敗"
 
-#: ../DistUpgrade/DistUpgradeController.py:1798
+#: ../DistUpgrade/DistUpgradeController.py:1810
 msgid ""
 "Preparing the system for the upgrade failed so a bug reporting process is "
 "being started."
 msgstr "準備系統以供升級的動作失敗，所以正在啟動臭蟲回報程序。"
 
-#: ../DistUpgrade/DistUpgradeController.py:1804
+#: ../DistUpgrade/DistUpgradeController.py:1816
 msgid ""
 "Preparing the system for the upgrade failed. To report a bug install apport "
 "and then execute 'apport-bug ubuntu-release-upgrader'."
@@ -641,12 +641,12 @@ msgstr ""
 "未能為系統準備升級。要回報此錯誤，請安裝 apport 並執行「apport-bug ubuntu-"
 "release-upgrader」。"
 
-#: ../DistUpgrade/DistUpgradeController.py:1821
-#: ../DistUpgrade/DistUpgradeController.py:1831
+#: ../DistUpgrade/DistUpgradeController.py:1833
+#: ../DistUpgrade/DistUpgradeController.py:1843
 msgid "Getting upgrade prerequisites failed"
 msgstr "取得升級先決元件失敗"
 
-#: ../DistUpgrade/DistUpgradeController.py:1822
+#: ../DistUpgrade/DistUpgradeController.py:1834
 msgid ""
 "The system was unable to get the prerequisites for the upgrade. The upgrade "
 "will abort now and restore the original system state.\n"
@@ -657,7 +657,7 @@ msgstr ""
 "\n"
 "此外，臭蟲回報程序正在啟動中。"
 
-#: ../DistUpgrade/DistUpgradeController.py:1832
+#: ../DistUpgrade/DistUpgradeController.py:1844
 msgid ""
 "The system was unable to get the prerequisites for the upgrade. The upgrade "
 "will abort now and restore the original system state.\n"
@@ -669,15 +669,15 @@ msgstr ""
 "\n"
 "要回報此錯誤，請安裝 apport 並執行「apport-bug ubuntu-release-upgrader」。"
 
-#: ../DistUpgrade/DistUpgradeController.py:1866
+#: ../DistUpgrade/DistUpgradeController.py:1878
 msgid "Updating repository information"
 msgstr "正在更新軟體庫資訊"
 
-#: ../DistUpgrade/DistUpgradeController.py:1902
+#: ../DistUpgrade/DistUpgradeController.py:1914
 msgid "Invalid package information"
 msgstr "無效的軟體包資訊"
 
-#: ../DistUpgrade/DistUpgradeController.py:1903
+#: ../DistUpgrade/DistUpgradeController.py:1915
 #, python-format
 msgid ""
 "After updating your package information, the essential package '%s' could "
@@ -693,69 +693,69 @@ msgstr ""
 "sources.list  以瞭解目前設定的軟體來源列表。\n"
 "若鏡像站正處於超載狀態，您可以過一段時間後再試著更新。"
 
-#: ../DistUpgrade/DistUpgradeController.py:1932
-#: ../DistUpgrade/DistUpgradeController.py:2038
+#: ../DistUpgrade/DistUpgradeController.py:1944
+#: ../DistUpgrade/DistUpgradeController.py:2050
 msgid "Fetching"
 msgstr "接收中"
 
-#: ../DistUpgrade/DistUpgradeController.py:1939
-#: ../DistUpgrade/DistUpgradeController.py:1962
-#: ../DistUpgrade/DistUpgradeController.py:1992
-#: ../DistUpgrade/DistUpgradeController.py:2042
+#: ../DistUpgrade/DistUpgradeController.py:1951
+#: ../DistUpgrade/DistUpgradeController.py:1974
+#: ../DistUpgrade/DistUpgradeController.py:2004
+#: ../DistUpgrade/DistUpgradeController.py:2054
 msgid "Upgrading"
 msgstr "升級中"
 
-#: ../DistUpgrade/DistUpgradeController.py:1941
+#: ../DistUpgrade/DistUpgradeController.py:1953
 msgid "Upgrade infeasible"
 msgstr "無法升級"
 
-#: ../DistUpgrade/DistUpgradeController.py:1942
+#: ../DistUpgrade/DistUpgradeController.py:1954
 msgid ""
 "The upgrade could not be completed, there were errors during the upgrade "
 "process."
 msgstr "因為升級過程中發生錯誤，因此升級無法完成。"
 
 #. don't abort here, because it would restore the sources.list
-#: ../DistUpgrade/DistUpgradeController.py:1965
-#: ../DistUpgrade/DistUpgradeController.py:1981
+#: ../DistUpgrade/DistUpgradeController.py:1977
+#: ../DistUpgrade/DistUpgradeController.py:1993
 msgid "Upgrade incomplete"
 msgstr "升級不完全"
 
-#: ../DistUpgrade/DistUpgradeController.py:1966
-#: ../DistUpgrade/DistUpgradeController.py:1982
+#: ../DistUpgrade/DistUpgradeController.py:1978
+#: ../DistUpgrade/DistUpgradeController.py:1994
 msgid ""
 "The upgrade has partially completed but there were errors during the upgrade "
 "process."
 msgstr "升級已部分完成，但升級過程中發生錯誤。"
 
 #. don't abort here, because it would restore the sources.list
-#: ../DistUpgrade/DistUpgradeController.py:1997
-#: ../DistUpgrade/DistUpgradeController.py:2044
-#: ../DistUpgrade/DistUpgradeController.py:2050
-#: ../DistUpgrade/DistUpgradeController.py:2061
+#: ../DistUpgrade/DistUpgradeController.py:2009
+#: ../DistUpgrade/DistUpgradeController.py:2056
+#: ../DistUpgrade/DistUpgradeController.py:2062
+#: ../DistUpgrade/DistUpgradeController.py:2073
 msgid "Upgrade complete"
 msgstr "升級完成"
 
-#: ../DistUpgrade/DistUpgradeController.py:1998
-#: ../DistUpgrade/DistUpgradeController.py:2045
-#: ../DistUpgrade/DistUpgradeController.py:2051
+#: ../DistUpgrade/DistUpgradeController.py:2010
+#: ../DistUpgrade/DistUpgradeController.py:2057
+#: ../DistUpgrade/DistUpgradeController.py:2063
 msgid ""
 "The upgrade has completed but there were errors during the upgrade process."
 msgstr "升級已經完成，但在升級過程中有發生錯誤。"
 
-#: ../DistUpgrade/DistUpgradeController.py:2013
+#: ../DistUpgrade/DistUpgradeController.py:2025
 msgid "System upgrade is complete."
 msgstr "系統升級完成。"
 
-#: ../DistUpgrade/DistUpgradeController.py:2062
+#: ../DistUpgrade/DistUpgradeController.py:2074
 msgid "The partial upgrade was completed."
 msgstr "部份升級完成。"
 
-#: ../DistUpgrade/DistUpgradeController.py:2091
+#: ../DistUpgrade/DistUpgradeController.py:2103
 msgid "Lock screen disabled"
 msgstr "已停用鎖定螢幕"
 
-#: ../DistUpgrade/DistUpgradeController.py:2092
+#: ../DistUpgrade/DistUpgradeController.py:2104
 msgid ""
 "Your lock screen has been disabled and will remain disabled until you reboot."
 msgstr "您的鎖定螢幕已經停用，且直到您重開機之前都會維持在停用狀態。"
@@ -1511,13 +1511,11 @@ msgstr "%(str_days)s %(str_hours)s"
 msgid "%(str_hours)s %(str_minutes)s"
 msgstr "%(str_hours)s又 %(str_minutes)s"
 
-#. 56 kbit
-#. 1Mbit = 1024 kbit
 #: ../DistUpgrade/DistUpgradeView.py:172
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"This download will take about %s with a 1Mbit DSL connection and about %s "
-"with a 56k modem."
+"This download will take about %s with a 40Mbit connection and about %s with "
+"a 5Mbit connection."
 msgstr "這次下載所需時間在 1M DSL 連線大約要 %s，用 56k 數據機大約要 %s。"
 
 #. if we have a estimated speed, use it

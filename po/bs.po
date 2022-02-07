@@ -3,12 +3,12 @@
 # This file is distributed under the same license as the update-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
 #
-#: ../DistUpgrade/DistUpgradeController.py:1045
+#: ../DistUpgrade/DistUpgradeController.py:1057
 msgid ""
 msgstr ""
 "Project-Id-Version: update-manager\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2021-10-29 09:52-0700\n"
+"POT-Creation-Date: 2022-02-07 11:08-0800\n"
 "PO-Revision-Date: 2019-06-18 17:53+0000\n"
 "Last-Translator: Brian Murray <brian@ubuntu.com>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -316,21 +316,21 @@ msgstr ""
 "Nadogradnja ne može biti nastavljena.\n"
 "Provjerite da li je moguće upisivanje u sistemski direktorijum."
 
-#: ../DistUpgrade/DistUpgradeController.py:617
+#: ../DistUpgrade/DistUpgradeController.py:629
 #, python-format
 msgid "Not for humans during development stage of release %s"
 msgstr "Nije namijenjeno ljudima tokom razvojne faze izdanja %s"
 
-#: ../DistUpgrade/DistUpgradeController.py:717
+#: ../DistUpgrade/DistUpgradeController.py:729
 #, python-format
 msgid "disabled on upgrade to %s"
 msgstr "onemogućeno pri nadogradnji na %s"
 
-#: ../DistUpgrade/DistUpgradeController.py:776
+#: ../DistUpgrade/DistUpgradeController.py:788
 msgid "No valid sources.list entry found"
 msgstr "Ispravan sources.list upis nije pronađen"
 
-#: ../DistUpgrade/DistUpgradeController.py:777
+#: ../DistUpgrade/DistUpgradeController.py:789
 #, python-format
 msgid ""
 "While scanning your repository information no entry about %s could be "
@@ -347,11 +347,11 @@ msgstr ""
 "\n"
 "Želite li ipak nastaviti?"
 
-#: ../DistUpgrade/DistUpgradeController.py:787
+#: ../DistUpgrade/DistUpgradeController.py:799
 msgid "No valid mirror found"
 msgstr "Nisam pronašao ispravan mirror"
 
-#: ../DistUpgrade/DistUpgradeController.py:788
+#: ../DistUpgrade/DistUpgradeController.py:800
 #, python-format
 msgid ""
 "While scanning your repository information no mirror entry for the upgrade "
@@ -371,11 +371,11 @@ msgstr ""
 "Ako odaberete 'Ne' nadogradnja će otkazati."
 
 #. hm, still nothing useful ...
-#: ../DistUpgrade/DistUpgradeController.py:808
+#: ../DistUpgrade/DistUpgradeController.py:820
 msgid "Generate default sources?"
 msgstr "Kreirati uobičajene izvore?"
 
-#: ../DistUpgrade/DistUpgradeController.py:809
+#: ../DistUpgrade/DistUpgradeController.py:821
 #, python-format
 msgid ""
 "After scanning your 'sources.list' no valid entry for '%s' was found.\n"
@@ -388,12 +388,12 @@ msgstr ""
 "Trebaju li biti dodati podrazumijevani unosi za '%s'? Ako izaberete 'Ne', "
 "nadograđivanje će se otkazati."
 
-#: ../DistUpgrade/DistUpgradeController.py:844
-#: ../DistUpgrade/DistUpgradeController.py:850
+#: ../DistUpgrade/DistUpgradeController.py:856
+#: ../DistUpgrade/DistUpgradeController.py:862
 msgid "Repository information invalid"
 msgstr "Podaci repozitorija neispravni"
 
-#: ../DistUpgrade/DistUpgradeController.py:845
+#: ../DistUpgrade/DistUpgradeController.py:857
 msgid ""
 "Upgrading the repository information resulted in a invalid file so a bug "
 "reporting process is being started."
@@ -401,7 +401,7 @@ msgstr ""
 "Nadograđivanje podataka o repozitoriju je rezultiralo neispravnom datotekom "
 "tako da je pokrenut proces za izvještavanje o grešci."
 
-#: ../DistUpgrade/DistUpgradeController.py:851
+#: ../DistUpgrade/DistUpgradeController.py:863
 msgid ""
 "Upgrading the repository information resulted in a invalid file. To report a "
 "bug install apport and then execute 'apport-bug ubuntu-release-upgrader'."
@@ -410,11 +410,11 @@ msgstr ""
 "prijavite grešku instalirate apport i zatim izvršite apport-bug ubuntu-"
 "release-upgrader'."
 
-#: ../DistUpgrade/DistUpgradeController.py:860
+#: ../DistUpgrade/DistUpgradeController.py:872
 msgid "Third party sources disabled"
 msgstr "Izvori trećih strana su isključeni"
 
-#: ../DistUpgrade/DistUpgradeController.py:861
+#: ../DistUpgrade/DistUpgradeController.py:873
 msgid ""
 "Some third party entries in your sources.list were disabled. You can re-"
 "enable them after the upgrade with the 'software-properties' tool or your "
@@ -424,14 +424,14 @@ msgstr ""
 "onemogućene. Nakon nadogradnje ih možete ponovo omogućiti pomoću alata "
 "„software-properties“ ili vašim upravnikom paketa."
 
-#: ../DistUpgrade/DistUpgradeController.py:903
+#: ../DistUpgrade/DistUpgradeController.py:915
 msgid "Package in inconsistent state"
 msgid_plural "Packages in inconsistent state"
 msgstr[0] "Paket u nekonzistentnom stanju"
 msgstr[1] "Paketi u nekonzistentnom stanju"
 msgstr[2] "Paketi u nekonzistentnom stanju"
 
-#: ../DistUpgrade/DistUpgradeController.py:906
+#: ../DistUpgrade/DistUpgradeController.py:918
 #, python-format
 msgid ""
 "The package '%s' is in an inconsistent state and needs to be reinstalled, "
@@ -454,11 +454,11 @@ msgstr[2] ""
 "nema arhiva za njih. Molim vas da ih instalirate ručno ili da ih uklonite sa "
 "sistema."
 
-#: ../DistUpgrade/DistUpgradeController.py:969
+#: ../DistUpgrade/DistUpgradeController.py:981
 msgid "Error during update"
 msgstr "Greška prilikom nadogradnje"
 
-#: ../DistUpgrade/DistUpgradeController.py:970
+#: ../DistUpgrade/DistUpgradeController.py:982
 msgid ""
 "A problem occurred during the update. This is usually some sort of network "
 "problem, please check your network connection and retry."
@@ -466,12 +466,12 @@ msgstr ""
 "Nastao je problem tokom nadogradnje. Ovo je uobicajeno neka vrsta problema "
 "sa mrezom, molim Vas da provjerite Vasu mreznu vezu i pokusajte ponovo."
 
-#: ../DistUpgrade/DistUpgradeController.py:1013
-#: ../DistUpgrade/DistUpgradeController.py:1018
+#: ../DistUpgrade/DistUpgradeController.py:1025
+#: ../DistUpgrade/DistUpgradeController.py:1030
 msgid "EFI System Partition (ESP) not usable"
 msgstr "EFI Particija Sistema (ESP) nije upotrebljiva"
 
-#: ../DistUpgrade/DistUpgradeController.py:1014
+#: ../DistUpgrade/DistUpgradeController.py:1026
 msgid ""
 "Your EFI System Partition (ESP) is not mounted at /boot/efi. Please ensure "
 "that it is properly configured and try again."
@@ -479,7 +479,7 @@ msgstr ""
 "EFI Particija Sustava (ESP) nije montirana na /boot/efi. Provjerite da li je "
 "ispravno podešena i pokušajte ponovno."
 
-#: ../DistUpgrade/DistUpgradeController.py:1019
+#: ../DistUpgrade/DistUpgradeController.py:1031
 msgid ""
 "The EFI System Partition (ESP) mounted at /boot/efi is not writable. Please "
 "mount this partition read-write and try again."
@@ -487,13 +487,13 @@ msgstr ""
 "EFI Particija Sustava (ESP) montirana na /boot/efi nije zapisiva. Montirajte "
 "ovu particiju sa dozvolom zapisivanja i pokušajte ponovno."
 
-#: ../DistUpgrade/DistUpgradeController.py:1026
+#: ../DistUpgrade/DistUpgradeController.py:1038
 msgid "Not enough free disk space"
 msgstr "Nema dovoljno praznog mjesta na disku"
 
 #. TRANSLATORS: you can change the order of the sentence,
 #. make sure to keep all {str_*} string untranslated.
-#: ../DistUpgrade/DistUpgradeController.py:1029
+#: ../DistUpgrade/DistUpgradeController.py:1041
 #, python-brace-format
 msgid ""
 "The upgrade has aborted. The upgrade needs a total of {str_total} free space "
@@ -505,14 +505,14 @@ msgstr ""
 "dodatnog diskovnog prostora na '{str_dir}'. {str_remedy}"
 
 #. specific ways to resolve lack of free space
-#: ../DistUpgrade/DistUpgradeController.py:1034
+#: ../DistUpgrade/DistUpgradeController.py:1046
 msgid ""
 "Remove temporary packages of former installations using 'sudo apt clean'."
 msgstr ""
 "Uklonite privremene pakete prijašnjih instalacija pokretanjem naredbe 'sudo "
 "apt clean'."
 
-#: ../DistUpgrade/DistUpgradeController.py:1036
+#: ../DistUpgrade/DistUpgradeController.py:1048
 msgid ""
 "You can remove old kernels using 'sudo apt autoremove' and you could also "
 "set COMPRESS=xz in /etc/initramfs-tools/initramfs.conf to reduce the size of "
@@ -522,7 +522,7 @@ msgstr ""
 "još možete postaviti COMPRESS=xz in /etc/initramfs-tools/initramfs.conf kako "
 "bi smanjili veličinu vaših initramfs."
 
-#: ../DistUpgrade/DistUpgradeController.py:1041
+#: ../DistUpgrade/DistUpgradeController.py:1053
 msgid ""
 "Empty your trash and remove temporary packages of former installations using "
 "'sudo apt-get clean'."
@@ -530,35 +530,35 @@ msgstr ""
 "Ispraznite vaše smeće i uklonite privremene datoteke prijašnjih instalacija "
 "pokretanjem naredbe 'sudo apt-get clean'."
 
-#: ../DistUpgrade/DistUpgradeController.py:1044
+#: ../DistUpgrade/DistUpgradeController.py:1056
 msgid "Reboot to clean up files in /tmp."
 msgstr "Ponovno pokrenite računar za uklanjanje datoteka u /tmp."
 
 #. calc the dist-upgrade and see if the removals are ok/expected
 #. do the dist-upgrade
-#: ../DistUpgrade/DistUpgradeController.py:1083
-#: ../DistUpgrade/DistUpgradeController.py:1925
-#: ../DistUpgrade/DistUpgradeController.py:1977
+#: ../DistUpgrade/DistUpgradeController.py:1095
+#: ../DistUpgrade/DistUpgradeController.py:1937
+#: ../DistUpgrade/DistUpgradeController.py:1989
 msgid "Calculating the changes"
 msgstr "Izračunavanje promjena"
 
 #. ask the user
-#: ../DistUpgrade/DistUpgradeController.py:1127
+#: ../DistUpgrade/DistUpgradeController.py:1139
 msgid "Do you want to start the upgrade?"
 msgstr "Želite li pokrenuti nadogradnju?"
 
-#: ../DistUpgrade/DistUpgradeController.py:1146
+#: ../DistUpgrade/DistUpgradeController.py:1158
 #, python-format
 msgid ""
 "Livepatch security updates are not available for Ubuntu %s. If you upgrade, "
 "Livepatch will turn off."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:1218
+#: ../DistUpgrade/DistUpgradeController.py:1230
 msgid "Upgrade canceled"
 msgstr "Nadogradnja prekinuta"
 
-#: ../DistUpgrade/DistUpgradeController.py:1219
+#: ../DistUpgrade/DistUpgradeController.py:1231
 msgid ""
 "The upgrade will cancel now and the original system state will be restored. "
 "You can resume the upgrade at a later time."
@@ -566,12 +566,12 @@ msgstr ""
 "Nadrgradnja će sada otkazati i originalno stanje sistema će biti obnovljen. "
 "Možete da nastavite nadogradnju kasnije."
 
-#: ../DistUpgrade/DistUpgradeController.py:1225
-#: ../DistUpgrade/DistUpgradeController.py:1370
+#: ../DistUpgrade/DistUpgradeController.py:1237
+#: ../DistUpgrade/DistUpgradeController.py:1382
 msgid "Could not download the upgrades"
 msgstr "Nisam mogao preuzeti nadogradnje"
 
-#: ../DistUpgrade/DistUpgradeController.py:1226
+#: ../DistUpgrade/DistUpgradeController.py:1238
 msgid ""
 "The upgrade has aborted. Please check your Internet connection or "
 "installation media and try again. All files downloaded so far have been kept."
@@ -581,27 +581,27 @@ msgstr ""
 
 #. FIXME: strings are not good, but we are in string freeze
 #. currently
-#: ../DistUpgrade/DistUpgradeController.py:1319
-#: ../DistUpgrade/DistUpgradeController.py:1358
-#: ../DistUpgrade/DistUpgradeController.py:1474
+#: ../DistUpgrade/DistUpgradeController.py:1331
+#: ../DistUpgrade/DistUpgradeController.py:1370
+#: ../DistUpgrade/DistUpgradeController.py:1486
 msgid "Error during commit"
 msgstr "Javila se greška tokom upisivanja"
 
 #. generate a new cache
-#: ../DistUpgrade/DistUpgradeController.py:1321
-#: ../DistUpgrade/DistUpgradeController.py:1360
-#: ../DistUpgrade/DistUpgradeController.py:1519
+#: ../DistUpgrade/DistUpgradeController.py:1333
+#: ../DistUpgrade/DistUpgradeController.py:1372
+#: ../DistUpgrade/DistUpgradeController.py:1531
 msgid "Restoring original system state"
 msgstr "Vraćam u početno stanje"
 
-#: ../DistUpgrade/DistUpgradeController.py:1322
-#: ../DistUpgrade/DistUpgradeController.py:1337
-#: ../DistUpgrade/DistUpgradeController.py:1361
+#: ../DistUpgrade/DistUpgradeController.py:1334
+#: ../DistUpgrade/DistUpgradeController.py:1349
+#: ../DistUpgrade/DistUpgradeController.py:1373
 msgid "Could not install the upgrades"
 msgstr "Nisam mogao instalirati nadogradnje"
 
 #. invoke the frontend now and show a error message
-#: ../DistUpgrade/DistUpgradeController.py:1327
+#: ../DistUpgrade/DistUpgradeController.py:1339
 msgid ""
 "The upgrade has aborted. Your system could be in an unusable state. A "
 "recovery will run now (dpkg --configure -a)."
@@ -609,7 +609,7 @@ msgstr ""
 "Nadogradnja je prekinuta. Vaš sistem bi mogao biti u neupotrebljivom stanju. "
 "Popravak će upravo biti pokrenut (dpkg --configure -a)."
 
-#: ../DistUpgrade/DistUpgradeController.py:1332
+#: ../DistUpgrade/DistUpgradeController.py:1344
 #, python-format
 msgid ""
 "\n"
@@ -626,31 +626,31 @@ msgstr ""
 "prijavu greške.\n"
 "%s"
 
-#: ../DistUpgrade/DistUpgradeController.py:1371
+#: ../DistUpgrade/DistUpgradeController.py:1383
 msgid ""
 "The upgrade has aborted. Please check your Internet connection or "
 "installation media and try again. "
 msgstr ""
 "Nadogradnja je prekinuta. Vaš sistem bi mogao biti u neupotrebljivom stanju. "
 
-#: ../DistUpgrade/DistUpgradeController.py:1399
+#: ../DistUpgrade/DistUpgradeController.py:1411
 msgid "Searching for obsolete software"
 msgstr "Tražim zastarjele programe"
 
-#: ../DistUpgrade/DistUpgradeController.py:1462
+#: ../DistUpgrade/DistUpgradeController.py:1474
 msgid "Remove obsolete packages?"
 msgstr "Ukloniti zastarjele pakete?"
 
-#: ../DistUpgrade/DistUpgradeController.py:1463
+#: ../DistUpgrade/DistUpgradeController.py:1475
 #: ../data/gtkbuilder/DistUpgrade.ui.h:8
 msgid "_Keep"
 msgstr "_Zadrži"
 
-#: ../DistUpgrade/DistUpgradeController.py:1463
+#: ../DistUpgrade/DistUpgradeController.py:1475
 msgid "_Remove"
 msgstr "_Ukloni"
 
-#: ../DistUpgrade/DistUpgradeController.py:1475
+#: ../DistUpgrade/DistUpgradeController.py:1487
 msgid ""
 "A problem occurred during the clean-up. Please see the below message for "
 "more information. "
@@ -660,28 +660,28 @@ msgstr ""
 
 #. FIXME: instead of error out, fetch and install it
 #. here
-#: ../DistUpgrade/DistUpgradeController.py:1557
+#: ../DistUpgrade/DistUpgradeController.py:1569
 msgid "Required depends is not installed"
 msgstr "Neophodna međuzavisnost nije instlirana."
 
-#: ../DistUpgrade/DistUpgradeController.py:1558
+#: ../DistUpgrade/DistUpgradeController.py:1570
 #, python-format
 msgid "The required dependency '%s' is not installed. "
 msgstr "Neophodna međuzavisnost „%s“ nije instlirana. "
 
 #. sanity check (check for ubuntu-desktop, brokenCache etc)
 #. then open the cache (again)
-#: ../DistUpgrade/DistUpgradeController.py:1791
-#: ../DistUpgrade/DistUpgradeController.py:1875
+#: ../DistUpgrade/DistUpgradeController.py:1803
+#: ../DistUpgrade/DistUpgradeController.py:1887
 msgid "Checking package manager"
 msgstr "Provjeravam menadžera paketa"
 
-#: ../DistUpgrade/DistUpgradeController.py:1797
-#: ../DistUpgrade/DistUpgradeController.py:1803
+#: ../DistUpgrade/DistUpgradeController.py:1809
+#: ../DistUpgrade/DistUpgradeController.py:1815
 msgid "Preparing the upgrade failed"
 msgstr "Neuspjelo pripremanje nadogradnje"
 
-#: ../DistUpgrade/DistUpgradeController.py:1798
+#: ../DistUpgrade/DistUpgradeController.py:1810
 msgid ""
 "Preparing the system for the upgrade failed so a bug reporting process is "
 "being started."
@@ -689,7 +689,7 @@ msgstr ""
 "Priprema sistema za nadogradnju nije uspjela tako da je pokrenut proces za "
 "izvještavanje o greški."
 
-#: ../DistUpgrade/DistUpgradeController.py:1804
+#: ../DistUpgrade/DistUpgradeController.py:1816
 msgid ""
 "Preparing the system for the upgrade failed. To report a bug install apport "
 "and then execute 'apport-bug ubuntu-release-upgrader'."
@@ -697,12 +697,12 @@ msgstr ""
 "Priprema sistema za nadogradnju je neuspjela. Da prijavite grešku "
 "instalirajte apport u pokrenite 'apport-bug ubuntu-release-upgrader'"
 
-#: ../DistUpgrade/DistUpgradeController.py:1821
-#: ../DistUpgrade/DistUpgradeController.py:1831
+#: ../DistUpgrade/DistUpgradeController.py:1833
+#: ../DistUpgrade/DistUpgradeController.py:1843
 msgid "Getting upgrade prerequisites failed"
 msgstr "Neuspjelo dobavljanje preduslova za nadogradnju"
 
-#: ../DistUpgrade/DistUpgradeController.py:1822
+#: ../DistUpgrade/DistUpgradeController.py:1834
 msgid ""
 "The system was unable to get the prerequisites for the upgrade. The upgrade "
 "will abort now and restore the original system state.\n"
@@ -714,7 +714,7 @@ msgstr ""
 "\n"
 "Uz ovo, pokrenut je i proces za izvještavanje o grešci."
 
-#: ../DistUpgrade/DistUpgradeController.py:1832
+#: ../DistUpgrade/DistUpgradeController.py:1844
 msgid ""
 "The system was unable to get the prerequisites for the upgrade. The upgrade "
 "will abort now and restore the original system state.\n"
@@ -728,15 +728,15 @@ msgstr ""
 "Da prijavite grešku instalirajte apport u pokrenite 'apport-bug ubuntu-"
 "release-upgrader'"
 
-#: ../DistUpgrade/DistUpgradeController.py:1866
+#: ../DistUpgrade/DistUpgradeController.py:1878
 msgid "Updating repository information"
 msgstr "Nadograđujem podatke repozitorija"
 
-#: ../DistUpgrade/DistUpgradeController.py:1902
+#: ../DistUpgrade/DistUpgradeController.py:1914
 msgid "Invalid package information"
 msgstr "Neispravni podaci paketa"
 
-#: ../DistUpgrade/DistUpgradeController.py:1903
+#: ../DistUpgrade/DistUpgradeController.py:1915
 #, python-format
 msgid ""
 "After updating your package information, the essential package '%s' could "
@@ -755,70 +755,70 @@ msgstr ""
 "U slučaju preopterećenog mirror servera pokušajte nadogradnju uraditi "
 "kasnije."
 
-#: ../DistUpgrade/DistUpgradeController.py:1932
-#: ../DistUpgrade/DistUpgradeController.py:2038
+#: ../DistUpgrade/DistUpgradeController.py:1944
+#: ../DistUpgrade/DistUpgradeController.py:2050
 msgid "Fetching"
 msgstr "Dobavljanje"
 
-#: ../DistUpgrade/DistUpgradeController.py:1939
-#: ../DistUpgrade/DistUpgradeController.py:1962
-#: ../DistUpgrade/DistUpgradeController.py:1992
-#: ../DistUpgrade/DistUpgradeController.py:2042
+#: ../DistUpgrade/DistUpgradeController.py:1951
+#: ../DistUpgrade/DistUpgradeController.py:1974
+#: ../DistUpgrade/DistUpgradeController.py:2004
+#: ../DistUpgrade/DistUpgradeController.py:2054
 msgid "Upgrading"
 msgstr "Nadograđujem"
 
-#: ../DistUpgrade/DistUpgradeController.py:1941
+#: ../DistUpgrade/DistUpgradeController.py:1953
 msgid "Upgrade infeasible"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:1942
+#: ../DistUpgrade/DistUpgradeController.py:1954
 msgid ""
 "The upgrade could not be completed, there were errors during the upgrade "
 "process."
 msgstr ""
 
 #. don't abort here, because it would restore the sources.list
-#: ../DistUpgrade/DistUpgradeController.py:1965
-#: ../DistUpgrade/DistUpgradeController.py:1981
+#: ../DistUpgrade/DistUpgradeController.py:1977
+#: ../DistUpgrade/DistUpgradeController.py:1993
 msgid "Upgrade incomplete"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:1966
-#: ../DistUpgrade/DistUpgradeController.py:1982
+#: ../DistUpgrade/DistUpgradeController.py:1978
+#: ../DistUpgrade/DistUpgradeController.py:1994
 msgid ""
 "The upgrade has partially completed but there were errors during the upgrade "
 "process."
 msgstr ""
 
 #. don't abort here, because it would restore the sources.list
-#: ../DistUpgrade/DistUpgradeController.py:1997
-#: ../DistUpgrade/DistUpgradeController.py:2044
-#: ../DistUpgrade/DistUpgradeController.py:2050
-#: ../DistUpgrade/DistUpgradeController.py:2061
+#: ../DistUpgrade/DistUpgradeController.py:2009
+#: ../DistUpgrade/DistUpgradeController.py:2056
+#: ../DistUpgrade/DistUpgradeController.py:2062
+#: ../DistUpgrade/DistUpgradeController.py:2073
 msgid "Upgrade complete"
 msgstr "Nadogradnja završena"
 
-#: ../DistUpgrade/DistUpgradeController.py:1998
-#: ../DistUpgrade/DistUpgradeController.py:2045
-#: ../DistUpgrade/DistUpgradeController.py:2051
+#: ../DistUpgrade/DistUpgradeController.py:2010
+#: ../DistUpgrade/DistUpgradeController.py:2057
+#: ../DistUpgrade/DistUpgradeController.py:2063
 msgid ""
 "The upgrade has completed but there were errors during the upgrade process."
 msgstr ""
 "Nadogradnja je završila, ali su bile greške tokom postupka nadogradnje."
 
-#: ../DistUpgrade/DistUpgradeController.py:2013
+#: ../DistUpgrade/DistUpgradeController.py:2025
 msgid "System upgrade is complete."
 msgstr "Nadogradnja sistema je završena."
 
-#: ../DistUpgrade/DistUpgradeController.py:2062
+#: ../DistUpgrade/DistUpgradeController.py:2074
 msgid "The partial upgrade was completed."
 msgstr "Djelimična nadogradnja završena."
 
-#: ../DistUpgrade/DistUpgradeController.py:2091
+#: ../DistUpgrade/DistUpgradeController.py:2103
 msgid "Lock screen disabled"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2092
+#: ../DistUpgrade/DistUpgradeController.py:2104
 msgid ""
 "Your lock screen has been disabled and will remain disabled until you reboot."
 msgstr ""
@@ -1592,13 +1592,11 @@ msgstr "%(str_days)s %(str_hours)s"
 msgid "%(str_hours)s %(str_minutes)s"
 msgstr "%(str_hours)s %(str_minutes)s"
 
-#. 56 kbit
-#. 1Mbit = 1024 kbit
 #: ../DistUpgrade/DistUpgradeView.py:172
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"This download will take about %s with a 1Mbit DSL connection and about %s "
-"with a 56k modem."
+"This download will take about %s with a 40Mbit connection and about %s with "
+"a 5Mbit connection."
 msgstr ""
 "Ovo preuzimanje će 1Mbit DSL vezom trajati oko %s, a 56k modemom oko %s."
 
