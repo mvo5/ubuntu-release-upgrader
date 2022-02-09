@@ -163,7 +163,6 @@ class DistUpgradeQuirks(object):
         self._removeOldApportCrashes()
         self._killUpdateNotifier()
         self._killKBluetooth()
-        self._killScreensaver()
         self._pokeScreensaver()
         self._stopDocvertConverter()
 
@@ -492,12 +491,6 @@ class DistUpgradeQuirks(object):
         if os.path.exists("/usr/bin/killall"):
             logging.debug("killing kblueplugd kbluetooth4")
             subprocess.call(["killall", "-q", "kblueplugd", "kbluetooth4"])
-
-    def _killScreensaver(self):
-        """killall gnome-screensaver """
-        if os.path.exists("/usr/bin/killall"):
-            logging.debug("killing gnome-screensaver")
-            subprocess.call(["killall", "-q", "gnome-screensaver"])
 
     def _pokeScreensaver(self):
         if (os.path.exists("/usr/bin/xdg-screensaver") and

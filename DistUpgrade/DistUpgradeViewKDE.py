@@ -37,7 +37,6 @@ try:
         QMessageBox, QDialogButtonBox, QTreeWidgetItem, QPushButton, QWidget,\
         QHBoxLayout, QLabel
     from PyQt5.QtGui import QTextOption, QPixmap, QIcon, QTextCursor
-    from PyQt5.QtDBus import QDBusConnection, QDBusInterface, QDBusReply
 except ImportError:
     from PyQt4 import uic
     from PyQt4.QtCore import Qt, QLocale, QTranslator, PYQT_VERSION, QTimer
@@ -46,7 +45,6 @@ except ImportError:
         QPushButton, QWidget, QTextCursor, QHBoxLayout, QLabel
     # If we still throw an exception, bounce back to Main to try another UI.
 
-import atexit
 import sys
 import locale
 import logging
@@ -652,9 +650,6 @@ class DistUpgradeViewKDE(DistUpgradeView):
         self.konsole_frame_layout.addWidget(self.terminal_text)
         self.terminal_text.show()
 
-        self.inhibitScreenlock()
-        atexit.register(self.uninhibitScreenlock)
-
         # for some reason we need to start the main loop to get everything displayed
         # this app mostly works with processEvents but run main loop briefly to keep it happily displaying all widgets
         QTimer.singleShot(10, self.exitMainLoopMidFlight)
@@ -664,34 +659,6 @@ class DistUpgradeViewKDE(DistUpgradeView):
         # This is run shortly after startup. Do not add actual exit logic here!
         print("exitMainLoopMidFlight")
         self.app.exit()
-
-    def inhibitScreenlock(self):
-        if not QDBusConnection.sessionBus().isConnected():
-            sys.stderr.write("Cannot connect to the D-Bus session bus.\n"
-                    "To start it, run:\n"
-                    "\teval `dbus-launch --auto-syntax`\n");
-            return
-
-        iface = QDBusInterface('org.kde.screensaver', '/ScreenSaver', '',
-                QDBusConnection.sessionBus())
-
-        if iface.isValid():
-            msg = iface.call('Inhibit', 'DisUpgradeViewKDE', 'Upgrading base OS')
-            reply = QDBusReply(msg)
-            self.screenLockCookie = reply.value()
-
-    def uninhibitScreenlock(self):
-        if not QDBusConnection.sessionBus().isConnected():
-            sys.stderr.write("Cannot connect to the D-Bus session bus.\n"
-                    "To start it, run:\n"
-                    "\teval `dbus-launch --auto-syntax`\n");
-            return
-
-        iface = QDBusInterface('org.kde.screensaver', '/ScreenSaver', '',
-                QDBusConnection.sessionBus())
-
-        if iface.isValid():
-            iface.call('UnInhibit', self.screenLockCookie)
 
     def translate_widget_children(self, parentWidget=None):
         if parentWidget == None:

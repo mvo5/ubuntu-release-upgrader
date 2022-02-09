@@ -8,6 +8,8 @@ ubuntu-release-upgrader (1:22.04.5) UNRELEASED; urgency=medium
 
   [ Nick Rosbrook ]
   * Update download rates in estimated download message (LP: #1947581)
+  * Use org.freedesktop.ScreenSaver to inhibit screen lock (LP: #1959458).
+    This approach also works in Kubuntu.
 
  -- Brian Murray <brian@ubuntu.com>  Fri, 28 Jan 2022 13:43:11 -0800
 
