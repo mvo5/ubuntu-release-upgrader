@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: update-manager.HEAD\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2022-02-07 11:08-0800\n"
+"POT-Creation-Date: 2022-02-14 10:57-0800\n"
 "PO-Revision-Date: 2019-06-18 17:55+0000\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
@@ -210,7 +210,7 @@ msgstr ""
 "שנמצאת בשימוש.\n"
 " נא להתקין את אחת החבילות שלהלן באמצעות synaptic או apt-get בטרם המשך הפעולה."
 
-#: ../DistUpgrade/DistUpgradeController.py:112
+#: ../DistUpgrade/DistUpgradeController.py:113
 msgid "Reading cache"
 msgstr "המטמון נקרא"
 
@@ -506,9 +506,9 @@ msgid ""
 "set COMPRESS=xz in /etc/initramfs-tools/initramfs.conf to reduce the size of "
 "your initramfs."
 msgstr ""
-"ניתן להסיר ליבות ישנות באמצעות ‚sudo apt autoremove‘ וניתן גם להשתמש ב־"
-"COMPRESS=xz בתוך ‎/etc/initramfs-tools/initramfs.conf כדי להקטין את הנפח של ה־"
-"initramfs שלך."
+"ניתן להסיר ליבות ישנות באמצעות ‚sudo apt autoremove‘ וניתן גם להשתמש "
+"ב־COMPRESS=xz בתוך ‎/etc/initramfs-tools/initramfs.conf כדי להקטין את הנפח של "
+"ה־initramfs שלך."
 
 #: ../DistUpgrade/DistUpgradeController.py:1053
 msgid ""
@@ -791,14 +791,27 @@ msgstr "שדרוג המערכת הושלם."
 msgid "The partial upgrade was completed."
 msgstr "השדרוג החלקי הושלם."
 
-#: ../DistUpgrade/DistUpgradeController.py:2103
+#: ../DistUpgrade/DistUpgradeController.py:2093
 msgid "Lock screen disabled"
 msgstr "מסך הנעילה בוטל"
 
-#: ../DistUpgrade/DistUpgradeController.py:2104
+#: ../DistUpgrade/DistUpgradeController.py:2094
+#, fuzzy
 msgid ""
-"Your lock screen has been disabled and will remain disabled until you reboot."
+"Your lock screen has been disabled and will remain disabled during the "
+"upgrade."
 msgstr "מסך הנעילה שלך הושבת ויישאר מושבת עד להפעלה מחדש."
+
+#: ../DistUpgrade/DistUpgradeController.py:2102
+msgid "Unable to disable lock screen"
+msgstr ""
+
+#: ../DistUpgrade/DistUpgradeController.py:2103
+msgid ""
+"It is highly recommended that the lock screen be disabled during the upgrade "
+"to prevent later issues. Please ensure your screen lock is disabled before "
+"continuing."
+msgstr ""
 
 #: ../DistUpgrade/DistUpgradeFetcher.py:107
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:170
@@ -943,7 +956,7 @@ msgid "&Upgrade"
 msgstr "&שדרג"
 
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:154
-#: ../DistUpgrade/DistUpgradeViewKDE.py:715
+#: ../DistUpgrade/DistUpgradeViewKDE.py:682
 msgid "&Cancel"
 msgstr "&ביטול"
 
@@ -974,7 +987,7 @@ msgstr "קובץ %s מתוך %s"
 #. print("mediaChange %s %s" % (medium, drive))
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:235
 #: ../DistUpgrade/DistUpgradeViewGtk3.py:125
-#: ../DistUpgrade/DistUpgradeViewKDE.py:302
+#: ../DistUpgrade/DistUpgradeViewKDE.py:300
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
 msgstr "נא להכניס את '%s' לכונן '%s'."
@@ -982,15 +995,15 @@ msgstr "נא להכניס את '%s' לכונן '%s'."
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:237
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:242
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:243
-#: ../DistUpgrade/DistUpgradeViewKDE.py:303
+#: ../DistUpgrade/DistUpgradeViewKDE.py:301
 msgid "Media Change"
 msgstr "החלפת מדיה"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:235
+#: ../DistUpgrade/DistUpgradeQuirks.py:234
 msgid "Your graphics hardware may not be fully supported in Ubuntu 14.04."
 msgstr "יתכן שהחומרה הגרפית שלך אינה נתמכת במלואה באובונטו 14.04."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:237
+#: ../DistUpgrade/DistUpgradeQuirks.py:236
 msgid ""
 "Running the 'unity' desktop environment is not fully supported by your "
 "graphics hardware. You will maybe end up in a very slow environment after "
@@ -1005,13 +1018,13 @@ msgstr ""
 "wiki.ubuntu.com/X/Bugs/UpdateManagerWarningForUnity3D, האם בכל זאת להמשיך "
 "בשדרוג?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:261
+#: ../DistUpgrade/DistUpgradeQuirks.py:260
 msgid "Your graphics hardware may not be fully supported in Ubuntu 12.04 LTS."
 msgstr ""
 "חומרת הגרפיקה שלך אינה נתמכת במלואה על ידי אובונטו 12.04 עם תמיכה לטווח ארוך "
 "(LTS)."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:263
+#: ../DistUpgrade/DistUpgradeQuirks.py:262
 msgid ""
 "The support in Ubuntu 12.04 LTS for your Intel graphics hardware is limited "
 "and you may encounter problems after the upgrade. For more information see "
@@ -1022,7 +1035,7 @@ msgstr ""
 "בעיות לאחר השדרוג. למידע נוסף יש לעיין בכתובת https://wiki.ubuntu.com/X/Bugs/"
 "UpdateManagerWarningForI8xx האם ברצונך להמשיך בשדרוג?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:283
+#: ../DistUpgrade/DistUpgradeQuirks.py:282
 msgid ""
 "Upgrading may reduce desktop effects, and performance in games and other "
 "graphically intensive programs."
@@ -1030,7 +1043,7 @@ msgstr ""
 "שדרוג עלול לפגוע באפקטים של שולחן העבודה ובביצועים של משחקים ותכניות עמוסות "
 "מבחינה גרפית."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:287
+#: ../DistUpgrade/DistUpgradeQuirks.py:286
 msgid ""
 "This computer is currently using the AMD 'fglrx' graphics driver. No version "
 "of this driver is available that works with your hardware in Ubuntu 10.04 "
@@ -1043,11 +1056,11 @@ msgstr ""
 "\n"
 "האם ברצונך להמשיך?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:326
+#: ../DistUpgrade/DistUpgradeQuirks.py:325
 msgid "Sorry, no more upgrades for this system"
 msgstr "אין עוד עדכונים למערכת הזאת, עמך הסליחה"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:327
+#: ../DistUpgrade/DistUpgradeQuirks.py:326
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases for this system's 'i386' "
@@ -1059,11 +1072,11 @@ msgstr ""
 "\n"
 "עדכונים לאובונטו %s יימשכו עד %s."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:342
+#: ../DistUpgrade/DistUpgradeQuirks.py:341
 msgid "No ARMv6 CPU"
 msgstr "אין מעבד מסוג ARMv6"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:343
+#: ../DistUpgrade/DistUpgradeQuirks.py:342
 msgid ""
 "Your system uses an ARM CPU that is older than the ARMv6 architecture. All "
 "packages in karmic were built with optimizations requiring ARMv6 as the "
@@ -1074,12 +1087,12 @@ msgstr ""
 "החבילות ב־Karmic נבנו עם שיפורים מיוחדים הדורשים את ARMv6 כארכיטקטורה "
 "מינימלית. לא ניתן לשדרג את המערכת להפצת אובונטו חדשה עם חומרה זו."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:363
+#: ../DistUpgrade/DistUpgradeQuirks.py:362
 msgid ""
 "Sorry, this storage driver is not supported in kernels for newer releases"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:365
+#: ../DistUpgrade/DistUpgradeQuirks.py:364
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases that provide kernel support "
@@ -1089,11 +1102,11 @@ msgid ""
 "driver, remove the directory %s and try again."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:385
+#: ../DistUpgrade/DistUpgradeQuirks.py:384
 msgid "No init available"
 msgstr "אין init זמין"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:386
+#: ../DistUpgrade/DistUpgradeQuirks.py:385
 msgid ""
 "Your system appears to be a virtualised environment without an init daemon, "
 "e.g. Linux-VServer. Ubuntu 10.04 LTS cannot function within this type of "
@@ -1108,11 +1121,11 @@ msgstr ""
 "\n"
 "האם ברצונך להמשיך?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:427
+#: ../DistUpgrade/DistUpgradeQuirks.py:426
 msgid "The Robot Operating System (ROS) is installed"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:428
+#: ../DistUpgrade/DistUpgradeQuirks.py:427
 msgid ""
 "It appears that ROS is currently installed. Each ROS release is very strict "
 "about the versions of Ubuntu it supports, and Ubuntu upgrades can fail if "
@@ -1129,12 +1142,12 @@ msgid ""
 "Are you sure you want to continue?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:559
+#: ../DistUpgrade/DistUpgradeQuirks.py:552
 #, fuzzy
 msgid "Connection to the Snap Store failed"
 msgstr "החיבור לחנות ה־Snap נכשלה"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:560
+#: ../DistUpgrade/DistUpgradeQuirks.py:553
 msgid ""
 "You have the package lxd installed but your system is unable to reach the "
 "Snap Store. lxd is now provided via a snap and the release upgrade will fail "
@@ -1144,11 +1157,11 @@ msgid ""
 "may want to configure a Snap Store proxy."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:575
+#: ../DistUpgrade/DistUpgradeQuirks.py:568
 msgid "Connection to Snap Store failed"
 msgstr "החיבור לחנות ה־Snap נכשלה"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:576
+#: ../DistUpgrade/DistUpgradeQuirks.py:569
 msgid ""
 "Your system does not have a connection to the Snap Store. For the best "
 "upgrade experience make sure that your system can connect to api.snapcraft."
@@ -1158,11 +1171,11 @@ msgstr ""
 "למערכת שלך אין קשר אל חנות ה־Snap. לקבלת חוויית השדרוג הטובה ביותר נא לוודא "
 "שלמערכת שלך יש גישה אל api.snapcraft.io.ֿ"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:585
+#: ../DistUpgrade/DistUpgradeQuirks.py:578
 msgid "Outdated snapd package"
 msgstr "חבילת snapd שתוקפה פג."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:586
+#: ../DistUpgrade/DistUpgradeQuirks.py:579
 msgid ""
 "Your system does not have the latest version of snapd. Please update the "
 "version of snapd on your system to improve the upgrade experience.\n"
@@ -1174,34 +1187,34 @@ msgstr ""
 
 #. now perform direct API calls to the store, requesting size
 #. information for each of the snaps needing installation
-#: ../DistUpgrade/DistUpgradeQuirks.py:611
+#: ../DistUpgrade/DistUpgradeQuirks.py:604
 msgid "Calculating snap size requirements"
 msgstr "דרישות גודל ה־snap מחושבות"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:642
+#: ../DistUpgrade/DistUpgradeQuirks.py:635
 msgid "Processing snap replacements"
 msgstr "החלפות ה־snap עוברות עיבוד"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:648
+#: ../DistUpgrade/DistUpgradeQuirks.py:641
 #, python-format
 msgid "refreshing snap %s"
 msgstr "ה־snap‏ %s מתרענן"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:652
+#: ../DistUpgrade/DistUpgradeQuirks.py:645
 #, fuzzy, python-format
 msgid "removing snap %s"
 msgstr "ה־snap‏ %s מתרענן"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:655
+#: ../DistUpgrade/DistUpgradeQuirks.py:648
 #, python-format
 msgid "installing snap %s"
 msgstr "ה־snap‏ %s מותקן"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:684
+#: ../DistUpgrade/DistUpgradeQuirks.py:677
 msgid "PAE not enabled"
 msgstr "PAE לא מופעל"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:685
+#: ../DistUpgrade/DistUpgradeQuirks.py:678
 msgid ""
 "Your system uses a CPU that does not have PAE enabled. Ubuntu only supports "
 "non-PAE systems up to Ubuntu 12.04. To upgrade to a later version of Ubuntu, "
@@ -1213,11 +1226,11 @@ msgstr ""
 "להפעיל PAE (אם ניתן) בעזרת ההנחיות הבאות:\n"
 "http://help.ubuntu.com/community/EnablingPAE"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:981
+#: ../DistUpgrade/DistUpgradeQuirks.py:974
 msgid "universe component not enabled"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:982
+#: ../DistUpgrade/DistUpgradeQuirks.py:975
 #, python-format
 msgid ""
 "You have the package %s installed which is a python2 package. python2 has "
@@ -1229,7 +1242,7 @@ msgid ""
 "universe component in /etc/apt/sources.list or remove %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1083
+#: ../DistUpgrade/DistUpgradeQuirks.py:1076
 msgid "Checking for installed snaps"
 msgstr "ה־snaps המותקנים שלך נבדקים"
 
@@ -1262,26 +1275,26 @@ msgid "Upgrade to the development release"
 msgstr "שדרוג לגרסת הפיתוח"
 
 #: ../DistUpgrade/DistUpgradeViewGtk3.py:146
-#: ../DistUpgrade/DistUpgradeViewKDE.py:316
+#: ../DistUpgrade/DistUpgradeViewKDE.py:314
 msgid "Fetching is complete"
 msgstr "ההורדה הושלמה"
 
 #: ../DistUpgrade/DistUpgradeViewGtk3.py:161
-#: ../DistUpgrade/DistUpgradeViewKDE.py:332
+#: ../DistUpgrade/DistUpgradeViewKDE.py:330
 #, python-format
 msgid "Fetching file %li of %li at %sB/s"
 msgstr "מתקבל קובץ %li מתוך %li ב־%s בתים לשנייה."
 
 #: ../DistUpgrade/DistUpgradeViewGtk3.py:163
 #: ../DistUpgrade/DistUpgradeViewGtk3.py:325
-#: ../DistUpgrade/DistUpgradeViewKDE.py:333
-#: ../DistUpgrade/DistUpgradeViewKDE.py:483
+#: ../DistUpgrade/DistUpgradeViewKDE.py:331
+#: ../DistUpgrade/DistUpgradeViewKDE.py:481
 #, python-format
 msgid "About %s remaining"
 msgstr "נותרו כ־%s."
 
 #: ../DistUpgrade/DistUpgradeViewGtk3.py:166
-#: ../DistUpgrade/DistUpgradeViewKDE.py:335
+#: ../DistUpgrade/DistUpgradeViewKDE.py:333
 #, python-format
 msgid "Fetching file %li of %li"
 msgstr "מתקבל קובץ %li מתוך %li"
@@ -1290,24 +1303,24 @@ msgstr "מתקבל קובץ %li מתוך %li"
 #. of the terminal (to display something useful then)
 #. -> longer term, move this code into python-apt
 #: ../DistUpgrade/DistUpgradeViewGtk3.py:198
-#: ../DistUpgrade/DistUpgradeViewKDE.py:373
+#: ../DistUpgrade/DistUpgradeViewKDE.py:371
 msgid "Applying changes"
 msgstr "השינויים חלים"
 
 #. we do not report followup errors from earlier failures
 #: ../DistUpgrade/DistUpgradeViewGtk3.py:224
-#: ../DistUpgrade/DistUpgradeViewKDE.py:386
+#: ../DistUpgrade/DistUpgradeViewKDE.py:384
 msgid "dependency problems - leaving unconfigured"
 msgstr "בעיות תלות - נותר בלתי מוגדר"
 
 #: ../DistUpgrade/DistUpgradeViewGtk3.py:229
-#: ../DistUpgrade/DistUpgradeViewKDE.py:388
+#: ../DistUpgrade/DistUpgradeViewKDE.py:386
 #, python-format
 msgid "Could not install '%s'"
 msgstr "לא ניתן להתקין את \"%s\""
 
 #: ../DistUpgrade/DistUpgradeViewGtk3.py:230
-#: ../DistUpgrade/DistUpgradeViewKDE.py:389
+#: ../DistUpgrade/DistUpgradeViewKDE.py:387
 #, python-format
 msgid ""
 "The upgrade will continue but the '%s' package may not be in a working "
@@ -1318,7 +1331,7 @@ msgstr ""
 
 #. self.expander.set_expanded(True)
 #: ../DistUpgrade/DistUpgradeViewGtk3.py:247
-#: ../DistUpgrade/DistUpgradeViewKDE.py:411
+#: ../DistUpgrade/DistUpgradeViewKDE.py:409
 #, python-format
 msgid ""
 "Replace the customized configuration file\n"
@@ -1328,14 +1341,14 @@ msgstr ""
 "'%s'?"
 
 #: ../DistUpgrade/DistUpgradeViewGtk3.py:248
-#: ../DistUpgrade/DistUpgradeViewKDE.py:412
+#: ../DistUpgrade/DistUpgradeViewKDE.py:410
 msgid ""
 "You will lose any changes you have made to this configuration file if you "
 "choose to replace it with a newer version."
 msgstr "שינויים שבוצעו בקובץ תצורה זה יאבדו אם יוחלט להחליפו בגרסה חדשה יותר."
 
 #: ../DistUpgrade/DistUpgradeViewGtk3.py:268
-#: ../DistUpgrade/DistUpgradeViewKDE.py:435
+#: ../DistUpgrade/DistUpgradeViewKDE.py:433
 msgid "The 'diff' command was not found"
 msgstr "הפקודה 'diff' לא נמצאה"
 
@@ -1408,92 +1421,92 @@ msgid "Cancel"
 msgstr "ביטול"
 
 #: ../DistUpgrade/DistUpgradeViewGtk3.py:774
-#: ../DistUpgrade/DistUpgradeViewKDE.py:939
+#: ../DistUpgrade/DistUpgradeViewKDE.py:906
 msgid "Continue"
 msgstr "המשך"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:447
+#: ../DistUpgrade/DistUpgradeViewKDE.py:445
 msgid "Show Difference >>>"
 msgstr "הצגת שינויים >>>"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:450
+#: ../DistUpgrade/DistUpgradeViewKDE.py:448
 msgid "<<< Hide Difference"
 msgstr "<<< הסתרת השינויים"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:701
+#: ../DistUpgrade/DistUpgradeViewKDE.py:668
 msgid "Error"
 msgstr "שגיאה"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:719
-#: ../DistUpgrade/DistUpgradeViewKDE.py:960
+#: ../DistUpgrade/DistUpgradeViewKDE.py:686
+#: ../DistUpgrade/DistUpgradeViewKDE.py:927
 msgid "&Close"
 msgstr "ס&גירה"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:753
+#: ../DistUpgrade/DistUpgradeViewKDE.py:720
 msgid "Show Terminal >>>"
 msgstr "הצגת מסוף >>>"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:756
+#: ../DistUpgrade/DistUpgradeViewKDE.py:723
 msgid "<<< Hide Terminal"
 msgstr "<<< הסתרת מסוף"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:829
+#: ../DistUpgrade/DistUpgradeViewKDE.py:796
 msgid "Information"
 msgstr "פרטים"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:877
+#: ../DistUpgrade/DistUpgradeViewKDE.py:844
 msgid "&Start Upgrade"
 msgstr "הת&חלת שדרוג"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:879
-#: ../DistUpgrade/DistUpgradeViewKDE.py:923
-#: ../DistUpgrade/DistUpgradeViewKDE.py:926
+#: ../DistUpgrade/DistUpgradeViewKDE.py:846
+#: ../DistUpgrade/DistUpgradeViewKDE.py:890
+#: ../DistUpgrade/DistUpgradeViewKDE.py:893
 #: ../data/gtkbuilder/DistUpgrade.ui.h:7
 msgid "Details"
 msgstr "פרטים"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:901
+#: ../DistUpgrade/DistUpgradeViewKDE.py:868
 #, python-format
 msgid "No longer supported %s"
 msgstr "לא נתמך עוד %s"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:903
+#: ../DistUpgrade/DistUpgradeViewKDE.py:870
 #, python-format
 msgid "Remove %s"
 msgstr "הסרת %s"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:905
+#: ../DistUpgrade/DistUpgradeViewKDE.py:872
 #: ../DistUpgrade/DistUpgradeViewText.py:239
 #, python-format
 msgid "Remove (was auto installed) %s"
 msgstr "הסרת (הותקנה אוטומטית) %s"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:907
+#: ../DistUpgrade/DistUpgradeViewKDE.py:874
 #, python-format
 msgid "Install %s"
 msgstr "התקנת %s"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:909
+#: ../DistUpgrade/DistUpgradeViewKDE.py:876
 #, python-format
 msgid "Upgrade %s"
 msgstr "שדרוג %s"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:956
+#: ../DistUpgrade/DistUpgradeViewKDE.py:923
 #: ../DistUpgrade/DistUpgradeViewText.py:292
 msgid "Restart required"
 msgstr "נדרשת הפעלה מחדש"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:956
+#: ../DistUpgrade/DistUpgradeViewKDE.py:923
 msgid "<b><big>Restart the system to complete the upgrade</big></b>"
 msgstr "<b><big>האם להפעיל מחדש את המערכת כדי להשלים את השדרוג?</big></b>"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:959
+#: ../DistUpgrade/DistUpgradeViewKDE.py:926
 #: ../data/gtkbuilder/DistUpgrade.ui.h:14
 msgid "_Restart Now"
 msgstr "ה_פעלה מחדש כעת"
 
 #. FIXME make this user friendly
-#: ../DistUpgrade/DistUpgradeViewKDE.py:977
+#: ../DistUpgrade/DistUpgradeViewKDE.py:944
 msgid ""
 "<b><big>Cancel the running upgrade?</big></b>\n"
 "\n"
@@ -1504,7 +1517,7 @@ msgstr ""
 "\n"
 "המערכת עלולה להיות בלתי שמישה אם השדרוג יבוטל. מומלץ ביותר להמשיך בשדרוג."
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:981
+#: ../DistUpgrade/DistUpgradeViewKDE.py:948
 msgid "Cancel Upgrade?"
 msgstr "האם לבטל את השדרוג?"
 

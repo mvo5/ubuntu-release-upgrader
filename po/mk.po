@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mk\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2022-02-07 11:08-0800\n"
+"POT-Creation-Date: 2022-02-14 10:57-0800\n"
 "PO-Revision-Date: 2013-05-22 11:00+0000\n"
 "Last-Translator: Јован Наумовски <jovan@lugola.net>\n"
 "Language-Team: Macedonian <ossm-members@hedona.on.net.mk>\n"
@@ -181,7 +181,7 @@ msgid ""
 "before proceeding."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:112
+#: ../DistUpgrade/DistUpgradeController.py:113
 msgid "Reading cache"
 msgstr "Читање на кешот"
 
@@ -692,13 +692,25 @@ msgstr "Надградбата на системот е завршена."
 msgid "The partial upgrade was completed."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2103
+#: ../DistUpgrade/DistUpgradeController.py:2093
 msgid "Lock screen disabled"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2104
+#: ../DistUpgrade/DistUpgradeController.py:2094
 msgid ""
-"Your lock screen has been disabled and will remain disabled until you reboot."
+"Your lock screen has been disabled and will remain disabled during the "
+"upgrade."
+msgstr ""
+
+#: ../DistUpgrade/DistUpgradeController.py:2102
+msgid "Unable to disable lock screen"
+msgstr ""
+
+#: ../DistUpgrade/DistUpgradeController.py:2103
+msgid ""
+"It is highly recommended that the lock screen be disabled during the upgrade "
+"to prevent later issues. Please ensure your screen lock is disabled before "
+"continuing."
 msgstr ""
 
 #: ../DistUpgrade/DistUpgradeFetcher.py:107
@@ -846,7 +858,7 @@ msgid "&Upgrade"
 msgstr ""
 
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:154
-#: ../DistUpgrade/DistUpgradeViewKDE.py:715
+#: ../DistUpgrade/DistUpgradeViewKDE.py:682
 msgid "&Cancel"
 msgstr ""
 
@@ -877,7 +889,7 @@ msgstr ""
 #. print("mediaChange %s %s" % (medium, drive))
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:235
 #: ../DistUpgrade/DistUpgradeViewGtk3.py:125
-#: ../DistUpgrade/DistUpgradeViewKDE.py:302
+#: ../DistUpgrade/DistUpgradeViewKDE.py:300
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
 msgstr "Внесете '%s' во драјвот '%s'"
@@ -885,15 +897,15 @@ msgstr "Внесете '%s' во драјвот '%s'"
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:237
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:242
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:243
-#: ../DistUpgrade/DistUpgradeViewKDE.py:303
+#: ../DistUpgrade/DistUpgradeViewKDE.py:301
 msgid "Media Change"
 msgstr "Промена на медиум"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:235
+#: ../DistUpgrade/DistUpgradeQuirks.py:234
 msgid "Your graphics hardware may not be fully supported in Ubuntu 14.04."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:237
+#: ../DistUpgrade/DistUpgradeQuirks.py:236
 msgid ""
 "Running the 'unity' desktop environment is not fully supported by your "
 "graphics hardware. You will maybe end up in a very slow environment after "
@@ -903,11 +915,11 @@ msgid ""
 "upgrade?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:261
+#: ../DistUpgrade/DistUpgradeQuirks.py:260
 msgid "Your graphics hardware may not be fully supported in Ubuntu 12.04 LTS."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:263
+#: ../DistUpgrade/DistUpgradeQuirks.py:262
 msgid ""
 "The support in Ubuntu 12.04 LTS for your Intel graphics hardware is limited "
 "and you may encounter problems after the upgrade. For more information see "
@@ -915,13 +927,13 @@ msgid ""
 "continue with the upgrade?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:283
+#: ../DistUpgrade/DistUpgradeQuirks.py:282
 msgid ""
 "Upgrading may reduce desktop effects, and performance in games and other "
 "graphically intensive programs."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:287
+#: ../DistUpgrade/DistUpgradeQuirks.py:286
 msgid ""
 "This computer is currently using the AMD 'fglrx' graphics driver. No version "
 "of this driver is available that works with your hardware in Ubuntu 10.04 "
@@ -930,11 +942,11 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:326
+#: ../DistUpgrade/DistUpgradeQuirks.py:325
 msgid "Sorry, no more upgrades for this system"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:327
+#: ../DistUpgrade/DistUpgradeQuirks.py:326
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases for this system's 'i386' "
@@ -943,11 +955,11 @@ msgid ""
 "Updates for Ubuntu %s will continue until %s."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:342
+#: ../DistUpgrade/DistUpgradeQuirks.py:341
 msgid "No ARMv6 CPU"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:343
+#: ../DistUpgrade/DistUpgradeQuirks.py:342
 msgid ""
 "Your system uses an ARM CPU that is older than the ARMv6 architecture. All "
 "packages in karmic were built with optimizations requiring ARMv6 as the "
@@ -955,12 +967,12 @@ msgid ""
 "Ubuntu release with this hardware."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:363
+#: ../DistUpgrade/DistUpgradeQuirks.py:362
 msgid ""
 "Sorry, this storage driver is not supported in kernels for newer releases"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:365
+#: ../DistUpgrade/DistUpgradeQuirks.py:364
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases that provide kernel support "
@@ -970,11 +982,11 @@ msgid ""
 "driver, remove the directory %s and try again."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:385
+#: ../DistUpgrade/DistUpgradeQuirks.py:384
 msgid "No init available"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:386
+#: ../DistUpgrade/DistUpgradeQuirks.py:385
 msgid ""
 "Your system appears to be a virtualised environment without an init daemon, "
 "e.g. Linux-VServer. Ubuntu 10.04 LTS cannot function within this type of "
@@ -984,11 +996,11 @@ msgid ""
 "Are you sure you want to continue?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:427
+#: ../DistUpgrade/DistUpgradeQuirks.py:426
 msgid "The Robot Operating System (ROS) is installed"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:428
+#: ../DistUpgrade/DistUpgradeQuirks.py:427
 msgid ""
 "It appears that ROS is currently installed. Each ROS release is very strict "
 "about the versions of Ubuntu it supports, and Ubuntu upgrades can fail if "
@@ -1005,11 +1017,11 @@ msgid ""
 "Are you sure you want to continue?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:559
+#: ../DistUpgrade/DistUpgradeQuirks.py:552
 msgid "Connection to the Snap Store failed"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:560
+#: ../DistUpgrade/DistUpgradeQuirks.py:553
 msgid ""
 "You have the package lxd installed but your system is unable to reach the "
 "Snap Store. lxd is now provided via a snap and the release upgrade will fail "
@@ -1019,11 +1031,11 @@ msgid ""
 "may want to configure a Snap Store proxy."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:575
+#: ../DistUpgrade/DistUpgradeQuirks.py:568
 msgid "Connection to Snap Store failed"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:576
+#: ../DistUpgrade/DistUpgradeQuirks.py:569
 msgid ""
 "Your system does not have a connection to the Snap Store. For the best "
 "upgrade experience make sure that your system can connect to api.snapcraft."
@@ -1031,11 +1043,11 @@ msgid ""
 "Do you still want to continue with the upgrade?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:585
+#: ../DistUpgrade/DistUpgradeQuirks.py:578
 msgid "Outdated snapd package"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:586
+#: ../DistUpgrade/DistUpgradeQuirks.py:579
 msgid ""
 "Your system does not have the latest version of snapd. Please update the "
 "version of snapd on your system to improve the upgrade experience.\n"
@@ -1044,34 +1056,34 @@ msgstr ""
 
 #. now perform direct API calls to the store, requesting size
 #. information for each of the snaps needing installation
-#: ../DistUpgrade/DistUpgradeQuirks.py:611
+#: ../DistUpgrade/DistUpgradeQuirks.py:604
 msgid "Calculating snap size requirements"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:642
+#: ../DistUpgrade/DistUpgradeQuirks.py:635
 msgid "Processing snap replacements"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:648
+#: ../DistUpgrade/DistUpgradeQuirks.py:641
 #, python-format
 msgid "refreshing snap %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:652
+#: ../DistUpgrade/DistUpgradeQuirks.py:645
 #, python-format
 msgid "removing snap %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:655
+#: ../DistUpgrade/DistUpgradeQuirks.py:648
 #, python-format
 msgid "installing snap %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:684
+#: ../DistUpgrade/DistUpgradeQuirks.py:677
 msgid "PAE not enabled"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:685
+#: ../DistUpgrade/DistUpgradeQuirks.py:678
 msgid ""
 "Your system uses a CPU that does not have PAE enabled. Ubuntu only supports "
 "non-PAE systems up to Ubuntu 12.04. To upgrade to a later version of Ubuntu, "
@@ -1079,11 +1091,11 @@ msgid ""
 "http://help.ubuntu.com/community/EnablingPAE"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:981
+#: ../DistUpgrade/DistUpgradeQuirks.py:974
 msgid "universe component not enabled"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:982
+#: ../DistUpgrade/DistUpgradeQuirks.py:975
 #, python-format
 msgid ""
 "You have the package %s installed which is a python2 package. python2 has "
@@ -1095,7 +1107,7 @@ msgid ""
 "universe component in /etc/apt/sources.list or remove %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1083
+#: ../DistUpgrade/DistUpgradeQuirks.py:1076
 msgid "Checking for installed snaps"
 msgstr ""
 
@@ -1128,26 +1140,26 @@ msgid "Upgrade to the development release"
 msgstr ""
 
 #: ../DistUpgrade/DistUpgradeViewGtk3.py:146
-#: ../DistUpgrade/DistUpgradeViewKDE.py:316
+#: ../DistUpgrade/DistUpgradeViewKDE.py:314
 msgid "Fetching is complete"
 msgstr "Земањето заврши"
 
 #: ../DistUpgrade/DistUpgradeViewGtk3.py:161
-#: ../DistUpgrade/DistUpgradeViewKDE.py:332
+#: ../DistUpgrade/DistUpgradeViewKDE.py:330
 #, python-format
 msgid "Fetching file %li of %li at %sB/s"
 msgstr ""
 
 #: ../DistUpgrade/DistUpgradeViewGtk3.py:163
 #: ../DistUpgrade/DistUpgradeViewGtk3.py:325
-#: ../DistUpgrade/DistUpgradeViewKDE.py:333
-#: ../DistUpgrade/DistUpgradeViewKDE.py:483
+#: ../DistUpgrade/DistUpgradeViewKDE.py:331
+#: ../DistUpgrade/DistUpgradeViewKDE.py:481
 #, python-format
 msgid "About %s remaining"
 msgstr "Преостануваат околу %s"
 
 #: ../DistUpgrade/DistUpgradeViewGtk3.py:166
-#: ../DistUpgrade/DistUpgradeViewKDE.py:335
+#: ../DistUpgrade/DistUpgradeViewKDE.py:333
 #, python-format
 msgid "Fetching file %li of %li"
 msgstr "Земам датотека %li од %li"
@@ -1156,24 +1168,24 @@ msgstr "Земам датотека %li од %li"
 #. of the terminal (to display something useful then)
 #. -> longer term, move this code into python-apt
 #: ../DistUpgrade/DistUpgradeViewGtk3.py:198
-#: ../DistUpgrade/DistUpgradeViewKDE.py:373
+#: ../DistUpgrade/DistUpgradeViewKDE.py:371
 msgid "Applying changes"
 msgstr "Применувам промени"
 
 #. we do not report followup errors from earlier failures
 #: ../DistUpgrade/DistUpgradeViewGtk3.py:224
-#: ../DistUpgrade/DistUpgradeViewKDE.py:386
+#: ../DistUpgrade/DistUpgradeViewKDE.py:384
 msgid "dependency problems - leaving unconfigured"
 msgstr ""
 
 #: ../DistUpgrade/DistUpgradeViewGtk3.py:229
-#: ../DistUpgrade/DistUpgradeViewKDE.py:388
+#: ../DistUpgrade/DistUpgradeViewKDE.py:386
 #, python-format
 msgid "Could not install '%s'"
 msgstr "Не можам да инсталирам '%s'"
 
 #: ../DistUpgrade/DistUpgradeViewGtk3.py:230
-#: ../DistUpgrade/DistUpgradeViewKDE.py:389
+#: ../DistUpgrade/DistUpgradeViewKDE.py:387
 #, python-format
 msgid ""
 "The upgrade will continue but the '%s' package may not be in a working "
@@ -1182,7 +1194,7 @@ msgstr ""
 
 #. self.expander.set_expanded(True)
 #: ../DistUpgrade/DistUpgradeViewGtk3.py:247
-#: ../DistUpgrade/DistUpgradeViewKDE.py:411
+#: ../DistUpgrade/DistUpgradeViewKDE.py:409
 #, python-format
 msgid ""
 "Replace the customized configuration file\n"
@@ -1192,7 +1204,7 @@ msgstr ""
 "„%s“?"
 
 #: ../DistUpgrade/DistUpgradeViewGtk3.py:248
-#: ../DistUpgrade/DistUpgradeViewKDE.py:412
+#: ../DistUpgrade/DistUpgradeViewKDE.py:410
 msgid ""
 "You will lose any changes you have made to this configuration file if you "
 "choose to replace it with a newer version."
@@ -1201,7 +1213,7 @@ msgstr ""
 "датотека ако изберете да ја замените со понова верзија."
 
 #: ../DistUpgrade/DistUpgradeViewGtk3.py:268
-#: ../DistUpgrade/DistUpgradeViewKDE.py:435
+#: ../DistUpgrade/DistUpgradeViewKDE.py:433
 msgid "The 'diff' command was not found"
 msgstr "Командата „diff“ не беше пронајдена"
 
@@ -1270,93 +1282,93 @@ msgid "Cancel"
 msgstr ""
 
 #: ../DistUpgrade/DistUpgradeViewGtk3.py:774
-#: ../DistUpgrade/DistUpgradeViewKDE.py:939
+#: ../DistUpgrade/DistUpgradeViewKDE.py:906
 msgid "Continue"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:447
+#: ../DistUpgrade/DistUpgradeViewKDE.py:445
 msgid "Show Difference >>>"
 msgstr "Покажи ја разликата >>>"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:450
+#: ../DistUpgrade/DistUpgradeViewKDE.py:448
 msgid "<<< Hide Difference"
 msgstr "<<< Скриј ја разлаката"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:701
+#: ../DistUpgrade/DistUpgradeViewKDE.py:668
 msgid "Error"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:719
-#: ../DistUpgrade/DistUpgradeViewKDE.py:960
+#: ../DistUpgrade/DistUpgradeViewKDE.py:686
+#: ../DistUpgrade/DistUpgradeViewKDE.py:927
 msgid "&Close"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:753
+#: ../DistUpgrade/DistUpgradeViewKDE.py:720
 msgid "Show Terminal >>>"
 msgstr "Покажи терминал >>>"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:756
+#: ../DistUpgrade/DistUpgradeViewKDE.py:723
 msgid "<<< Hide Terminal"
 msgstr "<<< Скриј го терминалот"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:829
+#: ../DistUpgrade/DistUpgradeViewKDE.py:796
 msgid "Information"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:877
+#: ../DistUpgrade/DistUpgradeViewKDE.py:844
 msgid "&Start Upgrade"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:879
-#: ../DistUpgrade/DistUpgradeViewKDE.py:923
-#: ../DistUpgrade/DistUpgradeViewKDE.py:926
+#: ../DistUpgrade/DistUpgradeViewKDE.py:846
+#: ../DistUpgrade/DistUpgradeViewKDE.py:890
+#: ../DistUpgrade/DistUpgradeViewKDE.py:893
 #: ../data/gtkbuilder/DistUpgrade.ui.h:7
 msgid "Details"
 msgstr "Детали"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:901
+#: ../DistUpgrade/DistUpgradeViewKDE.py:868
 #, python-format
 msgid "No longer supported %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:903
+#: ../DistUpgrade/DistUpgradeViewKDE.py:870
 #, python-format
 msgid "Remove %s"
 msgstr "Отстрани го %s"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:905
+#: ../DistUpgrade/DistUpgradeViewKDE.py:872
 #: ../DistUpgrade/DistUpgradeViewText.py:239
 #, python-format
 msgid "Remove (was auto installed) %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:907
+#: ../DistUpgrade/DistUpgradeViewKDE.py:874
 #, python-format
 msgid "Install %s"
 msgstr "Инсталирај %s"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:909
+#: ../DistUpgrade/DistUpgradeViewKDE.py:876
 #, python-format
 msgid "Upgrade %s"
 msgstr "Надгради %s"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:956
+#: ../DistUpgrade/DistUpgradeViewKDE.py:923
 #: ../DistUpgrade/DistUpgradeViewText.py:292
 msgid "Restart required"
 msgstr "Потребно е рестартирање"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:956
+#: ../DistUpgrade/DistUpgradeViewKDE.py:923
 msgid "<b><big>Restart the system to complete the upgrade</big></b>"
 msgstr ""
 "<b><big>Рестартирајте го системот за да ја завршите надградбата</big></b>"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:959
+#: ../DistUpgrade/DistUpgradeViewKDE.py:926
 #: ../data/gtkbuilder/DistUpgrade.ui.h:14
 msgid "_Restart Now"
 msgstr "_Рестартирај сега"
 
 #. FIXME make this user friendly
-#: ../DistUpgrade/DistUpgradeViewKDE.py:977
+#: ../DistUpgrade/DistUpgradeViewKDE.py:944
 msgid ""
 "<b><big>Cancel the running upgrade?</big></b>\n"
 "\n"
@@ -1364,7 +1376,7 @@ msgid ""
 "strongly advised to resume the upgrade."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:981
+#: ../DistUpgrade/DistUpgradeViewKDE.py:948
 msgid "Cancel Upgrade?"
 msgstr "Да ја прекинам надградбата?"
 
