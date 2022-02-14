@@ -22,6 +22,7 @@
 
 import apt
 import apt_pkg
+import dbus
 import distro_info
 import sys
 import os
@@ -189,8 +190,7 @@ class DistUpgradeController(object):
         # apt cron job
         self._aptCronJobPerms = 0o755
         # for inhibiting idle
-        self._uid = ''
-        self._user_env = {}
+        self._session_bus = None
 
     def openCache(self, lock=True, restore_sources_list_on_fail=False):
         logging.debug("openCache()")
@@ -2075,57 +2075,51 @@ class DistUpgradeController(object):
         return True
 
     def _inhibitIdle(self):
-        if os.path.exists("/usr/bin/gnome-session-inhibit"):
-            self._uid = os.environ.get('SUDO_UID', '')
-            if not self._uid:
-                self._uid = os.environ.get('PKEXEC_UID', '')
-            if not self._uid:
-                logging.debug("failed to determine user upgrading")
-                logging.error("failed to inhibit gnome-session idle")
-                return
-            self._getUserEnv()
-            if not self._user_env:
-                return
-            #seteuid so dbus user session can be accessed
-            os.seteuid(int(self._uid))
+        logging.debug('inhibit screensaver')
 
-            logging.debug("inhibit gnome-session idle")
-            try:
-                xdg_desktop = self._user_env.get("XDG_CURRENT_DESKTOP", "")
-                if not xdg_desktop:
-                    logging.debug("failed to find XDG_CURRENT_DESKTOP")
-                    logging.error("failed to inhibit gnome-session idle")
-                    return
-                subprocess.Popen(["gnome-session-inhibit", "--inhibit",
-                                  "idle", "--inhibit-only"],
-                                 env=self._user_env,
-                                 stdout=subprocess.DEVNULL)
-                self._view.information(_("Lock screen disabled"),
-                                       _("Your lock screen has been "
-                                         "disabled and will remain "
-                                         "disabled until you reboot."))
-            except (OSError, ValueError):
-                logging.exception("failed to inhibit gnome-session idle")
+        self._setNonRootEUID()
+
+        try:
+            # The org.freedesktop.ScreenSaver.Inhibit effect lasts only
+            # as long as the dbus connection remains open. Once u-r-u
+            # exits, the connection will be closed and screen inhibition
+            # will be removed.
+            self._session_bus = dbus.SessionBus()
+            proxy = self._session_bus.get_object('org.freedesktop.ScreenSaver',
+                                                 '/org/freedesktop/ScreenSaver')
+            screensaver = dbus.Interface(proxy, dbus_interface='org.freedesktop.ScreenSaver')
+            screensaver.Inhibit('ubuntu-release-upgrader', 'Upgrading Ubuntu')
+
+            self._view.information(_("Lock screen disabled"),
+                                   _("Your lock screen has been "
+                                     "disabled and will remain "
+                                     "disabled during the upgrade."))
+        except dbus.exceptions.DBusException as e:
+            if not os.getenv('XDG_SESSION_TYPE'):
+                return
+
+            logging.debug('failed to inhibit screensaver: ' + str(e))
+            self._view.information(_("Unable to disable lock screen"),
+                                   _("It is highly recommended that the "
+                                     "lock screen be disabled during the "
+                                     "upgrade to prevent later issues. "
+                                     "Please ensure your screen lock is "
+                                     "disabled before continuing."))
+        finally:
             os.seteuid(os.getuid())
 
-    def _getUserEnv(self):
-        try:
-            pid = subprocess.check_output(["pgrep", "-u", self._uid,
-                                           "gnome-session"])
-            pid = pid.decode().split('\n')[0]
-            with open('/proc/' + pid + '/environ', 'r') as f:
-                data = f.read().split('\x00')
-            for line in data:
-                if len(line):
-                    env = line.split('=', 1)
-                    self._user_env[env[0]] = env[1]
-        except subprocess.CalledProcessError as e:
-            if e.returncode == 1:
-                logging.debug("gnome-session not running for user")
-            else:
-                logging.exception("failed to read user env")
+    def _setNonRootEUID(self):
+        if os.getuid() != 0:
+            return
 
+        uid = os.getenv('SUDO_UID')
+        if not uid:
+            uid = os.getenv('PKEXEC_UID')
+        if not uid:
+            logging.debug("failed to determine user upgrading")
+            return
 
+        os.seteuid(int(uid))
 
 if __name__ == "__main__":
     from .DistUpgradeViewText import DistUpgradeViewText
