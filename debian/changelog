@@ -1,4 +1,4 @@
-ubuntu-release-upgrader (1:22.04.5) UNRELEASED; urgency=medium
+ubuntu-release-upgrader (1:22.04.5) jammy; urgency=medium
 
   [ Brian Murray ]
   * debian/control: rename the main branch
@@ -12,7 +12,7 @@ ubuntu-release-upgrader (1:22.04.5) UNRELEASED; urgency=medium
   * Use org.freedesktop.ScreenSaver to inhibit screen lock (LP: #1959458).
     This approach also works in Kubuntu.
 
- -- Brian Murray <brian@ubuntu.com>  Mon, 07 Feb 2022 11:00:53 -0800
+ -- Brian Murray <brian@ubuntu.com>  Mon, 14 Feb 2022 11:01:58 -0800
 
 ubuntu-release-upgrader (1:22.04.4) jammy; urgency=medium
 
