@@ -118,6 +118,7 @@ class DistUpgradeQuirks(object):
         self._get_from_and_to_version()
         self._test_and_fail_on_i386()
         self._test_and_fail_on_aufs()
+        self._test_and_fail_on_power8()
 
         cache = self.controller.cache
         self._test_and_warn_if_ros_installed(cache)
@@ -367,6 +368,35 @@ class DistUpgradeQuirks(object):
                         "Please ensure that none of your containers are "
                         "using the aufs storage driver, remove the directory "
                         "%s and try again." % aufs_dir)
+                self._view.error(summary, msg)
+                self.controller.abort()
+
+    def _test_and_fail_on_power8(self):
+        """
+        Test and fail if running on a POWER8 processor. Starting with Ubuntu
+        22.04, ppc64el is compiled for POWER9 processors. Prior to 22.04 it
+        was/is compiled for POWER8 processors. Hence POWER8 processors are not
+        able to run, install or upgrade to jammy.
+        """
+        if self.arch != "ppc64el":
+            return
+
+        updates_end = ""
+        if self._from_version == "20.04":
+            updates_end = "April 2025"
+        elif self._from_version == "21.10":
+            updates_end = "July 2022"
+
+        with open("/proc/cpuinfo") as f:
+            cpuinfo = f.read()
+
+            if re.search("^cpu\s*:\s*POWER8", cpuinfo, re.MULTILINE):
+                logging.error("POWER8 processor detected")
+                summary = _("Sorry, no more upgrades for this system")
+                msg = _("There will not be any further Ubuntu releases "
+                        "for this system's POWER8 processor.\n\n"
+                        "Updates for Ubuntu %s will continue until %s." %
+                        (self._from_version, updates_end))
                 self._view.error(summary, msg)
                 self.controller.abort()
 

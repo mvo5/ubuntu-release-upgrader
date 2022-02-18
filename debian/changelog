@@ -1,3 +1,9 @@
+ubuntu-release-upgrader (1:22.04.6) UNRELEASED; urgency=medium
+
+  * Prevent upgrades to jammy on POWER8 (LP: #19602550).
+
+ -- Nick Rosbrook <nick.rosbrook@canonical.com>  Fri, 18 Feb 2022 13:35:31 -0500
+
 ubuntu-release-upgrader (1:22.04.5) jammy; urgency=medium
 
   [ Brian Murray ]

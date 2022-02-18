@@ -929,6 +929,37 @@ class TestSnapQuirks(unittest.TestCase):
         # actual deb packages that will have to be removed during the upgrade
         self.assertEqual(controller.forced_obsoletes.append.call_count, 3)
 
+    @mock.patch("builtins.open", new_callable=mock.mock_open,
+                read_data="""\
+processor       : 0
+cpu             : POWER8 (raw), altivec supported
+clock           : 3491.000000MHz
+revision        : 2.0 (pvr 004d 0200)
+
+processor       : 1
+cpu             : POWER8 (raw), altivec supported
+clock           : 3491.000000MHz
+revision        : 2.0 (pvr 004d 0200)
+
+timebase        : 512000000
+platform        : PowerNV
+model           : 8001-22C
+machine         : PowerNV 8001-22C
+firmware        : OPAL
+MMU             : Hash
+""")
+    @mock.patch("DistUpgrade.DistUpgradeQuirks.get_arch",
+                return_value="ppc64el")
+    def test_power8_fail(self, arch, mock_file):
+        controller = mock.Mock()
+        config = mock.Mock()
+        q = DistUpgradeQuirks(controller, config)
+
+        q._test_and_fail_on_power8()
+        self.assertTrue(len(controller.abort.mock_calls))
+
+        mock_file.assert_called_with("/proc/cpuinfo")
+
 
 if __name__ == "__main__":
     import logging
