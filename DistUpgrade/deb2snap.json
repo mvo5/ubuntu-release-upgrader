@@ -7,7 +7,7 @@
         },
         "firefox": {
             "deb": "firefox",
-            "metapkg": "ubuntu-desktop"
+            "metapkg": ["ubuntu-desktop","kubuntu-desktop","lubuntu-desktop","ubuntu-mate-desktop"]
         },
         "gnome-3-34-1804": {
             "metapkg": "ubuntu-desktop"

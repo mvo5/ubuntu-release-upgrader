@@ -820,6 +820,35 @@ class TestSnapQuirks(unittest.TestCase):
                 'deb': 'gnome-software',
                 'snap-id': '1234'}})
 
+    def test_is_deb2snap_metapkg_installed(self):
+        # Prepare the state for testing
+        controller = mock.Mock()
+        config = mock.Mock()
+        q = DistUpgradeQuirks(controller, config)
+        q._from_version = "19.04"
+        q._to_version = "19.10"
+        controller.cache = {
+            'ubuntu-desktop':
+                make_mock_pkg(
+                    name="ubuntu-desktop",
+                    is_installed=True)
+        }
+
+        testdata = [
+            # (input, expected output)
+            ({}, False),
+            ({'metapkg': None}, False),
+            ({'metapkg': 'ubuntu-desktop'}, True),
+            ({'metapkg': 'kubuntu-desktop'}, False),
+            ({'metapkg': ['kubuntu-desktop', 'ubuntu-desktop']}, True),
+            ({'metapkg': ['kubuntu-desktop', 'lubuntu-desktop']}, False),
+        ]
+
+        for data in testdata:
+            self.assertEqual(q._is_deb2snap_metapkg_installed(data[0]),
+                             data[1],
+                             'Expected {1} for input {0}'.format(*data))
+
     @mock.patch("DistUpgrade.DistUpgradeQuirks.get_arch")
     @mock.patch("urllib.request.urlopen")
     def test_calculate_snap_size_requirements(self, urlopen, arch):

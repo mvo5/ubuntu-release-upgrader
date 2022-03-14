@@ -1042,6 +1042,25 @@ class DistUpgradeQuirks(object):
                 logging.warning(msg)
                 apt.apt_pkg.config.set("Apt::Install-Recommends", "1")
 
+    def _is_deb2snap_metapkg_installed(self, deb2snap_entry):
+        """ Helper function that checks if the given deb2snap entry
+            has at least one metapkg which is installed on the system.
+        """
+        metapkg_list = deb2snap_entry.get("metapkg", None)
+        if not isinstance(metapkg_list, list):
+            metapkg_list = [metapkg_list]
+
+        for metapkg in metapkg_list:
+            if metapkg not in self.controller.cache:
+                continue
+            if metapkg and \
+                    self.controller.cache[metapkg].is_installed is False:
+                continue
+
+            return True
+
+        return False
+
     def _prepare_snap_replacement_data(self):
         """ Helper function fetching all required info for the deb-to-snap
             migration: version strings for upgrade (from and to) and the list
@@ -1062,11 +1081,7 @@ class DistUpgradeQuirks(object):
 
             for snap in d2s["seeded"]:
                 seed = d2s["seeded"][snap]
-                metapkg = seed.get("metapkg", None)
-                if metapkg not in self.controller.cache:
-                    continue
-                if metapkg and \
-                        self.controller.cache[metapkg].is_installed is False:
+                if not self._is_deb2snap_metapkg_installed(seed):
                     continue
                 deb = seed.get("deb", None)
                 from_chan = seed.get("from_channel", from_channel)
@@ -1076,11 +1091,7 @@ class DistUpgradeQuirks(object):
             for snap in d2s["unseeded"]:
                 unseed = d2s["unseeded"][snap]
                 deb = unseed.get("deb", None)
-                metapkg = unseed.get("metapkg", None)
-                if metapkg not in self.controller.cache:
-                    continue
-                if metapkg and \
-                        self.controller.cache[metapkg].is_installed is False:
+                if not self._is_deb2snap_metapkg_installed(unseed):
                     continue
                 from_chan = unseed.get("from_channel", from_channel)
                 unseeded_snaps[snap] = (deb, from_chan)
