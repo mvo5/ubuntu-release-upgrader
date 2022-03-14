@@ -86,7 +86,7 @@ class DistUpgradeFetcherCore(object):
         return False
 
     def error(self, summary, message):
-        """ dummy implementation for error display, should be overwriten
+        """ minimal implementation for error display, should be overwriten
             by subclasses that want to more fancy method
         """
         print(summary)

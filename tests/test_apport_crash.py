@@ -10,7 +10,7 @@ from mock import patch
 from DistUpgrade.DistUpgradeApport import (
     _apport_append_logfiles,
     apport_pkgfailure,
-    APPORT_WHITELIST,
+    APPORT_ALLOWLIST,
 )
 sys.path.insert(0, "..")
 
@@ -38,12 +38,12 @@ class TestApportInformationLeak(unittest.TestCase):
         # extract the call arguments
         function_call_args, kwargs = mock_popen.call_args
         apport_cmd_args = function_call_args[0]
-        # ensure that the whitelist is honored
+        # ensure that the allow list is honored
         for i in range(1, len(apport_cmd_args), 2):
             option = apport_cmd_args[i]
             arg = apport_cmd_args[i + 1]
             if option == "-l":
-                self.assertTrue(os.path.basename(arg) in APPORT_WHITELIST)
+                self.assertTrue(os.path.basename(arg) in APPORT_ALLOWLIST)
 
 
 if __name__ == "__main__":

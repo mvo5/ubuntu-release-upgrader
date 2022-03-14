@@ -139,7 +139,7 @@ class MyCache(apt.Cache):
         # Do not create the cache until we know it is not locked
         apt.Cache.__init__(self, progress)
         # a list of regexp that are not allowed to be removed
-        self.removal_blacklist = config.getListFromFile("Distro", "RemovalBlacklistFile")
+        self.removal_denylist = config.getListFromFile("Distro", "RemovalDenylistFile")
         # the linux metapackage should not be removed
         self.linux_metapackage = self.quirks._get_linux_metapackage(self, False)
         self.uname = Popen(["uname", "-r"], stdout=PIPE,
@@ -402,7 +402,7 @@ class MyCache(apt.Cache):
         logging.debug("need_server_mode(): can not find a desktop meta package or key deps, running in server mode")
         return True
 
-    def sanity_check(self, view):
+    def coherence_check(self, view):
         """ check if the cache is ok and if the required metapkgs
             are installed
         """
@@ -762,22 +762,22 @@ class MyCache(apt.Cache):
 
     def _verifyChanges(self):
         """ this function tests if the current changes don't violate
-            our constrains (blacklisted removals etc)
+            our constraints (deny listed removals etc)
         """
         main_arch = apt_pkg.config.find("APT::Architecture")
         removeEssentialOk = self.config.getlist("Distro", "RemoveEssentialOk")
         # check changes
         for pkg in self.get_changes():
-            if pkg.marked_delete and self._inRemovalBlacklist(pkg.name):
-                logging.debug("The package '%s' is marked for removal but it's in the removal blacklist", pkg.name)
-                raise SystemError(_("The package '%s' is marked for removal but it is in the removal blacklist.") % pkg.name)
+            if pkg.marked_delete and self._inRemovalDenylist(pkg.name):
+                logging.debug("The package '%s' is marked for removal but it's in the removal deny list", pkg.name)
+                raise SystemError(_("The package '%s' is marked for removal but it is in the removal deny list.") % pkg.name)
             if pkg.marked_delete and (
                     pkg._pkg.essential == True and
                     pkg.installed.architecture in (main_arch, "all") and
                     not pkg.name in removeEssentialOk):
                 logging.debug("The package '%s' is marked for removal but it's an ESSENTIAL package", pkg.name)
                 raise SystemError(_("The essential package '%s' is marked for removal.") % pkg.name)
-        # check bad-versions blacklist
+        # check bad-versions deny list
         badVersions = self.config.getlist("Distro", "BadVersions")
         for bv in badVersions:
             (pkgname, ver) = bv.split("_")
@@ -785,7 +785,7 @@ class MyCache(apt.Cache):
                 self[pkgname].candidate.version == ver and
                 (self[pkgname].marked_install or
                  self[pkgname].marked_upgrade)):
-                raise SystemError(_("Trying to install blacklisted version '%s'") % bv)
+                raise SystemError(_("Trying to install deny listed version '%s'") % bv)
         return True
 
     def _lookupPkgRecord(self, pkg):
@@ -931,25 +931,26 @@ class MyCache(apt.Cache):
             return False
         return True
 
-    def _inRemovalBlacklist(self, pkgname):
-        for expr in self.removal_blacklist:
+    def _inRemovalDenylist(self, pkgname):
+        for expr in self.removal_denylist:
             if re.compile(expr).match(pkgname):
-                logging.debug("blacklist expr '%s' matches '%s'" % (expr, pkgname))
+                logging.debug("denylist expr '%s' matches '%s'" %
+                              (expr, pkgname))
                 return True
         return False
 
     @withResolverLog
     def tryMarkObsoleteForRemoval(self, pkgname, remove_candidates, forced_obsoletes, foreign_pkgs):
         #logging.debug("tryMarkObsoleteForRemoval(): %s" % pkgname)
-        # sanity check, first see if it looks like a running kernel pkg
+        # coherence check, first see if it looks like a running kernel pkg
         if pkgname.endswith(self.uname):
             logging.debug("skipping running kernel pkg '%s'" % pkgname)
             return False
         if pkgname == self.linux_metapackage:
             logging.debug("skipping kernel metapackage '%s'" % pkgname)
             return False
-        if self._inRemovalBlacklist(pkgname):
-            logging.debug("skipping '%s' (in removalBlacklist)" % pkgname)
+        if self._inRemovalDenylist(pkgname):
+            logging.debug("skipping '%s' (in removalDenylist)" % pkgname)
             return False
         # ensure we honor KeepInstalledSection here as well
         for section in self.config.getlist("Distro", "KeepInstalledSection"):
@@ -985,7 +986,7 @@ class MyCache(apt.Cache):
             for pkg in self.get_changes():
                 if (pkg.name not in remove_candidates or
                       pkg.name in foreign_pkgs or
-                      self._inRemovalBlacklist(pkg.name) or
+                      self._inRemovalDenylist(pkg.name) or
                       pkg.name == self.linux_metapackage):
                     logging.debug("package '%s' produces an unwanted removal '%s', skipping" % (pkgname, pkg.name))
                     self.restore_snapshot()

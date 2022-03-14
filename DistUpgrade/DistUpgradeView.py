@@ -248,7 +248,7 @@ class DumbTerminal(object):
         import subprocess
         subprocess.call(cmd)
 
-class DummyHtmlView(object):
+class SampleHtmlView(object):
     def open(self, url):
         pass
     def show(self):
@@ -291,7 +291,7 @@ class DistUpgradeView(object):
     def getTerminal(self):
         return DumbTerminal()
     def getHtmlView(self):
-        return DummyHtmlView()
+        return SampleHtmlView()
     def updateStatus(self, msg):
         """ update the current status of the distUpgrade based
             on the current view

@@ -33,7 +33,7 @@ from datetime import datetime
 from optparse import OptionParser
 from gettext import gettext as _
 
-# dirs that the packages will touch, this is needed for the sanity check
+# dirs that the packages will touch, this is needed for the coherence check
 # before the upgrade
 SYSTEM_DIRS = ["/bin",
               "/boot",

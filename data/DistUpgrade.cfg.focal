@@ -21,7 +21,7 @@ BaseMetaPkgs=ubuntu-minimal, ubuntu-standard
 IgnoredTasks=minimal, standard, ubuntu-core
 Demotions=demoted.cfg.focal
 #RemoveEssentialOk=sysvinit, sysvutils, belocs-locales-bin
-RemovalBlacklistFile=removal_blacklist.cfg
+RemovalDenylistFile=removal_denylist.cfg
 # if those packages were installed, make sure to keep them installed
 KeepInstalledPkgs=xserver-xorg-video-all
 KeepInstalledSection=translations
@@ -37,7 +37,7 @@ PurgeObsoletes=yes
 #PostUpgradeInstall=apt
 PostInstallScripts=./xorg_fix_proprietary.py
 EnableApport=yes
-# this supported blacklisting certain versions to ensure we do not upgrade
+# this supported deny listing certain versions to ensure we do not upgrade
 #  - blcr-dkms fails to build on kernel 2.6.35
 #BadVersions=blcr-dkms_0.8.2-13
 # ubiquity slideshow

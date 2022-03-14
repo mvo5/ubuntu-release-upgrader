@@ -557,7 +557,7 @@ class DistUpgradeViewGtk3(DistUpgradeView,SimpleGtkbuilderApp):
                 self.vbox_main.pack_end(self._webkit_view, True, True, 0)
             except:
                 logging.exception("html widget")
-                return DistUpgradeView.DummyHtmlView()
+                return DistUpgradeView.SampleHtmlView()
         return HtmlView(self._webkit_view)
 
     def _key_press_handler(self, widget, keyev):
@@ -696,7 +696,7 @@ class DistUpgradeViewGtk3(DistUpgradeView,SimpleGtkbuilderApp):
 
     def confirmChanges(self, summary, changes, demotions, downloadSize,
                        actions=None, removal_bold=True):
-        # FIXME: add a whitelist here for packages that we expect to be
+        # FIXME: add an allow list here for packages that we expect to be
         # removed (how to calc this automatically?)
         if not DistUpgradeView.confirmChanges(self, summary, changes,
                                               demotions, downloadSize):

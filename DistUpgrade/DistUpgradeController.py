@@ -384,7 +384,7 @@ class DistUpgradeController(object):
 
 
     def prepare(self):
-        """ initial cache opening, sanity checking, network checking """
+        """ initial cache opening, coherence checking, network checking """
         # first check if that is a good upgrade
         self.release = release = subprocess.Popen(["lsb_release","-c","-s"],
                                    stdout=subprocess.PIPE,
@@ -426,7 +426,7 @@ class DistUpgradeController(object):
         except SystemError as e:
             logging.error("openCache() failed: '%s'" % e)
             return False
-        if not self.cache.sanity_check(self._view):
+        if not self.cache.coherence_check(self._view):
             return False
 
         # now figure out if we need to go into desktop or 
@@ -723,7 +723,8 @@ class DistUpgradeController(object):
                             self.found_components[d].add(comp)
 
             else:
-                # disable anything that is not from a official mirror or a whitelisted third party
+                # disable anything that is not from a official mirror or an
+                # allowed third party
                 if entry.dist == self.fromDist:
                     entry.dist = self.toDist
                 disable_comment = " " + _("disabled on upgrade to %s") % self.toDist
@@ -1413,9 +1414,10 @@ class DistUpgradeController(object):
         now_foreign = self.cache._getForeignPkgs(self.origin, self.fromDist, self.toDist)
         logging.debug("Obsolete: %s" % " ".join(sorted(now_obsolete)))
         logging.debug("Foreign: %s" % " ".join(sorted(now_foreign)))
-        # now sanity check - if a base meta package is in the obsolete list now, that means
-        # that something went wrong (see #335154) badly with the network. this should never happen, but it did happen
-        # at least once so we add extra paranoia here
+        # now coherence check - if a base meta package is in the obsolete list
+        # now, that means that something went wrong (see #335154) badly with
+        # the network. this should never happen, but it did happen at least
+        # once so we add extra paranoia here
         for pkg in self.config.getlist("Distro","BaseMetaPkgs"):
             if pkg in now_obsolete:
                 logging.error("the BaseMetaPkg '%s' is in the obsolete list, something is wrong, ignoring the obsoletes" % pkg)
@@ -1644,7 +1646,7 @@ class DistUpgradeController(object):
         return False
 
     def isThirdPartyMirror(self, uri):
-        " check if uri is a whitelisted third-party mirror "
+        " check if uri is an allowed third-party mirror "
         uri = uri.rstrip("/")
         for mirror in self.valid_3p_mirrors:
             mirror = mirror.rstrip("/")
@@ -1736,8 +1738,8 @@ class DistUpgradeController(object):
             except NoBackportsFoundException as e:
                 logging.warning("no backport for '%s' found" % e)
             return False
-        
-        # FIXME: sanity check the origin (just for safety)
+
+        # FIXME: coherence check of the origin (just for safety)
         for pkgname in backportslist:
             pkg = self.cache[pkgname]
             # look for the right version (backport)
@@ -1799,7 +1801,7 @@ class DistUpgradeController(object):
 
     # this is the core
     def fullUpgrade(self):
-        # sanity check (check for ubuntu-desktop, brokenCache etc)
+        # coherence check (check for ubuntu-desktop, brokenCache etc)
         self._view.updateStatus(_("Checking package manager"))
         self._view.setStep(Step.PREPARE)
 

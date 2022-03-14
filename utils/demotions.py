@@ -4,7 +4,7 @@
 #
 # TODO:
 # - emacs21 ships it's icon in emacs-data, deal with this
-# - some stuff needs to be blacklisted (e.g. gnome-about)
+# - some stuff needs to be in a deny list (e.g. gnome-about)
 # - lots of packages have their desktop file in "-data", "-comon" (e.g. anjuta)
 # - lots of packages have multiple desktop files for the same application
 #   abiword, abiword-gnome, abiword-gtk

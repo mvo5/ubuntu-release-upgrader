@@ -6,7 +6,7 @@ import sys
 import gettext
 import errno
 
-APPORT_WHITELIST = {
+APPORT_ALLOWLIST = {
     "apt.log": "Aptlog",
     "apt-term.log": "Apttermlog",
     "apt-clone_system_state.tar.gz": "Aptclonesystemstate.tar.gz",
@@ -21,11 +21,11 @@ APPORT_WHITELIST = {
 
 def _apport_append_logfiles(report, logdir="/var/log/dist-upgrade/"):
     dirname = 'VarLogDistupgrade'
-    for fname in APPORT_WHITELIST:
+    for fname in APPORT_ALLOWLIST:
         f = os.path.join(logdir, fname)
         if not os.path.isfile(f) or os.path.getsize(f) == 0:
             continue
-        ident = dirname + APPORT_WHITELIST[fname]
+        ident = dirname + APPORT_ALLOWLIST[fname]
         if os.access(f, os.R_OK):
             report[ident] = (open(f), )
         elif os.path.exists(f):
@@ -101,7 +101,7 @@ def apport_pkgfailure(pkg, errormsg):
     if os.path.exists(s):
         args = [s, "-p", pkg]
         args.extend(["--tags", "dist-upgrade"])
-        for fname in APPORT_WHITELIST:
+        for fname in APPORT_ALLOWLIST:
             args.extend(["-l", os.path.join(LOGDIR, fname)])
         try:
             p = subprocess.Popen(args, stdin=subprocess.PIPE,
