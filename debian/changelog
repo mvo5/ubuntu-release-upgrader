@@ -1,4 +1,4 @@
-ubuntu-release-upgrader (1:22.04.7) UNRELEASED; urgency=medium
+ubuntu-release-upgrader (1:22.04.7) jammy; urgency=medium
 
   [ Brian Murray ]
   * Inclusive naming updates.

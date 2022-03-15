@@ -3,12 +3,12 @@
 # This file is distributed under the same license as the update-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
 #
-#: ../DistUpgrade/DistUpgradeController.py:1057
+#: ../DistUpgrade/DistUpgradeController.py:1058
 msgid ""
 msgstr ""
 "Project-Id-Version: update-manager\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2022-02-14 10:57-0800\n"
+"POT-Creation-Date: 2022-03-15 10:48-0700\n"
 "PO-Revision-Date: 2013-05-22 11:00+0000\n"
 "Last-Translator: Märt Põder <boamaod@gmail.com>\n"
 "Language-Team: Estonian <et@li.org>\n"
@@ -149,9 +149,9 @@ msgstr ""
 "kontrollimata pakettide nimekiri."
 
 #: ../DistUpgrade/DistUpgradeCache.py:773
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"The package '%s' is marked for removal but it is in the removal blacklist."
+"The package '%s' is marked for removal but it is in the removal deny list."
 msgstr ""
 "Eemaldamiseks on märgistatud pakett '%s', mis on aga eemaldamise mustas "
 "nimekirjas."
@@ -162,8 +162,8 @@ msgid "The essential package '%s' is marked for removal."
 msgstr "Oluline pakett '%s' on märgistatud eemaldamiseks."
 
 #: ../DistUpgrade/DistUpgradeCache.py:788
-#, python-format
-msgid "Trying to install blacklisted version '%s'"
+#, fuzzy, python-format
+msgid "Trying to install deny listed version '%s'"
 msgstr "Halvas nimekirjas oleva versiooni '%s' paigaldamise katse"
 
 #: ../DistUpgrade/DistUpgradeCache.py:910
@@ -303,16 +303,16 @@ msgstr ""
 msgid "Not for humans during development stage of release %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:729
+#: ../DistUpgrade/DistUpgradeController.py:730
 #, python-format
 msgid "disabled on upgrade to %s"
 msgstr "keelatud %s-le uuendamisel"
 
-#: ../DistUpgrade/DistUpgradeController.py:788
+#: ../DistUpgrade/DistUpgradeController.py:789
 msgid "No valid sources.list entry found"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:789
+#: ../DistUpgrade/DistUpgradeController.py:790
 #, python-format
 msgid ""
 "While scanning your repository information no entry about %s could be "
@@ -323,11 +323,11 @@ msgid ""
 "Do you want to continue anyway?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:799
+#: ../DistUpgrade/DistUpgradeController.py:800
 msgid "No valid mirror found"
 msgstr "Ühtegi sobivat peeglit ei leitud"
 
-#: ../DistUpgrade/DistUpgradeController.py:800
+#: ../DistUpgrade/DistUpgradeController.py:801
 #, python-format
 msgid ""
 "While scanning your repository information no mirror entry for the upgrade "
@@ -340,11 +340,11 @@ msgid ""
 msgstr ""
 
 #. hm, still nothing useful ...
-#: ../DistUpgrade/DistUpgradeController.py:820
+#: ../DistUpgrade/DistUpgradeController.py:821
 msgid "Generate default sources?"
 msgstr "Kas genereerida vaikimisi allikad?"
 
-#: ../DistUpgrade/DistUpgradeController.py:821
+#: ../DistUpgrade/DistUpgradeController.py:822
 #, python-format
 msgid ""
 "After scanning your 'sources.list' no valid entry for '%s' was found.\n"
@@ -357,28 +357,28 @@ msgstr ""
 "Kas vaikimisi kirjed '%s' jaoks tuleks lisada? Kui valid 'Ei', katkestatakse "
 "uuendamine."
 
-#: ../DistUpgrade/DistUpgradeController.py:856
-#: ../DistUpgrade/DistUpgradeController.py:862
+#: ../DistUpgrade/DistUpgradeController.py:857
+#: ../DistUpgrade/DistUpgradeController.py:863
 msgid "Repository information invalid"
 msgstr "Varamu informatsioon vigane"
 
-#: ../DistUpgrade/DistUpgradeController.py:857
+#: ../DistUpgrade/DistUpgradeController.py:858
 msgid ""
 "Upgrading the repository information resulted in a invalid file so a bug "
 "reporting process is being started."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:863
+#: ../DistUpgrade/DistUpgradeController.py:864
 msgid ""
 "Upgrading the repository information resulted in a invalid file. To report a "
 "bug install apport and then execute 'apport-bug ubuntu-release-upgrader'."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:872
+#: ../DistUpgrade/DistUpgradeController.py:873
 msgid "Third party sources disabled"
 msgstr "Kolmandate osapoolte allikad keelatud"
 
-#: ../DistUpgrade/DistUpgradeController.py:873
+#: ../DistUpgrade/DistUpgradeController.py:874
 msgid ""
 "Some third party entries in your sources.list were disabled. You can re-"
 "enable them after the upgrade with the 'software-properties' tool or your "
@@ -388,13 +388,13 @@ msgstr ""
 "võid need jälle lubada, kasutades tööriista 'software-properties' või oma "
 "paketihaldurit."
 
-#: ../DistUpgrade/DistUpgradeController.py:915
+#: ../DistUpgrade/DistUpgradeController.py:916
 msgid "Package in inconsistent state"
 msgid_plural "Packages in inconsistent state"
 msgstr[0] "Vasturääkivustega pakett"
 msgstr[1] "Vasturääkivustega paketid"
 
-#: ../DistUpgrade/DistUpgradeController.py:918
+#: ../DistUpgrade/DistUpgradeController.py:919
 #, python-format
 msgid ""
 "The package '%s' is in an inconsistent state and needs to be reinstalled, "
@@ -413,11 +413,11 @@ msgstr[1] ""
 "paigaldada, kuid arhiive ei leitud. Palun paigalda need käsitsi uuesti või "
 "eemalda süsteemist."
 
-#: ../DistUpgrade/DistUpgradeController.py:981
+#: ../DistUpgrade/DistUpgradeController.py:982
 msgid "Error during update"
 msgstr "Uuendamise ajal ilmnes viga."
 
-#: ../DistUpgrade/DistUpgradeController.py:982
+#: ../DistUpgrade/DistUpgradeController.py:983
 msgid ""
 "A problem occurred during the update. This is usually some sort of network "
 "problem, please check your network connection and retry."
@@ -425,30 +425,30 @@ msgstr ""
 "Uuendamisel esines viga. Tavaliselt on selleks võrguprobleem, kontrolli "
 "võrguühendust ja proovi uuesti."
 
-#: ../DistUpgrade/DistUpgradeController.py:1025
-#: ../DistUpgrade/DistUpgradeController.py:1030
+#: ../DistUpgrade/DistUpgradeController.py:1026
+#: ../DistUpgrade/DistUpgradeController.py:1031
 msgid "EFI System Partition (ESP) not usable"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:1026
+#: ../DistUpgrade/DistUpgradeController.py:1027
 msgid ""
 "Your EFI System Partition (ESP) is not mounted at /boot/efi. Please ensure "
 "that it is properly configured and try again."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:1031
+#: ../DistUpgrade/DistUpgradeController.py:1032
 msgid ""
 "The EFI System Partition (ESP) mounted at /boot/efi is not writable. Please "
 "mount this partition read-write and try again."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:1038
+#: ../DistUpgrade/DistUpgradeController.py:1039
 msgid "Not enough free disk space"
 msgstr "Kõvakettal pole piisavalt vaba ruumi"
 
 #. TRANSLATORS: you can change the order of the sentence,
 #. make sure to keep all {str_*} string untranslated.
-#: ../DistUpgrade/DistUpgradeController.py:1041
+#: ../DistUpgrade/DistUpgradeController.py:1042
 #, python-brace-format
 msgid ""
 "The upgrade has aborted. The upgrade needs a total of {str_total} free space "
@@ -457,53 +457,53 @@ msgid ""
 msgstr ""
 
 #. specific ways to resolve lack of free space
-#: ../DistUpgrade/DistUpgradeController.py:1046
+#: ../DistUpgrade/DistUpgradeController.py:1047
 msgid ""
 "Remove temporary packages of former installations using 'sudo apt clean'."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:1048
+#: ../DistUpgrade/DistUpgradeController.py:1049
 msgid ""
 "You can remove old kernels using 'sudo apt autoremove' and you could also "
 "set COMPRESS=xz in /etc/initramfs-tools/initramfs.conf to reduce the size of "
 "your initramfs."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:1053
+#: ../DistUpgrade/DistUpgradeController.py:1054
 msgid ""
 "Empty your trash and remove temporary packages of former installations using "
 "'sudo apt-get clean'."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:1056
+#: ../DistUpgrade/DistUpgradeController.py:1057
 msgid "Reboot to clean up files in /tmp."
 msgstr ""
 
 #. calc the dist-upgrade and see if the removals are ok/expected
 #. do the dist-upgrade
-#: ../DistUpgrade/DistUpgradeController.py:1095
-#: ../DistUpgrade/DistUpgradeController.py:1937
-#: ../DistUpgrade/DistUpgradeController.py:1989
+#: ../DistUpgrade/DistUpgradeController.py:1096
+#: ../DistUpgrade/DistUpgradeController.py:1939
+#: ../DistUpgrade/DistUpgradeController.py:1991
 msgid "Calculating the changes"
 msgstr "Muudatuste rehkendamine"
 
 #. ask the user
-#: ../DistUpgrade/DistUpgradeController.py:1139
+#: ../DistUpgrade/DistUpgradeController.py:1140
 msgid "Do you want to start the upgrade?"
 msgstr "Kas alustada uuendamist?"
 
-#: ../DistUpgrade/DistUpgradeController.py:1158
+#: ../DistUpgrade/DistUpgradeController.py:1159
 #, python-format
 msgid ""
 "Livepatch security updates are not available for Ubuntu %s. If you upgrade, "
 "Livepatch will turn off."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:1230
+#: ../DistUpgrade/DistUpgradeController.py:1231
 msgid "Upgrade canceled"
 msgstr "Uuendamine katkestatud"
 
-#: ../DistUpgrade/DistUpgradeController.py:1231
+#: ../DistUpgrade/DistUpgradeController.py:1232
 msgid ""
 "The upgrade will cancel now and the original system state will be restored. "
 "You can resume the upgrade at a later time."
@@ -511,12 +511,12 @@ msgstr ""
 "Uuendamine katkestatakse nüüd ning esialgne süsteemi olukord taastatakse. Sa "
 "võid uuendada mõni teine kord."
 
-#: ../DistUpgrade/DistUpgradeController.py:1237
-#: ../DistUpgrade/DistUpgradeController.py:1382
+#: ../DistUpgrade/DistUpgradeController.py:1238
+#: ../DistUpgrade/DistUpgradeController.py:1383
 msgid "Could not download the upgrades"
 msgstr "Uuenduste allalaadimine polnud võimalik"
 
-#: ../DistUpgrade/DistUpgradeController.py:1238
+#: ../DistUpgrade/DistUpgradeController.py:1239
 msgid ""
 "The upgrade has aborted. Please check your Internet connection or "
 "installation media and try again. All files downloaded so far have been kept."
@@ -526,27 +526,27 @@ msgstr ""
 
 #. FIXME: strings are not good, but we are in string freeze
 #. currently
-#: ../DistUpgrade/DistUpgradeController.py:1331
-#: ../DistUpgrade/DistUpgradeController.py:1370
-#: ../DistUpgrade/DistUpgradeController.py:1486
+#: ../DistUpgrade/DistUpgradeController.py:1332
+#: ../DistUpgrade/DistUpgradeController.py:1371
+#: ../DistUpgrade/DistUpgradeController.py:1488
 msgid "Error during commit"
 msgstr "Toimingu ajal esines viga"
 
 #. generate a new cache
-#: ../DistUpgrade/DistUpgradeController.py:1333
-#: ../DistUpgrade/DistUpgradeController.py:1372
-#: ../DistUpgrade/DistUpgradeController.py:1531
+#: ../DistUpgrade/DistUpgradeController.py:1334
+#: ../DistUpgrade/DistUpgradeController.py:1373
+#: ../DistUpgrade/DistUpgradeController.py:1533
 msgid "Restoring original system state"
 msgstr "Süsteemi algse oleku taastamine"
 
-#: ../DistUpgrade/DistUpgradeController.py:1334
-#: ../DistUpgrade/DistUpgradeController.py:1349
-#: ../DistUpgrade/DistUpgradeController.py:1373
+#: ../DistUpgrade/DistUpgradeController.py:1335
+#: ../DistUpgrade/DistUpgradeController.py:1350
+#: ../DistUpgrade/DistUpgradeController.py:1374
 msgid "Could not install the upgrades"
 msgstr "Uuenduste paigaldamine polnud võimalik"
 
 #. invoke the frontend now and show a error message
-#: ../DistUpgrade/DistUpgradeController.py:1339
+#: ../DistUpgrade/DistUpgradeController.py:1340
 msgid ""
 "The upgrade has aborted. Your system could be in an unusable state. A "
 "recovery will run now (dpkg --configure -a)."
@@ -554,7 +554,7 @@ msgstr ""
 "Uuendamine katkes. Sinu arvuti võib olla praegu kasutamatu. Praegu käivitati "
 "taastamisoperatsioon (dpkg --configure -a)."
 
-#: ../DistUpgrade/DistUpgradeController.py:1344
+#: ../DistUpgrade/DistUpgradeController.py:1345
 #, python-format
 msgid ""
 "\n"
@@ -565,7 +565,7 @@ msgid ""
 "%s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:1383
+#: ../DistUpgrade/DistUpgradeController.py:1384
 msgid ""
 "The upgrade has aborted. Please check your Internet connection or "
 "installation media and try again. "
@@ -573,24 +573,24 @@ msgstr ""
 "Uuendamine katkes. Kontrolli internetiühendust või paigaldusmeediumi ning "
 "proovi uuesti. "
 
-#: ../DistUpgrade/DistUpgradeController.py:1411
+#: ../DistUpgrade/DistUpgradeController.py:1412
 msgid "Searching for obsolete software"
 msgstr "Aegunud tarkvara otsimine"
 
-#: ../DistUpgrade/DistUpgradeController.py:1474
+#: ../DistUpgrade/DistUpgradeController.py:1476
 msgid "Remove obsolete packages?"
 msgstr "Kas eemaldada iganenud paketid?"
 
-#: ../DistUpgrade/DistUpgradeController.py:1475
+#: ../DistUpgrade/DistUpgradeController.py:1477
 #: ../data/gtkbuilder/DistUpgrade.ui.h:8
 msgid "_Keep"
 msgstr "_Hoia alles"
 
-#: ../DistUpgrade/DistUpgradeController.py:1475
+#: ../DistUpgrade/DistUpgradeController.py:1477
 msgid "_Remove"
 msgstr "_Eemalda"
 
-#: ../DistUpgrade/DistUpgradeController.py:1487
+#: ../DistUpgrade/DistUpgradeController.py:1489
 msgid ""
 "A problem occurred during the clean-up. Please see the below message for "
 "more information. "
@@ -598,45 +598,45 @@ msgstr "Puhastamise käigus esines viga. Täpsem info alumises teates. "
 
 #. FIXME: instead of error out, fetch and install it
 #. here
-#: ../DistUpgrade/DistUpgradeController.py:1569
+#: ../DistUpgrade/DistUpgradeController.py:1571
 msgid "Required depends is not installed"
 msgstr "Vajalik sõltuvus pole paigaldatud"
 
-#: ../DistUpgrade/DistUpgradeController.py:1570
+#: ../DistUpgrade/DistUpgradeController.py:1572
 #, python-format
 msgid "The required dependency '%s' is not installed. "
 msgstr "Vajalik sõltuvus '%s' pole paigaldatud. "
 
-#. sanity check (check for ubuntu-desktop, brokenCache etc)
+#. coherence check (check for ubuntu-desktop, brokenCache etc)
 #. then open the cache (again)
-#: ../DistUpgrade/DistUpgradeController.py:1803
-#: ../DistUpgrade/DistUpgradeController.py:1887
+#: ../DistUpgrade/DistUpgradeController.py:1805
+#: ../DistUpgrade/DistUpgradeController.py:1889
 msgid "Checking package manager"
 msgstr "Paketihalduri kontrollimine"
 
-#: ../DistUpgrade/DistUpgradeController.py:1809
-#: ../DistUpgrade/DistUpgradeController.py:1815
+#: ../DistUpgrade/DistUpgradeController.py:1811
+#: ../DistUpgrade/DistUpgradeController.py:1817
 msgid "Preparing the upgrade failed"
 msgstr "Uuendamise ettevalmistamine ebaõnnestus"
 
-#: ../DistUpgrade/DistUpgradeController.py:1810
+#: ../DistUpgrade/DistUpgradeController.py:1812
 msgid ""
 "Preparing the system for the upgrade failed so a bug reporting process is "
 "being started."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:1816
+#: ../DistUpgrade/DistUpgradeController.py:1818
 msgid ""
 "Preparing the system for the upgrade failed. To report a bug install apport "
 "and then execute 'apport-bug ubuntu-release-upgrader'."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:1833
-#: ../DistUpgrade/DistUpgradeController.py:1843
+#: ../DistUpgrade/DistUpgradeController.py:1835
+#: ../DistUpgrade/DistUpgradeController.py:1845
 msgid "Getting upgrade prerequisites failed"
 msgstr "Uuendamise eelduste hankimine ebaõnnestus"
 
-#: ../DistUpgrade/DistUpgradeController.py:1834
+#: ../DistUpgrade/DistUpgradeController.py:1836
 msgid ""
 "The system was unable to get the prerequisites for the upgrade. The upgrade "
 "will abort now and restore the original system state.\n"
@@ -644,7 +644,7 @@ msgid ""
 "Additionally, a bug reporting process is being started."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:1844
+#: ../DistUpgrade/DistUpgradeController.py:1846
 msgid ""
 "The system was unable to get the prerequisites for the upgrade. The upgrade "
 "will abort now and restore the original system state.\n"
@@ -653,15 +653,15 @@ msgid ""
 "upgrader'."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:1878
+#: ../DistUpgrade/DistUpgradeController.py:1880
 msgid "Updating repository information"
 msgstr "Varamuinfo uuendamine"
 
-#: ../DistUpgrade/DistUpgradeController.py:1914
+#: ../DistUpgrade/DistUpgradeController.py:1916
 msgid "Invalid package information"
 msgstr "Vigane paketiinfo"
 
-#: ../DistUpgrade/DistUpgradeController.py:1915
+#: ../DistUpgrade/DistUpgradeController.py:1917
 #, python-format
 msgid ""
 "After updating your package information, the essential package '%s' could "
@@ -673,79 +673,79 @@ msgid ""
 "later."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:1944
-#: ../DistUpgrade/DistUpgradeController.py:2050
+#: ../DistUpgrade/DistUpgradeController.py:1946
+#: ../DistUpgrade/DistUpgradeController.py:2052
 msgid "Fetching"
 msgstr "Allalaadimine"
 
-#: ../DistUpgrade/DistUpgradeController.py:1951
-#: ../DistUpgrade/DistUpgradeController.py:1974
-#: ../DistUpgrade/DistUpgradeController.py:2004
-#: ../DistUpgrade/DistUpgradeController.py:2054
+#: ../DistUpgrade/DistUpgradeController.py:1953
+#: ../DistUpgrade/DistUpgradeController.py:1976
+#: ../DistUpgrade/DistUpgradeController.py:2006
+#: ../DistUpgrade/DistUpgradeController.py:2056
 msgid "Upgrading"
 msgstr "Uuendamine"
 
-#: ../DistUpgrade/DistUpgradeController.py:1953
+#: ../DistUpgrade/DistUpgradeController.py:1955
 msgid "Upgrade infeasible"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:1954
+#: ../DistUpgrade/DistUpgradeController.py:1956
 msgid ""
 "The upgrade could not be completed, there were errors during the upgrade "
 "process."
 msgstr ""
 
 #. don't abort here, because it would restore the sources.list
-#: ../DistUpgrade/DistUpgradeController.py:1977
-#: ../DistUpgrade/DistUpgradeController.py:1993
+#: ../DistUpgrade/DistUpgradeController.py:1979
+#: ../DistUpgrade/DistUpgradeController.py:1995
 msgid "Upgrade incomplete"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:1978
-#: ../DistUpgrade/DistUpgradeController.py:1994
+#: ../DistUpgrade/DistUpgradeController.py:1980
+#: ../DistUpgrade/DistUpgradeController.py:1996
 msgid ""
 "The upgrade has partially completed but there were errors during the upgrade "
 "process."
 msgstr ""
 
 #. don't abort here, because it would restore the sources.list
-#: ../DistUpgrade/DistUpgradeController.py:2009
-#: ../DistUpgrade/DistUpgradeController.py:2056
-#: ../DistUpgrade/DistUpgradeController.py:2062
-#: ../DistUpgrade/DistUpgradeController.py:2073
+#: ../DistUpgrade/DistUpgradeController.py:2011
+#: ../DistUpgrade/DistUpgradeController.py:2058
+#: ../DistUpgrade/DistUpgradeController.py:2064
+#: ../DistUpgrade/DistUpgradeController.py:2075
 msgid "Upgrade complete"
 msgstr "Uuendamine valmis"
 
-#: ../DistUpgrade/DistUpgradeController.py:2010
-#: ../DistUpgrade/DistUpgradeController.py:2057
-#: ../DistUpgrade/DistUpgradeController.py:2063
+#: ../DistUpgrade/DistUpgradeController.py:2012
+#: ../DistUpgrade/DistUpgradeController.py:2059
+#: ../DistUpgrade/DistUpgradeController.py:2065
 msgid ""
 "The upgrade has completed but there were errors during the upgrade process."
 msgstr "Uuendus on lõpetatud, kuid uuendamise ajal tekkisid vead."
 
-#: ../DistUpgrade/DistUpgradeController.py:2025
+#: ../DistUpgrade/DistUpgradeController.py:2027
 msgid "System upgrade is complete."
 msgstr "Süsteemi uuendamine on valmis."
 
-#: ../DistUpgrade/DistUpgradeController.py:2074
+#: ../DistUpgrade/DistUpgradeController.py:2076
 msgid "The partial upgrade was completed."
 msgstr "Osaline uuendamine lõpetati."
 
-#: ../DistUpgrade/DistUpgradeController.py:2093
+#: ../DistUpgrade/DistUpgradeController.py:2095
 msgid "Lock screen disabled"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2094
+#: ../DistUpgrade/DistUpgradeController.py:2096
 msgid ""
 "Your lock screen has been disabled and will remain disabled during the "
 "upgrade."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2102
+#: ../DistUpgrade/DistUpgradeController.py:2104
 msgid "Unable to disable lock screen"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2103
+#: ../DistUpgrade/DistUpgradeController.py:2105
 msgid ""
 "It is highly recommended that the lock screen be disabled during the upgrade "
 "to prevent later issues. Please ensure your screen lock is disabled before "
@@ -941,11 +941,11 @@ msgstr "Palun sisesta '%s' seadmesse '%s'"
 msgid "Media Change"
 msgstr "Meedia muutmine"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:234
+#: ../DistUpgrade/DistUpgradeQuirks.py:235
 msgid "Your graphics hardware may not be fully supported in Ubuntu 14.04."
 msgstr "Teie graafika riistvara pole Ubuntu 14.04 täielikult toetatud."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:236
+#: ../DistUpgrade/DistUpgradeQuirks.py:237
 msgid ""
 "Running the 'unity' desktop environment is not fully supported by your "
 "graphics hardware. You will maybe end up in a very slow environment after "
@@ -955,11 +955,11 @@ msgid ""
 "upgrade?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:260
+#: ../DistUpgrade/DistUpgradeQuirks.py:261
 msgid "Your graphics hardware may not be fully supported in Ubuntu 12.04 LTS."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:262
+#: ../DistUpgrade/DistUpgradeQuirks.py:263
 msgid ""
 "The support in Ubuntu 12.04 LTS for your Intel graphics hardware is limited "
 "and you may encounter problems after the upgrade. For more information see "
@@ -967,7 +967,7 @@ msgid ""
 "continue with the upgrade?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:282
+#: ../DistUpgrade/DistUpgradeQuirks.py:283
 msgid ""
 "Upgrading may reduce desktop effects, and performance in games and other "
 "graphically intensive programs."
@@ -975,7 +975,7 @@ msgstr ""
 "Uuendamine võib eemaldada töölauaefektid ja vähendada mängude ning teiste "
 "graafikamahukate rakenduste jõudlust."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:286
+#: ../DistUpgrade/DistUpgradeQuirks.py:287
 msgid ""
 "This computer is currently using the AMD 'fglrx' graphics driver. No version "
 "of this driver is available that works with your hardware in Ubuntu 10.04 "
@@ -988,11 +988,12 @@ msgstr ""
 "\n"
 "Kas tahad sellest hoolimata jätkata?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:325
+#: ../DistUpgrade/DistUpgradeQuirks.py:326
+#: ../DistUpgrade/DistUpgradeQuirks.py:395
 msgid "Sorry, no more upgrades for this system"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:326
+#: ../DistUpgrade/DistUpgradeQuirks.py:327
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases for this system's 'i386' "
@@ -1001,11 +1002,11 @@ msgid ""
 "Updates for Ubuntu %s will continue until %s."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:341
+#: ../DistUpgrade/DistUpgradeQuirks.py:342
 msgid "No ARMv6 CPU"
 msgstr "Ei leitud ARMv6 protsessorit"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:342
+#: ../DistUpgrade/DistUpgradeQuirks.py:343
 msgid ""
 "Your system uses an ARM CPU that is older than the ARMv6 architecture. All "
 "packages in karmic were built with optimizations requiring ARMv6 as the "
@@ -1016,12 +1017,12 @@ msgstr ""
 "Kõik paketid karmic'us koostati optimeeritult vähemalt ARMv6 arhitektuurile. "
 "Selle raudvaraga ei ole võimalik Ubuntut uuendada."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:362
+#: ../DistUpgrade/DistUpgradeQuirks.py:363
 msgid ""
 "Sorry, this storage driver is not supported in kernels for newer releases"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:364
+#: ../DistUpgrade/DistUpgradeQuirks.py:365
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases that provide kernel support "
@@ -1031,11 +1032,20 @@ msgid ""
 "driver, remove the directory %s and try again."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:384
+#: ../DistUpgrade/DistUpgradeQuirks.py:396
+#, python-format
+msgid ""
+"There will not be any further Ubuntu releases for this system's POWER8 "
+"processor.\n"
+"\n"
+"Updates for Ubuntu %s will continue until %s."
+msgstr ""
+
+#: ../DistUpgrade/DistUpgradeQuirks.py:414
 msgid "No init available"
 msgstr "Init pole saadaval"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:385
+#: ../DistUpgrade/DistUpgradeQuirks.py:415
 msgid ""
 "Your system appears to be a virtualised environment without an init daemon, "
 "e.g. Linux-VServer. Ubuntu 10.04 LTS cannot function within this type of "
@@ -1050,11 +1060,11 @@ msgstr ""
 "\n"
 "Kas tahad sellest hoolimata jätkata?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:426
+#: ../DistUpgrade/DistUpgradeQuirks.py:456
 msgid "The Robot Operating System (ROS) is installed"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:427
+#: ../DistUpgrade/DistUpgradeQuirks.py:457
 msgid ""
 "It appears that ROS is currently installed. Each ROS release is very strict "
 "about the versions of Ubuntu it supports, and Ubuntu upgrades can fail if "
@@ -1071,11 +1081,11 @@ msgid ""
 "Are you sure you want to continue?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:552
+#: ../DistUpgrade/DistUpgradeQuirks.py:582
 msgid "Connection to the Snap Store failed"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:553
+#: ../DistUpgrade/DistUpgradeQuirks.py:583
 msgid ""
 "You have the package lxd installed but your system is unable to reach the "
 "Snap Store. lxd is now provided via a snap and the release upgrade will fail "
@@ -1085,11 +1095,11 @@ msgid ""
 "may want to configure a Snap Store proxy."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:568
+#: ../DistUpgrade/DistUpgradeQuirks.py:598
 msgid "Connection to Snap Store failed"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:569
+#: ../DistUpgrade/DistUpgradeQuirks.py:599
 msgid ""
 "Your system does not have a connection to the Snap Store. For the best "
 "upgrade experience make sure that your system can connect to api.snapcraft."
@@ -1097,11 +1107,11 @@ msgid ""
 "Do you still want to continue with the upgrade?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:578
+#: ../DistUpgrade/DistUpgradeQuirks.py:608
 msgid "Outdated snapd package"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:579
+#: ../DistUpgrade/DistUpgradeQuirks.py:609
 msgid ""
 "Your system does not have the latest version of snapd. Please update the "
 "version of snapd on your system to improve the upgrade experience.\n"
@@ -1110,34 +1120,34 @@ msgstr ""
 
 #. now perform direct API calls to the store, requesting size
 #. information for each of the snaps needing installation
-#: ../DistUpgrade/DistUpgradeQuirks.py:604
+#: ../DistUpgrade/DistUpgradeQuirks.py:634
 msgid "Calculating snap size requirements"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:635
+#: ../DistUpgrade/DistUpgradeQuirks.py:665
 msgid "Processing snap replacements"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:641
+#: ../DistUpgrade/DistUpgradeQuirks.py:671
 #, python-format
 msgid "refreshing snap %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:645
+#: ../DistUpgrade/DistUpgradeQuirks.py:675
 #, python-format
 msgid "removing snap %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:648
+#: ../DistUpgrade/DistUpgradeQuirks.py:678
 #, python-format
 msgid "installing snap %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:677
+#: ../DistUpgrade/DistUpgradeQuirks.py:707
 msgid "PAE not enabled"
 msgstr "PAE pole lubatud"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:678
+#: ../DistUpgrade/DistUpgradeQuirks.py:708
 msgid ""
 "Your system uses a CPU that does not have PAE enabled. Ubuntu only supports "
 "non-PAE systems up to Ubuntu 12.04. To upgrade to a later version of Ubuntu, "
@@ -1145,11 +1155,11 @@ msgid ""
 "http://help.ubuntu.com/community/EnablingPAE"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:974
+#: ../DistUpgrade/DistUpgradeQuirks.py:1004
 msgid "universe component not enabled"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:975
+#: ../DistUpgrade/DistUpgradeQuirks.py:1005
 #, python-format
 msgid ""
 "You have the package %s installed which is a python2 package. python2 has "
@@ -1161,7 +1171,7 @@ msgid ""
 "universe component in /etc/apt/sources.list or remove %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1076
+#: ../DistUpgrade/DistUpgradeQuirks.py:1117
 msgid "Checking for installed snaps"
 msgstr ""
 

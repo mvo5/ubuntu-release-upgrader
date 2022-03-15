@@ -13,6 +13,7 @@ cpp-9-doc
 cpp-9-powerpc64le-linux-gnu
 cpp-9-s390x-linux-gnu
 drac-dev
+eog-dev
 fonts-arabeyes
 g++-9
 g++-9-aarch64-linux-gnu
@@ -43,6 +44,7 @@ gir1.2-amtk-5
 gir1.2-appindicator3-0.1
 gir1.2-appstreamglib-1.0
 gir1.2-handy-0.0
+gnome-screenshot
 gnome-software
 gnome-software-common
 gnome-software-dev
@@ -80,10 +82,7 @@ lib64stdc++-9-dev
 libamtk-5-0
 libamtk-5-common
 libamtk-5-dev
-libapparmor-perl
 libappindicator-doc
-libappindicator3-1
-libappindicator3-dev
 libappstream-glib-dev
 libappstream-glib8
 libasan5
@@ -93,6 +92,9 @@ libasan5-ppc64el-cross
 libasan5-s390x-cross
 libasn1-8-heimdal
 libasync-mergepoint-perl
+libcapnp-dev
+libcmis-0.5-5v5
+libcmis-dev
 libconfig-general-perl
 libcppunit-subunit-dev
 libcppunit-subunit0
@@ -120,7 +122,6 @@ libhdb9-heimdal
 libheimbase1-heimdal
 libheimntlm0-heimdal
 libhx509-5-heimdal
-libidn11
 libio-async-loop-epoll-perl
 libio-async-perl
 libjs-modernizr
@@ -131,12 +132,14 @@ libkdc2-heimdal
 libkrb5-26-heimdal
 liblinux-epoll-perl
 libllvm9
-liblpsolve55-dev
 liblua5.2-0
 liblua5.2-dev
 libmdds-dev
+libneon27-gnutls
+libneon27-gnutls-dev
 libnss-extrausers
 libnss-myhostname
+libnumber-range-perl
 libnvidia-extra-440
 libopenobex2
 libopenobex2-dev
@@ -159,11 +162,11 @@ libstdc++-9-pic
 libstruct-dumb-perl
 libsubunit-dev
 libsubunit0
-libsuitesparse-dev
 libsuitesparse-doc
 libtest-fatal-perl
 libtest-refcount-perl
 libtext-levenshtein-perl
+libucpp-dev
 libvirt-daemon-driver-storage-rbd
 libwind0-heimdal
 libx32asan5
@@ -176,7 +179,6 @@ libxml-writer-perl
 libxmlrpc-epi-dev
 libxmlrpc-epi0
 libxmlrpc-epi0-dbg
-libyaml-cpp0.6
 lilo
 lilo-doc
 locales-all
@@ -204,11 +206,13 @@ python3-genshi
 python3-kazoo
 python3-lazy-object-proxy
 python3-libxml2
+python3-linecache2
 python3-logilab-common
 python3-neutron-fwaas
 python3-nine
 python3-parted
 python3-pep8
+python3-pil.imagetk
 python3-polib
 python3-pyxs
 python3-requests-unixsocket
@@ -226,6 +230,8 @@ tgt
 ubuntu-core-snapd-units
 ubuntu-fan
 ubuntu-wallpapers-focal
+ucpp
 unifont
 vino
+wslu
 xfonts-unifont
