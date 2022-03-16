@@ -1,3 +1,9 @@
+ubuntu-release-upgrader (1:22.04.8) UNRELEASED; urgency=medium
+
+  * Update the firefox deb2snap entry so that it includes Ubuntu Studio.
+
+ -- Brian Murray <brian@ubuntu.com>  Wed, 16 Mar 2022 08:39:46 -0700
+
 ubuntu-release-upgrader (1:22.04.7) jammy; urgency=medium
 
   [ Brian Murray ]
