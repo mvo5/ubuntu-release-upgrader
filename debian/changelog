@@ -1,6 +1,11 @@
 ubuntu-release-upgrader (1:22.04.8) UNRELEASED; urgency=medium
 
+  [ Brian Murray ]
   * Update the firefox deb2snap entry so that it includes Ubuntu Studio.
+
+  [ Christian Ehrhardt ]
+  * d/91-release-upgrade: try to use the less expensive /etc/lsb-release
+    to check if we are in a devel release (LP: #1893716)
 
  -- Brian Murray <brian@ubuntu.com>  Wed, 16 Mar 2022 08:39:46 -0700
 

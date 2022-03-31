@@ -1,7 +1,12 @@
 #!/bin/sh
 
 # if the current release is under development there won't be a new one
-if [ "$(lsb_release -sd | cut -d' ' -f4)" = "(development" ]; then
+[ -r /etc/lsb-release ] && . /etc/lsb-release
+if [ -z "$DISTRIB_DESCRIPTION" ] && command -v lsb_release > /dev/null; then
+    DISTRIB_DESCRIPTION=$(lsb_release -s -d)
+fi
+
+if [ "$(echo "$DISTRIB_DESCRIPTION" | cut -d' ' -f4)" = "(development" ]; then
     exit 0
 fi
 
