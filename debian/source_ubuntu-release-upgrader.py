@@ -1,16 +1,18 @@
 '''apport package hook for ubuntu-release-upgrader
 
-(c) 2011-2014 Canonical Ltd.
+(c) 2011-2022 Canonical Ltd.
 Author: Brian Murray <brian@ubuntu.com>
 '''
 
 import os
 import re
+from glob import glob
 
 from apport.hookutils import (
     attach_gsettings_package,
     attach_file_if_exists,
     attach_root_command_outputs,
+    command_output,
     root_command_output)
 
 
@@ -46,6 +48,14 @@ def add_info(report, ui):
         report,
         {'CurrentDmesg.txt':
             'dmesg | comm -13 --nocheck-order /var/log/dmesg -'})
+    if os.path.exists('/run/systemd/system'):
+        report['JournalErrors'] = command_output(
+            ['journalctl', '-b', '--priority=warning', '--lines=1000'])
+    # the release upgrade may have crashed due to something else crashing
+    reports = glob('/var/crash/*')
+    if reports:
+        report['CrashReports'] = command_output(
+            ['stat', '-c', '%a:%u:%g:%s:%y:%x:%n'] + reports)
     problem_type = report.get("ProblemType", None)
     if problem_type == 'Crash':
         tmpdir = re.compile('ubuntu-release-upgrader-\w+')

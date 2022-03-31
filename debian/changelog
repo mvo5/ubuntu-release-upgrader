@@ -2,6 +2,9 @@ ubuntu-release-upgrader (1:22.04.8) UNRELEASED; urgency=medium
 
   [ Brian Murray ]
   * Update the firefox deb2snap entry so that it includes Ubuntu Studio.
+  * Modify the ubuntu-release-upgrader apport package hook to also gather
+    recent messages in journalctl and a list of crashes in /var/crash as one
+    of those may have negatively affected the upgrade process.
 
   [ Christian Ehrhardt ]
   * d/91-release-upgrade: try to use the less expensive /etc/lsb-release
