@@ -1,3 +1,9 @@
+ubuntu-release-upgrader (1:22.04.9) UNRELEASED; urgency=medium
+
+  * do-release-upgrade: Preserve env vars needed for screen lock prevention (LP: #1968607).
+
+ -- Nick Rosbrook <nick.rosbrook@canonical.com>  Tue, 12 Apr 2022 15:00:49 -0400
+
 ubuntu-release-upgrader (1:22.04.8) jammy; urgency=medium
 
   [ Brian Murray ]

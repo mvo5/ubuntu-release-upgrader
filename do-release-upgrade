@@ -110,6 +110,10 @@ if __name__ == "__main__":
                             "instead of commenting them out."))
   parser.add_option ("-q", "--quiet", default=False, action="store_true",
                      dest="quiet")
+  parser.add_option ("-e", "--env",
+                     help=_("A comma-seprated list of environment variables "
+                            "(e.g. VAR1=VALUE1,VAR2=VALUE2) that should be set "
+                            "during the upgrade."))
 
   (options, args) = parser.parse_args()
 
@@ -216,6 +220,15 @@ if __name__ == "__main__":
     # the env variable is used by code in the dist-upgrader tarball
     os.environ["RELEASE_UPGRADER_ALLOW_THIRD_PARTY"] = "True"
 
+  if options.env:
+      for env in options.env.split(','):
+          parts = env.split('=')
+          if len(parts) < 2:
+              continue
+
+          # The value itself may contain '='.
+          os.environ[parts[0]] = '='.join(parts[1:])
+
   # GTK 3 fetcher starts setting up the the GUI and KDE GUI needs to start GUI
   # later, too.
   if (options.frontend in {"DistUpgradeViewGtk3", "DistUpgradeViewKDE"} and
@@ -225,6 +238,16 @@ if __name__ == "__main__":
     # this is needed because pkexec doesn't pass on the env
     if 'RELEASE_UPGRADER_ALLOW_THIRD_PARTY' in os.environ:
         sys.argv.append('--allow-third-party')
+
+    # Some extra environment variables need to be passed, but we need
+    # to do this explicitly with do-release-upgrade because pkexec
+    # does not provide such functionality.
+    extra_env_vars = [
+        'DBUS_SESSION_BUS_ADDRESS=%s' % os.getenv('DBUS_SESSION_BUS_ADDRESS', ''),
+        'XDG_SESSION_TYPE=%s' % os.getenv('XDG_SESSION_TYPE', ''),
+    ]
+    sys.argv.append('--env=%s' % ','.join(extra_env_vars))
+
     os.execv("/usr/bin/pkexec", ["pkexec"] + sys.argv)
 
   fetcher = get_fetcher(options.frontend, m.new_dist, options.data_dir)
