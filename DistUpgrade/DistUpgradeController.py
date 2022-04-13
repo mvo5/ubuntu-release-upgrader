@@ -2092,23 +2092,25 @@ class DistUpgradeController(object):
             screensaver = dbus.Interface(proxy, dbus_interface='org.freedesktop.ScreenSaver')
             screensaver.Inhibit('ubuntu-release-upgrader', 'Upgrading Ubuntu')
 
-            self._view.information(_("Lock screen disabled"),
-                                   _("Your lock screen has been "
-                                     "disabled and will remain "
-                                     "disabled during the upgrade."))
+            summary = _("Lock screen disabled")
+            message = _("Your lock screen has been "
+                        "disabled and will remain "
+                        "disabled during the upgrade.")
         except dbus.exceptions.DBusException as e:
             if not os.getenv('XDG_SESSION_TYPE'):
                 return
 
             logging.debug('failed to inhibit screensaver: ' + str(e))
-            self._view.information(_("Unable to disable lock screen"),
-                                   _("It is highly recommended that the "
-                                     "lock screen be disabled during the "
-                                     "upgrade to prevent later issues. "
-                                     "Please ensure your screen lock is "
-                                     "disabled before continuing."))
+            summary = _("Unable to disable lock screen")
+            message = _("It is highly recommended that the "
+                        "lock screen be disabled during the "
+                        "upgrade to prevent later issues. "
+                        "Please ensure your screen lock is "
+                        "disabled before continuing.")
         finally:
             os.seteuid(os.getuid())
+
+        self._view.information(summary, message)
 
     def _setNonRootEUID(self):
         if os.getuid() != 0:
