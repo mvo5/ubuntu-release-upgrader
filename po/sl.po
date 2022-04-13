@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: update-manager\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2022-03-15 10:48-0700\n"
+"POT-Creation-Date: 2022-04-13 14:27-0700\n"
 "PO-Revision-Date: 2019-06-18 17:53+0000\n"
 "Last-Translator: Brian Murray <brian@ubuntu.com>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
@@ -2073,23 +2073,29 @@ msgid ""
 "commenting them out."
 msgstr ""
 
-#: ../do-release-upgrade:122
+#: ../do-release-upgrade:114
+msgid ""
+"A comma-seprated list of environment variables (e.g. VAR1=VALUE1,"
+"VAR2=VALUE2) that should be set during the upgrade."
+msgstr ""
+
+#: ../do-release-upgrade:126
 msgid "The options --devel-release and --proposed are"
 msgstr "Možnosti --devel-release in --proposed se"
 
-#: ../do-release-upgrade:123
+#: ../do-release-upgrade:127
 msgid "mutually exclusive. Please use only one of them."
 msgstr "med seboj izključujeta. Uporabite samo eno."
 
-#: ../do-release-upgrade:127
+#: ../do-release-upgrade:131
 msgid "Checking for a new Ubuntu release"
 msgstr "Preverjanje za novo izdajo Ubuntu"
 
-#: ../do-release-upgrade:139
+#: ../do-release-upgrade:143
 msgid "Your Ubuntu release is not supported anymore."
 msgstr "Vaša izdaja Ubuntu ni več podprta."
 
-#: ../do-release-upgrade:140
+#: ../do-release-upgrade:144
 msgid ""
 "For upgrade information, please visit:\n"
 "%(url)s\n"
@@ -2097,45 +2103,45 @@ msgstr ""
 "Za podrobnosti o posodobitvah obiščite:\n"
 "%(url)s\n"
 
-#: ../do-release-upgrade:155
+#: ../do-release-upgrade:159
 msgid "In /etc/update-manager/release-upgrades Prompt "
 msgstr ""
 "Nadgradnja ni mogoča, ker je /etc/update-manager/release-upgrades Prompt "
 
-#: ../do-release-upgrade:156
+#: ../do-release-upgrade:160
 msgid "is set to never so upgrading is not possible."
 msgstr "nastavljen na nikoli (Never)."
 
-#: ../do-release-upgrade:158
+#: ../do-release-upgrade:162
 msgid "There is no development version of an LTS available."
 msgstr "Ni na voljo LTS različica v razvoju."
 
-#: ../do-release-upgrade:159
+#: ../do-release-upgrade:163
 msgid "To upgrade to the latest non-LTS development release "
 msgstr "Za nadgradnjo na zadnjo različico v razvoju "
 
-#: ../do-release-upgrade:160
+#: ../do-release-upgrade:164
 msgid "set Prompt=normal in /etc/update-manager/release-upgrades."
 msgstr ""
 "nastavite Prompt=normal v datoteki /etc/update-manager/release-upgrades."
 
-#: ../do-release-upgrade:162
+#: ../do-release-upgrade:166
 msgid "Upgrades to the development release are only "
 msgstr "Nadgradnja na razvojno različico je "
 
-#: ../do-release-upgrade:163
+#: ../do-release-upgrade:167
 msgid "available from the latest supported release."
 msgstr "na voljo samo z zadnje podprte različice."
 
-#: ../do-release-upgrade:165
+#: ../do-release-upgrade:169
 msgid "No new release found."
 msgstr "Nova različica ni bila najdena."
 
-#: ../do-release-upgrade:170
+#: ../do-release-upgrade:174
 msgid "Release upgrade not possible right now"
 msgstr "Nadgradnja izdaje trenutno ni mogoča"
 
-#: ../do-release-upgrade:171
+#: ../do-release-upgrade:175
 #, c-format
 msgid ""
 "The release upgrade can not be performed currently, please try again later. "
@@ -2144,22 +2150,22 @@ msgstr ""
 "Nadgradnja izdaje trenutno ne more biti opravljena. Poskusite kasneje. "
 "Strežnik je sporočil: '%s'"
 
-#: ../do-release-upgrade:177
+#: ../do-release-upgrade:181
 #, c-format
 msgid "New release '%s' available."
 msgstr "Na voljo je nova izdaja '%s'."
 
-#: ../do-release-upgrade:178
+#: ../do-release-upgrade:182
 msgid "Run 'do-release-upgrade' to upgrade to it."
 msgstr "Za nadgradnjo na novo izdajo zaženite ukaz 'do-release-upgrade'."
 
-#: ../do-release-upgrade:195
+#: ../do-release-upgrade:199
 msgid "Please install all available updates for your release before upgrading."
 msgstr ""
 "Pred nadgradnjo vas prosimo, da namestite vse posodobitve vaše izdaje, ki so "
 "na voljo."
 
-#: ../do-release-upgrade:211
+#: ../do-release-upgrade:215
 msgid ""
 "You have not rebooted after updating a package which requires a reboot. "
 "Please reboot before upgrading."
