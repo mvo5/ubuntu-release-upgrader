@@ -219,6 +219,11 @@ def main():
         not options.disable_gnu_screen):
         run_new_gnu_screen_window_or_reattach()
 
+    # A reboot is required at the end of the upgrade,
+    # so there is no need to run needrestart during upgrade.
+    if not os.getenv('NEEDRESTART_SUSPEND'):
+        os.environ['NEEDRESTART_SUSPEND'] = 'y'
+
     from .DistUpgradeController import DistUpgradeController
     app = DistUpgradeController(view, options, datadir=options.datadir)
     atexit.register(app._enableAptCronJob)
