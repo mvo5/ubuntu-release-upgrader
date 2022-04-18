@@ -308,6 +308,7 @@ libxmlrpc-epi0-dbg
 lilo
 lilo-doc
 locales-all
+ltrace
 lua5.2-doc
 mutter
 neutron-fwaas-common

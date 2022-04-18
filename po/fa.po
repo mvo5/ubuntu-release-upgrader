@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: update-manager\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2022-04-13 14:27-0700\n"
+"POT-Creation-Date: 2022-04-18 17:48+0000\n"
 "PO-Revision-Date: 2013-05-22 11:00+0000\n"
 "Last-Translator: Brian Murray <brian@ubuntu.com>\n"
 "Language-Team: Persian <fa@li.org>\n"
@@ -1793,7 +1793,7 @@ msgstr ""
 
 #: ../do-release-upgrade:114
 msgid ""
-"A comma-seprated list of environment variables (e.g. VAR1=VALUE1,"
+"A comma-separated list of environment variables (e.g. VAR1=VALUE1,"
 "VAR2=VALUE2) that should be set during the upgrade."
 msgstr ""
 
