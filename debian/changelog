@@ -1,11 +1,28 @@
-ubuntu-release-upgrader (1:22.04.9) UNRELEASED; urgency=medium
+ubuntu-release-upgrader (1:22.10.1) UNRELEASED; urgency=medium
 
-  * do-release-upgrade: Preserve env vars needed for screen lock prevention (LP: #1968607).
   * data: Update do-release-upgrade man page.
+
+ -- Nick Rosbrook <nick.rosbrook@canonical.com>  Tue, 12 Apr 2022 15:00:49 -0400
+
+ubuntu-release-upgrader (1:22.04.10) jammy; urgency=medium
+
+  * DistUpgrade: Set NEEDRESTART_SUSPEND during upgrades (LP: #1968919).
+  * do-release-upgrade: Fix a typo in the --help output.
+  * Run pre-build.sh: updating mirrors, demotions, and translations.
+
+ -- Nick Rosbrook <nick.rosbrook@canonical.com>  Mon, 18 Apr 2022 13:47:54 -0400
+
+ubuntu-release-upgrader (1:22.04.9) jammy; urgency=medium
+
+  [ Nick Rosbrook ]
+  * do-release-upgrade: Preserve env vars needed for screen lock prevention (LP: #1968607).
   * DistUpgrade/DistUpgradeController.py: Do not make UI dialog calls while
     EUID != 0.
 
- -- Nick Rosbrook <nick.rosbrook@canonical.com>  Tue, 12 Apr 2022 15:00:49 -0400
+  [ Brian Murray ]
+  * Run pre-build.sh: updating mirrors, demotions, and translations.
+
+ -- Brian Murray <brian@ubuntu.com>  Wed, 13 Apr 2022 14:30:37 -0700
 
 ubuntu-release-upgrader (1:22.04.8) jammy; urgency=medium
 

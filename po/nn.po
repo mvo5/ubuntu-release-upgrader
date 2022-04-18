@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: update-manager\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2022-03-15 10:48-0700\n"
+"POT-Creation-Date: 2022-04-18 17:48+0000\n"
 "PO-Revision-Date: 2013-05-22 11:00+0000\n"
 "Last-Translator: Åsmund Skjæveland <aasmunds@ulrik.uio.no>\n"
 "Language-Team: Norwegian Nynorsk <nn@li.org>\n"
@@ -1926,23 +1926,29 @@ msgid ""
 "commenting them out."
 msgstr ""
 
-#: ../do-release-upgrade:122
+#: ../do-release-upgrade:114
+msgid ""
+"A comma-separated list of environment variables (e.g. VAR1=VALUE1,"
+"VAR2=VALUE2) that should be set during the upgrade."
+msgstr ""
+
+#: ../do-release-upgrade:126
 msgid "The options --devel-release and --proposed are"
 msgstr ""
 
-#: ../do-release-upgrade:123
+#: ../do-release-upgrade:127
 msgid "mutually exclusive. Please use only one of them."
 msgstr ""
 
-#: ../do-release-upgrade:127
+#: ../do-release-upgrade:131
 msgid "Checking for a new Ubuntu release"
 msgstr ""
 
-#: ../do-release-upgrade:139
+#: ../do-release-upgrade:143
 msgid "Your Ubuntu release is not supported anymore."
 msgstr "Di utgåve av Ubuntu er ikkje lenger støtta."
 
-#: ../do-release-upgrade:140
+#: ../do-release-upgrade:144
 msgid ""
 "For upgrade information, please visit:\n"
 "%(url)s\n"
@@ -1950,43 +1956,43 @@ msgstr ""
 "For informasjon om oppgradering, vitj:\n"
 "%(url)s\n"
 
-#: ../do-release-upgrade:155
+#: ../do-release-upgrade:159
 msgid "In /etc/update-manager/release-upgrades Prompt "
 msgstr ""
 
-#: ../do-release-upgrade:156
+#: ../do-release-upgrade:160
 msgid "is set to never so upgrading is not possible."
 msgstr ""
 
-#: ../do-release-upgrade:158
+#: ../do-release-upgrade:162
 msgid "There is no development version of an LTS available."
 msgstr ""
 
-#: ../do-release-upgrade:159
+#: ../do-release-upgrade:163
 msgid "To upgrade to the latest non-LTS development release "
 msgstr ""
 
-#: ../do-release-upgrade:160
+#: ../do-release-upgrade:164
 msgid "set Prompt=normal in /etc/update-manager/release-upgrades."
 msgstr ""
 
-#: ../do-release-upgrade:162
+#: ../do-release-upgrade:166
 msgid "Upgrades to the development release are only "
 msgstr ""
 
-#: ../do-release-upgrade:163
+#: ../do-release-upgrade:167
 msgid "available from the latest supported release."
 msgstr ""
 
-#: ../do-release-upgrade:165
+#: ../do-release-upgrade:169
 msgid "No new release found."
 msgstr ""
 
-#: ../do-release-upgrade:170
+#: ../do-release-upgrade:174
 msgid "Release upgrade not possible right now"
 msgstr "Å oppgradere til ny utgåve er ikkje mogleg akkurat no"
 
-#: ../do-release-upgrade:171
+#: ../do-release-upgrade:175
 #, c-format
 msgid ""
 "The release upgrade can not be performed currently, please try again later. "
@@ -1995,20 +2001,20 @@ msgstr ""
 "Klarte ikkje å oppgradera til den nye versjonen akkurat no. Prøv på nytt "
 "seinare. Tenaren svarte: «%s»"
 
-#: ../do-release-upgrade:177
+#: ../do-release-upgrade:181
 #, c-format
 msgid "New release '%s' available."
 msgstr "Ei ny utgjeving, «%s», er tilgjengeleg."
 
-#: ../do-release-upgrade:178
+#: ../do-release-upgrade:182
 msgid "Run 'do-release-upgrade' to upgrade to it."
 msgstr "Køyr «do-release-upgrade» for å oppgradera til henne."
 
-#: ../do-release-upgrade:195
+#: ../do-release-upgrade:199
 msgid "Please install all available updates for your release before upgrading."
 msgstr ""
 
-#: ../do-release-upgrade:211
+#: ../do-release-upgrade:215
 msgid ""
 "You have not rebooted after updating a package which requires a reboot. "
 "Please reboot before upgrading."

@@ -111,7 +111,7 @@ if __name__ == "__main__":
   parser.add_option ("-q", "--quiet", default=False, action="store_true",
                      dest="quiet")
   parser.add_option ("-e", "--env",
-                     help=_("A comma-seprated list of environment variables "
+                     help=_("A comma-separated list of environment variables "
                             "(e.g. VAR1=VALUE1,VAR2=VALUE2) that should be set "
                             "during the upgrade."))
 

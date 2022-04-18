@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2022-03-15 10:48-0700\n"
+"POT-Creation-Date: 2022-04-18 17:48+0000\n"
 "PO-Revision-Date: 2019-06-18 17:52+0000\n"
 "Last-Translator: Paco Molinero <paco@byasl.com>\n"
 "Language-Team: Spanish <traductores@gnome.org>\n"
@@ -2079,23 +2079,29 @@ msgstr ""
 "Intente la actualización con espejos y repositorios de terceros activados en "
 "vez de quitarlos en forma de comentario."
 
-#: ../do-release-upgrade:122
+#: ../do-release-upgrade:114
+msgid ""
+"A comma-separated list of environment variables (e.g. VAR1=VALUE1,"
+"VAR2=VALUE2) that should be set during the upgrade."
+msgstr ""
+
+#: ../do-release-upgrade:126
 msgid "The options --devel-release and --proposed are"
 msgstr "Las opciones --devel-release y --proposed son"
 
-#: ../do-release-upgrade:123
+#: ../do-release-upgrade:127
 msgid "mutually exclusive. Please use only one of them."
 msgstr "mutuamente exclusivas. Use solo una de ellas."
 
-#: ../do-release-upgrade:127
+#: ../do-release-upgrade:131
 msgid "Checking for a new Ubuntu release"
 msgstr "Comprobar si hay una nueva versión de Ubuntu"
 
-#: ../do-release-upgrade:139
+#: ../do-release-upgrade:143
 msgid "Your Ubuntu release is not supported anymore."
 msgstr "Su versión de Ubuntu ya no tiene soporte."
 
-#: ../do-release-upgrade:140
+#: ../do-release-upgrade:144
 msgid ""
 "For upgrade information, please visit:\n"
 "%(url)s\n"
@@ -2103,43 +2109,43 @@ msgstr ""
 "Para saber más sobre esta actualización, visite:\n"
 "%(url)s\n"
 
-#: ../do-release-upgrade:155
+#: ../do-release-upgrade:159
 msgid "In /etc/update-manager/release-upgrades Prompt "
 msgstr "En indicador /etc/update-manager/release-upgrades "
 
-#: ../do-release-upgrade:156
+#: ../do-release-upgrade:160
 msgid "is set to never so upgrading is not possible."
 msgstr "está establecido en nunca por lo que actualizar no es posible."
 
-#: ../do-release-upgrade:158
+#: ../do-release-upgrade:162
 msgid "There is no development version of an LTS available."
 msgstr "No hay una versión de desarrollo de una LTS disponible."
 
-#: ../do-release-upgrade:159
+#: ../do-release-upgrade:163
 msgid "To upgrade to the latest non-LTS development release "
 msgstr "Para actualizar al último lanzamiento de desarrollo sin LTS "
 
-#: ../do-release-upgrade:160
+#: ../do-release-upgrade:164
 msgid "set Prompt=normal in /etc/update-manager/release-upgrades."
 msgstr "defina «Prompt=normal» en /etc/update-manager/release-upgrades."
 
-#: ../do-release-upgrade:162
+#: ../do-release-upgrade:166
 msgid "Upgrades to the development release are only "
 msgstr "Las actualizaciones de la versión de desarrollo están "
 
-#: ../do-release-upgrade:163
+#: ../do-release-upgrade:167
 msgid "available from the latest supported release."
 msgstr "disponibles desde la última versión soportada."
 
-#: ../do-release-upgrade:165
+#: ../do-release-upgrade:169
 msgid "No new release found."
 msgstr "No hay ninguna versión nueva."
 
-#: ../do-release-upgrade:170
+#: ../do-release-upgrade:174
 msgid "Release upgrade not possible right now"
 msgstr "En este momento no es posible la actualización de versión"
 
-#: ../do-release-upgrade:171
+#: ../do-release-upgrade:175
 #, c-format
 msgid ""
 "The release upgrade can not be performed currently, please try again later. "
@@ -2148,22 +2154,22 @@ msgstr ""
 "La actualización de versión no se puede realizar en este momento, inténtelo "
 "de nuevo después. El servidor informó: «%s»"
 
-#: ../do-release-upgrade:177
+#: ../do-release-upgrade:181
 #, c-format
 msgid "New release '%s' available."
 msgstr "Está disponible la nueva versión «%s»."
 
-#: ../do-release-upgrade:178
+#: ../do-release-upgrade:182
 msgid "Run 'do-release-upgrade' to upgrade to it."
 msgstr "Ejecute «do-release-upgrade» para actualizarse a ella."
 
-#: ../do-release-upgrade:195
+#: ../do-release-upgrade:199
 msgid "Please install all available updates for your release before upgrading."
 msgstr ""
 "Instale todas las actualizaciones disponibles de su versión antes de "
 "actualizar la distribución."
 
-#: ../do-release-upgrade:211
+#: ../do-release-upgrade:215
 msgid ""
 "You have not rebooted after updating a package which requires a reboot. "
 "Please reboot before upgrading."
