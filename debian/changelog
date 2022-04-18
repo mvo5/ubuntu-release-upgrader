@@ -1,4 +1,4 @@
-ubuntu-release-upgrader (1:22.04.10) UNRELEASED; urgency=medium
+ubuntu-release-upgrader (1:22.04.10) jammy; urgency=medium
 
   * DistUpgrade: Set NEEDRESTART_SUSPEND during upgrades (LP: #1968919).
   * do-release-upgrade: Fix a typo in the --help output.
