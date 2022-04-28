@@ -1,10 +1,10 @@
-ubuntu-release-upgrader (1:22.10.1) UNRELEASED; urgency=medium
+ubuntu-release-upgrader (1:22.10.1) kinetic; urgency=medium
 
   * data: Update do-release-upgrade man page.
   * Update for 22.04 -> 22.10.
   * Run pre-build.sh: updating mirrors, demotions, and translations.
 
- -- Nick Rosbrook <nick.rosbrook@canonical.com>  Thu, 28 Apr 2022 14:22:51 -0400
+ -- Nick Rosbrook <nick.rosbrook@canonical.com>  Thu, 28 Apr 2022 14:27:33 -0400
 
 ubuntu-release-upgrader (1:22.04.10) jammy; urgency=medium
 
