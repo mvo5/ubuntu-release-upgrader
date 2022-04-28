@@ -477,7 +477,7 @@ class DistUpgradeViewGtk3(DistUpgradeView,SimpleGtkbuilderApp):
             pass
 
         title_string = self.label_title.get_label()
-        title_string = title_string.replace("%s", "22.04")
+        title_string = title_string.replace("%s", "22.10")
         self.label_title.set_label(title_string)
 
         # terminal stuff
