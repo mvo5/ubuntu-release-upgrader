@@ -22,7 +22,11 @@
 import errno
 import sys
 import logging
+import fcntl
+import signal
+import struct
 import subprocess
+import termios
 from gettext import dgettext
 
 import apt
@@ -68,20 +72,101 @@ class TextAcquireProgress(AcquireProgress, apt.progress.text.AcquireProgress):
 
 class TextInstallProgress(InstallProgress):
 
-    # percent step when progress is reported (to avoid screen spam)
-    MIN_REPORTING = 5
+    save_cursor = "\0337"
+    restore_cursor = "\0338"
+    restore_bg =  "\033[49m"
+    restore_fg = "\033[39m"
 
     def __init__(self, *args, **kwargs):
         super(TextInstallProgress, self).__init__(*args, **kwargs)
         self._prev_percent = 0
 
+    def handle_sigwinch(self, signum, frame):
+        nr_cols, nr_rows = self.get_terminal_size()
+        self.setup_terminal_scroll_area(nr_rows)
+        self.draw_status_line(self._prev_percent)
+
+    def start_update(self):
+        nr_cols, nr_rows = self.get_terminal_size()
+        self.setup_terminal_scroll_area(nr_rows)
+        signal.signal(signal.SIGWINCH, self.handle_sigwinch)
+
+    def finish_update(self):
+        nr_cols, nr_rows = self.get_terminal_size()
+        if nr_rows > 0:
+            self.setup_terminal_scroll_area(nr_rows+1)
+            clear_screen_below_cursor = "\033[J";
+            print(clear_screen_below_cursor)
+            signal.signal(signal.SIGWINCH, signal.SIG_DFL)
+
+    def get_terminal_size(self):
+        return os.get_terminal_size()
+
+    def setup_terminal_scroll_area(self, nr_rows):
+        # scroll down a bit to avoid visual glitch when the screen
+        # area shrinks by one row
+        print("\n", end="")
+        # save cursor
+        print(self.save_cursor, end="")
+        # set scroll region (this will place the cursor in the top left)
+        print("\033[0;%sr" % (nr_rows - 1), end="")
+        # restore cursor but ensure its inside the scrolling area
+        print(self.restore_cursor, end="")
+        print("\033[1A", end="")
+        sys.stdout.flush()
+        # XXX: does not work here (unlike in apt which has a more
+        #      elaborate pty setup)
+        #self.master_fd = sys.stdout.fileno()
+        #s = struct.pack('HHHH', 0, 0, 0, 0)
+        #t = fcntl.ioctl(self.master_fd, termios.TIOCGWINSZ, s)
+        #if t is not None:
+        #    rows, cols, h_pixels, v_pixels = struct.unpack('HHHH', t)
+        #    if rows > 0:
+        #        s = struct.pack('HHHH', rows-1, cols, h_pixels, v_pixels)
+        #        fcntl.ioctl(self.master_fd, termios.TIOCSWINSZ, s)
+
     def status_change(self, pkg, percent, status):
-        if self._prev_percent + self.MIN_REPORTING < percent:
-            # FIXME: move into ubuntu-release-upgrader after trusty
-            domain = "libapt-pkg4.12"
-            progress_str = dgettext(domain, "Progress: [%3i%%]") % int(percent)
-            sys.stdout.write("\r\n%s\r\n" % progress_str)
-            self._prev_percent = percent
+        if self._prev_percent + 1 < percent:
+            return
+        self.draw_status_line(percent)
+        self._prev_percent = percent
+
+    def draw_status_line(self, percent):
+        nr_cols, nr_rows = self.get_terminal_size()
+        # XXX: apt does not need this, the scroll area needs to be setup
+        #      again in case that something messed up the terminal (like ucf)
+        # XXX2: this leads to a empty line *above* the progress bar,
+        #       so it looks like there is a off-by-one somewhere
+        self.setup_terminal_scroll_area(nr_rows)
+        # do progress
+        progress_str = _("Progress: [%3li%%]") % percent
+        # green
+        set_bg_color = apt.apt_pkg.dequote_string(
+            apt.apt_pkg.config.find(
+                "Dpkg::Progress-Fancy::Progress-fg", "%1b[42m"))
+        # black
+        set_fg_color = apt.apt_pkg.dequote_string(
+            apt.apt_pkg.config.find(
+             "Dpkg::Progress-Fancy::Progress-bg", "%1b[30m"))
+        print(self.save_cursor, end="")
+        # move cursor position to last row
+        print("\033[%s;0f%s%s%s%s%s" % (
+            nr_rows, set_bg_color, set_fg_color, progress_str,
+            self.restore_bg, self.restore_fg), end="")
+        # create progress bar
+        padding = 4
+        progressbar_size = nr_cols - padding - len(progress_str)
+        current_percent = percent / 100.0
+        output = ""
+        bar_size = progressbar_size - 2
+        bar_done = max(0, min(bar_size, int(percent * bar_size/100.0)))
+        output += "["
+        output += bar_done * "#"
+        output += (bar_size - bar_done) * '.'
+        output += "]"
+        print(output, end="")
+        print(self.restore_cursor, end="")
+        sys.stdout.flush()
 
 
 class TextCdromProgressAdapter(apt.progress.base.CdromProgress):
@@ -297,6 +382,22 @@ class DistUpgradeViewText(DistUpgradeView):
 
 
 if __name__ == "__main__":
+  # test with:
+  # PYTHONPATH=. python3 -m DistUpgrade.DistUpgradeViewText
+  import time
+  p = TextInstallProgress()
+  p.start_update()
+  for i in range(100):
+    time.sleep(0.02)
+    # simulate something that messes with the terminal
+    if i == 20:
+        s=b"just exit vim here: this simulates something that messes with the terminal"
+        #subprocess.run(["vim", "-"], input=s)
+    if i % 2 == 0:
+        print("some text %i" % i)
+    p.status_change("foo-%s" % i, i, "status now %s" % i)
+  p.finish_update()
+
   view = DistUpgradeViewText()
 
   #while True:
