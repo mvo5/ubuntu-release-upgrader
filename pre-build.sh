@@ -30,7 +30,7 @@ rm -f ./tests/data-sources-list-test/Ubuntu.mirrors
 
 # when this gets enabled, make sure to add symlink in DistUpgrade
 # echo "Running lts demotions"
-(cd utils && ./demotions.py focal jammy > demoted.cfg.focal)
+# (cd utils && ./demotions.py focal jammy > demoted.cfg.focal)
 
 # update apt_btrfs_snapshot.py copy, this needs an installed
 # apt-btrfs-snapshot on the build machine
