@@ -311,6 +311,7 @@ locales-all
 ltrace
 lua5.2-doc
 mutter
+neutron-fwaas-common
 nvidia-opencl-icd-340
 ocl-icd-dev
 ocl-icd-libopencl1
@@ -349,6 +350,7 @@ python3-lazy-object-proxy
 python3-libxml2
 python3-linecache2
 python3-logilab-common
+python3-neutron-fwaas
 python3-nine
 python3-parted
 python3-pep8
