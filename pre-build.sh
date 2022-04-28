@@ -26,7 +26,7 @@ rm -f ./tests/data-sources-list-test/Ubuntu.mirrors
 
 # update demotions
 # echo "Running demotions"
-(cd utils && ./demotions.py impish jammy > demoted.cfg)
+(cd utils && ./demotions.py jammy kinetic > demoted.cfg)
 
 # when this gets enabled, make sure to add symlink in DistUpgrade
 # echo "Running lts demotions"
