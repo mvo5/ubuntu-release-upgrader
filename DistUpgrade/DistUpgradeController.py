@@ -22,7 +22,6 @@
 
 import apt
 import apt_pkg
-import dbus
 import distro_info
 import sys
 import os
@@ -2079,9 +2078,11 @@ class DistUpgradeController(object):
     def _inhibitIdle(self):
         logging.debug('inhibit screensaver')
 
-        self._setNonRootEUID()
-
         try:
+            import dbus
+
+            self._setNonRootEUID()
+
             # The org.freedesktop.ScreenSaver.Inhibit effect lasts only
             # as long as the dbus connection remains open. Once u-r-u
             # exits, the connection will be closed and screen inhibition
@@ -2096,7 +2097,7 @@ class DistUpgradeController(object):
             message = _("Your lock screen has been "
                         "disabled and will remain "
                         "disabled during the upgrade.")
-        except dbus.exceptions.DBusException as e:
+        except Exception as e:
             if not os.getenv('XDG_SESSION_TYPE'):
                 return
 
