@@ -6,12 +6,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 # Yuval Tanny, 2005.
 #
-#: ../DistUpgrade/DistUpgradeController.py:1058
+#: ../DistUpgrade/DistUpgradeController.py:1057
 msgid ""
 msgstr ""
 "Project-Id-Version: update-manager.HEAD\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2022-04-28 18:24+0000\n"
+"POT-Creation-Date: 2022-05-09 16:12+0000\n"
 "PO-Revision-Date: 2019-06-18 17:55+0000\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
@@ -210,15 +210,15 @@ msgstr ""
 "שנמצאת בשימוש.\n"
 " נא להתקין את אחת החבילות שלהלן באמצעות synaptic או apt-get בטרם המשך הפעולה."
 
-#: ../DistUpgrade/DistUpgradeController.py:113
+#: ../DistUpgrade/DistUpgradeController.py:112
 msgid "Reading cache"
 msgstr "המטמון נקרא"
 
-#: ../DistUpgrade/DistUpgradeController.py:219
+#: ../DistUpgrade/DistUpgradeController.py:218
 msgid "Unable to get exclusive lock"
 msgstr "לא ניתן להשיג נעילה בלעדית"
 
-#: ../DistUpgrade/DistUpgradeController.py:220
+#: ../DistUpgrade/DistUpgradeController.py:219
 msgid ""
 "This usually means that another package management application (like apt-get "
 "or aptitude) already running. Please close that application first."
@@ -226,11 +226,11 @@ msgstr ""
 "בדרך כלל משמעות הדבר היא שמנהל חבילות אחר (למשל apt-get או aptitude) כבר "
 "פועל. נא לסגור היישום הנ״ל תחילה."
 
-#: ../DistUpgrade/DistUpgradeController.py:278
+#: ../DistUpgrade/DistUpgradeController.py:277
 msgid "Upgrading over remote connection not supported"
 msgstr "לא קיימת תמיכה לשדרוג מחיבור מרוחק"
 
-#: ../DistUpgrade/DistUpgradeController.py:279
+#: ../DistUpgrade/DistUpgradeController.py:278
 msgid ""
 "You are running the upgrade over a remote ssh connection with a frontend "
 "that does not support this. Please try a text mode upgrade with 'do-release-"
@@ -243,11 +243,11 @@ msgstr ""
 "\n"
 "השדרוג יבוטל כעת. נא לנסות ללא SSH."
 
-#: ../DistUpgrade/DistUpgradeController.py:293
+#: ../DistUpgrade/DistUpgradeController.py:292
 msgid "Continue running under SSH?"
 msgstr "להמשיך לרוץ תחת SSH?"
 
-#: ../DistUpgrade/DistUpgradeController.py:294
+#: ../DistUpgrade/DistUpgradeController.py:293
 #, python-format
 msgid ""
 "This session appears to be running under ssh. It is not recommended to "
@@ -263,11 +263,11 @@ msgstr ""
 "אם תמשיך, יופעל סוכן SSH נוסף בפתחה '%s'.\n"
 "האם ברצונך להמשיך?"
 
-#: ../DistUpgrade/DistUpgradeController.py:308
+#: ../DistUpgrade/DistUpgradeController.py:307
 msgid "Starting additional sshd"
 msgstr "sshd נוסף מופעל"
 
-#: ../DistUpgrade/DistUpgradeController.py:309
+#: ../DistUpgrade/DistUpgradeController.py:308
 #, python-format
 msgid ""
 "To make recovery in case of failure easier, an additional sshd will be "
@@ -277,7 +277,7 @@ msgstr ""
 "כדי להקל על השחזור במקרה של כשל, יופעל סוכן ssh נוסף בפתחה '%s'. במידה שמשהו "
 "משתבש עם התחברות ה־ssh הנוכחית עדיין ניתן להשתמש בהתחברות הנוספת.\n"
 
-#: ../DistUpgrade/DistUpgradeController.py:317
+#: ../DistUpgrade/DistUpgradeController.py:316
 #, python-format
 msgid ""
 "If you run a firewall, you may need to temporarily open this port. As this "
@@ -290,28 +290,28 @@ msgstr ""
 "עם פקודה כגון:\n"
 "'%s'"
 
-#: ../DistUpgrade/DistUpgradeController.py:395
-#: ../DistUpgrade/DistUpgradeController.py:419
+#: ../DistUpgrade/DistUpgradeController.py:394
+#: ../DistUpgrade/DistUpgradeController.py:418
 msgid "Can not upgrade"
 msgstr "לא ניתן לשדרג"
 
-#: ../DistUpgrade/DistUpgradeController.py:396
+#: ../DistUpgrade/DistUpgradeController.py:395
 #, python-format
 msgid "An upgrade from '%s' to '%s' is not supported with this tool."
 msgstr "לא ניתן לשדרג מ־'%s' ל־'%s' על ידי כלי זה."
 
-#: ../DistUpgrade/DistUpgradeController.py:420
+#: ../DistUpgrade/DistUpgradeController.py:419
 msgid ""
 "Your python3 install is corrupted. Please fix the '/usr/bin/python3' symlink."
 msgstr ""
 "התקנת ה־python3 שלך פגומה. נא לתקן את הקישור הסימבולי ‚‎/usr/bin/python3’."
 
-#: ../DistUpgrade/DistUpgradeController.py:449
+#: ../DistUpgrade/DistUpgradeController.py:448
 #, python-format
 msgid "Can not write to '%s'"
 msgstr "לא ניתן לכתוב אל '%s'"
 
-#: ../DistUpgrade/DistUpgradeController.py:450
+#: ../DistUpgrade/DistUpgradeController.py:449
 #, python-format
 msgid ""
 "Its not possible to write to the system directory '%s' on your system. The "
@@ -321,21 +321,21 @@ msgstr ""
 "לא ניתן לכתוב אל תיקיית המערכת '%s' שבמערכת שלך. השדרוג יופסק.\n"
 "נא לוודא שניתן לכתוב אל תיקיית המערכת."
 
-#: ../DistUpgrade/DistUpgradeController.py:629
+#: ../DistUpgrade/DistUpgradeController.py:628
 #, python-format
 msgid "Not for humans during development stage of release %s"
 msgstr "לא מיועד לבני אנוש במהלך שלב הפיתוח של גרסה %s"
 
-#: ../DistUpgrade/DistUpgradeController.py:730
+#: ../DistUpgrade/DistUpgradeController.py:729
 #, python-format
 msgid "disabled on upgrade to %s"
 msgstr "בוטל בשדרוג ל־%s"
 
-#: ../DistUpgrade/DistUpgradeController.py:789
+#: ../DistUpgrade/DistUpgradeController.py:788
 msgid "No valid sources.list entry found"
 msgstr "לא נמצאה רשומה תקפה ב־sources.list"
 
-#: ../DistUpgrade/DistUpgradeController.py:790
+#: ../DistUpgrade/DistUpgradeController.py:789
 #, python-format
 msgid ""
 "While scanning your repository information no entry about %s could be "
@@ -351,11 +351,11 @@ msgstr ""
 "\n"
 "להמשיך בכל זאת?"
 
-#: ../DistUpgrade/DistUpgradeController.py:800
+#: ../DistUpgrade/DistUpgradeController.py:799
 msgid "No valid mirror found"
 msgstr "לא נמצא אתר מראה תקין"
 
-#: ../DistUpgrade/DistUpgradeController.py:801
+#: ../DistUpgrade/DistUpgradeController.py:800
 #, python-format
 msgid ""
 "While scanning your repository information no mirror entry for the upgrade "
@@ -374,11 +374,11 @@ msgstr ""
 "בחירה ב‚לא‘ תבטל את השדרוג."
 
 #. hm, still nothing useful ...
-#: ../DistUpgrade/DistUpgradeController.py:821
+#: ../DistUpgrade/DistUpgradeController.py:820
 msgid "Generate default sources?"
 msgstr "לייצר את מקורות בררת המחדל?"
 
-#: ../DistUpgrade/DistUpgradeController.py:822
+#: ../DistUpgrade/DistUpgradeController.py:821
 #, python-format
 msgid ""
 "After scanning your 'sources.list' no valid entry for '%s' was found.\n"
@@ -390,18 +390,18 @@ msgstr ""
 "\n"
 "האם להוסיף את רשומות בררת המחדל עבור '%s'? אם 'לא' יבחר, השדרוג יבוטל."
 
-#: ../DistUpgrade/DistUpgradeController.py:857
-#: ../DistUpgrade/DistUpgradeController.py:863
+#: ../DistUpgrade/DistUpgradeController.py:856
+#: ../DistUpgrade/DistUpgradeController.py:862
 msgid "Repository information invalid"
 msgstr "נתוני המאגרים לא תקינים"
 
-#: ../DistUpgrade/DistUpgradeController.py:858
+#: ../DistUpgrade/DistUpgradeController.py:857
 msgid ""
 "Upgrading the repository information resulted in a invalid file so a bug "
 "reporting process is being started."
 msgstr "שדרוג נתוני המאגרים גרם לקובץ פגום ולכן החל תהליך של דיווח על תקלה."
 
-#: ../DistUpgrade/DistUpgradeController.py:864
+#: ../DistUpgrade/DistUpgradeController.py:863
 msgid ""
 "Upgrading the repository information resulted in a invalid file. To report a "
 "bug install apport and then execute 'apport-bug ubuntu-release-upgrader'."
@@ -409,11 +409,11 @@ msgstr ""
 "שדרוג פרטי המאגר הוביל לקובץ פגום. כדי לדווח על תקלה יש להתקין את apport ואז "
 "להריץ את הפקודה 'apport-bug ubuntu-release-upgrader'."
 
-#: ../DistUpgrade/DistUpgradeController.py:873
+#: ../DistUpgrade/DistUpgradeController.py:872
 msgid "Third party sources disabled"
 msgstr "מקורות של ספקי צד שלישי בוטלו"
 
-#: ../DistUpgrade/DistUpgradeController.py:874
+#: ../DistUpgrade/DistUpgradeController.py:873
 msgid ""
 "Some third party entries in your sources.list were disabled. You can re-"
 "enable them after the upgrade with the 'software-properties' tool or your "
@@ -422,13 +422,13 @@ msgstr ""
 "כמה מקורות צד שלישי ברשימת ה־sources.list נוטרלו. ניתן לאפשר אותם שוב לאחר "
 "השדרוג באמצעות הכלי 'software-properties' או בעזרת מנהל החבילות שלך."
 
-#: ../DistUpgrade/DistUpgradeController.py:916
+#: ../DistUpgrade/DistUpgradeController.py:915
 msgid "Package in inconsistent state"
 msgid_plural "Packages in inconsistent state"
 msgstr[0] "חבילה במצב לא רציף"
 msgstr[1] "חבילות במצב לא רציף"
 
-#: ../DistUpgrade/DistUpgradeController.py:919
+#: ../DistUpgrade/DistUpgradeController.py:918
 #, python-format
 msgid ""
 "The package '%s' is in an inconsistent state and needs to be reinstalled, "
@@ -445,11 +445,11 @@ msgstr[1] ""
 "החבילות'%s' הנן במצב בלתי רציף ויש להתקינן מחדש, אך לא ניתן למצוא עבורן "
 "ארכיון. יש להתקין חבילות אלו מחדש ידנית או להסיר אותן מהמערכת."
 
-#: ../DistUpgrade/DistUpgradeController.py:982
+#: ../DistUpgrade/DistUpgradeController.py:981
 msgid "Error during update"
 msgstr "שגיאה במהלך העדכון"
 
-#: ../DistUpgrade/DistUpgradeController.py:983
+#: ../DistUpgrade/DistUpgradeController.py:982
 msgid ""
 "A problem occurred during the update. This is usually some sort of network "
 "problem, please check your network connection and retry."
@@ -457,12 +457,12 @@ msgstr ""
 "התעוררה בעיה בתהליך העדכון. בדרך כלל זוהי בעיית רשת, נא לבדוק את חיבור הרשת "
 "שלך ולנסות שנית."
 
-#: ../DistUpgrade/DistUpgradeController.py:1026
-#: ../DistUpgrade/DistUpgradeController.py:1031
+#: ../DistUpgrade/DistUpgradeController.py:1025
+#: ../DistUpgrade/DistUpgradeController.py:1030
 msgid "EFI System Partition (ESP) not usable"
 msgstr "מחיצת המערכת מסוג EFI‏ (ESP) אינה שמישה"
 
-#: ../DistUpgrade/DistUpgradeController.py:1027
+#: ../DistUpgrade/DistUpgradeController.py:1026
 msgid ""
 "Your EFI System Partition (ESP) is not mounted at /boot/efi. Please ensure "
 "that it is properly configured and try again."
@@ -470,7 +470,7 @@ msgstr ""
 "מחיצת המערכת מסוג EFI‏ (ESP) שלך אינה מעוגנת תחת ‎/boot/efi. נא לוודא שהיא "
 "מוגדרת כראוי ולנסות שוב."
 
-#: ../DistUpgrade/DistUpgradeController.py:1032
+#: ../DistUpgrade/DistUpgradeController.py:1031
 msgid ""
 "The EFI System Partition (ESP) mounted at /boot/efi is not writable. Please "
 "mount this partition read-write and try again."
@@ -478,13 +478,13 @@ msgstr ""
 "מחיצת המערכת מסוג EFI‏ (ESP) שמעוגנת תחת ‎/boot/efi אינה זמינה לכתיבה. נא לעגן "
 "את המחיצה הזאת במצב קריאה-כתיבה ולנסות שוב."
 
-#: ../DistUpgrade/DistUpgradeController.py:1039
+#: ../DistUpgrade/DistUpgradeController.py:1038
 msgid "Not enough free disk space"
 msgstr "אין די שטח בכונן הקשיח"
 
 #. TRANSLATORS: you can change the order of the sentence,
 #. make sure to keep all {str_*} string untranslated.
-#: ../DistUpgrade/DistUpgradeController.py:1042
+#: ../DistUpgrade/DistUpgradeController.py:1041
 #, python-brace-format
 msgid ""
 "The upgrade has aborted. The upgrade needs a total of {str_total} free space "
@@ -495,12 +495,12 @@ msgstr ""
 "נא לפנות לפחות {str_needed} נוספים בכונן ‚{str_dir}’. {str_remedy}"
 
 #. specific ways to resolve lack of free space
-#: ../DistUpgrade/DistUpgradeController.py:1047
+#: ../DistUpgrade/DistUpgradeController.py:1046
 msgid ""
 "Remove temporary packages of former installations using 'sudo apt clean'."
 msgstr "ניתן להסיר חבילות זמניות של התקנות קודמות באמצעות ‚sudo apt clean‘."
 
-#: ../DistUpgrade/DistUpgradeController.py:1049
+#: ../DistUpgrade/DistUpgradeController.py:1048
 msgid ""
 "You can remove old kernels using 'sudo apt autoremove' and you could also "
 "set COMPRESS=xz in /etc/initramfs-tools/initramfs.conf to reduce the size of "
@@ -510,7 +510,7 @@ msgstr ""
 "ב־COMPRESS=xz בתוך ‎/etc/initramfs-tools/initramfs.conf כדי להקטין את הנפח של "
 "ה־initramfs שלך."
 
-#: ../DistUpgrade/DistUpgradeController.py:1054
+#: ../DistUpgrade/DistUpgradeController.py:1053
 msgid ""
 "Empty your trash and remove temporary packages of former installations using "
 "'sudo apt-get clean'."
@@ -518,24 +518,24 @@ msgstr ""
 "כדאי לפנות את האשפה שלך ולהסיר חבילות זמניות של התקנות קודמות באמצעות ‚sudo "
 "apt-get clean‘."
 
-#: ../DistUpgrade/DistUpgradeController.py:1057
+#: ../DistUpgrade/DistUpgradeController.py:1056
 msgid "Reboot to clean up files in /tmp."
 msgstr "יש להפעיל מחדש כדי לנקות את הקבצים תחת ‎/tmp."
 
 #. calc the dist-upgrade and see if the removals are ok/expected
 #. do the dist-upgrade
-#: ../DistUpgrade/DistUpgradeController.py:1096
-#: ../DistUpgrade/DistUpgradeController.py:1939
-#: ../DistUpgrade/DistUpgradeController.py:1991
+#: ../DistUpgrade/DistUpgradeController.py:1095
+#: ../DistUpgrade/DistUpgradeController.py:1938
+#: ../DistUpgrade/DistUpgradeController.py:1990
 msgid "Calculating the changes"
 msgstr "השינויים מחושבים"
 
 #. ask the user
-#: ../DistUpgrade/DistUpgradeController.py:1140
+#: ../DistUpgrade/DistUpgradeController.py:1139
 msgid "Do you want to start the upgrade?"
 msgstr "האם ברצונך להתחיל את השדרוג?"
 
-#: ../DistUpgrade/DistUpgradeController.py:1159
+#: ../DistUpgrade/DistUpgradeController.py:1158
 #, python-format
 msgid ""
 "Livepatch security updates are not available for Ubuntu %s. If you upgrade, "
@@ -544,11 +544,11 @@ msgstr ""
 "עדכוני אבטחה בהטלאה חיה אינם זמינים לאובונטו %s. במקרה של שדרוג, הטלאה חיה "
 "תכבה."
 
-#: ../DistUpgrade/DistUpgradeController.py:1231
+#: ../DistUpgrade/DistUpgradeController.py:1230
 msgid "Upgrade canceled"
 msgstr "השדרוג בוטל"
 
-#: ../DistUpgrade/DistUpgradeController.py:1232
+#: ../DistUpgrade/DistUpgradeController.py:1231
 msgid ""
 "The upgrade will cancel now and the original system state will be restored. "
 "You can resume the upgrade at a later time."
@@ -556,12 +556,12 @@ msgstr ""
 "השדרוג יבוטל כעת והמערכת תחזור למצבה המקורי. ניתן להמשיך את השדרוג במועד "
 "מאוחר יותר."
 
-#: ../DistUpgrade/DistUpgradeController.py:1238
-#: ../DistUpgrade/DistUpgradeController.py:1383
+#: ../DistUpgrade/DistUpgradeController.py:1237
+#: ../DistUpgrade/DistUpgradeController.py:1382
 msgid "Could not download the upgrades"
 msgstr "לא ניתן להוריד את השדרוג"
 
-#: ../DistUpgrade/DistUpgradeController.py:1239
+#: ../DistUpgrade/DistUpgradeController.py:1238
 msgid ""
 "The upgrade has aborted. Please check your Internet connection or "
 "installation media and try again. All files downloaded so far have been kept."
@@ -571,27 +571,27 @@ msgstr ""
 
 #. FIXME: strings are not good, but we are in string freeze
 #. currently
-#: ../DistUpgrade/DistUpgradeController.py:1332
-#: ../DistUpgrade/DistUpgradeController.py:1371
-#: ../DistUpgrade/DistUpgradeController.py:1488
+#: ../DistUpgrade/DistUpgradeController.py:1331
+#: ../DistUpgrade/DistUpgradeController.py:1370
+#: ../DistUpgrade/DistUpgradeController.py:1487
 msgid "Error during commit"
 msgstr "שגיאה במהלך הביצוע"
 
 #. generate a new cache
-#: ../DistUpgrade/DistUpgradeController.py:1334
-#: ../DistUpgrade/DistUpgradeController.py:1373
-#: ../DistUpgrade/DistUpgradeController.py:1533
+#: ../DistUpgrade/DistUpgradeController.py:1333
+#: ../DistUpgrade/DistUpgradeController.py:1372
+#: ../DistUpgrade/DistUpgradeController.py:1532
 msgid "Restoring original system state"
 msgstr "המערכת מוחזרת למצבה המקורי"
 
-#: ../DistUpgrade/DistUpgradeController.py:1335
-#: ../DistUpgrade/DistUpgradeController.py:1350
-#: ../DistUpgrade/DistUpgradeController.py:1374
+#: ../DistUpgrade/DistUpgradeController.py:1334
+#: ../DistUpgrade/DistUpgradeController.py:1349
+#: ../DistUpgrade/DistUpgradeController.py:1373
 msgid "Could not install the upgrades"
 msgstr "לא ניתן להתקין את השדרוגים"
 
 #. invoke the frontend now and show a error message
-#: ../DistUpgrade/DistUpgradeController.py:1340
+#: ../DistUpgrade/DistUpgradeController.py:1339
 msgid ""
 "The upgrade has aborted. Your system could be in an unusable state. A "
 "recovery will run now (dpkg --configure -a)."
@@ -599,7 +599,7 @@ msgstr ""
 "השדרוג בוטל. המערכת שלך עלולה להיות בלתי שמישה. כעת תתבצע פעולת שחזור (dpkg "
 "--configure -a)."
 
-#: ../DistUpgrade/DistUpgradeController.py:1345
+#: ../DistUpgrade/DistUpgradeController.py:1344
 #, python-format
 msgid ""
 "\n"
@@ -616,30 +616,30 @@ msgstr ""
 "לדיווח על התקלה.\n"
 "%s"
 
-#: ../DistUpgrade/DistUpgradeController.py:1384
+#: ../DistUpgrade/DistUpgradeController.py:1383
 msgid ""
 "The upgrade has aborted. Please check your Internet connection or "
 "installation media and try again. "
 msgstr "השדרוג בוטל. נא לבדוק את החיבור לאינטרנט ואת אמצעי ההתקנה ולנסות שוב. "
 
-#: ../DistUpgrade/DistUpgradeController.py:1412
+#: ../DistUpgrade/DistUpgradeController.py:1411
 msgid "Searching for obsolete software"
 msgstr "מתבצע חיפוש אחר תכנה מיושנת"
 
-#: ../DistUpgrade/DistUpgradeController.py:1476
+#: ../DistUpgrade/DistUpgradeController.py:1475
 msgid "Remove obsolete packages?"
 msgstr "האם להסיר חבילות מיושנות?"
 
-#: ../DistUpgrade/DistUpgradeController.py:1477
+#: ../DistUpgrade/DistUpgradeController.py:1476
 #: ../data/gtkbuilder/DistUpgrade.ui.h:8
 msgid "_Keep"
 msgstr "_שמירה"
 
-#: ../DistUpgrade/DistUpgradeController.py:1477
+#: ../DistUpgrade/DistUpgradeController.py:1476
 msgid "_Remove"
 msgstr "ה_סרה"
 
-#: ../DistUpgrade/DistUpgradeController.py:1489
+#: ../DistUpgrade/DistUpgradeController.py:1488
 msgid ""
 "A problem occurred during the clean-up. Please see the below message for "
 "more information. "
@@ -647,34 +647,34 @@ msgstr "התרחשה תקלה במהלך הפינוי. נא לעיין בהוד�
 
 #. FIXME: instead of error out, fetch and install it
 #. here
-#: ../DistUpgrade/DistUpgradeController.py:1571
+#: ../DistUpgrade/DistUpgradeController.py:1570
 msgid "Required depends is not installed"
 msgstr "החבילות הדרושות להתקנה אינן מותקנות"
 
-#: ../DistUpgrade/DistUpgradeController.py:1572
+#: ../DistUpgrade/DistUpgradeController.py:1571
 #, python-format
 msgid "The required dependency '%s' is not installed. "
 msgstr "החבילה '%s' הדרושה להתקנה אינה מותקנת "
 
 #. coherence check (check for ubuntu-desktop, brokenCache etc)
 #. then open the cache (again)
-#: ../DistUpgrade/DistUpgradeController.py:1805
-#: ../DistUpgrade/DistUpgradeController.py:1889
+#: ../DistUpgrade/DistUpgradeController.py:1804
+#: ../DistUpgrade/DistUpgradeController.py:1888
 msgid "Checking package manager"
 msgstr "מנהל החבילות נבדק"
 
-#: ../DistUpgrade/DistUpgradeController.py:1811
-#: ../DistUpgrade/DistUpgradeController.py:1817
+#: ../DistUpgrade/DistUpgradeController.py:1810
+#: ../DistUpgrade/DistUpgradeController.py:1816
 msgid "Preparing the upgrade failed"
 msgstr "תהליך הכנת השדרוג נכשל"
 
-#: ../DistUpgrade/DistUpgradeController.py:1812
+#: ../DistUpgrade/DistUpgradeController.py:1811
 msgid ""
 "Preparing the system for the upgrade failed so a bug reporting process is "
 "being started."
 msgstr "תהליך הכנת המערכת לשדרוג נכשל ולכן יופעל תהליך דיווח על תקלה."
 
-#: ../DistUpgrade/DistUpgradeController.py:1818
+#: ../DistUpgrade/DistUpgradeController.py:1817
 msgid ""
 "Preparing the system for the upgrade failed. To report a bug install apport "
 "and then execute 'apport-bug ubuntu-release-upgrader'."
@@ -682,12 +682,12 @@ msgstr ""
 "הכנת המערכת לשדרוג נכשלה. כדי לדווח על תקלה יש להתקין את apport ואז להריץ את "
 "הפקודה 'apport-bug ubuntu-release-upgrader'."
 
-#: ../DistUpgrade/DistUpgradeController.py:1835
-#: ../DistUpgrade/DistUpgradeController.py:1845
+#: ../DistUpgrade/DistUpgradeController.py:1834
+#: ../DistUpgrade/DistUpgradeController.py:1844
 msgid "Getting upgrade prerequisites failed"
 msgstr "קבלת דרישות הקדם לשדרוג נכשלה"
 
-#: ../DistUpgrade/DistUpgradeController.py:1836
+#: ../DistUpgrade/DistUpgradeController.py:1835
 msgid ""
 "The system was unable to get the prerequisites for the upgrade. The upgrade "
 "will abort now and restore the original system state.\n"
@@ -699,7 +699,7 @@ msgstr ""
 "\n"
 "בנוסף על כך, יופעל תהליך הדיווח על תקלות."
 
-#: ../DistUpgrade/DistUpgradeController.py:1846
+#: ../DistUpgrade/DistUpgradeController.py:1845
 msgid ""
 "The system was unable to get the prerequisites for the upgrade. The upgrade "
 "will abort now and restore the original system state.\n"
@@ -713,15 +713,15 @@ msgstr ""
 "כדי לדווח על תקלה יש להתקין את apport ואז להריץ את הפקודה 'apport-bug ubuntu-"
 "release-upgrader'."
 
-#: ../DistUpgrade/DistUpgradeController.py:1880
+#: ../DistUpgrade/DistUpgradeController.py:1879
 msgid "Updating repository information"
 msgstr "נתוני המאגרים מתעדכנים"
 
-#: ../DistUpgrade/DistUpgradeController.py:1916
+#: ../DistUpgrade/DistUpgradeController.py:1915
 msgid "Invalid package information"
 msgstr "פרטי החבילה אינם תקינים"
 
-#: ../DistUpgrade/DistUpgradeController.py:1917
+#: ../DistUpgrade/DistUpgradeController.py:1916
 #, python-format
 msgid ""
 "After updating your package information, the essential package '%s' could "
@@ -733,80 +733,80 @@ msgid ""
 "later."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:1946
-#: ../DistUpgrade/DistUpgradeController.py:2052
+#: ../DistUpgrade/DistUpgradeController.py:1945
+#: ../DistUpgrade/DistUpgradeController.py:2051
 msgid "Fetching"
 msgstr "מתקבל"
 
-#: ../DistUpgrade/DistUpgradeController.py:1953
-#: ../DistUpgrade/DistUpgradeController.py:1976
-#: ../DistUpgrade/DistUpgradeController.py:2006
-#: ../DistUpgrade/DistUpgradeController.py:2056
+#: ../DistUpgrade/DistUpgradeController.py:1952
+#: ../DistUpgrade/DistUpgradeController.py:1975
+#: ../DistUpgrade/DistUpgradeController.py:2005
+#: ../DistUpgrade/DistUpgradeController.py:2055
 msgid "Upgrading"
 msgstr "בשדרוג"
 
-#: ../DistUpgrade/DistUpgradeController.py:1955
+#: ../DistUpgrade/DistUpgradeController.py:1954
 msgid "Upgrade infeasible"
 msgstr "אין אפשרות לשדרג"
 
-#: ../DistUpgrade/DistUpgradeController.py:1956
+#: ../DistUpgrade/DistUpgradeController.py:1955
 msgid ""
 "The upgrade could not be completed, there were errors during the upgrade "
 "process."
 msgstr "לא ניתן להשלים את השדרוג, אירעו שגיאות במהלך השדרוג."
 
 #. don't abort here, because it would restore the sources.list
-#: ../DistUpgrade/DistUpgradeController.py:1979
-#: ../DistUpgrade/DistUpgradeController.py:1995
+#: ../DistUpgrade/DistUpgradeController.py:1978
+#: ../DistUpgrade/DistUpgradeController.py:1994
 msgid "Upgrade incomplete"
 msgstr "השדרוג לא הסתיים"
 
-#: ../DistUpgrade/DistUpgradeController.py:1980
-#: ../DistUpgrade/DistUpgradeController.py:1996
+#: ../DistUpgrade/DistUpgradeController.py:1979
+#: ../DistUpgrade/DistUpgradeController.py:1995
 msgid ""
 "The upgrade has partially completed but there were errors during the upgrade "
 "process."
 msgstr "השדרוג הושלם באופן חלקי אך אירעו שגיאות במהלך השדרוג."
 
 #. don't abort here, because it would restore the sources.list
-#: ../DistUpgrade/DistUpgradeController.py:2011
-#: ../DistUpgrade/DistUpgradeController.py:2058
-#: ../DistUpgrade/DistUpgradeController.py:2064
-#: ../DistUpgrade/DistUpgradeController.py:2075
+#: ../DistUpgrade/DistUpgradeController.py:2010
+#: ../DistUpgrade/DistUpgradeController.py:2057
+#: ../DistUpgrade/DistUpgradeController.py:2063
+#: ../DistUpgrade/DistUpgradeController.py:2074
 msgid "Upgrade complete"
 msgstr "השדרוג הושלם"
 
-#: ../DistUpgrade/DistUpgradeController.py:2012
-#: ../DistUpgrade/DistUpgradeController.py:2059
-#: ../DistUpgrade/DistUpgradeController.py:2065
+#: ../DistUpgrade/DistUpgradeController.py:2011
+#: ../DistUpgrade/DistUpgradeController.py:2058
+#: ../DistUpgrade/DistUpgradeController.py:2064
 msgid ""
 "The upgrade has completed but there were errors during the upgrade process."
 msgstr "השדרוג הושלם אך צצו שגיאות במהלך השדרוג."
 
-#: ../DistUpgrade/DistUpgradeController.py:2027
+#: ../DistUpgrade/DistUpgradeController.py:2026
 msgid "System upgrade is complete."
 msgstr "שדרוג המערכת הושלם."
 
-#: ../DistUpgrade/DistUpgradeController.py:2076
+#: ../DistUpgrade/DistUpgradeController.py:2075
 msgid "The partial upgrade was completed."
 msgstr "השדרוג החלקי הושלם."
 
-#: ../DistUpgrade/DistUpgradeController.py:2095
+#: ../DistUpgrade/DistUpgradeController.py:2096
 msgid "Lock screen disabled"
 msgstr "מסך הנעילה בוטל"
 
-#: ../DistUpgrade/DistUpgradeController.py:2096
+#: ../DistUpgrade/DistUpgradeController.py:2097
 #, fuzzy
 msgid ""
 "Your lock screen has been disabled and will remain disabled during the "
 "upgrade."
 msgstr "מסך הנעילה שלך הושבת ויישאר מושבת עד להפעלה מחדש."
 
-#: ../DistUpgrade/DistUpgradeController.py:2104
+#: ../DistUpgrade/DistUpgradeController.py:2105
 msgid "Unable to disable lock screen"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2105
+#: ../DistUpgrade/DistUpgradeController.py:2106
 msgid ""
 "It is highly recommended that the lock screen be disabled during the upgrade "
 "to prevent later issues. Please ensure your screen lock is disabled before "
