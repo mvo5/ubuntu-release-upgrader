@@ -2098,7 +2098,7 @@ class DistUpgradeController(object):
                         "disabled and will remain "
                         "disabled during the upgrade.")
         except Exception as e:
-            if not os.getenv('XDG_SESSION_TYPE'):
+            if os.getenv('XDG_SESSION_TYPE', '') in ('', 'tty'):
                 return
 
             logging.debug('failed to inhibit screensaver: ' + str(e))
