@@ -1,9 +1,9 @@
-ubuntu-release-upgrader (1:22.10.3) UNRELEASED; urgency=medium
+ubuntu-release-upgrader (1:22.10.3) kinetic; urgency=medium
 
   * DistUpgrade: Do not show lock screen error if XDG_SESSION_TYPE is
     tty (LP: #1973785).
 
- -- Nick Rosbrook <nick.rosbrook@canonical.com>  Tue, 17 May 2022 11:30:16 -0400
+ -- Nick Rosbrook <nick.rosbrook@canonical.com>  Wed, 18 May 2022 09:38:56 -0700
 
 ubuntu-release-upgrader (1:22.10.2) kinetic; urgency=medium
 
