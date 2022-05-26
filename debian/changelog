@@ -1,8 +1,14 @@
+ubuntu-release-upgrader (1:22.10.4) kinetic; urgency=medium
+
+  * DistUpgrade: Add deb2snap entry for snapd-desktop-integration (LP: #1975747).
+  * Run pre-build.sh: updating mirrors, demotions, and translations.
+
+ -- Brian Murray <brian@ubuntu.com>  Thu, 26 May 2022 12:43:08 -0700
+
 ubuntu-release-upgrader (1:22.10.3) kinetic; urgency=medium
 
   * DistUpgrade: Do not show lock screen error if XDG_SESSION_TYPE is
     tty (LP: #1973785).
-  * DistUpgrade: Add deb2snap entry for snapd-desktop-integration (LP: #1975747).
 
  -- Nick Rosbrook <nick.rosbrook@canonical.com>  Wed, 18 May 2022 09:38:56 -0700
 
