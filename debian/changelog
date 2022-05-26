@@ -3,7 +3,7 @@ ubuntu-release-upgrader (1:22.10.4) kinetic; urgency=medium
   * DistUpgrade: Add deb2snap entry for snapd-desktop-integration (LP: #1975747).
   * Run pre-build.sh: updating mirrors, demotions, and translations.
 
- -- Brian Murray <brian@ubuntu.com>  Thu, 26 May 2022 12:43:08 -0700
+ -- Brian Murray <brian@ubuntu.com>  Thu, 26 May 2022 12:49:15 -0700
 
 ubuntu-release-upgrader (1:22.10.3) kinetic; urgency=medium
 
