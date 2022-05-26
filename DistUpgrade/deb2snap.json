@@ -22,6 +22,9 @@
         "snap-store": {
             "deb": "gnome-software",
             "metapkg": "ubuntu-desktop"
+        },
+        "snapd-desktop-integration": {
+            "metapkg": "ubuntu-desktop-minimal"
         }
     },
     "unseeded": {
