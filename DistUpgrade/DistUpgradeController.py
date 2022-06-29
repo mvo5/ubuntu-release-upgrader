@@ -2026,9 +2026,14 @@ class DistUpgradeController(object):
         self._view.updateStatus(_("System upgrade is complete."))            
         get_telemetry().done()
         # FIXME should we look into /var/run/reboot-required here?
-        if (not inside_chroot() and
-            self._view.confirmRestart()):
-            subprocess.Popen("/sbin/reboot")
+        if not inside_chroot():
+            if self._inside_WSL():
+                self._view.adviseExitOtherWSL()
+                with open("/run/launcher-command", "w+", encoding="utf-8") as f:
+                    f.write("action: reboot\n")
+                self._view.adviseRestartWSL()
+            elif self._view.confirmRestart():
+                subprocess.Popen("/sbin/reboot")
             sys.exit(0)
         return True
         
@@ -2125,6 +2130,10 @@ class DistUpgradeController(object):
             return
 
         os.seteuid(int(uid))
+
+    def _inside_WSL(self):
+        return os.path.exists("/proc/sys/fs/binfmt_misc/WSLInterop")
+
 
 if __name__ == "__main__":
     from .DistUpgradeViewText import DistUpgradeViewText

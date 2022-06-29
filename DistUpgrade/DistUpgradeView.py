@@ -430,6 +430,16 @@ class DistUpgradeView(object):
                  "Do you want to do this "
                  "now?")
         return self.askYesNoQuestion(summary, msg)
+    def adviseExitOtherWSL(self):
+        summary = _("Action required")
+        msg = _("Exit all other instances of Ubuntu WSL before continuing.")
+        extended = _("Unsaved progress may otherwise be lost.")
+        return self.information(summary, msg, extended)
+    def adviseRestartWSL(self):
+        summary = _("WSL restart required")
+        msg = _("Exit this instance of Ubuntu WSL.")
+        extended = _("The upgrade will then be complete.")
+        return self.information(summary, msg, extended)
     def error(self, summary, msg, extended_msg=None):
         " display a error "
         pass
