@@ -1,3 +1,9 @@
+ubuntu-release-upgrader (1:22.10.5~ppa1) UNRELEASED; urgency=medium
+
+   * DistUpgrade: No longer attempting to reboot in WSL (LP: #1958668).
+
+ -- Edu Gómez Escandell <edu.gomez.escandell@canonical.com>  Wed, 29 Jun 2022 09:13:09 +0200
+
 ubuntu-release-upgrader (1:22.10.4) kinetic; urgency=medium
 
   * DistUpgrade: Add deb2snap entry for snapd-desktop-integration (LP: #1975747).
