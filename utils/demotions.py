@@ -15,6 +15,7 @@ import apt
 import apt_pkg
 import os
 import sys
+import urllib.request
 import warnings
 warnings.filterwarnings("ignore", "apt API not stable yet", FutureWarning)
 #import xdg.Menu
@@ -76,8 +77,15 @@ if __name__ == "__main__":
     for dist in [old, new]:
 
         for comp in ["main", "restricted", "universe", "multiverse"]:
-            line = "deb http://archive.ubuntu.com/ubuntu %s %s\n" % \
-                   (dist.name, comp)
+            for site in ('archive.ubuntu.com/ubuntu',
+                         'old-releases.ubuntu.com/ubuntu'):
+                try:
+                    if urllib.request.urlopen(
+                        "http://%s/dists/%s/Release" % (site, dist.name)).getcode() == 200:
+                            line = "deb http://%s %s %s\n" % \
+                                (site, dist.name, comp)
+                except urllib.error.HTTPError:
+                    pass
             with open("apt/sources.list", "w") as sources_list:
                 sources_list.write(line)
             dist.pkgs_in_comp[comp] = set()
