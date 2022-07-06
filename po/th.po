@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: update-manager\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2022-05-26 12:46-0700\n"
+"POT-Creation-Date: 2022-07-06 13:02-0700\n"
 "PO-Revision-Date: 2013-05-22 11:00+0000\n"
 "Last-Translator: Brian Murray <brian@ubuntu.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -711,14 +711,14 @@ msgstr ""
 "คุณอาจต้องการทดลองการอัปเกรดใหม่อีกครั้งในภายหลัง"
 
 #: ../DistUpgrade/DistUpgradeController.py:1945
-#: ../DistUpgrade/DistUpgradeController.py:2051
+#: ../DistUpgrade/DistUpgradeController.py:2056
 msgid "Fetching"
 msgstr "กำลังดึงข้อมูล"
 
 #: ../DistUpgrade/DistUpgradeController.py:1952
 #: ../DistUpgrade/DistUpgradeController.py:1975
 #: ../DistUpgrade/DistUpgradeController.py:2005
-#: ../DistUpgrade/DistUpgradeController.py:2055
+#: ../DistUpgrade/DistUpgradeController.py:2060
 msgid "Upgrading"
 msgstr "กำลังปรับปรุง"
 
@@ -747,15 +747,15 @@ msgstr "การอัปเกรดเสร็จสมบูรณ์เพ
 
 #. don't abort here, because it would restore the sources.list
 #: ../DistUpgrade/DistUpgradeController.py:2010
-#: ../DistUpgrade/DistUpgradeController.py:2057
-#: ../DistUpgrade/DistUpgradeController.py:2063
-#: ../DistUpgrade/DistUpgradeController.py:2074
+#: ../DistUpgrade/DistUpgradeController.py:2062
+#: ../DistUpgrade/DistUpgradeController.py:2068
+#: ../DistUpgrade/DistUpgradeController.py:2079
 msgid "Upgrade complete"
 msgstr "ปรับปรุงเสร็จแล้ว"
 
 #: ../DistUpgrade/DistUpgradeController.py:2011
-#: ../DistUpgrade/DistUpgradeController.py:2058
-#: ../DistUpgrade/DistUpgradeController.py:2064
+#: ../DistUpgrade/DistUpgradeController.py:2063
+#: ../DistUpgrade/DistUpgradeController.py:2069
 msgid ""
 "The upgrade has completed but there were errors during the upgrade process."
 msgstr "การปรับรุ่นสมบูรณ์ แต่เกิดข้อผิดพลาดในระหว่างขั้นตอนการปรับรุ่น"
@@ -764,26 +764,26 @@ msgstr "การปรับรุ่นสมบูรณ์ แต่เก�
 msgid "System upgrade is complete."
 msgstr "ปรับปรุงระบบเสร็จแล้ว"
 
-#: ../DistUpgrade/DistUpgradeController.py:2075
+#: ../DistUpgrade/DistUpgradeController.py:2080
 msgid "The partial upgrade was completed."
 msgstr "การปรับปรุงรุ่นบางส่วนเสร็จสมบูรณ์"
 
-#: ../DistUpgrade/DistUpgradeController.py:2096
+#: ../DistUpgrade/DistUpgradeController.py:2101
 msgid "Lock screen disabled"
 msgstr "ปิดใช้งานหน้าจอล็อกแล้ว"
 
-#: ../DistUpgrade/DistUpgradeController.py:2097
+#: ../DistUpgrade/DistUpgradeController.py:2102
 #, fuzzy
 msgid ""
 "Your lock screen has been disabled and will remain disabled during the "
 "upgrade."
 msgstr "หน้าจอล็อกของคุณจะถูกปิดใช้งานจนกว่าคุณจะบูตเครื่องใหม่"
 
-#: ../DistUpgrade/DistUpgradeController.py:2105
+#: ../DistUpgrade/DistUpgradeController.py:2110
 msgid "Unable to disable lock screen"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2106
+#: ../DistUpgrade/DistUpgradeController.py:2111
 msgid ""
 "It is highly recommended that the lock screen be disabled during the upgrade "
 "to prevent later issues. Please ensure your screen lock is disabled before "
@@ -1673,6 +1673,33 @@ msgstr "ต้องเริ่มระบบใหม่"
 msgid ""
 "The upgrade is finished and a reboot is required. Do you want to do this now?"
 msgstr "การปรับปรุงเสร็จสิ้นแล้วและต้องการที่จะเริ่มระบบใหม่ คุณต้องการที่จะทำเดี๋ยวนี้หรือเปล่า?"
+
+#: ../DistUpgrade/DistUpgradeView.py:434
+#, fuzzy
+msgid "Action required"
+msgstr "ต้องเริ่มระบบใหม่"
+
+#: ../DistUpgrade/DistUpgradeView.py:435
+msgid "Exit all other instances of Ubuntu WSL before continuing."
+msgstr ""
+
+#: ../DistUpgrade/DistUpgradeView.py:436
+msgid "Unsaved progress may otherwise be lost."
+msgstr ""
+
+#: ../DistUpgrade/DistUpgradeView.py:439
+#, fuzzy
+msgid "WSL restart required"
+msgstr "ต้องการเริ่มระบบใหม่"
+
+#: ../DistUpgrade/DistUpgradeView.py:440
+msgid "Exit this instance of Ubuntu WSL."
+msgstr ""
+
+#: ../DistUpgrade/DistUpgradeView.py:441
+#, fuzzy
+msgid "The upgrade will then be complete."
+msgstr "ปรับปรุงระบบเสร็จแล้ว"
 
 #: ../DistUpgrade/DistUpgradeViewText.py:82
 #, python-format

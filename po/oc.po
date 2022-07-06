@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: update-manager\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2022-05-26 12:46-0700\n"
+"POT-Creation-Date: 2022-07-06 13:02-0700\n"
 "PO-Revision-Date: 2019-06-18 17:52+0000\n"
 "Last-Translator: Cédric VALMARY (Tot en òc) <cvalmary@yahoo.fr>\n"
 "Language-Team: Occitan (post 1500) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
@@ -733,14 +733,14 @@ msgstr ""
 "jorn pus tard."
 
 #: ../DistUpgrade/DistUpgradeController.py:1945
-#: ../DistUpgrade/DistUpgradeController.py:2051
+#: ../DistUpgrade/DistUpgradeController.py:2056
 msgid "Fetching"
 msgstr "Recuperacion"
 
 #: ../DistUpgrade/DistUpgradeController.py:1952
 #: ../DistUpgrade/DistUpgradeController.py:1975
 #: ../DistUpgrade/DistUpgradeController.py:2005
-#: ../DistUpgrade/DistUpgradeController.py:2055
+#: ../DistUpgrade/DistUpgradeController.py:2060
 msgid "Upgrading"
 msgstr "Mesa a nivèl"
 
@@ -769,15 +769,15 @@ msgstr ""
 
 #. don't abort here, because it would restore the sources.list
 #: ../DistUpgrade/DistUpgradeController.py:2010
-#: ../DistUpgrade/DistUpgradeController.py:2057
-#: ../DistUpgrade/DistUpgradeController.py:2063
-#: ../DistUpgrade/DistUpgradeController.py:2074
+#: ../DistUpgrade/DistUpgradeController.py:2062
+#: ../DistUpgrade/DistUpgradeController.py:2068
+#: ../DistUpgrade/DistUpgradeController.py:2079
 msgid "Upgrade complete"
 msgstr "Mesa a nivèl acabada"
 
 #: ../DistUpgrade/DistUpgradeController.py:2011
-#: ../DistUpgrade/DistUpgradeController.py:2058
-#: ../DistUpgrade/DistUpgradeController.py:2064
+#: ../DistUpgrade/DistUpgradeController.py:2063
+#: ../DistUpgrade/DistUpgradeController.py:2069
 msgid ""
 "The upgrade has completed but there were errors during the upgrade process."
 msgstr ""
@@ -788,25 +788,25 @@ msgstr ""
 msgid "System upgrade is complete."
 msgstr "La mesa a nivèl del sistèma es acabada."
 
-#: ../DistUpgrade/DistUpgradeController.py:2075
+#: ../DistUpgrade/DistUpgradeController.py:2080
 msgid "The partial upgrade was completed."
 msgstr "La mesa a nivèl parciala del sistèma es acabada."
 
-#: ../DistUpgrade/DistUpgradeController.py:2096
+#: ../DistUpgrade/DistUpgradeController.py:2101
 msgid "Lock screen disabled"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2097
+#: ../DistUpgrade/DistUpgradeController.py:2102
 msgid ""
 "Your lock screen has been disabled and will remain disabled during the "
 "upgrade."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2105
+#: ../DistUpgrade/DistUpgradeController.py:2110
 msgid "Unable to disable lock screen"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2106
+#: ../DistUpgrade/DistUpgradeController.py:2111
 msgid ""
 "It is highly recommended that the lock screen be disabled during the upgrade "
 "to prevent later issues. Please ensure your screen lock is disabled before "
@@ -1732,6 +1732,33 @@ msgid ""
 msgstr ""
 "La mesa a nivèl es acabada e l'ordenador deu èsser reamodat. O volètz far "
 "tre ara ?"
+
+#: ../DistUpgrade/DistUpgradeView.py:434
+#, fuzzy
+msgid "Action required"
+msgstr "Vos cal tornar amodar l'ordenador"
+
+#: ../DistUpgrade/DistUpgradeView.py:435
+msgid "Exit all other instances of Ubuntu WSL before continuing."
+msgstr ""
+
+#: ../DistUpgrade/DistUpgradeView.py:436
+msgid "Unsaved progress may otherwise be lost."
+msgstr ""
+
+#: ../DistUpgrade/DistUpgradeView.py:439
+#, fuzzy
+msgid "WSL restart required"
+msgstr "Vos cal reaviar l'ordenador"
+
+#: ../DistUpgrade/DistUpgradeView.py:440
+msgid "Exit this instance of Ubuntu WSL."
+msgstr ""
+
+#: ../DistUpgrade/DistUpgradeView.py:441
+#, fuzzy
+msgid "The upgrade will then be complete."
+msgstr "La mesa a nivèl del sistèma es acabada."
 
 #: ../DistUpgrade/DistUpgradeViewText.py:82
 #, python-format

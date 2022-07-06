@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: shotwell-0.7.2\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2022-05-26 12:46-0700\n"
+"POT-Creation-Date: 2022-07-06 13:02-0700\n"
 "PO-Revision-Date: 2019-02-10 12:11+0000\n"
 "Last-Translator: Istiak Ferdous <Unknown>\n"
 "Language-Team: Bengali <ankur-bd-l10n@googlegroups.com>\n"
@@ -714,14 +714,14 @@ msgid ""
 msgstr ""
 
 #: ../DistUpgrade/DistUpgradeController.py:1945
-#: ../DistUpgrade/DistUpgradeController.py:2051
+#: ../DistUpgrade/DistUpgradeController.py:2056
 msgid "Fetching"
 msgstr "টেনে আনা হচ্ছে"
 
 #: ../DistUpgrade/DistUpgradeController.py:1952
 #: ../DistUpgrade/DistUpgradeController.py:1975
 #: ../DistUpgrade/DistUpgradeController.py:2005
-#: ../DistUpgrade/DistUpgradeController.py:2055
+#: ../DistUpgrade/DistUpgradeController.py:2060
 msgid "Upgrading"
 msgstr "আপগ্রেড করা হচ্ছে"
 
@@ -750,15 +750,15 @@ msgstr ""
 
 #. don't abort here, because it would restore the sources.list
 #: ../DistUpgrade/DistUpgradeController.py:2010
-#: ../DistUpgrade/DistUpgradeController.py:2057
-#: ../DistUpgrade/DistUpgradeController.py:2063
-#: ../DistUpgrade/DistUpgradeController.py:2074
+#: ../DistUpgrade/DistUpgradeController.py:2062
+#: ../DistUpgrade/DistUpgradeController.py:2068
+#: ../DistUpgrade/DistUpgradeController.py:2079
 msgid "Upgrade complete"
 msgstr "হালনাগাদ সম্পন্ন হয়েছে"
 
 #: ../DistUpgrade/DistUpgradeController.py:2011
-#: ../DistUpgrade/DistUpgradeController.py:2058
-#: ../DistUpgrade/DistUpgradeController.py:2064
+#: ../DistUpgrade/DistUpgradeController.py:2063
+#: ../DistUpgrade/DistUpgradeController.py:2069
 msgid ""
 "The upgrade has completed but there were errors during the upgrade process."
 msgstr "আপগ্রেড সম্পন্ন কিন্তু আপগ্রেড প্রসেসের সময় ত্রুটি ঘটে।"
@@ -768,25 +768,25 @@ msgid "System upgrade is complete."
 msgstr "সিস্টেম আপগ্রেড সম্পন্ন।"
 
 # snigdha
-#: ../DistUpgrade/DistUpgradeController.py:2075
+#: ../DistUpgrade/DistUpgradeController.py:2080
 msgid "The partial upgrade was completed."
 msgstr "আংশিক আপগ্রেড সম্পন্ন হয়েছে।"
 
-#: ../DistUpgrade/DistUpgradeController.py:2096
+#: ../DistUpgrade/DistUpgradeController.py:2101
 msgid "Lock screen disabled"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2097
+#: ../DistUpgrade/DistUpgradeController.py:2102
 msgid ""
 "Your lock screen has been disabled and will remain disabled during the "
 "upgrade."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2105
+#: ../DistUpgrade/DistUpgradeController.py:2110
 msgid "Unable to disable lock screen"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2106
+#: ../DistUpgrade/DistUpgradeController.py:2111
 msgid ""
 "It is highly recommended that the lock screen be disabled during the upgrade "
 "to prevent later issues. Please ensure your screen lock is disabled before "
@@ -1701,6 +1701,33 @@ msgstr "রিবুট করা প্রয়োজন"
 msgid ""
 "The upgrade is finished and a reboot is required. Do you want to do this now?"
 msgstr "আপগ্রেডটি সম্পন্ন এবং রিবুট করা প্রয়োজন। আপনি কি এক্ষুনি তা করতে চান?"
+
+#: ../DistUpgrade/DistUpgradeView.py:434
+#, fuzzy
+msgid "Action required"
+msgstr "রিবুট করা প্রয়োজন"
+
+#: ../DistUpgrade/DistUpgradeView.py:435
+msgid "Exit all other instances of Ubuntu WSL before continuing."
+msgstr ""
+
+#: ../DistUpgrade/DistUpgradeView.py:436
+msgid "Unsaved progress may otherwise be lost."
+msgstr ""
+
+#: ../DistUpgrade/DistUpgradeView.py:439
+#, fuzzy
+msgid "WSL restart required"
+msgstr "পুনরায় শুরু করা প্রয়োজন"
+
+#: ../DistUpgrade/DistUpgradeView.py:440
+msgid "Exit this instance of Ubuntu WSL."
+msgstr ""
+
+#: ../DistUpgrade/DistUpgradeView.py:441
+#, fuzzy
+msgid "The upgrade will then be complete."
+msgstr "সিস্টেম আপগ্রেড সম্পন্ন।"
 
 #: ../DistUpgrade/DistUpgradeViewText.py:82
 #, python-format

@@ -1,6 +1,10 @@
-ubuntu-release-upgrader (1:22.10.5~ppa1) UNRELEASED; urgency=medium
+ubuntu-release-upgrader (1:22.10.5) UNRELEASED; urgency=medium
 
-   * DistUpgrade: No longer attempting to reboot in WSL (LP: #1958668).
+  [ Edu Gómez Escandell ]
+   * DistUpgrade: No longer attempt to reboot in WSL (LP: #1958668).
+
+  [ Brian Murray ]
+  * Run pre-build.sh: updating mirrors, demotions, and translations.
 
  -- Edu Gómez Escandell <edu.gomez.escandell@canonical.com>  Wed, 29 Jun 2022 09:13:09 +0200
 
