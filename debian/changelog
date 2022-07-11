@@ -2,6 +2,7 @@ ubuntu-release-upgrader (1:22.10.6) UNRELEASED; urgency=medium
 
   * utils/demotions.py: check old-releases.u.c so that we can generate
     demotions for releases which have reached their End of Life.
+  * data/DistUpgrade.cfg: remove mythbuntu and kubuntu-netbook metapackages.
 
  -- Brian Murray <brian@ubuntu.com>  Wed, 06 Jul 2022 18:02:29 -0700
 
