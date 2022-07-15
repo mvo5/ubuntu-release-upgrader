@@ -10,9 +10,6 @@
             "metapkg": ["ubuntu-desktop", "kubuntu-desktop", "lubuntu-desktop",
                         "ubuntu-mate-desktop", "ubuntustudio-desktop"]
         },
-        "gnome-3-34-1804": {
-            "metapkg": "ubuntu-desktop"
-        },
         "gnome-3-38-2004": {
             "metapkg": "ubuntu-desktop"
         },
@@ -29,6 +26,9 @@
     },
     "unseeded": {
         "gnome-3-28-1804": {
+        },
+        "gnome-3-34-1804": {
+            "metapkg": "ubuntu-desktop"
         },
         "gnome-calculator": {
             "deb": "gnome-calculator",
