@@ -742,8 +742,8 @@ class TestSnapQuirks(unittest.TestCase):
         controller = mock.Mock()
         config = mock.Mock()
         q = DistUpgradeQuirks(controller, config)
-        q._from_version = "19.04"
-        q._to_version = "19.10"
+        q._from_version = "20.04"
+        q._to_version = "22.04"
         # Call method under test
 
         controller.cache = {
@@ -800,22 +800,16 @@ class TestSnapQuirks(unittest.TestCase):
                 'command': 'install',
                 'deb': None, 'snap-id': '1234'},
              'firefox': {
-                'channel': 'stable/ubuntu-19.10',
+                'channel': 'stable/ubuntu-22.04',
                 'command': 'install',
                 'deb': 'firefox',
                 'snap-id': '1234'},
-             'gnome-3-34-1804': {
-                'channel': 'stable/ubuntu-19.10',
-                'command': 'install',
-                'deb': None, 'snap-id': '1234'},
              'gnome-3-38-2004': {
-                'channel': 'stable/ubuntu-19.10',
+                'channel': 'stable/ubuntu-22.04',
                 'command': 'install',
                 'deb': None, 'snap-id': '1234'},
-             'gnome-logs': {
-                'command': 'remove'},
              'snap-store': {
-                'channel': 'stable/ubuntu-19.10',
+                'channel': 'stable/ubuntu-22.04',
                 'command': 'install',
                 'deb': 'gnome-software',
                 'snap-id': '1234'}})
