@@ -81,9 +81,10 @@ if __name__ == "__main__":
                          'old-releases.ubuntu.com/ubuntu'):
                 try:
                     if urllib.request.urlopen(
-                        "http://%s/dists/%s/Release" % (site, dist.name)).getcode() == 200:
-                            line = "deb http://%s %s %s\n" % \
-                                (site, dist.name, comp)
+                            "http://%s/dists/%s/Release"
+                            % (site, dist.name)).getcode() == 200:
+                        line = "deb http://%s %s %s\n" % \
+                            (site, dist.name, comp)
                 except urllib.error.HTTPError:
                     pass
             with open("apt/sources.list", "w") as sources_list:
