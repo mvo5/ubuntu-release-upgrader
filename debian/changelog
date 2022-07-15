@@ -1,4 +1,4 @@
-ubuntu-release-upgrader (1:22.10.6) UNRELEASED; urgency=medium
+ubuntu-release-upgrader (1:22.10.6) kinetic; urgency=medium
 
   * utils/demotions.py: check old-releases.u.c so that we can generate
     demotions for releases which have reached their End of Life.
@@ -7,7 +7,7 @@ ubuntu-release-upgrader (1:22.10.6) UNRELEASED; urgency=medium
     should not be refreshed. (LP: #1981485)
   * Run pre-build.sh: updating mirrors, demotions, and translations.
 
- -- Brian Murray <brian@ubuntu.com>  Wed, 06 Jul 2022 18:02:29 -0700
+ -- Brian Murray <brian@ubuntu.com>  Fri, 15 Jul 2022 14:34:14 -0700
 
 ubuntu-release-upgrader (1:22.10.5) kinetic; urgency=medium
 
