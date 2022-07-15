@@ -5,6 +5,7 @@ ubuntu-release-upgrader (1:22.10.6) UNRELEASED; urgency=medium
   * data/DistUpgrade.cfg: remove mythbuntu and kubuntu-netbook metapackages.
   * DistUpgrade/deb2snap.json: gnome-3-34-1804 is no longer a seeded snap and
     should not be refreshed. (LP: #1981485)
+  * Run pre-build.sh: updating mirrors, demotions, and translations.
 
  -- Brian Murray <brian@ubuntu.com>  Wed, 06 Jul 2022 18:02:29 -0700
 
