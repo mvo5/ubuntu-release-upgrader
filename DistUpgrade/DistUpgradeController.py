@@ -944,8 +944,6 @@ class DistUpgradeController(object):
             self.config.set("Options","foreignPkgs", "True")
         else:
             self.config.set("Options","foreignPkgs", "False")
-        if self.serverMode:
-            self.tasks = self.cache.installedTasks
         logging.debug("Foreign: %s" % " ".join(sorted(self.foreign_pkgs)))
         logging.debug("Obsolete: %s" % " ".join(sorted(self.obsolete_pkgs)))
         return True
@@ -1097,7 +1095,7 @@ class DistUpgradeController(object):
             return False
 
         if self.serverMode:
-            if not self.cache.installTasks(self.tasks):
+            if not self.cache.installTasks(self.cache.installedTasks):
                 return False
 
         # show changes and confirm
@@ -1893,7 +1891,9 @@ class DistUpgradeController(object):
             # re-check server mode because we got new packages (it may happen
             # that the system had no sources.list entries and therefore no
             # desktop file information)
-            self.serverMode = self.cache.need_server_mode()
+            # switch from server to desktop but not the other way
+            if self.serverMode:
+                self.serverMode = self.cache.need_server_mode()
             # do it here as we need to know if we are in server or client mode
             self.quirks.ensure_recommends_are_installed_on_desktops()
             # now check if we still have some key packages available/downloadable
