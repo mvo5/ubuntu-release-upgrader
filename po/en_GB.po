@@ -3,12 +3,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Abigail Brady <morwen@evilmagic.org>, Bastien Nocera <hadess@hadess.net>, 2005.
 #
-#: ../DistUpgrade/DistUpgradeController.py:1057
+#: ../DistUpgrade/DistUpgradeController.py:1055
 msgid ""
 msgstr ""
 "Project-Id-Version: update-manager\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2022-07-15 14:26-0700\n"
+"POT-Creation-Date: 2022-08-22 12:51-0700\n"
 "PO-Revision-Date: 2019-06-18 17:53+0000\n"
 "Last-Translator: Brian Murray <brian@ubuntu.com>\n"
 "Language-Team: \n"
@@ -460,11 +460,11 @@ msgstr[1] ""
 "but no archive can be found for them. Please reinstall the packages manually "
 "or remove them from the system."
 
-#: ../DistUpgrade/DistUpgradeController.py:981
+#: ../DistUpgrade/DistUpgradeController.py:979
 msgid "Error during update"
 msgstr "Error during update"
 
-#: ../DistUpgrade/DistUpgradeController.py:982
+#: ../DistUpgrade/DistUpgradeController.py:980
 msgid ""
 "A problem occurred during the update. This is usually some sort of network "
 "problem, please check your network connection and retry."
@@ -472,12 +472,12 @@ msgstr ""
 "A problem occurred during the update. This is usually some sort of network "
 "problem, please check your network connection and retry."
 
-#: ../DistUpgrade/DistUpgradeController.py:1025
-#: ../DistUpgrade/DistUpgradeController.py:1030
+#: ../DistUpgrade/DistUpgradeController.py:1023
+#: ../DistUpgrade/DistUpgradeController.py:1028
 msgid "EFI System Partition (ESP) not usable"
 msgstr "EFI System Partition (ESP) not usable"
 
-#: ../DistUpgrade/DistUpgradeController.py:1026
+#: ../DistUpgrade/DistUpgradeController.py:1024
 msgid ""
 "Your EFI System Partition (ESP) is not mounted at /boot/efi. Please ensure "
 "that it is properly configured and try again."
@@ -485,7 +485,7 @@ msgstr ""
 "Your EFI System Partition (ESP) is not mounted at /boot/efi. Please ensure "
 "that it is properly configured and try again."
 
-#: ../DistUpgrade/DistUpgradeController.py:1031
+#: ../DistUpgrade/DistUpgradeController.py:1029
 msgid ""
 "The EFI System Partition (ESP) mounted at /boot/efi is not writable. Please "
 "mount this partition read-write and try again."
@@ -493,13 +493,13 @@ msgstr ""
 "The EFI System Partition (ESP) mounted at /boot/efi is not writable. Please "
 "mount this partition read-write and try again."
 
-#: ../DistUpgrade/DistUpgradeController.py:1038
+#: ../DistUpgrade/DistUpgradeController.py:1036
 msgid "Not enough free disk space"
 msgstr "Not enough free disk space"
 
 #. TRANSLATORS: you can change the order of the sentence,
 #. make sure to keep all {str_*} string untranslated.
-#: ../DistUpgrade/DistUpgradeController.py:1041
+#: ../DistUpgrade/DistUpgradeController.py:1039
 #, python-brace-format
 msgid ""
 "The upgrade has aborted. The upgrade needs a total of {str_total} free space "
@@ -511,14 +511,14 @@ msgstr ""
 "space on '{str_dir}'. {str_remedy}"
 
 #. specific ways to resolve lack of free space
+#: ../DistUpgrade/DistUpgradeController.py:1044
+msgid ""
+"Remove temporary packages of former installations using 'sudo apt clean'."
+msgstr ""
+"Remove temporary packages of former installations using 'sudo apt clean'."
+
 #: ../DistUpgrade/DistUpgradeController.py:1046
 msgid ""
-"Remove temporary packages of former installations using 'sudo apt clean'."
-msgstr ""
-"Remove temporary packages of former installations using 'sudo apt clean'."
-
-#: ../DistUpgrade/DistUpgradeController.py:1048
-msgid ""
 "You can remove old kernels using 'sudo apt autoremove' and you could also "
 "set COMPRESS=xz in /etc/initramfs-tools/initramfs.conf to reduce the size of "
 "your initramfs."
@@ -527,7 +527,7 @@ msgstr ""
 "set COMPRESS=xz in /etc/initramfs-tools/initramfs.conf to reduce the size of "
 "your initramfs."
 
-#: ../DistUpgrade/DistUpgradeController.py:1053
+#: ../DistUpgrade/DistUpgradeController.py:1051
 msgid ""
 "Empty your trash and remove temporary packages of former installations using "
 "'sudo apt-get clean'."
@@ -535,24 +535,24 @@ msgstr ""
 "Empty out your rubbish, and remove temporary packages of former "
 "installations using 'sudo apt-get clean'."
 
-#: ../DistUpgrade/DistUpgradeController.py:1056
+#: ../DistUpgrade/DistUpgradeController.py:1054
 msgid "Reboot to clean up files in /tmp."
 msgstr "Reboot to clean up files in /tmp."
 
 #. calc the dist-upgrade and see if the removals are ok/expected
 #. do the dist-upgrade
-#: ../DistUpgrade/DistUpgradeController.py:1095
+#: ../DistUpgrade/DistUpgradeController.py:1093
 #: ../DistUpgrade/DistUpgradeController.py:1938
 #: ../DistUpgrade/DistUpgradeController.py:1990
 msgid "Calculating the changes"
 msgstr "Calculating the changes"
 
 #. ask the user
-#: ../DistUpgrade/DistUpgradeController.py:1139
+#: ../DistUpgrade/DistUpgradeController.py:1137
 msgid "Do you want to start the upgrade?"
 msgstr "Do you want to start the upgrade?"
 
-#: ../DistUpgrade/DistUpgradeController.py:1158
+#: ../DistUpgrade/DistUpgradeController.py:1156
 #, python-format
 msgid ""
 "Livepatch security updates are not available for Ubuntu %s. If you upgrade, "
@@ -561,11 +561,11 @@ msgstr ""
 "Livepatch security updates are not available for Ubuntu %s. If you upgrade, "
 "Livepatch will turn off."
 
-#: ../DistUpgrade/DistUpgradeController.py:1230
+#: ../DistUpgrade/DistUpgradeController.py:1228
 msgid "Upgrade canceled"
 msgstr "Upgrade cancelled"
 
-#: ../DistUpgrade/DistUpgradeController.py:1231
+#: ../DistUpgrade/DistUpgradeController.py:1229
 msgid ""
 "The upgrade will cancel now and the original system state will be restored. "
 "You can resume the upgrade at a later time."
@@ -573,12 +573,12 @@ msgstr ""
 "The upgrade will cancel now and the original system state will be restored. "
 "You can resume the upgrade at a later time."
 
-#: ../DistUpgrade/DistUpgradeController.py:1237
-#: ../DistUpgrade/DistUpgradeController.py:1382
+#: ../DistUpgrade/DistUpgradeController.py:1235
+#: ../DistUpgrade/DistUpgradeController.py:1380
 msgid "Could not download the upgrades"
 msgstr "Could not download the upgrades"
 
-#: ../DistUpgrade/DistUpgradeController.py:1238
+#: ../DistUpgrade/DistUpgradeController.py:1236
 msgid ""
 "The upgrade has aborted. Please check your Internet connection or "
 "installation media and try again. All files downloaded so far have been kept."
@@ -588,27 +588,27 @@ msgstr ""
 
 #. FIXME: strings are not good, but we are in string freeze
 #. currently
-#: ../DistUpgrade/DistUpgradeController.py:1331
-#: ../DistUpgrade/DistUpgradeController.py:1370
-#: ../DistUpgrade/DistUpgradeController.py:1487
+#: ../DistUpgrade/DistUpgradeController.py:1329
+#: ../DistUpgrade/DistUpgradeController.py:1368
+#: ../DistUpgrade/DistUpgradeController.py:1485
 msgid "Error during commit"
 msgstr "Error during commit"
 
 #. generate a new cache
-#: ../DistUpgrade/DistUpgradeController.py:1333
-#: ../DistUpgrade/DistUpgradeController.py:1372
-#: ../DistUpgrade/DistUpgradeController.py:1532
+#: ../DistUpgrade/DistUpgradeController.py:1331
+#: ../DistUpgrade/DistUpgradeController.py:1370
+#: ../DistUpgrade/DistUpgradeController.py:1530
 msgid "Restoring original system state"
 msgstr "Restoring original system state"
 
-#: ../DistUpgrade/DistUpgradeController.py:1334
-#: ../DistUpgrade/DistUpgradeController.py:1349
-#: ../DistUpgrade/DistUpgradeController.py:1373
+#: ../DistUpgrade/DistUpgradeController.py:1332
+#: ../DistUpgrade/DistUpgradeController.py:1347
+#: ../DistUpgrade/DistUpgradeController.py:1371
 msgid "Could not install the upgrades"
 msgstr "Could not install the upgrades"
 
 #. invoke the frontend now and show a error message
-#: ../DistUpgrade/DistUpgradeController.py:1339
+#: ../DistUpgrade/DistUpgradeController.py:1337
 msgid ""
 "The upgrade has aborted. Your system could be in an unusable state. A "
 "recovery will run now (dpkg --configure -a)."
@@ -616,7 +616,7 @@ msgstr ""
 "The upgrade has aborted. Your system could be in an unusable state. A "
 "recovery will run now (dpkg --configure -a)."
 
-#: ../DistUpgrade/DistUpgradeController.py:1344
+#: ../DistUpgrade/DistUpgradeController.py:1342
 #, python-format
 msgid ""
 "\n"
@@ -633,7 +633,7 @@ msgstr ""
 "dist-upgrade/ to the bug report.\n"
 "%s"
 
-#: ../DistUpgrade/DistUpgradeController.py:1383
+#: ../DistUpgrade/DistUpgradeController.py:1381
 msgid ""
 "The upgrade has aborted. Please check your Internet connection or "
 "installation media and try again. "
@@ -641,24 +641,24 @@ msgstr ""
 "The upgrade has aborted. Please check your Internet connection or "
 "installation media and try again. "
 
-#: ../DistUpgrade/DistUpgradeController.py:1411
+#: ../DistUpgrade/DistUpgradeController.py:1409
 msgid "Searching for obsolete software"
 msgstr "Searching for obsolete software"
 
-#: ../DistUpgrade/DistUpgradeController.py:1475
+#: ../DistUpgrade/DistUpgradeController.py:1473
 msgid "Remove obsolete packages?"
 msgstr "Remove obsolete packages?"
 
-#: ../DistUpgrade/DistUpgradeController.py:1476
+#: ../DistUpgrade/DistUpgradeController.py:1474
 #: ../data/gtkbuilder/DistUpgrade.ui.h:8
 msgid "_Keep"
 msgstr "_Keep"
 
-#: ../DistUpgrade/DistUpgradeController.py:1476
+#: ../DistUpgrade/DistUpgradeController.py:1474
 msgid "_Remove"
 msgstr "_Remove"
 
-#: ../DistUpgrade/DistUpgradeController.py:1488
+#: ../DistUpgrade/DistUpgradeController.py:1486
 msgid ""
 "A problem occurred during the clean-up. Please see the below message for "
 "more information. "
@@ -668,28 +668,28 @@ msgstr ""
 
 #. FIXME: instead of error out, fetch and install it
 #. here
-#: ../DistUpgrade/DistUpgradeController.py:1570
+#: ../DistUpgrade/DistUpgradeController.py:1568
 msgid "Required depends is not installed"
 msgstr "Required depends are not installed"
 
-#: ../DistUpgrade/DistUpgradeController.py:1571
+#: ../DistUpgrade/DistUpgradeController.py:1569
 #, python-format
 msgid "The required dependency '%s' is not installed. "
 msgstr "The required dependency '%s' is not installed. "
 
 #. coherence check (check for ubuntu-desktop, brokenCache etc)
 #. then open the cache (again)
-#: ../DistUpgrade/DistUpgradeController.py:1804
-#: ../DistUpgrade/DistUpgradeController.py:1888
+#: ../DistUpgrade/DistUpgradeController.py:1802
+#: ../DistUpgrade/DistUpgradeController.py:1886
 msgid "Checking package manager"
 msgstr "Checking package manager"
 
-#: ../DistUpgrade/DistUpgradeController.py:1810
-#: ../DistUpgrade/DistUpgradeController.py:1816
+#: ../DistUpgrade/DistUpgradeController.py:1808
+#: ../DistUpgrade/DistUpgradeController.py:1814
 msgid "Preparing the upgrade failed"
 msgstr "Preparing the upgrade failed"
 
-#: ../DistUpgrade/DistUpgradeController.py:1811
+#: ../DistUpgrade/DistUpgradeController.py:1809
 msgid ""
 "Preparing the system for the upgrade failed so a bug reporting process is "
 "being started."
@@ -697,7 +697,7 @@ msgstr ""
 "Preparing the system for the upgrade failed, so a bug reporting process is "
 "being started."
 
-#: ../DistUpgrade/DistUpgradeController.py:1817
+#: ../DistUpgrade/DistUpgradeController.py:1815
 msgid ""
 "Preparing the system for the upgrade failed. To report a bug install apport "
 "and then execute 'apport-bug ubuntu-release-upgrader'."
@@ -705,12 +705,12 @@ msgstr ""
 "Preparing the system for the upgrade failed. To report a bug install apport "
 "and then execute 'apport-bug ubuntu-release-upgrader'."
 
-#: ../DistUpgrade/DistUpgradeController.py:1834
-#: ../DistUpgrade/DistUpgradeController.py:1844
+#: ../DistUpgrade/DistUpgradeController.py:1832
+#: ../DistUpgrade/DistUpgradeController.py:1842
 msgid "Getting upgrade prerequisites failed"
 msgstr "Getting upgrade prerequisites failed"
 
-#: ../DistUpgrade/DistUpgradeController.py:1835
+#: ../DistUpgrade/DistUpgradeController.py:1833
 msgid ""
 "The system was unable to get the prerequisites for the upgrade. The upgrade "
 "will abort now and restore the original system state.\n"
@@ -722,7 +722,7 @@ msgstr ""
 "\n"
 "Additionally, a bug reporting process is being started."
 
-#: ../DistUpgrade/DistUpgradeController.py:1845
+#: ../DistUpgrade/DistUpgradeController.py:1843
 msgid ""
 "The system was unable to get the prerequisites for the upgrade. The upgrade "
 "will abort now and restore the original system state.\n"
@@ -736,7 +736,7 @@ msgstr ""
 "To report a bug install apport and then execute 'apport-bug ubuntu-release-"
 "upgrader'."
 
-#: ../DistUpgrade/DistUpgradeController.py:1879
+#: ../DistUpgrade/DistUpgradeController.py:1877
 msgid "Updating repository information"
 msgstr "Updating repository information"
 
