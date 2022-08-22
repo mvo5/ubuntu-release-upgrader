@@ -1,9 +1,9 @@
 ubuntu-release-upgrader (1:22.10.7) UNRELEASED; urgency=medium
 
-  * data/release-upgrades: set Prompt to normal
-  * DistUpgrade/DistUpgradeController.py: In one of the finall calls of
+  * DistUpgrade/DistUpgradeController.py: In one of the final calls of
     need_server_mode() do not allow switching from a desktop mode upgrade to a
     server mode upgrade. (LP: #1969786)
+  * data/release-upgrades: set Prompt to normal
   * Run pre-build.sh: updating mirrors, demotions, and translations.
 
  -- Brian Murray <brian@ubuntu.com>  Mon, 22 Aug 2022 12:44:42 -0700
