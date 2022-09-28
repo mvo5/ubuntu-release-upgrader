@@ -252,7 +252,7 @@ class KDECdromProgressAdapter(apt.progress.base.CdromProgress):
         """ update is called regularly so that the gui can be redrawn """
         if text:
           self.status.setText(text)
-        self.progressbar.setValue(step.value/float(self.totalSteps))
+        self.progressbar.setValue(int(step.value/float(self.totalSteps)))
         QApplication.processEvents()
 
     def ask_cdrom_name(self):
@@ -277,7 +277,7 @@ class KDEOpProgress(apt.progress.base.OpProgress):
       #else:
       #    self.progressbar.pulse()
       #self.progressbar.set_fraction(self.percent/100.0)
-      self.progressbar.setValue(self.percent)
+      self.progressbar.setValue(int(self.percent))
       QApplication.processEvents()
 
   def done(self):
@@ -318,7 +318,7 @@ class KDEAcquireProgressAdapter(AcquireProgress):
         # FIXME: move the status_str and progress_str into python-apt
         # (python-apt need i18n first for this)
         AcquireProgress.pulse(self, owner)
-        self.progress.setValue(self.percent)
+        self.progress.setValue(int(self.percent))
         current_item = self.current_items + 1
         if current_item > self.total_items:
             current_item = self.total_items
@@ -465,7 +465,7 @@ class KDEInstallProgressAdapter(InstallProgress):
         if self.start_time == 0.0:
           #print("setting start time to %s" % self.start_time)
           self.start_time = time.time()
-        self.progress.setValue(self.percent)
+        self.progress.setValue(int(self.percent))
         self.label_status.setText(utf8(status.strip()))
         # start showing when we gathered some data
         if percent > 1.0:

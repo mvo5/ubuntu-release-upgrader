@@ -213,9 +213,9 @@ class KDEAcquireProgressAdapter(apt.progress.base.AcquireProgress):
 
     def pulse(self, owner):
         apt.progress.base.AcquireProgress.pulse(self, owner)
-        self.dialog.installationProgress.setValue(
+        self.dialog.installationProgress.setValue(int(
             (self.current_bytes + self.current_items) /
-            float(self.total_bytes + self.total_items) * 100)
+            float(self.total_bytes + self.total_items) * 100))
         current_item = self.current_items + 1
         if current_item > self.total_items:
             current_item = self.total_items
