@@ -27,7 +27,7 @@ def _apport_append_logfiles(report, logdir="/var/log/dist-upgrade/"):
             continue
         ident = dirname + APPORT_ALLOWLIST[fname]
         if os.access(f, os.R_OK):
-            report[ident] = (open(f), )
+            report[ident] = (f, )
         elif os.path.exists(f):
             try:
                 from apport.hookutils import root_command_output
