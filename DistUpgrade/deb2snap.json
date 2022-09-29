@@ -5,11 +5,6 @@
             "to_channel": "stable",
             "metapkg": "ubuntu-desktop"
         },
-        "firefox": {
-            "deb": "firefox",
-            "metapkg": ["ubuntu-desktop", "kubuntu-desktop", "lubuntu-desktop",
-                        "ubuntu-mate-desktop", "ubuntustudio-desktop"]
-        },
         "gnome-3-38-2004": {
             "metapkg": "ubuntu-desktop"
         },
