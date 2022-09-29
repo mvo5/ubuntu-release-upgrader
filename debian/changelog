@@ -1,11 +1,11 @@
-ubuntu-release-upgrader (1:22.10.8) UNRELEASED; urgency=medium
+ubuntu-release-upgrader (1:22.10.8) kinetic; urgency=medium
 
   * DistUpgrade: Cast to int when calling QProgressBar.setValue() (LP: #1991096)
   * DistUpgrade: Just pass filename to apport report (LP: #1985964)
   * DistUpgrade: Remove firefox from deb2snap.json (LP: #1964036)
   * Run pre-build.sh: updating mirrors, demotions, and translations.
 
- -- Nick Rosbrook <nick.rosbrook@canonical.com>  Wed, 28 Sep 2022 16:25:09 -0400
+ -- Nick Rosbrook <nick.rosbrook@canonical.com>  Thu, 29 Sep 2022 15:13:49 -0400
 
 ubuntu-release-upgrader (1:22.10.7) kinetic; urgency=medium
 
