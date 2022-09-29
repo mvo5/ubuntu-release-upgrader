@@ -23,7 +23,7 @@
 
 # Constants
 RUNLEVELHELPER=/sbin/runlevel
-POLICYHELPER=/usr/sbin/policy-rc.d
+POLICYHELPER=$DPKG_ROOT/usr/sbin/policy-rc.d
 INITDPREFIX=/etc/init.d/
 RCDPREFIX=/etc/rc
 
