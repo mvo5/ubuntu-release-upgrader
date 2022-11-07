@@ -97,7 +97,7 @@ BackupExt=distUpgrade
 LogDir=/var/log/dist-upgrade/
 
 [Sources]
-From=kinetic
+From=jammy
 To=lunar
 ValidOrigin=Ubuntu
 ValidMirrors = mirrors.cfg
