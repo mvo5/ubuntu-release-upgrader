@@ -1,10 +1,10 @@
-ubuntu-release-upgrader (1:23.04.1) UNRELEASED; urgency=medium
+ubuntu-release-upgrader (1:23.04.1) lunar; urgency=medium
 
   * Update for 22.10 -> 23.04.
   * Update for 22.04 -> 23.04.
   * Run pre-build.sh: updating mirrors, demotions, and translations.
 
- -- Brian Murray <brian@ubuntu.com>  Mon, 07 Nov 2022 05:54:15 -0800
+ -- Brian Murray <brian@ubuntu.com>  Mon, 07 Nov 2022 06:14:23 -0800
 
 ubuntu-release-upgrader (1:22.10.8) kinetic; urgency=medium
 
