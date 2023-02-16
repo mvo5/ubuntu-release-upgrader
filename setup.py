@@ -12,7 +12,9 @@ for line in check_output('dpkg-parsechangelog --format rfc822'.split(),
                          universal_newlines=True).splitlines():
     header, colon, value = line.lower().partition(':')
     if header == 'version':
-        version = value.strip()
+        # PEP 440 uses '!' for the epoch separator:
+        #   https://peps.python.org/pep-0440/#version-epochs
+        version = value.strip().replace(':','!')
         break
 else:
     raise RuntimeError('No version found in debian/changelog')
