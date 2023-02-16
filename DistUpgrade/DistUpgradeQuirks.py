@@ -123,6 +123,8 @@ class DistUpgradeQuirks(object):
         cache = self.controller.cache
         self._test_and_warn_if_ros_installed(cache)
 
+        self._maybe_prevent_flatpak_auto_removal()
+
         if 'snapd' not in cache:
             logging.debug("package required for Quirk not in cache")
             return
@@ -468,6 +470,56 @@ class DistUpgradeQuirks(object):
                   "Are you sure you want to continue?"))
             if not res:
                 self.controller.abort()
+
+    def _maybe_prevent_flatpak_auto_removal(self):
+        """
+        If flatpak is installed, and there are either active remotes, or
+        flatpak apps installed, prevent flatpak's auto-removal on upgrade.
+        """
+        prevent_auto_removal = False
+
+        if "flatpak" not in self.controller.cache:
+            return
+
+        if not self.controller.cache["flatpak"].is_installed:
+            return
+
+        if not os.path.exists("/usr/bin/flatpak"):
+            return
+
+        for subcmd in ["remotes", "list"]:
+            r = subprocess.run(
+                    ["/usr/bin/flatpak", subcmd],
+                    stdout=subprocess.PIPE
+            )
+            if r.stdout.decode("utf-8").strip():
+                prevent_auto_removal = True
+                break
+
+        logging.debug("flatpak will{}be marked as manually installed"
+                      .format(" " if prevent_auto_removal else " NOT "))
+
+        if not prevent_auto_removal:
+            return
+
+        self.controller.cache["flatpak"].mark_auto(auto=False)
+
+        for pkg in ("plasma-discover-backend-flatpak",
+                    "gnome-software-plugin-flatpak"):
+            if pkg not in self.controller.cache:
+                continue
+
+            if not self.controller.cache[pkg].is_installed:
+                continue
+
+            logging.debug("{} will be marked as manually installed"
+                          .format(pkg))
+            self.controller.cache[pkg].mark_auto(auto=False)
+
+        self.controller.cache.commit(
+            self._view.getAcquireProgress(),
+            self._view.getInstallProgress(self.controller.cache)
+        )
 
     def _checkArmCPU(self):
         """
