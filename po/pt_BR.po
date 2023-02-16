@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: update-manager\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2022-11-07 06:09-0800\n"
+"POT-Creation-Date: 2023-02-22 21:53+0000\n"
 "PO-Revision-Date: 2019-06-18 17:53+0000\n"
 "Last-Translator: Brian Murray <brian@ubuntu.com>\n"
 "Language-Team: Ubuntu-BR <tradutores@listas.ubuntubrasil.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Poedit-Language: Portuguese\n"
 
 #. TRANSLATORS: %s is a country
-#: ../DistUpgrade/distro.py:215 ../DistUpgrade/distro.py:446
+#: ../DistUpgrade/distro.py:206 ../DistUpgrade/distro.py:461
 #, python-format
 msgid "Server for %s"
 msgstr "Servidor para %s"
@@ -29,12 +29,12 @@ msgstr "Servidor para %s"
 #. More than one server is used. Since we don't handle this case
 #. in the user interface we set "custom servers" to true and
 #. append a list of all used servers
-#: ../DistUpgrade/distro.py:233 ../DistUpgrade/distro.py:239
-#: ../DistUpgrade/distro.py:255
+#: ../DistUpgrade/distro.py:225 ../DistUpgrade/distro.py:237
+#: ../DistUpgrade/distro.py:258
 msgid "Main server"
 msgstr "Servidor principal"
 
-#: ../DistUpgrade/distro.py:259
+#: ../DistUpgrade/distro.py:267
 msgid "Custom servers"
 msgstr "Servidores personalizados"
 
@@ -998,11 +998,11 @@ msgstr "Por favor insira '%s' na unidade '%s'"
 msgid "Media Change"
 msgstr "Mudança de mídia"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:235
+#: ../DistUpgrade/DistUpgradeQuirks.py:237
 msgid "Your graphics hardware may not be fully supported in Ubuntu 14.04."
 msgstr "O seu hardware gráfico pode não ter suporte completo no Ubuntu 14.04."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:237
+#: ../DistUpgrade/DistUpgradeQuirks.py:239
 msgid ""
 "Running the 'unity' desktop environment is not fully supported by your "
 "graphics hardware. You will maybe end up in a very slow environment after "
@@ -1018,13 +1018,13 @@ msgstr ""
 "UpdateManagerWarningForUnity3D Você tem certeza de que deseja continuar com "
 "a atualização?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:261
+#: ../DistUpgrade/DistUpgradeQuirks.py:263
 msgid "Your graphics hardware may not be fully supported in Ubuntu 12.04 LTS."
 msgstr ""
 "Seu hardware de gráficos pode não ser totalmente suportado no Ubuntu 12.04 "
 "LTS."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:263
+#: ../DistUpgrade/DistUpgradeQuirks.py:265
 msgid ""
 "The support in Ubuntu 12.04 LTS for your Intel graphics hardware is limited "
 "and you may encounter problems after the upgrade. For more information see "
@@ -1036,7 +1036,7 @@ msgstr ""
 "https://wiki.ubuntu.com/X/Bugs/UpdateManagerWarningForI8xx Você deseja "
 "continuar com a atualização?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:283
+#: ../DistUpgrade/DistUpgradeQuirks.py:285
 msgid ""
 "Upgrading may reduce desktop effects, and performance in games and other "
 "graphically intensive programs."
@@ -1044,7 +1044,7 @@ msgstr ""
 "Atualizar pode reduzir efeitos da área de trabalho e performance em jogos e "
 "outros programas que usam gráficos intensamente."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:287
+#: ../DistUpgrade/DistUpgradeQuirks.py:289
 msgid ""
 "This computer is currently using the AMD 'fglrx' graphics driver. No version "
 "of this driver is available that works with your hardware in Ubuntu 10.04 "
@@ -1058,12 +1058,12 @@ msgstr ""
 "\n"
 "Você deseja continuar?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:326
-#: ../DistUpgrade/DistUpgradeQuirks.py:395
+#: ../DistUpgrade/DistUpgradeQuirks.py:328
+#: ../DistUpgrade/DistUpgradeQuirks.py:397
 msgid "Sorry, no more upgrades for this system"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:327
+#: ../DistUpgrade/DistUpgradeQuirks.py:329
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases for this system's 'i386' "
@@ -1072,11 +1072,11 @@ msgid ""
 "Updates for Ubuntu %s will continue until %s."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:342
+#: ../DistUpgrade/DistUpgradeQuirks.py:344
 msgid "No ARMv6 CPU"
 msgstr "Nenhuma CPU ARMv6"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:343
+#: ../DistUpgrade/DistUpgradeQuirks.py:345
 msgid ""
 "Your system uses an ARM CPU that is older than the ARMv6 architecture. All "
 "packages in karmic were built with optimizations requiring ARMv6 as the "
@@ -1088,12 +1088,12 @@ msgstr ""
 "mínimo a arquitetura ARMv6. Não é possível atualizar seu sistema para uma "
 "versão mais nova do Ubuntu com este hardware."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:363
+#: ../DistUpgrade/DistUpgradeQuirks.py:365
 msgid ""
 "Sorry, this storage driver is not supported in kernels for newer releases"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:365
+#: ../DistUpgrade/DistUpgradeQuirks.py:367
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases that provide kernel support "
@@ -1103,7 +1103,7 @@ msgid ""
 "driver, remove the directory %s and try again."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:396
+#: ../DistUpgrade/DistUpgradeQuirks.py:398
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases for this system's POWER8 "
@@ -1112,11 +1112,11 @@ msgid ""
 "Updates for Ubuntu %s will continue until %s."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:414
+#: ../DistUpgrade/DistUpgradeQuirks.py:416
 msgid "No init available"
 msgstr "Sem inicialização disponível"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:415
+#: ../DistUpgrade/DistUpgradeQuirks.py:417
 msgid ""
 "Your system appears to be a virtualised environment without an init daemon, "
 "e.g. Linux-VServer. Ubuntu 10.04 LTS cannot function within this type of "
@@ -1132,11 +1132,11 @@ msgstr ""
 "\n"
 "Você tem certeza que deseja continuar?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:456
+#: ../DistUpgrade/DistUpgradeQuirks.py:458
 msgid "The Robot Operating System (ROS) is installed"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:457
+#: ../DistUpgrade/DistUpgradeQuirks.py:459
 msgid ""
 "It appears that ROS is currently installed. Each ROS release is very strict "
 "about the versions of Ubuntu it supports, and Ubuntu upgrades can fail if "
@@ -1153,11 +1153,11 @@ msgid ""
 "Are you sure you want to continue?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:582
+#: ../DistUpgrade/DistUpgradeQuirks.py:634
 msgid "Connection to the Snap Store failed"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:583
+#: ../DistUpgrade/DistUpgradeQuirks.py:635
 msgid ""
 "You have the package lxd installed but your system is unable to reach the "
 "Snap Store. lxd is now provided via a snap and the release upgrade will fail "
@@ -1167,11 +1167,11 @@ msgid ""
 "may want to configure a Snap Store proxy."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:598
+#: ../DistUpgrade/DistUpgradeQuirks.py:650
 msgid "Connection to Snap Store failed"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:599
+#: ../DistUpgrade/DistUpgradeQuirks.py:651
 msgid ""
 "Your system does not have a connection to the Snap Store. For the best "
 "upgrade experience make sure that your system can connect to api.snapcraft."
@@ -1179,11 +1179,11 @@ msgid ""
 "Do you still want to continue with the upgrade?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:608
+#: ../DistUpgrade/DistUpgradeQuirks.py:660
 msgid "Outdated snapd package"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:609
+#: ../DistUpgrade/DistUpgradeQuirks.py:661
 msgid ""
 "Your system does not have the latest version of snapd. Please update the "
 "version of snapd on your system to improve the upgrade experience.\n"
@@ -1192,34 +1192,34 @@ msgstr ""
 
 #. now perform direct API calls to the store, requesting size
 #. information for each of the snaps needing installation
-#: ../DistUpgrade/DistUpgradeQuirks.py:634
+#: ../DistUpgrade/DistUpgradeQuirks.py:686
 msgid "Calculating snap size requirements"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:665
+#: ../DistUpgrade/DistUpgradeQuirks.py:717
 msgid "Processing snap replacements"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:671
+#: ../DistUpgrade/DistUpgradeQuirks.py:723
 #, python-format
 msgid "refreshing snap %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:675
+#: ../DistUpgrade/DistUpgradeQuirks.py:727
 #, python-format
 msgid "removing snap %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:678
+#: ../DistUpgrade/DistUpgradeQuirks.py:730
 #, python-format
 msgid "installing snap %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:707
+#: ../DistUpgrade/DistUpgradeQuirks.py:759
 msgid "PAE not enabled"
 msgstr "PAE não habilitado"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:708
+#: ../DistUpgrade/DistUpgradeQuirks.py:760
 msgid ""
 "Your system uses a CPU that does not have PAE enabled. Ubuntu only supports "
 "non-PAE systems up to Ubuntu 12.04. To upgrade to a later version of Ubuntu, "
@@ -1232,11 +1232,11 @@ msgstr ""
 "veja:\n"
 "http://help.ubuntu.com/community/EnablingPAE"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1004
+#: ../DistUpgrade/DistUpgradeQuirks.py:1056
 msgid "universe component not enabled"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1005
+#: ../DistUpgrade/DistUpgradeQuirks.py:1057
 #, python-format
 msgid ""
 "You have the package %s installed which is a python2 package. python2 has "
@@ -1248,7 +1248,7 @@ msgid ""
 "universe component in /etc/apt/sources.list or remove %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1117
+#: ../DistUpgrade/DistUpgradeQuirks.py:1169
 msgid "Checking for installed snaps"
 msgstr ""
 
