@@ -1,4 +1,4 @@
-ubuntu-release-upgrader (1:23.04.2) UNRELEASED; urgency=medium
+ubuntu-release-upgrader (1:23.04.2) lunar; urgency=medium
 
   [ Nick Rosbrook ]
   * DistUpgradeQuirks: Add quirk to prevent flatpak auto-removal if needed
@@ -8,7 +8,7 @@ ubuntu-release-upgrader (1:23.04.2) UNRELEASED; urgency=medium
   [ Rudra Saraswat ]
   * Add unity-desktop to DistUpgrade.cfg (LP: #2003014)
 
- -- Nick Rosbrook <nick.rosbrook@canonical.com>  Wed, 22 Feb 2023 10:05:14 -0500
+ -- Nick Rosbrook <nick.rosbrook@canonical.com>  Wed, 22 Feb 2023 16:56:29 -0500
 
 ubuntu-release-upgrader (1:23.04.1) lunar; urgency=medium
 
