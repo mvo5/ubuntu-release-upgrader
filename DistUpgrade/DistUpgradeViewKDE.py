@@ -54,6 +54,7 @@ import traceback
 
 import apt
 import apt_pkg
+import distro_info
 import shlex # for osrelease
 import os
 
@@ -62,6 +63,7 @@ import pty
 from .DistUpgradeApport import run_apport, apport_crash
 
 from .DistUpgradeView import DistUpgradeView, FuzzyTimeToStr, InstallProgress, AcquireProgress
+from .DistUpgradeConfigParser import DistUpgradeConfig
 from .telemetry import get as get_telemetry
 
 import select
@@ -568,8 +570,10 @@ class DistUpgradeViewKDE(DistUpgradeView):
         logger.setLevel(logging.INFO)
         if not datadir or datadir == '.':
           localedir=os.path.join(os.getcwd(),"mo")
+          self.config = DistUpgradeConfig(os.getcwd())
         else:
           localedir="/usr/share/locale/ubuntu-release-upgrader"
+          self.config = DistUpgradeConfig(datadir)
 
         # FIXME: i18n must be somewhere relative do this dir
         try:
@@ -637,9 +641,13 @@ class DistUpgradeViewKDE(DistUpgradeView):
         name = _OSRelease().result["PRETTY_NAME"]
         if not name or name == "Ubuntu":
             name = "Kubuntu"
+
+        to_dist = self.config.get("Sources", "To")
+        to_version = distro_info.UbuntuDistroInfo().version(to_dist)
+
         title_string = self.window_main.label_title.text()
         title_string = title_string.replace("Ubuntu", name)
-        title_string = title_string.replace("%s", "22.10")
+        title_string = title_string.replace("%s", to_version)
         self.window_main.label_title.setText(title_string)
 
         # setup terminal text in hidden by default spot

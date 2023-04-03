@@ -47,11 +47,13 @@ import subprocess
 
 import apt
 import apt_pkg
+import distro_info
 import os
 
 from .DistUpgradeApport import run_apport, apport_crash
 
 from .DistUpgradeView import DistUpgradeView, FuzzyTimeToStr, InstallProgress, AcquireProgress
+from .DistUpgradeConfigParser import DistUpgradeConfig
 from .telemetry import get as get_telemetry
 from .SimpleGtk3builderApp import SimpleGtkbuilderApp
 
@@ -450,9 +452,11 @@ class DistUpgradeViewGtk3(DistUpgradeView,SimpleGtkbuilderApp):
         if not datadir or datadir == '.':
             localedir=os.path.join(os.getcwd(),"mo")
             gladedir=os.getcwd()
+            self.config = DistUpgradeConfig(os.getcwd())
         else:
             localedir="/usr/share/locale/"
             gladedir=os.path.join(datadir, "gtkbuilder")
+            self.config = DistUpgradeConfig(datadir)
 
         # check if we have a display etc
         Gtk.init_check(sys.argv)
@@ -476,8 +480,11 @@ class DistUpgradeViewGtk3(DistUpgradeView,SimpleGtkbuilderApp):
             logging.debug("error setting default icon, ignoring (%s)" % e)
             pass
 
+        to_dist = self.config.get("Sources", "To")
+        to_version = distro_info.UbuntuDistroInfo().version(to_dist)
+
         title_string = self.label_title.get_label()
-        title_string = title_string.replace("%s", "22.10")
+        title_string = title_string.replace("%s", to_version)
         self.label_title.set_label(title_string)
 
         # terminal stuff
