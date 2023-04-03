@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sk\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2023-02-22 21:53+0000\n"
+"POT-Creation-Date: 2023-04-03 16:33+0000\n"
 "PO-Revision-Date: 2013-05-23 02:43+0000\n"
 "Last-Translator: Iain Lane <iain@orangesquash.org.uk>\n"
 "Language-Team: <en@li.org>\n"
@@ -966,7 +966,7 @@ msgid "&Upgrade"
 msgstr "Akt&ualizovať"
 
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:154
-#: ../DistUpgrade/DistUpgradeViewKDE.py:682
+#: ../DistUpgrade/DistUpgradeViewKDE.py:690
 msgid "&Cancel"
 msgstr "&Zrušiť"
 
@@ -996,8 +996,8 @@ msgstr "Súbor %s z %s"
 
 #. print("mediaChange %s %s" % (medium, drive))
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:235
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:125
-#: ../DistUpgrade/DistUpgradeViewKDE.py:300
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:127
+#: ../DistUpgrade/DistUpgradeViewKDE.py:302
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
 msgstr "Prosím, vložte „%s“ do mechaniky „%s“"
@@ -1005,7 +1005,7 @@ msgstr "Prosím, vložte „%s“ do mechaniky „%s“"
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:237
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:242
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:243
-#: ../DistUpgrade/DistUpgradeViewKDE.py:301
+#: ../DistUpgrade/DistUpgradeViewKDE.py:303
 msgid "Media Change"
 msgstr "Výmena nosiča"
 
@@ -1286,27 +1286,27 @@ msgstr "Nastaviť dátový priečinok"
 msgid "Upgrade to the development release"
 msgstr "Aktualizácia na vývojovú verziu"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:146
-#: ../DistUpgrade/DistUpgradeViewKDE.py:314
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:148
+#: ../DistUpgrade/DistUpgradeViewKDE.py:316
 msgid "Fetching is complete"
 msgstr "Sťahovanie je dokončené"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:161
-#: ../DistUpgrade/DistUpgradeViewKDE.py:330
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:163
+#: ../DistUpgrade/DistUpgradeViewKDE.py:332
 #, python-format
 msgid "Fetching file %li of %li at %sB/s"
 msgstr "Získava sa súbor %li z %li rýchlosťou %sB/s"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:163
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:325
-#: ../DistUpgrade/DistUpgradeViewKDE.py:331
-#: ../DistUpgrade/DistUpgradeViewKDE.py:481
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:165
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:327
+#: ../DistUpgrade/DistUpgradeViewKDE.py:333
+#: ../DistUpgrade/DistUpgradeViewKDE.py:483
 #, python-format
 msgid "About %s remaining"
 msgstr "Zostáva približne %s"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:166
-#: ../DistUpgrade/DistUpgradeViewKDE.py:333
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:168
+#: ../DistUpgrade/DistUpgradeViewKDE.py:335
 #, python-format
 msgid "Fetching file %li of %li"
 msgstr "Sťahuje sa súbor %li z %li"
@@ -1314,25 +1314,25 @@ msgstr "Sťahuje sa súbor %li z %li"
 #. FIXME: add support for the timeout
 #. of the terminal (to display something useful then)
 #. -> longer term, move this code into python-apt
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:198
-#: ../DistUpgrade/DistUpgradeViewKDE.py:371
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:200
+#: ../DistUpgrade/DistUpgradeViewKDE.py:373
 msgid "Applying changes"
 msgstr "Aplikujú sa zmeny"
 
 #. we do not report followup errors from earlier failures
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:224
-#: ../DistUpgrade/DistUpgradeViewKDE.py:384
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:226
+#: ../DistUpgrade/DistUpgradeViewKDE.py:386
 msgid "dependency problems - leaving unconfigured"
 msgstr "problém so závislosťami - ponecháva sa nenakonfigurované"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:229
-#: ../DistUpgrade/DistUpgradeViewKDE.py:386
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:231
+#: ../DistUpgrade/DistUpgradeViewKDE.py:388
 #, python-format
 msgid "Could not install '%s'"
 msgstr "Nebolo možné nainštalovať „%s“"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:230
-#: ../DistUpgrade/DistUpgradeViewKDE.py:387
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:232
+#: ../DistUpgrade/DistUpgradeViewKDE.py:389
 #, python-format
 msgid ""
 "The upgrade will continue but the '%s' package may not be in a working "
@@ -1342,8 +1342,8 @@ msgstr ""
 "stave. Zvážte prosím zaslanie hlásenia o chybe."
 
 #. self.expander.set_expanded(True)
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:247
-#: ../DistUpgrade/DistUpgradeViewKDE.py:409
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:249
+#: ../DistUpgrade/DistUpgradeViewKDE.py:411
 #, python-format
 msgid ""
 "Replace the customized configuration file\n"
@@ -1352,8 +1352,8 @@ msgstr ""
 "Nahradiť upravený konfiguračný súbor\n"
 "„%s“?"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:248
-#: ../DistUpgrade/DistUpgradeViewKDE.py:410
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:250
+#: ../DistUpgrade/DistUpgradeViewKDE.py:412
 msgid ""
 "You will lose any changes you have made to this configuration file if you "
 "choose to replace it with a newer version."
@@ -1361,17 +1361,17 @@ msgstr ""
 "Ak si vyberiete nahradiť novšou verziou, stratíte všetky zmeny, ktoré ste "
 "spravili v tejto konfigurácii."
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:268
-#: ../DistUpgrade/DistUpgradeViewKDE.py:433
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:270
+#: ../DistUpgrade/DistUpgradeViewKDE.py:435
 msgid "The 'diff' command was not found"
 msgstr "Príkaz „diff“ nebol nájdený."
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:535
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:542
 #: ../DistUpgrade/DistUpgradeViewText.py:140
 msgid "A fatal error occurred"
 msgstr "Vyskytla sa nenapraviteľná chyba"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:536
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:543
 msgid ""
 "Please report this as a bug (if you haven't already) and include the files /"
 "var/log/dist-upgrade/main.log and /var/log/dist-upgrade/apt.log in your "
@@ -1384,11 +1384,11 @@ msgstr ""
 "Váš pôvodný súbor sources.list bol uložený ako /etc/apt/sources.list."
 "distUpgrade."
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:566
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:573
 msgid "Ctrl-c pressed"
 msgstr "Stlačené Ctrl-c"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:567
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:574
 msgid ""
 "This will abort the operation and may leave the system in a broken state. "
 "Are you sure you want to do that?"
@@ -1397,133 +1397,133 @@ msgstr ""
 "si istý, že to chcete?"
 
 #. append warning
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:706
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:713
 msgid "To prevent data loss close all open applications and documents."
 msgstr ""
 "Aby ste zamedzili strate údajov, zatvorte všetky otvorené aplikácie a "
 "dokumenty."
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:720
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:727
 #, python-format
 msgid "No longer supported by Canonical (%s)"
 msgstr "Tento balík už Canonical nepodporuje (%s)"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:721
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:728
 #, python-format
 msgid "<b>Downgrade (%s)</b>"
 msgstr "<b>Znížiť verziu (%s)</b>"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:722
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:729
 #, python-format
 msgid "Remove (%s)"
 msgstr "Odstrániť (%s)"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:723
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:730
 #, python-format
 msgid "No longer needed (%s)"
 msgstr "Už nie je potrebné (%s)"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:724
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:731
 #, python-format
 msgid "Install (%s)"
 msgstr "Nainštalovať (%s)"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:725
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:732
 #, python-format
 msgid "Upgrade (%s)"
 msgstr "Aktualizovať (%s)"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:773
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:780
 msgid "Cancel"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:774
-#: ../DistUpgrade/DistUpgradeViewKDE.py:906
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:781
+#: ../DistUpgrade/DistUpgradeViewKDE.py:914
 msgid "Continue"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:445
+#: ../DistUpgrade/DistUpgradeViewKDE.py:447
 msgid "Show Difference >>>"
 msgstr "Zobraziť rozdiel >>>"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:448
+#: ../DistUpgrade/DistUpgradeViewKDE.py:450
 msgid "<<< Hide Difference"
 msgstr "<<< Skryť rozdiel"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:668
+#: ../DistUpgrade/DistUpgradeViewKDE.py:676
 msgid "Error"
 msgstr "Chyba"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:686
-#: ../DistUpgrade/DistUpgradeViewKDE.py:927
+#: ../DistUpgrade/DistUpgradeViewKDE.py:694
+#: ../DistUpgrade/DistUpgradeViewKDE.py:935
 msgid "&Close"
 msgstr "&Zavrieť"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:720
+#: ../DistUpgrade/DistUpgradeViewKDE.py:728
 msgid "Show Terminal >>>"
 msgstr "Zobraziť Terminál >>>"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:723
+#: ../DistUpgrade/DistUpgradeViewKDE.py:731
 msgid "<<< Hide Terminal"
 msgstr "<<< Skryť Terminál"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:796
+#: ../DistUpgrade/DistUpgradeViewKDE.py:804
 msgid "Information"
 msgstr "Informácie"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:844
+#: ../DistUpgrade/DistUpgradeViewKDE.py:852
 msgid "&Start Upgrade"
 msgstr "&Spustiť aktualizáciu"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:846
-#: ../DistUpgrade/DistUpgradeViewKDE.py:890
-#: ../DistUpgrade/DistUpgradeViewKDE.py:893
+#: ../DistUpgrade/DistUpgradeViewKDE.py:854
+#: ../DistUpgrade/DistUpgradeViewKDE.py:898
+#: ../DistUpgrade/DistUpgradeViewKDE.py:901
 #: ../data/gtkbuilder/DistUpgrade.ui.h:7
 msgid "Details"
 msgstr "Podrobnosti"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:868
+#: ../DistUpgrade/DistUpgradeViewKDE.py:876
 #, python-format
 msgid "No longer supported %s"
 msgstr "Už nie je podporované %s"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:870
+#: ../DistUpgrade/DistUpgradeViewKDE.py:878
 #, python-format
 msgid "Remove %s"
 msgstr "Odstrániť %s"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:872
+#: ../DistUpgrade/DistUpgradeViewKDE.py:880
 #: ../DistUpgrade/DistUpgradeViewText.py:239
 #, python-format
 msgid "Remove (was auto installed) %s"
 msgstr "Odstrániť (bol nainštalovaný automaticky) %s"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:874
+#: ../DistUpgrade/DistUpgradeViewKDE.py:882
 #, python-format
 msgid "Install %s"
 msgstr "Inštalovať %s"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:876
+#: ../DistUpgrade/DistUpgradeViewKDE.py:884
 #, python-format
 msgid "Upgrade %s"
 msgstr "Aktualizovať %s"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:923
+#: ../DistUpgrade/DistUpgradeViewKDE.py:931
 #: ../DistUpgrade/DistUpgradeViewText.py:292
 msgid "Restart required"
 msgstr "Je potrebný reštart"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:923
+#: ../DistUpgrade/DistUpgradeViewKDE.py:931
 msgid "<b><big>Restart the system to complete the upgrade</big></b>"
 msgstr "<b><big>Pre dokončenie aktualizácie reštartujte počítač</big></b>"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:926
+#: ../DistUpgrade/DistUpgradeViewKDE.py:934
 #: ../data/gtkbuilder/DistUpgrade.ui.h:14
 msgid "_Restart Now"
 msgstr "_Reštartovať teraz"
 
 #. FIXME make this user friendly
-#: ../DistUpgrade/DistUpgradeViewKDE.py:944
+#: ../DistUpgrade/DistUpgradeViewKDE.py:952
 msgid ""
 "<b><big>Cancel the running upgrade?</big></b>\n"
 "\n"
@@ -1535,7 +1535,7 @@ msgstr ""
 "Ak zrušíte prebiehajúcu aktualizáciu, môže to ponechať systém v "
 "nepoužiteľnom stave. Dôrazne sa odporúča pokračovať v aktualizácii systému."
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:948
+#: ../DistUpgrade/DistUpgradeViewKDE.py:956
 msgid "Cancel Upgrade?"
 msgstr "Zrušiť prechod na novšiu verziu?"
 

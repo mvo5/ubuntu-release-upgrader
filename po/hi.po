@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: update-manager\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2023-02-22 21:53+0000\n"
+"POT-Creation-Date: 2023-04-03 16:33+0000\n"
 "PO-Revision-Date: 2013-05-22 11:00+0000\n"
 "Last-Translator: Manish Kumar <manishku86@yahoo.co.in>\n"
 "Language-Team: Hindi <hi@li.org>\n"
@@ -887,7 +887,7 @@ msgid "&Upgrade"
 msgstr ""
 
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:154
-#: ../DistUpgrade/DistUpgradeViewKDE.py:682
+#: ../DistUpgrade/DistUpgradeViewKDE.py:690
 msgid "&Cancel"
 msgstr ""
 
@@ -917,8 +917,8 @@ msgstr "संचिका %s है %s में से"
 
 #. print("mediaChange %s %s" % (medium, drive))
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:235
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:125
-#: ../DistUpgrade/DistUpgradeViewKDE.py:300
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:127
+#: ../DistUpgrade/DistUpgradeViewKDE.py:302
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
 msgstr "कृपया '%s' को ड्राइव '%s' में डालें"
@@ -926,7 +926,7 @@ msgstr "कृपया '%s' को ड्राइव '%s' में डाल�
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:237
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:242
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:243
-#: ../DistUpgrade/DistUpgradeViewKDE.py:301
+#: ../DistUpgrade/DistUpgradeViewKDE.py:303
 msgid "Media Change"
 msgstr "मिडिया परिवर्तन"
 
@@ -1191,27 +1191,27 @@ msgstr "datadir नियत करें"
 msgid "Upgrade to the development release"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:146
-#: ../DistUpgrade/DistUpgradeViewKDE.py:314
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:148
+#: ../DistUpgrade/DistUpgradeViewKDE.py:316
 msgid "Fetching is complete"
 msgstr "आकर्षण समाप्त हुआ"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:161
-#: ../DistUpgrade/DistUpgradeViewKDE.py:330
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:163
+#: ../DistUpgrade/DistUpgradeViewKDE.py:332
 #, python-format
 msgid "Fetching file %li of %li at %sB/s"
 msgstr "आकर्षित संचिका %li है %li का %sB/s की दर से"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:163
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:325
-#: ../DistUpgrade/DistUpgradeViewKDE.py:331
-#: ../DistUpgrade/DistUpgradeViewKDE.py:481
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:165
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:327
+#: ../DistUpgrade/DistUpgradeViewKDE.py:333
+#: ../DistUpgrade/DistUpgradeViewKDE.py:483
 #, python-format
 msgid "About %s remaining"
 msgstr "शेष %s के बारे में"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:166
-#: ../DistUpgrade/DistUpgradeViewKDE.py:333
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:168
+#: ../DistUpgrade/DistUpgradeViewKDE.py:335
 #, python-format
 msgid "Fetching file %li of %li"
 msgstr "आकर्षित संचिका %li है %li का"
@@ -1219,25 +1219,25 @@ msgstr "आकर्षित संचिका %li है %li का"
 #. FIXME: add support for the timeout
 #. of the terminal (to display something useful then)
 #. -> longer term, move this code into python-apt
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:198
-#: ../DistUpgrade/DistUpgradeViewKDE.py:371
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:200
+#: ../DistUpgrade/DistUpgradeViewKDE.py:373
 msgid "Applying changes"
 msgstr "बदलाव लागू कर रहा है"
 
 #. we do not report followup errors from earlier failures
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:224
-#: ../DistUpgrade/DistUpgradeViewKDE.py:384
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:226
+#: ../DistUpgrade/DistUpgradeViewKDE.py:386
 msgid "dependency problems - leaving unconfigured"
 msgstr "निर्भरता समस्ता- विन्यास छोड़ रहा है"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:229
-#: ../DistUpgrade/DistUpgradeViewKDE.py:386
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:231
+#: ../DistUpgrade/DistUpgradeViewKDE.py:388
 #, python-format
 msgid "Could not install '%s'"
 msgstr "'%s' को संस्थापित नहीं कर सका"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:230
-#: ../DistUpgrade/DistUpgradeViewKDE.py:387
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:232
+#: ../DistUpgrade/DistUpgradeViewKDE.py:389
 #, python-format
 msgid ""
 "The upgrade will continue but the '%s' package may not be in a working "
@@ -1247,8 +1247,8 @@ msgstr ""
 "रिपोर्ट भेंजे."
 
 #. self.expander.set_expanded(True)
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:247
-#: ../DistUpgrade/DistUpgradeViewKDE.py:409
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:249
+#: ../DistUpgrade/DistUpgradeViewKDE.py:411
 #, python-format
 msgid ""
 "Replace the customized configuration file\n"
@@ -1257,8 +1257,8 @@ msgstr ""
 "customized विन्यास संचिका को प्रतिस्थापित करें\n"
 "'%s'?"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:248
-#: ../DistUpgrade/DistUpgradeViewKDE.py:410
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:250
+#: ../DistUpgrade/DistUpgradeViewKDE.py:412
 msgid ""
 "You will lose any changes you have made to this configuration file if you "
 "choose to replace it with a newer version."
@@ -1266,17 +1266,17 @@ msgstr ""
 "यदि आपने नए वर्जन से प्रतिस्थापित किया तो इस विन्यास संचिका में किए गए किसी भी "
 "परिवर्तन को आप खो देंगें."
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:268
-#: ../DistUpgrade/DistUpgradeViewKDE.py:433
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:270
+#: ../DistUpgrade/DistUpgradeViewKDE.py:435
 msgid "The 'diff' command was not found"
 msgstr "'diff' कमांड नहीं पाया गया"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:535
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:542
 #: ../DistUpgrade/DistUpgradeViewText.py:140
 msgid "A fatal error occurred"
 msgstr "घातक त्रुटि पायी गई"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:536
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:543
 msgid ""
 "Please report this as a bug (if you haven't already) and include the files /"
 "var/log/dist-upgrade/main.log and /var/log/dist-upgrade/apt.log in your "
@@ -1288,11 +1288,11 @@ msgstr ""
 "समाहित करें. उन्नयन निष्फल हुआ.\n"
 "आपका मुल sources.list को /etc/apt/sources.list.distUpgrade में सहेजा हुआ है."
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:566
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:573
 msgid "Ctrl-c pressed"
 msgstr "Ctrl-c दबाएं"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:567
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:574
 msgid ""
 "This will abort the operation and may leave the system in a broken state. "
 "Are you sure you want to do that?"
@@ -1301,131 +1301,131 @@ msgstr ""
 "करना चाहते हैं?"
 
 #. append warning
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:706
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:713
 msgid "To prevent data loss close all open applications and documents."
 msgstr "आंकड़े को खोने से बचाने हेतु सभी खुले हुए अनुप्रयोगों एंव दस्तावेजों को बंद करें."
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:720
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:727
 #, python-format
 msgid "No longer supported by Canonical (%s)"
 msgstr "कैनेनिकल (%s) द्वारा अब समर्थित नहीं है"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:721
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:728
 #, python-format
 msgid "<b>Downgrade (%s)</b>"
 msgstr "<b>अवन्नयन (%s)</b>"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:722
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:729
 #, python-format
 msgid "Remove (%s)"
 msgstr "हटाएँ (%s)"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:723
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:730
 #, python-format
 msgid "No longer needed (%s)"
 msgstr "अब और आवश्यकता नहीं है (%s)"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:724
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:731
 #, python-format
 msgid "Install (%s)"
 msgstr "संस्थापित करें (%s)"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:725
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:732
 #, python-format
 msgid "Upgrade (%s)"
 msgstr "उन्नयन (%s)"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:773
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:780
 msgid "Cancel"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:774
-#: ../DistUpgrade/DistUpgradeViewKDE.py:906
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:781
+#: ../DistUpgrade/DistUpgradeViewKDE.py:914
 msgid "Continue"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:445
+#: ../DistUpgrade/DistUpgradeViewKDE.py:447
 msgid "Show Difference >>>"
 msgstr "अंतर दिखाएं >>>"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:448
+#: ../DistUpgrade/DistUpgradeViewKDE.py:450
 msgid "<<< Hide Difference"
 msgstr "<<< अंतर छुपाएं"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:668
+#: ../DistUpgrade/DistUpgradeViewKDE.py:676
 msgid "Error"
 msgstr "त्रुटि"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:686
-#: ../DistUpgrade/DistUpgradeViewKDE.py:927
+#: ../DistUpgrade/DistUpgradeViewKDE.py:694
+#: ../DistUpgrade/DistUpgradeViewKDE.py:935
 msgid "&Close"
 msgstr "बंद करें (&C)"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:720
+#: ../DistUpgrade/DistUpgradeViewKDE.py:728
 msgid "Show Terminal >>>"
 msgstr "टर्मिनल दिखाएं >>>"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:723
+#: ../DistUpgrade/DistUpgradeViewKDE.py:731
 msgid "<<< Hide Terminal"
 msgstr "<<< टर्मिनल छुपाएं"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:796
+#: ../DistUpgrade/DistUpgradeViewKDE.py:804
 msgid "Information"
 msgstr "सूचना"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:844
+#: ../DistUpgrade/DistUpgradeViewKDE.py:852
 msgid "&Start Upgrade"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:846
-#: ../DistUpgrade/DistUpgradeViewKDE.py:890
-#: ../DistUpgrade/DistUpgradeViewKDE.py:893
+#: ../DistUpgrade/DistUpgradeViewKDE.py:854
+#: ../DistUpgrade/DistUpgradeViewKDE.py:898
+#: ../DistUpgrade/DistUpgradeViewKDE.py:901
 #: ../data/gtkbuilder/DistUpgrade.ui.h:7
 msgid "Details"
 msgstr "विवरण"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:868
+#: ../DistUpgrade/DistUpgradeViewKDE.py:876
 #, python-format
 msgid "No longer supported %s"
 msgstr "अब और समर्थित नहीं है (%s)"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:870
+#: ../DistUpgrade/DistUpgradeViewKDE.py:878
 #, python-format
 msgid "Remove %s"
 msgstr "%s को हटाएं"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:872
+#: ../DistUpgrade/DistUpgradeViewKDE.py:880
 #: ../DistUpgrade/DistUpgradeViewText.py:239
 #, python-format
 msgid "Remove (was auto installed) %s"
 msgstr "%s (स्वतः संस्थापित) हटाएं"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:874
+#: ../DistUpgrade/DistUpgradeViewKDE.py:882
 #, python-format
 msgid "Install %s"
 msgstr "%s को संस्थापित करें"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:876
+#: ../DistUpgrade/DistUpgradeViewKDE.py:884
 #, python-format
 msgid "Upgrade %s"
 msgstr "%s को अद्यतन करें"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:923
+#: ../DistUpgrade/DistUpgradeViewKDE.py:931
 #: ../DistUpgrade/DistUpgradeViewText.py:292
 msgid "Restart required"
 msgstr "पुनःआरंभ की जरुरत है"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:923
+#: ../DistUpgrade/DistUpgradeViewKDE.py:931
 msgid "<b><big>Restart the system to complete the upgrade</big></b>"
 msgstr "<b><big>अद्यतन पूर्ण करने हेतु तंत्र को पुनःआरंभ करें</big></b>"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:926
+#: ../DistUpgrade/DistUpgradeViewKDE.py:934
 #: ../data/gtkbuilder/DistUpgrade.ui.h:14
 msgid "_Restart Now"
 msgstr "अभी पुनःआरंभ करें (_R)"
 
 #. FIXME make this user friendly
-#: ../DistUpgrade/DistUpgradeViewKDE.py:944
+#: ../DistUpgrade/DistUpgradeViewKDE.py:952
 msgid ""
 "<b><big>Cancel the running upgrade?</big></b>\n"
 "\n"
@@ -1437,7 +1437,7 @@ msgstr ""
 "यदि आप अद्यतन को रद्द करते हैं तो तंत्र अस्थायी स्थिति में आ जाएगा. आपसे प्रबल सलाह दि "
 "जाती है कि अद्यतन को पुनःशुरु करें."
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:948
+#: ../DistUpgrade/DistUpgradeViewKDE.py:956
 msgid "Cancel Upgrade?"
 msgstr "अद्यतन रद्द करें?"
 

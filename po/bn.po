@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: shotwell-0.7.2\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2023-02-22 21:53+0000\n"
+"POT-Creation-Date: 2023-04-03 16:33+0000\n"
 "PO-Revision-Date: 2019-02-10 12:11+0000\n"
 "Last-Translator: Istiak Ferdous <Unknown>\n"
 "Language-Team: Bengali <ankur-bd-l10n@googlegroups.com>\n"
@@ -940,7 +940,7 @@ msgid "&Upgrade"
 msgstr ""
 
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:154
-#: ../DistUpgrade/DistUpgradeViewKDE.py:682
+#: ../DistUpgrade/DistUpgradeViewKDE.py:690
 msgid "&Cancel"
 msgstr ""
 
@@ -971,8 +971,8 @@ msgstr "ফাইল %s এর %s"
 
 #. print("mediaChange %s %s" % (medium, drive))
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:235
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:125
-#: ../DistUpgrade/DistUpgradeViewKDE.py:300
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:127
+#: ../DistUpgrade/DistUpgradeViewKDE.py:302
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
 msgstr "দয়া করে '%s' ড্রাইভে '%s' প্রবেশ করান"
@@ -980,7 +980,7 @@ msgstr "দয়া করে '%s' ড্রাইভে '%s' প্রবেশ �
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:237
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:242
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:243
-#: ../DistUpgrade/DistUpgradeViewKDE.py:301
+#: ../DistUpgrade/DistUpgradeViewKDE.py:303
 msgid "Media Change"
 msgstr "মিডিয়া পরিবর্তন"
 
@@ -1253,28 +1253,28 @@ msgstr "datadir নির্ধারণ"
 msgid "Upgrade to the development release"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:146
-#: ../DistUpgrade/DistUpgradeViewKDE.py:314
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:148
+#: ../DistUpgrade/DistUpgradeViewKDE.py:316
 msgid "Fetching is complete"
 msgstr "টেনে আনা সম্পূর্ণ"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:161
-#: ../DistUpgrade/DistUpgradeViewKDE.py:330
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:163
+#: ../DistUpgrade/DistUpgradeViewKDE.py:332
 #, python-format
 msgid "Fetching file %li of %li at %sB/s"
 msgstr "ফাইল আনা হচ্ছে  %li এর %li %sB/s এ"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:163
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:325
-#: ../DistUpgrade/DistUpgradeViewKDE.py:331
-#: ../DistUpgrade/DistUpgradeViewKDE.py:481
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:165
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:327
+#: ../DistUpgrade/DistUpgradeViewKDE.py:333
+#: ../DistUpgrade/DistUpgradeViewKDE.py:483
 #, python-format
 msgid "About %s remaining"
 msgstr "%s বাকি আছে"
 
 # prb
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:166
-#: ../DistUpgrade/DistUpgradeViewKDE.py:333
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:168
+#: ../DistUpgrade/DistUpgradeViewKDE.py:335
 #, python-format
 msgid "Fetching file %li of %li"
 msgstr "%li এর %li ফাইল নিয়ে আসা হয়"
@@ -1282,27 +1282,27 @@ msgstr "%li এর %li ফাইল নিয়ে আসা হয়"
 #. FIXME: add support for the timeout
 #. of the terminal (to display something useful then)
 #. -> longer term, move this code into python-apt
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:198
-#: ../DistUpgrade/DistUpgradeViewKDE.py:371
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:200
+#: ../DistUpgrade/DistUpgradeViewKDE.py:373
 msgid "Applying changes"
 msgstr "পরিবর্তনগুলো প্রয়োগ করছি"
 
 # snigdha
 #. we do not report followup errors from earlier failures
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:224
-#: ../DistUpgrade/DistUpgradeViewKDE.py:384
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:226
+#: ../DistUpgrade/DistUpgradeViewKDE.py:386
 msgid "dependency problems - leaving unconfigured"
 msgstr "ডিপেন্ডেন্সী সমস্যা - আনকনফিগার হিসাবে রয়েছে"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:229
-#: ../DistUpgrade/DistUpgradeViewKDE.py:386
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:231
+#: ../DistUpgrade/DistUpgradeViewKDE.py:388
 #, python-format
 msgid "Could not install '%s'"
 msgstr "'%s' ইন্সটল করা যায় নি"
 
 # snigdha
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:230
-#: ../DistUpgrade/DistUpgradeViewKDE.py:387
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:232
+#: ../DistUpgrade/DistUpgradeViewKDE.py:389
 #, python-format
 msgid ""
 "The upgrade will continue but the '%s' package may not be in a working "
@@ -1313,8 +1313,8 @@ msgstr ""
 
 # snigdha
 #. self.expander.set_expanded(True)
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:247
-#: ../DistUpgrade/DistUpgradeViewKDE.py:409
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:249
+#: ../DistUpgrade/DistUpgradeViewKDE.py:411
 #, python-format
 msgid ""
 "Replace the customized configuration file\n"
@@ -1324,8 +1324,8 @@ msgstr ""
 "'%s' প্রতিস্থাপন?"
 
 # snigdha
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:248
-#: ../DistUpgrade/DistUpgradeViewKDE.py:410
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:250
+#: ../DistUpgrade/DistUpgradeViewKDE.py:412
 msgid ""
 "You will lose any changes you have made to this configuration file if you "
 "choose to replace it with a newer version."
@@ -1333,18 +1333,18 @@ msgstr ""
 "আপনি যদি নতুন সংস্করণ দ্বারা এটি প্রতিস্থাপন করেন তবে কনফিগারেশন ফাইলে কোনো "
 "পরিবর্তন করে থাকলে তা চলে যাবে।"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:268
-#: ../DistUpgrade/DistUpgradeViewKDE.py:433
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:270
+#: ../DistUpgrade/DistUpgradeViewKDE.py:435
 msgid "The 'diff' command was not found"
 msgstr "'diff' কমান্ডটি পাওয়া যায় নি"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:535
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:542
 #: ../DistUpgrade/DistUpgradeViewText.py:140
 msgid "A fatal error occurred"
 msgstr "একটি মারাত্মক সমস্যা সংঘটিত হয়েছে"
 
 # snigdha
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:536
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:543
 msgid ""
 "Please report this as a bug (if you haven't already) and include the files /"
 "var/log/dist-upgrade/main.log and /var/log/dist-upgrade/apt.log in your "
@@ -1356,12 +1356,12 @@ msgstr ""
 "করুন। আপগ্রেড বন্ধ আছে।\n"
 "আপনার মূল উৎস তালিকা /etc/apt/sources.list.distUpgrade এ সংরক্ষিত আছে।"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:566
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:573
 msgid "Ctrl-c pressed"
 msgstr "Ctrl-c চাপা হয়েছে"
 
 # snigdha
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:567
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:574
 msgid ""
 "This will abort the operation and may leave the system in a broken state. "
 "Are you sure you want to do that?"
@@ -1370,133 +1370,133 @@ msgstr ""
 "আপনি কি নিশ্চিত যে আপনি এমন করতে চান?"
 
 #. append warning
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:706
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:713
 msgid "To prevent data loss close all open applications and documents."
 msgstr "তথ্য হারাতে না চাইলে সকল অ্যাপলিকেশন এবং ডকুমেন্ট বন্ধ রাখুন।"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:720
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:727
 #, python-format
 msgid "No longer supported by Canonical (%s)"
 msgstr "ক্যানোনিক্যাল দ্বারা আর সমর্থিত নয় (%s)"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:721
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:728
 #, python-format
 msgid "<b>Downgrade (%s)</b>"
 msgstr "<b>ডাউনগ্রেড (%s)</b>"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:722
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:729
 #, python-format
 msgid "Remove (%s)"
 msgstr "(%s) অপসারণ"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:723
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:730
 #, python-format
 msgid "No longer needed (%s)"
 msgstr "আর প্রয়োজন নেই (%s)"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:724
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:731
 #, python-format
 msgid "Install (%s)"
 msgstr "(%s) ইন্সটল"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:725
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:732
 #, python-format
 msgid "Upgrade (%s)"
 msgstr "(%s) আপগ্রেড"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:773
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:780
 msgid "Cancel"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:774
-#: ../DistUpgrade/DistUpgradeViewKDE.py:906
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:781
+#: ../DistUpgrade/DistUpgradeViewKDE.py:914
 msgid "Continue"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:445
+#: ../DistUpgrade/DistUpgradeViewKDE.py:447
 msgid "Show Difference >>>"
 msgstr "পার্থক্য প্রদর্শন >>>"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:448
+#: ../DistUpgrade/DistUpgradeViewKDE.py:450
 msgid "<<< Hide Difference"
 msgstr "<<< পার্থক্য আড়াল করা"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:668
+#: ../DistUpgrade/DistUpgradeViewKDE.py:676
 msgid "Error"
 msgstr "ত্রুটি"
 
 # confused..coz here & seems not a shortcut
-#: ../DistUpgrade/DistUpgradeViewKDE.py:686
-#: ../DistUpgrade/DistUpgradeViewKDE.py:927
+#: ../DistUpgrade/DistUpgradeViewKDE.py:694
+#: ../DistUpgrade/DistUpgradeViewKDE.py:935
 msgid "&Close"
 msgstr "ও বন্ধ"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:720
+#: ../DistUpgrade/DistUpgradeViewKDE.py:728
 msgid "Show Terminal >>>"
 msgstr "টার্মিনাল প্রদর্শন >>>"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:723
+#: ../DistUpgrade/DistUpgradeViewKDE.py:731
 msgid "<<< Hide Terminal"
 msgstr "<<< টার্মিনাল আড়াল করা"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:796
+#: ../DistUpgrade/DistUpgradeViewKDE.py:804
 msgid "Information"
 msgstr "তথ্য"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:844
+#: ../DistUpgrade/DistUpgradeViewKDE.py:852
 msgid "&Start Upgrade"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:846
-#: ../DistUpgrade/DistUpgradeViewKDE.py:890
-#: ../DistUpgrade/DistUpgradeViewKDE.py:893
+#: ../DistUpgrade/DistUpgradeViewKDE.py:854
+#: ../DistUpgrade/DistUpgradeViewKDE.py:898
+#: ../DistUpgrade/DistUpgradeViewKDE.py:901
 #: ../data/gtkbuilder/DistUpgrade.ui.h:7
 msgid "Details"
 msgstr "বিস্তারিত"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:868
+#: ../DistUpgrade/DistUpgradeViewKDE.py:876
 #, python-format
 msgid "No longer supported %s"
 msgstr "আর সমর্থিত নয় %s"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:870
+#: ../DistUpgrade/DistUpgradeViewKDE.py:878
 #, python-format
 msgid "Remove %s"
 msgstr "%s অপসারণ"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:872
+#: ../DistUpgrade/DistUpgradeViewKDE.py:880
 #: ../DistUpgrade/DistUpgradeViewText.py:239
 #, python-format
 msgid "Remove (was auto installed) %s"
 msgstr "%s অপসারণ (যা স্বয়ংক্রিয় ভাবে ইনস্টল করা হয়েছিল)"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:874
+#: ../DistUpgrade/DistUpgradeViewKDE.py:882
 #, python-format
 msgid "Install %s"
 msgstr "%s ইন্সটল"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:876
+#: ../DistUpgrade/DistUpgradeViewKDE.py:884
 #, python-format
 msgid "Upgrade %s"
 msgstr "%s আপগ্রেড"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:923
+#: ../DistUpgrade/DistUpgradeViewKDE.py:931
 #: ../DistUpgrade/DistUpgradeViewText.py:292
 msgid "Restart required"
 msgstr "পুনরায় শুরু করা প্রয়োজন"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:923
+#: ../DistUpgrade/DistUpgradeViewKDE.py:931
 msgid "<b><big>Restart the system to complete the upgrade</big></b>"
 msgstr "<b><big>আপগ্রেড সম্পন্ন করতে সিস্টেমটি রিস্টার্ট করুন</big></b>"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:926
+#: ../DistUpgrade/DistUpgradeViewKDE.py:934
 #: ../data/gtkbuilder/DistUpgrade.ui.h:14
 msgid "_Restart Now"
 msgstr "এক্ষুনি রিস্টার্ট (_R)"
 
 # snigdha
 #. FIXME make this user friendly
-#: ../DistUpgrade/DistUpgradeViewKDE.py:944
+#: ../DistUpgrade/DistUpgradeViewKDE.py:952
 msgid ""
 "<b><big>Cancel the running upgrade?</big></b>\n"
 "\n"
@@ -1508,7 +1508,7 @@ msgstr ""
 "আপগ্রেড বন্ধ করলে সিস্টেম অকার্যকর হয়ে পড়বে। আপনাকে অবশ্যই আপগ্রেড চালিয়ে যেতে বলা "
 "হচ্ছে।"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:948
+#: ../DistUpgrade/DistUpgradeViewKDE.py:956
 msgid "Cancel Upgrade?"
 msgstr "আপগ্রেড বাতিল করা হবে কি?"
 

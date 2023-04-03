@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2023-02-22 21:53+0000\n"
+"POT-Creation-Date: 2023-04-03 16:33+0000\n"
 "PO-Revision-Date: 2019-06-18 17:52+0000\n"
 "Last-Translator: Paco Molinero <paco@byasl.com>\n"
 "Language-Team: Spanish <traductores@gnome.org>\n"
@@ -1017,7 +1017,7 @@ msgid "&Upgrade"
 msgstr "&Actualizar"
 
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:154
-#: ../DistUpgrade/DistUpgradeViewKDE.py:682
+#: ../DistUpgrade/DistUpgradeViewKDE.py:690
 msgid "&Cancel"
 msgstr "&Cancelar"
 
@@ -1047,8 +1047,8 @@ msgstr "Archivo %s de %s"
 
 #. print("mediaChange %s %s" % (medium, drive))
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:235
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:125
-#: ../DistUpgrade/DistUpgradeViewKDE.py:300
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:127
+#: ../DistUpgrade/DistUpgradeViewKDE.py:302
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
 msgstr "Inserte «%s» en la unidad «%s»"
@@ -1056,7 +1056,7 @@ msgstr "Inserte «%s» en la unidad «%s»"
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:237
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:242
 #: ../DistUpgrade/DistUpgradeFetcherKDE.py:243
-#: ../DistUpgrade/DistUpgradeViewKDE.py:301
+#: ../DistUpgrade/DistUpgradeViewKDE.py:303
 msgid "Media Change"
 msgstr "Cambio de soporte"
 
@@ -1358,27 +1358,27 @@ msgstr "Establecer datadir"
 msgid "Upgrade to the development release"
 msgstr "Actualizar a la versión en desarrollo"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:146
-#: ../DistUpgrade/DistUpgradeViewKDE.py:314
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:148
+#: ../DistUpgrade/DistUpgradeViewKDE.py:316
 msgid "Fetching is complete"
 msgstr "La descarga se ha completado"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:161
-#: ../DistUpgrade/DistUpgradeViewKDE.py:330
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:163
+#: ../DistUpgrade/DistUpgradeViewKDE.py:332
 #, python-format
 msgid "Fetching file %li of %li at %sB/s"
 msgstr "Descargando archivo %li de %li a %sB/s"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:163
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:325
-#: ../DistUpgrade/DistUpgradeViewKDE.py:331
-#: ../DistUpgrade/DistUpgradeViewKDE.py:481
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:165
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:327
+#: ../DistUpgrade/DistUpgradeViewKDE.py:333
+#: ../DistUpgrade/DistUpgradeViewKDE.py:483
 #, python-format
 msgid "About %s remaining"
 msgstr "Faltan alrededor de %s"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:166
-#: ../DistUpgrade/DistUpgradeViewKDE.py:333
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:168
+#: ../DistUpgrade/DistUpgradeViewKDE.py:335
 #, python-format
 msgid "Fetching file %li of %li"
 msgstr "Descargando archivo %li de %li"
@@ -1386,25 +1386,25 @@ msgstr "Descargando archivo %li de %li"
 #. FIXME: add support for the timeout
 #. of the terminal (to display something useful then)
 #. -> longer term, move this code into python-apt
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:198
-#: ../DistUpgrade/DistUpgradeViewKDE.py:371
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:200
+#: ../DistUpgrade/DistUpgradeViewKDE.py:373
 msgid "Applying changes"
 msgstr "Aplicando los cambios"
 
 #. we do not report followup errors from earlier failures
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:224
-#: ../DistUpgrade/DistUpgradeViewKDE.py:384
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:226
+#: ../DistUpgrade/DistUpgradeViewKDE.py:386
 msgid "dependency problems - leaving unconfigured"
 msgstr "problemas de dependencias - se deja sin configurar"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:229
-#: ../DistUpgrade/DistUpgradeViewKDE.py:386
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:231
+#: ../DistUpgrade/DistUpgradeViewKDE.py:388
 #, python-format
 msgid "Could not install '%s'"
 msgstr "No se ha podido instalar «%s»"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:230
-#: ../DistUpgrade/DistUpgradeViewKDE.py:387
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:232
+#: ../DistUpgrade/DistUpgradeViewKDE.py:389
 #, python-format
 msgid ""
 "The upgrade will continue but the '%s' package may not be in a working "
@@ -1415,8 +1415,8 @@ msgstr ""
 "informe de error acerca de esto."
 
 #. self.expander.set_expanded(True)
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:247
-#: ../DistUpgrade/DistUpgradeViewKDE.py:409
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:249
+#: ../DistUpgrade/DistUpgradeViewKDE.py:411
 #, python-format
 msgid ""
 "Replace the customized configuration file\n"
@@ -1425,8 +1425,8 @@ msgstr ""
 "¿Quiere sustituir el archivo de configuración modificado\n"
 "«%s»?"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:248
-#: ../DistUpgrade/DistUpgradeViewKDE.py:410
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:250
+#: ../DistUpgrade/DistUpgradeViewKDE.py:412
 msgid ""
 "You will lose any changes you have made to this configuration file if you "
 "choose to replace it with a newer version."
@@ -1434,17 +1434,17 @@ msgstr ""
 "Perderá todos los cambios que haya realizado en este archivo de "
 "configuración si decide sustituirlo por una nueva versión."
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:268
-#: ../DistUpgrade/DistUpgradeViewKDE.py:433
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:270
+#: ../DistUpgrade/DistUpgradeViewKDE.py:435
 msgid "The 'diff' command was not found"
 msgstr "No se ha encontrado la orden «diff»"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:535
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:542
 #: ../DistUpgrade/DistUpgradeViewText.py:140
 msgid "A fatal error occurred"
 msgstr "Ha ocurrido un error fatal"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:536
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:543
 msgid ""
 "Please report this as a bug (if you haven't already) and include the files /"
 "var/log/dist-upgrade/main.log and /var/log/dist-upgrade/apt.log in your "
@@ -1457,11 +1457,11 @@ msgstr ""
 "Su archivo sources.list original se guardó en /etc/apt/sources.list."
 "distUpgrade."
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:566
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:573
 msgid "Ctrl-c pressed"
 msgstr "Se ha pulsado Ctrl-C"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:567
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:574
 msgid ""
 "This will abort the operation and may leave the system in a broken state. "
 "Are you sure you want to do that?"
@@ -1470,133 +1470,133 @@ msgstr ""
 "defectuoso. ¿Seguro que quiere hacer eso?"
 
 #. append warning
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:706
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:713
 msgid "To prevent data loss close all open applications and documents."
 msgstr ""
 "Para prevenir la pérdida de datos, cierre todas las aplicaciones y "
 "documentos."
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:720
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:727
 #, python-format
 msgid "No longer supported by Canonical (%s)"
 msgstr "Ya no está soportado por Canonical (%s)"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:721
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:728
 #, python-format
 msgid "<b>Downgrade (%s)</b>"
 msgstr "<b>Desactualizar (%s)</b>"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:722
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:729
 #, python-format
 msgid "Remove (%s)"
 msgstr "Eliminar (%s)"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:723
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:730
 #, python-format
 msgid "No longer needed (%s)"
 msgstr "Ya no es necesario (%s)"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:724
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:731
 #, python-format
 msgid "Install (%s)"
 msgstr "Instalar (%s)"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:725
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:732
 #, python-format
 msgid "Upgrade (%s)"
 msgstr "Actualizar (%s)"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:773
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:780
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: ../DistUpgrade/DistUpgradeViewGtk3.py:774
-#: ../DistUpgrade/DistUpgradeViewKDE.py:906
+#: ../DistUpgrade/DistUpgradeViewGtk3.py:781
+#: ../DistUpgrade/DistUpgradeViewKDE.py:914
 msgid "Continue"
 msgstr "Continuar"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:445
+#: ../DistUpgrade/DistUpgradeViewKDE.py:447
 msgid "Show Difference >>>"
 msgstr "Mostrar diferencias >>>"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:448
+#: ../DistUpgrade/DistUpgradeViewKDE.py:450
 msgid "<<< Hide Difference"
 msgstr "<<< Ocultar diferencias"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:668
+#: ../DistUpgrade/DistUpgradeViewKDE.py:676
 msgid "Error"
 msgstr "Error"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:686
-#: ../DistUpgrade/DistUpgradeViewKDE.py:927
+#: ../DistUpgrade/DistUpgradeViewKDE.py:694
+#: ../DistUpgrade/DistUpgradeViewKDE.py:935
 msgid "&Close"
 msgstr "&Cerrar"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:720
+#: ../DistUpgrade/DistUpgradeViewKDE.py:728
 msgid "Show Terminal >>>"
 msgstr "Mostrar terminal >>>"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:723
+#: ../DistUpgrade/DistUpgradeViewKDE.py:731
 msgid "<<< Hide Terminal"
 msgstr "<<< Ocultar terminal"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:796
+#: ../DistUpgrade/DistUpgradeViewKDE.py:804
 msgid "Information"
 msgstr "Información"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:844
+#: ../DistUpgrade/DistUpgradeViewKDE.py:852
 msgid "&Start Upgrade"
 msgstr "&Iniciar actualización"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:846
-#: ../DistUpgrade/DistUpgradeViewKDE.py:890
-#: ../DistUpgrade/DistUpgradeViewKDE.py:893
+#: ../DistUpgrade/DistUpgradeViewKDE.py:854
+#: ../DistUpgrade/DistUpgradeViewKDE.py:898
+#: ../DistUpgrade/DistUpgradeViewKDE.py:901
 #: ../data/gtkbuilder/DistUpgrade.ui.h:7
 msgid "Details"
 msgstr "Detalles"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:868
+#: ../DistUpgrade/DistUpgradeViewKDE.py:876
 #, python-format
 msgid "No longer supported %s"
 msgstr "Ya no está soportado %s"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:870
+#: ../DistUpgrade/DistUpgradeViewKDE.py:878
 #, python-format
 msgid "Remove %s"
 msgstr "Eliminar %s"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:872
+#: ../DistUpgrade/DistUpgradeViewKDE.py:880
 #: ../DistUpgrade/DistUpgradeViewText.py:239
 #, python-format
 msgid "Remove (was auto installed) %s"
 msgstr "Eliminar (fue autoinstalado) %s"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:874
+#: ../DistUpgrade/DistUpgradeViewKDE.py:882
 #, python-format
 msgid "Install %s"
 msgstr "Instalar %s"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:876
+#: ../DistUpgrade/DistUpgradeViewKDE.py:884
 #, python-format
 msgid "Upgrade %s"
 msgstr "Actualizar %s"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:923
+#: ../DistUpgrade/DistUpgradeViewKDE.py:931
 #: ../DistUpgrade/DistUpgradeViewText.py:292
 msgid "Restart required"
 msgstr "Se requiere reiniciar"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:923
+#: ../DistUpgrade/DistUpgradeViewKDE.py:931
 msgid "<b><big>Restart the system to complete the upgrade</big></b>"
 msgstr "<b><big>Reinicie el sistema para completar la actualización</big></b>"
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:926
+#: ../DistUpgrade/DistUpgradeViewKDE.py:934
 #: ../data/gtkbuilder/DistUpgrade.ui.h:14
 msgid "_Restart Now"
 msgstr "_Reiniciar ahora"
 
 #. FIXME make this user friendly
-#: ../DistUpgrade/DistUpgradeViewKDE.py:944
+#: ../DistUpgrade/DistUpgradeViewKDE.py:952
 msgid ""
 "<b><big>Cancel the running upgrade?</big></b>\n"
 "\n"
@@ -1608,7 +1608,7 @@ msgstr ""
 "El sistema podría quedar en un estado no utilizable si cancela la "
 "actualización. Le recomendamos encarecidamente que continúe la actualización."
 
-#: ../DistUpgrade/DistUpgradeViewKDE.py:948
+#: ../DistUpgrade/DistUpgradeViewKDE.py:956
 msgid "Cancel Upgrade?"
 msgstr "¿Cancelar la actualización?"
 

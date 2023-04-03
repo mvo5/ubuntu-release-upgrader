@@ -58,6 +58,9 @@ libboost-system-dev
 libchart-perl
 libclang-cpp13
 libclc-13-dev
+libclc-14-dev
+libcurl3-nss
+libcurl4-nss-dev
 libdazzle-1.0-0
 libdazzle-1.0-dev
 libdazzle-common
@@ -92,16 +95,23 @@ libio-prompt-tiny-perl
 liblist-moreutils-perl
 liblist-moreutils-xs-perl
 libllvm13
+libllvm14
 libmirserver-dev
 libmlir-13
 libmlir-13-dev
+libmlir-14
+libmlir-14-dev
 libmoox-struct-perl
+libmpdec-dev
+libmpdec-doc
+libmpdec3
 libnamespace-autoclean-perl
 libnet-ip-perl
 libobject-id-perl
 libpfm4
 libpfm4-dev
 libpulsedsp
+libreoffice-style-breeze
 libreoffice-style-tango
 librest-dev
 librest-extras-dev
@@ -120,6 +130,8 @@ libtsan0-arm64-cross
 libtsan0-ppc64el-cross
 libunwind-13
 libunwind-13-dev
+libunwind-14
+libunwind-14-dev
 libwacom-bin
 libwebkit2gtk-4.0-dev
 libx32gfortran-11-dev
@@ -140,8 +152,6 @@ openjdk-11-jre
 openjdk-11-jre-headless
 openjdk-11-source
 php-json
-pulseaudio
-pulseaudio-module-bluetooth
 pulseaudio-utils
 python-pycryptodome-doc
 python-pysmi-doc
@@ -155,5 +165,4 @@ python3-pysnmp4
 python3-redis
 python3-rfc3339
 python3-sphinx-rtd-theme
-telnet
 ubuntu-wallpapers-jammy
