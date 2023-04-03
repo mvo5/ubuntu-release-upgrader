@@ -1,9 +1,9 @@
-ubuntu-release-upgrader (1:23.04.3) UNRELEASED; urgency=medium
+ubuntu-release-upgrader (1:23.04.3) lunar; urgency=medium
 
   * DistUpgrade: Dynamically get new version string for UI labels (LP: #2015087)
   * Run pre-build.sh: updating mirrors, demotions, and translations.
 
- -- Nick Rosbrook <nick.rosbrook@canonical.com>  Mon, 03 Apr 2023 12:37:08 -0400
+ -- Nick Rosbrook <nick.rosbrook@canonical.com>  Mon, 03 Apr 2023 12:39:16 -0400
 
 ubuntu-release-upgrader (1:23.04.2) lunar; urgency=medium
 
