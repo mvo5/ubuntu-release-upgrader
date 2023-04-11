@@ -1,3 +1,11 @@
+ubuntu-release-upgrader (1:23.04.4) UNRELEASED; urgency=medium
+
+  * DistUpgrade/deb2snap.json: Add in the snap gnome-42-2204 which is now
+    seeded for Ubuntu Desktop, move gnome-3-38-2004 to unseeded which will
+    make it a candidate for removal if it is unused.
+
+ -- Brian Murray <brian@ubuntu.com>  Tue, 11 Apr 2023 12:18:53 -0700
+
 ubuntu-release-upgrader (1:23.04.3) lunar; urgency=medium
 
   * DistUpgrade: Dynamically get new version string for UI labels (LP: #2015087)
