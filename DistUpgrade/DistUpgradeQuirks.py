@@ -109,6 +109,7 @@ class DistUpgradeQuirks(object):
     def PreCacheOpen(self):
         """ run before the apt cache is opened the first time """
         logging.debug("running Quirks.PreCacheOpen")
+        self._add_apport_ignore_tracker_extract()
 
     # individual quirks handler that run *after* the cache is opened
     def lunarPostInitialUpdate(self):
@@ -158,6 +159,7 @@ class DistUpgradeQuirks(object):
     def PostCleanup(self):
         " run after cleanup "
         logging.debug("running Quirks.PostCleanup")
+        self._remove_apport_ignore_tracker_extract()
 
     # run right before the first packages get installed
     def StartUpgrade(self):
@@ -520,6 +522,24 @@ class DistUpgradeQuirks(object):
             self._view.getAcquireProgress(),
             self._view.getInstallProgress(self.controller.cache)
         )
+
+    def _add_apport_ignore_tracker_extract(self):
+        path = '/etc/apport/blacklist.d/upgrade-quirk-tracker-extract-3'
+
+        try:
+            os.makedirs(os.path.dirname(path), exist_ok=True)
+            with open(path, 'w') as f:
+                f.write('/usr/libexec/tracker-extract-3\n')
+        except Exception as e:
+            logging.debug('Failed to create {}: {}'.format(path, e))
+
+    def _remove_apport_ignore_tracker_extract(self):
+        path = '/etc/apport/blacklist.d/upgrade-quirk-tracker-extract-3'
+
+        try:
+            os.remove(path)
+        except Exception as e:
+            logging.debug('Failed to remove {}: {}'.format(path, e))
 
     def _checkArmCPU(self):
         """
