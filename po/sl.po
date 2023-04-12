@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: update-manager\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2023-04-03 16:33+0000\n"
+"POT-Creation-Date: 2023-04-12 13:41+0000\n"
 "PO-Revision-Date: 2019-06-18 17:53+0000\n"
 "Last-Translator: Brian Murray <brian@ubuntu.com>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
@@ -1048,12 +1048,12 @@ msgstr "Vstavite '%s' v pogon '%s'"
 msgid "Media Change"
 msgstr "Menjava nosilca podatkov"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:237
+#: ../DistUpgrade/DistUpgradeQuirks.py:239
 msgid "Your graphics hardware may not be fully supported in Ubuntu 14.04."
 msgstr ""
 "Vaša grafična strojna oprema morda ni popolnoma podprta v Ubuntuju 14.04."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:239
+#: ../DistUpgrade/DistUpgradeQuirks.py:241
 msgid ""
 "Running the 'unity' desktop environment is not fully supported by your "
 "graphics hardware. You will maybe end up in a very slow environment after "
@@ -1068,12 +1068,12 @@ msgstr ""
 "oglejte https://wiki.ubuntu.com/X/Bugs/UpdateManagerWarningForUnity3D Ali še "
 "vedno želite nadaljevati z nadgradnjo?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:263
+#: ../DistUpgrade/DistUpgradeQuirks.py:265
 msgid "Your graphics hardware may not be fully supported in Ubuntu 12.04 LTS."
 msgstr ""
 "Vaša grafična strojna oprema v Ubuntuju 12.04 LTS morda ni popolnoma podprta."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:265
+#: ../DistUpgrade/DistUpgradeQuirks.py:267
 msgid ""
 "The support in Ubuntu 12.04 LTS for your Intel graphics hardware is limited "
 "and you may encounter problems after the upgrade. For more information see "
@@ -1085,7 +1085,7 @@ msgstr ""
 "https://wiki.ubuntu.com/X/Bugs/UpdateManagerWarningForI8xx. Ali želite z "
 "nadgradnjo nadaljevati?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:285
+#: ../DistUpgrade/DistUpgradeQuirks.py:287
 msgid ""
 "Upgrading may reduce desktop effects, and performance in games and other "
 "graphically intensive programs."
@@ -1093,7 +1093,7 @@ msgstr ""
 "Nadgradnja bo verjetno vplivala na učinke namizja, zmogljivost pri igrah in "
 "drugih grafično zahtevnih programih."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:289
+#: ../DistUpgrade/DistUpgradeQuirks.py:291
 msgid ""
 "This computer is currently using the AMD 'fglrx' graphics driver. No version "
 "of this driver is available that works with your hardware in Ubuntu 10.04 "
@@ -1106,12 +1106,12 @@ msgstr ""
 "\n"
 "Ali želite nadaljevati?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:328
-#: ../DistUpgrade/DistUpgradeQuirks.py:397
+#: ../DistUpgrade/DistUpgradeQuirks.py:330
+#: ../DistUpgrade/DistUpgradeQuirks.py:399
 msgid "Sorry, no more upgrades for this system"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:329
+#: ../DistUpgrade/DistUpgradeQuirks.py:331
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases for this system's 'i386' "
@@ -1120,11 +1120,11 @@ msgid ""
 "Updates for Ubuntu %s will continue until %s."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:344
+#: ../DistUpgrade/DistUpgradeQuirks.py:346
 msgid "No ARMv6 CPU"
 msgstr "Ni CPE ARMv6"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:345
+#: ../DistUpgrade/DistUpgradeQuirks.py:347
 msgid ""
 "Your system uses an ARM CPU that is older than the ARMv6 architecture. All "
 "packages in karmic were built with optimizations requiring ARMv6 as the "
@@ -1136,12 +1136,12 @@ msgstr ""
 "različico arhitekture. Na trenutni strojni opremi ni mogoče nadgraditi "
 "vašega sistema na novo izdajo distribucije Ubuntu."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:365
+#: ../DistUpgrade/DistUpgradeQuirks.py:367
 msgid ""
 "Sorry, this storage driver is not supported in kernels for newer releases"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:367
+#: ../DistUpgrade/DistUpgradeQuirks.py:369
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases that provide kernel support "
@@ -1151,7 +1151,7 @@ msgid ""
 "driver, remove the directory %s and try again."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:398
+#: ../DistUpgrade/DistUpgradeQuirks.py:400
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases for this system's POWER8 "
@@ -1160,11 +1160,11 @@ msgid ""
 "Updates for Ubuntu %s will continue until %s."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:416
+#: ../DistUpgrade/DistUpgradeQuirks.py:418
 msgid "No init available"
 msgstr "Init ni na voljo"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:417
+#: ../DistUpgrade/DistUpgradeQuirks.py:419
 msgid ""
 "Your system appears to be a virtualised environment without an init daemon, "
 "e.g. Linux-VServer. Ubuntu 10.04 LTS cannot function within this type of "
@@ -1179,11 +1179,11 @@ msgstr ""
 "\n"
 "Ali res želite nadaljevati?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:458
+#: ../DistUpgrade/DistUpgradeQuirks.py:460
 msgid "The Robot Operating System (ROS) is installed"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:459
+#: ../DistUpgrade/DistUpgradeQuirks.py:461
 msgid ""
 "It appears that ROS is currently installed. Each ROS release is very strict "
 "about the versions of Ubuntu it supports, and Ubuntu upgrades can fail if "
@@ -1200,12 +1200,12 @@ msgid ""
 "Are you sure you want to continue?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:634
+#: ../DistUpgrade/DistUpgradeQuirks.py:654
 #, fuzzy
 msgid "Connection to the Snap Store failed"
 msgstr "Povezava s trgovino Snap je spodletela"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:635
+#: ../DistUpgrade/DistUpgradeQuirks.py:655
 msgid ""
 "You have the package lxd installed but your system is unable to reach the "
 "Snap Store. lxd is now provided via a snap and the release upgrade will fail "
@@ -1215,11 +1215,11 @@ msgid ""
 "may want to configure a Snap Store proxy."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:650
+#: ../DistUpgrade/DistUpgradeQuirks.py:670
 msgid "Connection to Snap Store failed"
 msgstr "Povezava s trgovino Snap je spodletela"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:651
+#: ../DistUpgrade/DistUpgradeQuirks.py:671
 msgid ""
 "Your system does not have a connection to the Snap Store. For the best "
 "upgrade experience make sure that your system can connect to api.snapcraft."
@@ -1230,11 +1230,11 @@ msgstr ""
 "se prepričajte, da se vaš sistem lahko poveže z api.snapcraft.io.\n"
 "Ali še vedno želite nadaljevati z nadgradnjo?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:660
+#: ../DistUpgrade/DistUpgradeQuirks.py:680
 msgid "Outdated snapd package"
 msgstr "Zastarel paket snapd"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:661
+#: ../DistUpgrade/DistUpgradeQuirks.py:681
 msgid ""
 "Your system does not have the latest version of snapd. Please update the "
 "version of snapd on your system to improve the upgrade experience.\n"
@@ -1246,34 +1246,34 @@ msgstr ""
 
 #. now perform direct API calls to the store, requesting size
 #. information for each of the snaps needing installation
-#: ../DistUpgrade/DistUpgradeQuirks.py:686
+#: ../DistUpgrade/DistUpgradeQuirks.py:706
 msgid "Calculating snap size requirements"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:717
+#: ../DistUpgrade/DistUpgradeQuirks.py:737
 msgid "Processing snap replacements"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:723
+#: ../DistUpgrade/DistUpgradeQuirks.py:743
 #, python-format
 msgid "refreshing snap %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:727
+#: ../DistUpgrade/DistUpgradeQuirks.py:747
 #, python-format
 msgid "removing snap %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:730
+#: ../DistUpgrade/DistUpgradeQuirks.py:750
 #, python-format
 msgid "installing snap %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:759
+#: ../DistUpgrade/DistUpgradeQuirks.py:779
 msgid "PAE not enabled"
 msgstr "PAE ni omogočen"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:760
+#: ../DistUpgrade/DistUpgradeQuirks.py:780
 msgid ""
 "Your system uses a CPU that does not have PAE enabled. Ubuntu only supports "
 "non-PAE systems up to Ubuntu 12.04. To upgrade to a later version of Ubuntu, "
@@ -1286,11 +1286,11 @@ msgstr ""
 "si:\n"
 "http://help.ubuntu.com/community/EnablingPAE"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1056
+#: ../DistUpgrade/DistUpgradeQuirks.py:1076
 msgid "universe component not enabled"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1057
+#: ../DistUpgrade/DistUpgradeQuirks.py:1077
 #, python-format
 msgid ""
 "You have the package %s installed which is a python2 package. python2 has "
@@ -1302,7 +1302,7 @@ msgid ""
 "universe component in /etc/apt/sources.list or remove %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1169
+#: ../DistUpgrade/DistUpgradeQuirks.py:1189
 msgid "Checking for installed snaps"
 msgstr "Preverjanje nameščenih snapov"
 

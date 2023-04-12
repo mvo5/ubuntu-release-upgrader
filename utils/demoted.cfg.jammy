@@ -102,9 +102,6 @@ libmlir-13-dev
 libmlir-14
 libmlir-14-dev
 libmoox-struct-perl
-libmpdec-dev
-libmpdec-doc
-libmpdec3
 libnamespace-autoclean-perl
 libnet-ip-perl
 libobject-id-perl
