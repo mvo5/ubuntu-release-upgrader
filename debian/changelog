@@ -1,8 +1,13 @@
 ubuntu-release-upgrader (1:23.04.4) UNRELEASED; urgency=medium
 
+  [ Brian Murray ]
   * DistUpgrade/deb2snap.json: Add in the snap gnome-42-2204 which is now
     seeded for Ubuntu Desktop, move gnome-3-38-2004 to unseeded which will
     make it a candidate for removal if it is unused.
+
+  [ Nick Rosbrook ]
+  * DistUpgrade: Make apport ignore tracker-extract-3 during upgrade (LP: #2012638)
+  * Run pre-build.sh: updating mirrors, demotions, and translations.
 
  -- Brian Murray <brian@ubuntu.com>  Tue, 11 Apr 2023 12:18:53 -0700
 
