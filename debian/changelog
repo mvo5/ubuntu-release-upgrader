@@ -1,4 +1,4 @@
-ubuntu-release-upgrader (1:23.04.4) UNRELEASED; urgency=medium
+ubuntu-release-upgrader (1:23.04.4) lunar; urgency=medium
 
   [ Brian Murray ]
   * DistUpgrade/deb2snap.json: Add in the snap gnome-42-2204 which is now
@@ -9,7 +9,7 @@ ubuntu-release-upgrader (1:23.04.4) UNRELEASED; urgency=medium
   * DistUpgrade: Make apport ignore tracker-extract-3 during upgrade (LP: #2012638)
   * Run pre-build.sh: updating mirrors, demotions, and translations.
 
- -- Brian Murray <brian@ubuntu.com>  Tue, 11 Apr 2023 12:18:53 -0700
+ -- Nick Rosbrook <nick.rosbrook@canonical.com>  Wed, 12 Apr 2023 14:36:20 -0400
 
 ubuntu-release-upgrader (1:23.04.3) lunar; urgency=medium
 
