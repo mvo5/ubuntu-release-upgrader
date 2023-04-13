@@ -795,7 +795,7 @@ class TestSnapQuirks(unittest.TestCase):
                 'channel': 'stable',
                 'command': 'install',
                 'deb': None, 'snap-id': '1234'},
-             'gnome-3-38-2004': {
+             'gnome-42-2204': {
                 'channel': 'stable/ubuntu-22.04',
                 'command': 'install',
                 'deb': None, 'snap-id': '1234'},
