@@ -1,9 +1,9 @@
-ubuntu-release-upgrader (1:23.04.6) UNRELEASED; urgency=medium
+ubuntu-release-upgrader (1:23.04.6) lunar; urgency=medium
 
   * DistUpgradeQuirks: Stop ignoring crashes from tracker-extract-3 during
     upgrade as the underlying crash was fixed.
 
- -- Brian Murray <brian@ubuntu.com>  Tue, 18 Apr 2023 06:48:03 -0700
+ -- Brian Murray <brian@ubuntu.com>  Tue, 18 Apr 2023 06:52:49 -0700
 
 ubuntu-release-upgrader (1:23.04.5) lunar; urgency=medium
 
