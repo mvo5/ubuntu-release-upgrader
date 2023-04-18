@@ -109,7 +109,6 @@ class DistUpgradeQuirks(object):
     def PreCacheOpen(self):
         """ run before the apt cache is opened the first time """
         logging.debug("running Quirks.PreCacheOpen")
-        self._add_apport_ignore_tracker_extract()
 
     # individual quirks handler that run *after* the cache is opened
     def lunarPostInitialUpdate(self):
@@ -159,7 +158,6 @@ class DistUpgradeQuirks(object):
     def PostCleanup(self):
         " run after cleanup "
         logging.debug("running Quirks.PostCleanup")
-        self._remove_apport_ignore_tracker_extract()
 
     # run right before the first packages get installed
     def StartUpgrade(self):

@@ -1,8 +1,15 @@
-ubuntu-release-upgrader (1:23.04.5) UNRELEASED; urgency=medium
+ubuntu-release-upgrader (1:23.04.6) UNRELEASED; urgency=medium
+
+  * DistUpgradeQuirks: Stop ignoring crashes from tracker-extract-3 during
+    upgrade as the underlying crash was fixed.
+
+ -- Brian Murray <brian@ubuntu.com>  Tue, 18 Apr 2023 06:48:03 -0700
+
+ubuntu-release-upgrader (1:23.04.5) lunar; urgency=medium
 
   * Update the autopkgtests for the deb2snap changes.
 
- -- Brian Murray <brian@ubuntu.com>  Wed, 12 Apr 2023 18:52:45 -0700
+ -- Brian Murray <brian@ubuntu.com>  Wed, 12 Apr 2023 19:17:15 -0700
 
 ubuntu-release-upgrader (1:23.04.4) lunar; urgency=medium
 
