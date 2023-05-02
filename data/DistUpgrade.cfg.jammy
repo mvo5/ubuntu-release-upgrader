@@ -98,7 +98,7 @@ LogDir=/var/log/dist-upgrade/
 
 [Sources]
 From=jammy
-To=lunar
+To=mantic
 ValidOrigin=Ubuntu
 ValidMirrors = mirrors.cfg
 Components=main,restricted,universe,multiverse
