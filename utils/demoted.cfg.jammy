@@ -1,4 +1,4 @@
-# demoted packages from jammy to lunar
+# demoted packages from jammy to mantic
 apturl
 apturl-common
 binfmt-support
