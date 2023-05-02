@@ -1,3 +1,10 @@
+ubuntu-release-upgrader (1:23.10.1) UNRELEASED; urgency=medium
+
+  * Update for mantic
+  * Run pre-build.sh: updating mirrors, demotions, and translations.
+
+ -- Nick Rosbrook <nick.rosbrook@canonical.com>  Tue, 02 May 2023 07:51:00 -0400
+
 ubuntu-release-upgrader (1:23.04.6) lunar; urgency=medium
 
   * DistUpgradeQuirks: Stop ignoring crashes from tracker-extract-3 during
