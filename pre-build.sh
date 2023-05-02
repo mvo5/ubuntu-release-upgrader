@@ -26,11 +26,11 @@ rm -f ./tests/data-sources-list-test/Ubuntu.mirrors
 
 # update demotions
 # echo "Running demotions"
-(cd utils && ./demotions.py kinetic lunar > demoted.cfg)
+(cd utils && ./demotions.py lunar mantic > demoted.cfg)
 
 # when this gets enabled, make sure to add symlink in DistUpgrade
 # echo "Running lts demotions"
-(cd utils && ./demotions.py jammy lunar > demoted.cfg.jammy)
+(cd utils && ./demotions.py jammy mantic > demoted.cfg.jammy)
 
 # update apt_btrfs_snapshot.py copy, this needs an installed
 # apt-btrfs-snapshot on the build machine
