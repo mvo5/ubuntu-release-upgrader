@@ -31,7 +31,7 @@ from gi.repository import Gtk
 webkit2 = False
 try:
     import gi
-    gi.require_version("WebKit2", "4.0")
+    gi.require_version("WebKit2", "4.1")
     from gi.repository import WebKit2 as WebKit
     webkit2 = True
 except ImportError:

@@ -63,7 +63,7 @@ Depends: ${python3:Depends},
          python3-gi (>= 3.8),
          gir1.2-vte-2.91,
          gir1.2-gtk-3.0,
-         gir1.2-webkit2-4.0
+         gir1.2-webkit2-4.1
 Description: manage release upgrades
  This is the GTK+ frontend of the Ubuntu Release Upgrader
 
