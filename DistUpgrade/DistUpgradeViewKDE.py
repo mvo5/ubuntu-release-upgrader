@@ -230,8 +230,8 @@ class DumbTerminal(QTextEdit):
         # do nothing for events like "shift"
         if not ev.text():
             return
-        # now sent the key event to the termianl as utf-8
-        os.write(self.installProgress.master_fd, ev.text().toUtf8())
+        # now send the key event to the terminal as utf-8
+        os.write(self.installProgress.master_fd, ev.text().encode('utf-8'))
 
     def onCursorPositionChanged(self):
         """ helper that ensures that the cursor is always at the end """
