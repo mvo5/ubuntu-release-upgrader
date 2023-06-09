@@ -2,6 +2,7 @@ ubuntu-release-upgrader (1:23.10.3) UNRELEASED; urgency=medium
 
   * DistUpgradeViewKDE.py: Fix a crash when writing text on a key press event.
     Thanks Launchpad user Matteo Italia for the fix. (LP: #2020414)
+  * Run pre-build.sh: updating mirrors, demotions, and translations.
 
  -- Brian Murray <brian@ubuntu.com>  Fri, 09 Jun 2023 14:05:23 -0700
 

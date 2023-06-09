@@ -36,6 +36,7 @@ gfortran-11
 gfortran-11-doc
 gfortran-11-multilib
 gir1.2-dazzle-1.0
+gir1.2-dmap-3.0
 gir1.2-gtksource-4
 gnome-bluetooth-common
 gnome-todo
@@ -65,6 +66,7 @@ libdazzle-1.0-0
 libdazzle-1.0-dev
 libdazzle-common
 libdazzle-doc
+libdmapsharing-3.0-2
 libdmapsharing-3.0-dev
 libebackend1.2-dev
 libebook-contacts1.2-dev
@@ -162,4 +164,6 @@ python3-pysnmp4
 python3-redis
 python3-rfc3339
 python3-sphinx-rtd-theme
+rhythmbox-dev
+ubuntu-image
 ubuntu-wallpapers-jammy
