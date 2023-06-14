@@ -22,6 +22,7 @@
 
 import apt
 import apt_pkg
+import base64
 import distro_info
 import sys
 import os
@@ -60,7 +61,15 @@ from aptsources import distinfo
 from aptsources import sourceslist
 sourceslist.DistInfo = distinfo.DistInfo
 
-from aptsources.sourceslist import SourcesList, is_mirror
+from aptsources.sourceslist import (SourcesList,
+                                    SourceEntry,
+                                    is_mirror)
+try:
+    from aptsources.sourceslist import Deb822SourceEntry
+    have_deb822_source_entry = True
+except ImportError:
+    have_deb822_source_entry = False
+
 from .distro import get_distro, NoDistroTemplateException
 
 from .DistUpgradeGettext import gettext as _
@@ -84,6 +93,30 @@ def component_ordering_key(a):
         # ensure to sort behind the "official" components, order is not
         # really important for those
         return len(ordering)+1
+
+def suite_ordering_key(a):
+    """ key() function for sorted to ensure "correct" suite ordering """
+    ordering = ["", "updates", "security", "backports", "proposed"]
+    pocket = a.partition("-")[2]
+
+    try:
+        return ordering.index(pocket)
+    except ValueError:
+        return len(ordering)+1
+
+def gpg_keyring_to_ascii(keyring_path):
+    out = []
+
+    out.append('-----BEGIN PGP PUBLIC KEY BLOCK-----')
+    out.append('')
+
+    with open(keyring_path, 'rb') as f:
+        data = base64.b64encode(f.read())
+
+    out += [data[i:i+64].decode('us-ascii') for i in range(0, len(data), 64)]
+    out.append('-----END PGP PUBLIC KEY BLOCK-----')
+
+    return out
 
 
 class NoBackportsFoundException(Exception):
@@ -136,6 +169,19 @@ class DistUpgradeController(object):
         self.toDist = self.config.get("Sources","To")
         self.origin = self.config.get("Sources","ValidOrigin")
         self.arch = get_arch()
+
+        # Defaults for deb sources
+        self.default_sources_filepath = os.path.join(
+            apt_pkg.config.find_dir("Dir::Etc::sourceparts"),
+            "ubuntu.sources"
+        )
+
+        if self.arch in ("amd64", "i386"):
+            self.default_source_uri = "http://{}archive.ubuntu.com/ubuntu".format(country_mirror())
+            self.security_source_uri = "http://security.ubuntu.com/ubuntu"
+        else:
+            self.default_source_uri = "http://ports.ubuntu.com/ubuntu-ports"
+            self.security_source_uri = "http://ports.ubuntu.com/ubuntu-ports"
 
         # we run with --force-overwrite by default
         if "RELEASE_UPGRADE_NO_FORCE_OVERWRITE" not in os.environ:
@@ -455,6 +501,36 @@ class DistUpgradeController(object):
 
         return True
 
+    def _deb822SourceEntryDownloadable(self, entry):
+        """
+        Check if deb822 source points to downloadable archive(s).
+        Returns a tuple (bool, list).
+
+        The bool is True if any combination of URI and suite was downloadable,
+        or False if no combination was.
+
+        The list contains tuples of URI and suite that were not downloadable
+        together.
+        """
+        logging.debug("verifySourcesListEntry: %s" % entry)
+        # no way to verify without network
+        if not self.useNetwork:
+            logging.debug("skipping downloadable check (no network)")
+            return (True, [])
+
+        failed = []
+        downloadable = False
+
+        for uri in entry.uris:
+            for suite in entry.suites:
+                release_file = "{}/dists/{}/Release".format(uri, suite)
+                if url_downloadable(release_file, logging.debug):
+                    downloadable = True
+                else:
+                    failed.append((uri,suite))
+
+        return (downloadable, failed)
+
     def _sourcesListEntryDownloadable(self, entry):
         """
         helper that checks if a sources.list entry points to 
@@ -465,6 +541,7 @@ class DistUpgradeController(object):
         if not self.useNetwork:
             logging.debug("skipping downloadable check (no network)")
             return True
+
         # check if the entry points to something we can download
         uri = "%s/dists/%s/Release" % (entry.uri, entry.dist)
         return url_downloadable(uri, logging.debug)
@@ -777,6 +854,420 @@ class DistUpgradeController(object):
                     logging.info("to new entry '%s'" % get_string_with_no_auth_from_source_entry(entry))
                     del self.found_components[entry.dist]
         return foundToDist
+
+    def migratedToDeb822(self):
+        """
+        Return True if all sources are deb822, and return False
+        if any (valid) non-deb822 sources are found.
+        """
+        if not have_deb822_source_entry:
+            return False
+
+        sources = SourcesList(matcherPath=self.datadir, deb822=True)
+        nondeb822 = [s for s in sources if not isinstance(s, Deb822SourceEntry)]
+
+        # On migration, we leave behind an empty (i.e. invalid)
+        # /etc/apt/sources.list to explain the migration. Ignore this file.
+        sourcelist_file = os.path.join(
+            apt_pkg.config.find_dir("Dir::Etc"),
+            apt_pkg.config.find("Dir::Etc::sourcelist")
+        )
+        nondeb822 = [s for s in nondeb822 \
+                     if not (s.file == sourcelist_file and s.invalid)]
+
+        return not nondeb822
+
+    def migrateToDeb822Sources(self):
+        """
+        Migrate .list files to corresponding .sources files.
+        """
+        logging.debug("migrateToDeb822Sources()")
+
+        sourcelist_file = os.path.join(
+            apt_pkg.config.find_dir("Dir::Etc"),
+            apt_pkg.config.find("Dir::Etc::sourcelist")
+        )
+        sourceparts_dir = apt_pkg.config.find_dir('Dir::Etc::sourceparts')
+        trustedparts_dir = apt_pkg.config.find_dir('Dir::Etc::trustedparts')
+
+        self.sources = SourcesList(matcherPath=self.datadir)
+        self.sources.backup(self.sources_backup_ext)
+
+        index = {}
+        for entry in self.sources:
+            if not isinstance(entry, SourceEntry) or entry.invalid:
+                continue
+
+            # Remove disabled deb-src entries, because stylistically it makes
+            # more sense to add/remove deb-src in the Types: field, rather than
+            # having a deb-src entry with Enabled: no.
+            if entry.type == 'deb-src' and entry.disabled:
+                continue
+
+            # Figure out where this new entry is going.
+            if entry.file == sourcelist_file:
+                if self.isMirror(entry.uri):
+                    # sources.list -> sources.list.d/ubuntu.sources
+                    new_filepath = os.path.join(sourceparts_dir, 'ubuntu.sources')
+                else:
+                    # sources.list -> sources.list.d/third-party.sources
+                    new_filepath = os.path.join(sourceparts_dir, 'third-party.sources')
+            else:
+                # sources.list.d/foo.list -> sources.list.d/foo.sources
+                new_filepath = os.path.splitext(entry.file)[0] + '.sources'
+
+            # Start by making the existing sources as "flat" as possible. Later
+            # we can consolidate by suite and type if possible.
+            key = (new_filepath, entry.disabled, entry.type, entry.uri, entry.dist)
+            try:
+                e = index[key]
+                e['comps'] = list(set(e['comps'] + entry.comps))
+                e['comps'].sort(key=component_ordering_key)
+            except KeyError:
+                e = {}
+                e['filepath'] = new_filepath
+                e['disabled'] = entry.disabled
+                e['types'] = [entry.type]
+                e['uris'] = [entry.uri]
+                e['suites'] = [entry.dist]
+                e['comps'] = list(set(entry.comps))
+                e['comps'].sort(key=component_ordering_key)
+                index[key] = e
+
+        for suite in [k[-1] for k in index.keys()]:
+            for k in [k for k in index.keys() if k[-1] != suite]:
+                try:
+                    e = index[(*k[:-1], suite)]
+
+                    if e['comps'] == index[k]['comps']:
+                        e['suites'] += index[k]['suites']
+                        e['suites'].sort(key=suite_ordering_key)
+
+                        del index[k]
+                except KeyError:
+                    continue
+
+        for (ks, se) in [(k,e) for (k,e) in index.items() if k[2] == 'deb-src']:
+            for (kb, be) in [(k,e) for (k,e) in index.items() if k[2] == 'deb']:
+                can_combine = True
+                can_combine &= se['filepath'] == be['filepath']
+                can_combine &= se['disabled'] == be['disabled']
+                can_combine &= se['uris'] == be['uris']
+                can_combine &= se['suites'] == be['suites']
+                can_combine &= se['comps'] == be['comps']
+
+                if can_combine:
+                    be['types'] = ['deb', 'deb-src']
+                    del index[ks]
+
+        # Consolidate GPG keys from trusted.gpg.d into their respective .sources files.
+        for entry in index.values():
+            filepath = entry['filepath']
+
+            if filepath == os.path.join(sourceparts_dir, 'ubuntu.sources'):
+                keyring = '/usr/share/keyrings/ubuntu-archive-keyring.gpg'
+            else:
+                # Check if there is a ppa.gpg corresponding to ppa.list.
+                keyring = os.path.basename(os.path.splitext(filepath)[0])
+                keyring = os.path.join(trustedparts_dir, keyring + '.gpg')
+
+                if not os.path.exists(keyring):
+                    # apt-add-repository names the list files as $user-ubuntu-$ppa-$release.list,
+                    # but the .gpg files are named $user-ubuntu-$ppa.gpg.
+                    keyring = os.path.basename(os.path.splitext(filepath)[0])
+                    keyring = keyring.rsplit('-', 1)[0] + '.gpg'
+                    keyring = os.path.join(trustedparts_dir, keyring)
+
+            if os.path.exists(keyring) and not entry.get('signed-by'):
+                lines = gpg_keyring_to_ascii(keyring)
+                lines = [' ' + (l if l.strip() else '.') for l in lines]
+
+                entry['signed-by'] = '\n' + '\n'.join(lines)
+
+        # Generate the new .sources files. We write the files manually rather
+        # than using python-apt because the currently loaded version of
+        # aptsources.sourceslist might not have Deb822SourceEntry yet.
+        for path in set([e['filepath'] for e in index.values()]):
+            stanzas = []
+
+            for e in [e for e in index.values() if e['filepath'] == path]:
+                stanza = ''
+                if e['disabled']:
+                    stanza += 'Enabled: no\n'
+
+                stanza += 'Types: {}\n'.format(' '.join(e['types']))
+                stanza += 'URIs: {}\n'.format(' '.join(e['uris']))
+                stanza += 'Suites: {}\n'.format(' '.join(e['suites']))
+                stanza += 'Components: {}\n'.format(' '.join(e['comps']))
+
+                if e.get('signed-by'):
+                    stanza += 'Signed-By: {}\n'.format(e['signed-by'])
+
+                stanzas.append(stanza)
+
+            with open(path, 'w') as f:
+                f.write('\n'.join(stanzas))
+
+        # Remove the old .list files.
+        for entry in [e for e in self.sources if isinstance(e, SourceEntry)]:
+            if os.path.exists(entry.file):
+                os.remove(entry.file)
+
+            self.sources.remove(entry)
+
+        self.sources.save()
+
+        # Finally, leave a comment in the old sources.list file explaining
+        # the migration.
+        with open(sourcelist_file, 'w') as f:
+            f.write('# Ubuntu sources have moved to {}\n'
+                    .format(os.path.join(sourceparts_dir, 'ubuntu.sources')))
+
+    def _addDefaultSources(self):
+        e = self.sources.add(
+            file=self.default_sources_filepath,
+            type='deb',
+            uri=self.default_source_uri,
+            dist=self.toDist,
+            orig_comps=['main', 'restricted']
+        )
+        e.suites = sorted([self.toDist, self.toDist + '-updates'],
+                          key=suite_ordering_key)
+
+        lines = gpg_keyring_to_ascii('/usr/share/keyrings/ubuntu-archive-keyring.gpg')
+        lines = [' ' + (l if l.strip() else '.') for l in lines]
+        e.section['Signed-By'] = '\n' + '\n'.join(lines)
+
+    def _addSecuritySources(self):
+        e = self.sources.add(
+            file=self.default_sources_filepath,
+            type='deb',
+            uri=self.security_source_uri,
+            dist=self.toDist + '-security',
+            orig_comps=['main', 'restricted']
+        )
+        lines = gpg_keyring_to_ascii('/usr/share/keyrings/ubuntu-archive-keyring.gpg')
+        lines = [' ' + (l if l.strip() else '.') for l in lines]
+        e.section['Signed-By'] = '\n' + '\n'.join(lines)
+
+    def _mirrorCheck(self):
+        # skip mirror check if special environment is set
+        # (useful for server admins with internal repos)
+        if (self.config.getWithDefault("Sources","AllowThirdParty",False) or
+            "RELEASE_UPGRADER_ALLOW_THIRD_PARTY" in os.environ):
+            logging.warning("mirror check skipped, *overriden* via config")
+            return True
+
+        # check if we need to enable main
+        if self.useNetwork:
+            # now check if the base-meta pkgs are available in
+            # the archive or only available as "now"
+            # -> if not that means that "main" is missing and we
+            #    need to enable it
+            logging.debug(self.config.getlist("Distro", "BaseMetaPkgs"))
+            for pkgname in self.config.getlist("Distro", "BaseMetaPkgs"):
+                logging.debug("Checking pkg: %s" % pkgname)
+                if ((not pkgname in self.cache or
+                     not self.cache[pkgname].candidate or
+                     len(self.cache[pkgname].candidate.origins) == 0)
+                    or
+                    (self.cache[pkgname].candidate and
+                     len(self.cache[pkgname].candidate.origins) == 1 and
+                     self.cache[pkgname].candidate.origins[0].archive == "now")
+                   ):
+                    logging.debug("BaseMetaPkg '%s' has no candidate.origins" % pkgname)
+                    return False
+
+        return True
+
+    def rewriteDeb822Sources(self, mirror_check=True):
+        """
+        deb822-aware version of rewriteSourcesList()
+
+        Return True if we found a valid dist to ugprade to, and return False
+        otherwise.
+        """
+        found_to_dist = False
+
+        logging.debug("rewriteDeb822Sources()" +
+                      (" with mirror_check" if mirror_check else ""))
+        if mirror_check and not self._mirrorCheck():
+            self._addDefaultSources()
+
+        # Map suites from current release to next release.
+        suite_mapping = {self.fromDist: self.toDist}
+        for pocket in self.config.getlist("Sources", "Pockets"):
+            f = '{}-{}'.format(self.fromDist, pocket)
+            t = '{}-{}'.format(self.toDist, pocket)
+            suite_mapping[f] = t
+
+        # Iterate over source entries, and potentially disable or modify them
+        # to create potential sources which can be upgraded to.
+        self.sources_disabled = False
+        self.found_components = {}
+        for entry in [e for e in self.sources if not (e.invalid or e.disabled)]:
+            # Disable -proposed when upgrading to -devel release.
+            if self.options and self.options.devel_release:
+                logging.debug("upgrade to development release, disabling proposed")
+                no_proposed = set(entry.suites) - set([self.fromDist + "-proposed"])
+                if not no_proposed:
+                    # -proposed is the only pocket for this source, so just
+                    # disable it.
+                    entry.disabled = True
+                    continue
+                else:
+                    # If there are other suites, just remove -proposed.
+                    entry.sutes = no_proposed
+
+            # Remove/replace old-releases.ubuntu.com sources as needed.
+            entry.uris = set([u for u in entry.uris \
+                              if "old-releases.ubuntu.com/" not in u])
+            if not entry.uris:
+                if [s for s in entry.suites if s.endswith("-security")]:
+                    entry.uris = [self.security_source_uri]
+                else:
+                    entry.uris = [self.default_source_uri]
+
+            logging.debug("examining: '%s'" %
+                          get_string_with_no_auth_from_source_entry(copy.deepcopy(entry)))
+
+            # Disable sources that do not contain valid mirrors.
+            known_mirrors = [u for u in entry.uris \
+                             if self.isMirror(u) \
+                             or not mirror_check \
+                             or self.isThirdPartyMirror(u)]
+            if not known_mirrors:
+                entry.disabled = True
+                self.sources_disabled = True
+
+                logging.debug("entry '%s' was disabled (unknown mirror)"
+                              % get_string_with_no_auth_from_source_entry(copy.deepcopy(entry)))
+                continue
+
+            # Move suites to the next release.
+            new_suites = []
+            for s in entry.suites:
+                try:
+                    new_suites.append(suite_mapping[s])
+                except KeyError:
+                    if s in suite_mapping.values():
+                        new_suites.append(s)
+
+            # If this did not yield any suites, disable this source.
+            if not new_suites:
+                entry.disabled = True
+                self.sources_disabled = True
+
+                logging.debug("entry '%s' was disabled (unknown dist)"
+                              % get_string_with_no_auth_from_source_entry(copy.deepcopy(entry)))
+                continue
+            else:
+                entry.suites = sorted(list(set(new_suites)), key=suite_ordering_key)
+
+            # deb-src entries, security archive URIs, and sources without only
+            # -security or -backports enabled are not valid "to" sources.
+            valid_uris = [u for u in entry.uris \
+                          if "/security.ubuntu.com" not in u]
+            valid_suites = [s for s in entry.suites \
+                            if s.rsplit('-', 1)[-1] not in ["backports", "security"]]
+            valid_to = "deb" in entry.types and valid_uris and valid_suites
+            if not valid_to:
+                continue
+
+            # Finally, test the archive to make sure it provides the new dist.
+            (downloadable, failed) = self._deb822SourceEntryDownloadable(entry)
+            if not downloadable:
+                entry.disabled = True
+                self.source_disabled = True
+                logging.debug("entry '%s' was disabled (no Release file)"
+                              % get_string_with_no_auth_from_source_entry(copy.deepcopy(entry)))
+                continue
+            elif failed:
+                logging.debug("some Release files were not downloadable for '%s"
+                              % get_string_with_no_auth_from_source_entry(copy.deepcopy(entry)))
+            else:
+                # We can upgrade using this source.
+                found_to_dist = True
+
+                for suite in entry.suites:
+                    try:
+                        self.found_components[suite] |= set(entry.comps)
+                    except KeyError:
+                        self.found_components[suite] = set(entry.comps)
+
+        return found_to_dist
+
+    def updateDeb822Sources(self):
+        """
+        deb822-aware version of updateSourcesList()
+        """
+        logging.debug("updateDeb822Sources()")
+        self.sources = SourcesList(matcherPath=self.datadir, deb822=True)
+        self.sources.backup(self.sources_backup_ext)
+
+        sources = [s for s in self.sources if not s.invalid]
+
+        if not any("deb" in e.types and self.fromDist in e.suites for e in sources):
+            res = self._view.askYesNoQuestion(_("No valid source entry found"),
+                             _("While scanning your repository "
+                               "information no entry about %s could be "
+                               "found.\n\n"
+                               "An upgrade might not succeed.\n\n"
+                               "Do you want to continue anyway?") % self.fromDist)
+            if not res:
+                self.abort()
+
+        if not self.rewriteDeb822Sources(mirror_check=True):
+            logging.error("No valid mirror found")
+            res = self._view.askYesNoQuestion(_("No valid mirror found"),
+                             _("While scanning your repository "
+                               "information no mirror entry for "
+                               "the upgrade was found. "
+                               "This can happen if you run an internal "
+                               "mirror or if the mirror information is "
+                               "out of date.\n\n"
+                               "Do you want to rewrite your "
+                               "'sources.list' file anyway? If you choose "
+                               "'Yes' here it will update all '%s' to '%s' "
+                               "entries.\n"
+                               "If you select 'No' the upgrade will cancel."
+                               ) % (self.fromDist, self.toDist))
+            if res:
+                # re-init the sources and try again
+                self.sources = SourcesList(matcherPath=self.datadir, deb822=True)
+                # its ok if rewriteSourcesList fails here if
+                # we do not use a network, the sources.list may be empty
+                if (not self.rewriteDeb822Sources(mirror_check=False)
+                    and self.useNetwork):
+                    #hm, still nothing useful ...
+                    prim = _("Generate default sources?")
+                    secon = _("After scanning your 'ubuntu.sources' no "
+                              "valid entry for '%s' was found.\n\n"
+                              "Should default entries for '%s' be "
+                              "added? If you select 'No', the upgrade "
+                              "will cancel.") % (self.fromDist, self.toDist)
+                    if not self._view.askYesNoQuestion(prim, secon):
+                        self.abort()
+
+                    # add some defaults here
+                    self._addDefaultSources()
+                    self._addSecuritySources()
+            else:
+                self.abort()
+
+        # now write
+        self.sources.save()
+
+        if self.sources_disabled:
+            self._view.information(_("Third party sources disabled"),
+                             _("Some third party entries in your sources.list "
+                               "were disabled. You can re-enable them "
+                               "after the upgrade with the "
+                               "'software-properties' tool or "
+                               "your package manager."
+                               ))
+        get_telemetry().set_using_third_party_sources(self.sources_disabled)
+        return True
 
     def updateSourcesList(self):
         logging.debug("updateSourcesList()")
@@ -1493,6 +1984,10 @@ class DistUpgradeController(object):
         # fixes etc - only do on real upgrades
         if not self._partialUpgrade:
             self.runPostInstallScripts()
+
+        if not self.migratedToDeb822():
+            self.migrateToDeb822Sources()
+
         return True
 
     def runPostInstallScripts(self):
@@ -1875,7 +2370,18 @@ class DistUpgradeController(object):
             # update sources.list
             self._view.setStep(Step.MODIFY_SOURCES)
             self._view.updateStatus(_("Updating repository information"))
-            if not self.updateSourcesList():
+
+            # If we are not yet migrated to deb822 sources, then update the
+            # sources the old way. We will migrate to deb822 sources at the
+            # end of the upgrade.
+            logging.debug("Have Deb822SourceEntry: {}"
+                          .format(have_deb822_source_entry))
+
+            if self.migratedToDeb822():
+                logging.debug("Already migrated to deb822")
+                if not self.updateDeb822Sources():
+                    self.abort()
+            elif not self.updateSourcesList():
                 self.abort()
 
             # then update the package index files
