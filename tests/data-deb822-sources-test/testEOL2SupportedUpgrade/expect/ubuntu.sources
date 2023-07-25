@@ -1,0 +1,9 @@
+Types: deb deb-src
+URIs: {default_source_uri}
+Suites: {dist}
+Components: main restricted multiverse universe
+
+Types: deb
+URIs: {security_source_uri}
+Suites: {dist}-security
+Components: main restricted

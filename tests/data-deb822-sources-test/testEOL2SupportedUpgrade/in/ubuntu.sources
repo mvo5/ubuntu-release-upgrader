@@ -1,0 +1,9 @@
+Types: deb deb-src
+URIs: http://old-releases.ubuntu.com/ubuntu
+Suites: {dist}
+Components: main restricted multiverse universe
+
+Types: deb
+URIs: http://old-releases.ubuntu.com/ubuntu
+Suites: {dist}-security
+Components: main restricted

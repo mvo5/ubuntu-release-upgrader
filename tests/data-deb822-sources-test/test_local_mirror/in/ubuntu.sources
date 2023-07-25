@@ -1,0 +1,14 @@
+Types: deb
+URIs: http://192.168.1.1/ubuntu
+Suites: {dist} {dist}-updates
+Components: main restricted
+
+Types: deb
+URIs: {security_source_uri}
+Suites: {dist}-security
+Components: main restricted
+
+Types: deb
+URIs: {default_source_uri}
+Suites: {dist}-backports
+Components: main restricted universe multiverse

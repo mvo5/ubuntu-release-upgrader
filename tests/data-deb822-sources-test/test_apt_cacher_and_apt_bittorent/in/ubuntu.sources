@@ -1,0 +1,34 @@
+Types: deb
+URIs: http://localhost:9977/security.ubuntu.com/ubuntu
+Suites: {dist}-security
+Components: main restricted universe multiverse
+
+Types: deb
+URIs: http://localhost:9977/us.archive.ubuntu.com/ubuntu/
+Suites: {dist}
+Components: main
+
+Types: deb
+URIs: http://localhost:9977/archive.ubuntu.com/ubuntu/
+Suites: {dist}
+Components: main
+
+Types: deb
+URIs: http://archive.ubuntu.com/ubuntu
+Suites: {dist}
+Components: main restricted multiverse universe
+
+Types: deb
+URIs: http://de.archive.ubuntu.com/ubuntu/
+Suites: {dist}
+Components: main restricted multiverse
+
+Types: deb-src
+URIs: http://archive.ubuntu.com/ubuntu
+Suites: {dist}
+Components: main restricted multiverse
+
+Types: deb
+URIs: http://security.ubuntu.com/ubuntu/
+Suites: {dist}-security
+Components: main restricted universe

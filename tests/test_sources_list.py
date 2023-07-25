@@ -5,6 +5,7 @@ from __future__ import print_function
 
 import apt_pkg
 import distro_info
+import inspect
 import os
 import shutil
 import subprocess
@@ -812,7 +813,224 @@ deb http://ports.ubuntu.com/ubuntu-ports/ gutsy-backports main restricted univer
                 l in expected.split("\n"),
                 "unexpected entry '%s' in sources.list. got:\n'''%s'''" %
                 (l, sources_list))
-                
+
+class TestDeb822SourcesUpdate(unittest.TestCase):
+
+    testdir = os.path.abspath(os.path.join(CURDIR, "data-deb822-sources-test"))
+    sourceparts_dir = os.path.join(testdir, "sources.list.d")
+
+    def setUp(self):
+        apt_pkg.config.set("Dir::Etc", self.testdir)
+        apt_pkg.config.set("Dir::Etc::sourcelist", "sources.list")
+        apt_pkg.config.set("Dir::Etc::sourceparts", self.sourceparts_dir)
+        apt_pkg.config.set("APT::Default-Release", "")
+
+    def tearDown(self):
+        shutil.rmtree(self.sourceparts_dir, ignore_errors=True)
+
+    def test_ubuntu_sources_with_nothing(self):
+        """
+        test ubuntu.sources rewrite with nothing in it
+        """
+        self.prepareTestSources()
+
+        v = DistUpgradeViewNonInteractive()
+        d = DistUpgradeController(v, datadir=self.testdir)
+        d.openCache(lock=False)
+        res = d.updateDeb822Sources()
+        self.assertTrue(res)
+        self.assertSourcesMatchExpected(
+            dist=d.toDist,
+            default_source_uri=d.default_source_uri,
+            security_source_uri=d.security_source_uri,
+        )
+
+    @mock.patch("DistUpgrade.DistUpgradeController.DistUpgradeController._deb822SourceEntryDownloadable")
+    def test_sources_rewrite(self, mock_deb822SourceEntryDownloadable):
+        """
+        test regular ubuntu.sources rewrite
+        """
+        v = DistUpgradeViewNonInteractive()
+        d = DistUpgradeController(v, datadir=self.testdir)
+        d.useNetwork = False
+        self.prepareTestSources(
+            dist=d.fromDist,
+            default_source_uri=d.default_source_uri,
+            security_source_uri=d.security_source_uri,
+        )
+        d.config.set("Distro", "BaseMetaPkgs", "ubuntu-minimal")
+        d.openCache(lock=False)
+        mock_deb822SourceEntryDownloadable.return_value = (True, [])
+        res = d.updateDeb822Sources()
+        self.assertTrue(mock_deb822SourceEntryDownloadable.called)
+        self.assertTrue(res)
+        self.assertSourcesMatchExpected(
+            dist=d.toDist,
+            default_source_uri=d.default_source_uri,
+            security_source_uri=d.security_source_uri,
+        )
+
+    @unittest.skipUnless(ARCH in ('amd64', 'i386'), "ports are not mirrored")
+    @mock.patch("DistUpgrade.DistUpgradeController.DistUpgradeController._deb822SourceEntryDownloadable")
+    def test_sources_inactive_mirror(self,
+                                     mock_deb822SourceEntryDownloadable):
+        """
+        test ubuntu.sources rewrite of an obsolete mirror
+        """
+        v = DistUpgradeViewNonInteractive()
+        d = DistUpgradeController(v, datadir=self.testdir)
+        d.config.set("Distro", "BaseMetaPkgs", "ubuntu-minimal")
+        d.openCache(lock=False)
+        self.prepareTestSources(dist=d.fromDist)
+        mock_deb822SourceEntryDownloadable.return_value = (True, [])
+        res = d.updateDeb822Sources()
+        self.assertTrue(mock_deb822SourceEntryDownloadable.called)
+        self.assertTrue(res)
+        self.assertSourcesMatchExpected(
+            from_dist=d.fromDist,
+            to_dist=d.toDist,
+            default_source_uri=d.default_source_uri
+        )
+
+    def testEOL2SupportedUpgrade(self):
+        " test upgrade from a EOL release to a supported release "
+        to_dist = LTSES[-2]
+        from_dist = di.all[di.all.index(to_dist) - 1]
+        os.environ["LANG"] = "C"
+        v = DistUpgradeViewNonInteractive()
+        d = DistUpgradeController(v, datadir=self.testdir)
+        d.fromDist = from_dist
+        d.toDist = to_dist
+        d.openCache(lock=False)
+        self.prepareTestSources(dist=from_dist)
+        res = d.updateDeb822Sources()
+        self.assertTrue(res)
+        self.assertSourcesMatchExpected(
+            dist=to_dist,
+            default_source_uri=d.default_source_uri,
+            security_source_uri=d.security_source_uri,
+        )
+
+    @mock.patch("DistUpgrade.DistUpgradeController.DistUpgradeController._deb822SourceEntryDownloadable")
+    def test_private_ppa_transition(self, mock_deb822SourceEntryDownloadable):
+        if "RELEASE_UPGRADER_ALLOW_THIRD_PARTY" in os.environ:
+            del os.environ["RELEASE_UPGRADER_ALLOW_THIRD_PARTY"]
+
+        v = DistUpgradeViewNonInteractive()
+        d = DistUpgradeController(v, datadir=self.testdir)
+        d.openCache(lock=False)
+        self.prepareTestSources(
+            dist=d.fromDist,
+            default_source_uri=d.default_source_uri,
+            security_source_uri=d.security_source_uri,
+        )
+        mock_deb822SourceEntryDownloadable.return_value = (True, [])
+        res = d.updateDeb822Sources()
+        self.assertTrue(mock_deb822SourceEntryDownloadable.called)
+        self.assertTrue(res)
+        self.assertSourcesMatchExpected(
+            to_dist=d.toDist,
+            from_dist=d.fromDist,
+            default_source_uri=d.default_source_uri,
+            security_source_uri=d.security_source_uri,
+        )
+
+    @mock.patch("DistUpgrade.DistUpgradeController.DistUpgradeController._deb822SourceEntryDownloadable")
+    def test_apt_cacher_and_apt_bittorent(self,
+                                          mock_deb822SourceEntryDownloadable):
+        """
+        test transition of apt-cacher/apt-torrent uris
+        """
+        v = DistUpgradeViewNonInteractive()
+        d = DistUpgradeController(v, datadir=self.testdir)
+        d.openCache(lock=False)
+        self.prepareTestSources(dist=d.fromDist)
+        mock_deb822SourceEntryDownloadable.return_value = (True, [])
+        res = d.updateDeb822Sources()
+        self.assertTrue(mock_deb822SourceEntryDownloadable.called)
+        self.assertTrue(res)
+        self.assertSourcesMatchExpected(dist=d.toDist)
+
+    @mock.patch("DistUpgrade.DistUpgradeController.DistUpgradeController._deb822SourceEntryDownloadable")
+    def test_local_mirror(self, mock_deb822SourceEntryDownloadable):
+        """
+        test that a local mirror with official -backports works (LP: #1067393)
+        """
+        v = DistUpgradeViewNonInteractive()
+        d = DistUpgradeController(v, datadir=self.testdir)
+        d.openCache(lock=False)
+        self.prepareTestSources(
+            dist=d.fromDist,
+            default_source_uri=d.default_source_uri,
+            security_source_uri=d.security_source_uri,
+        )
+        mock_deb822SourceEntryDownloadable.return_value = (True, [])
+        res = d.updateDeb822Sources()
+        self.assertTrue(mock_deb822SourceEntryDownloadable.called)
+        self.assertTrue(res)
+        self.assertSourcesMatchExpected(
+            dist=d.toDist,
+            default_source_uri=d.default_source_uri,
+            security_source_uri=d.security_source_uri,
+        )
+
+    @mock.patch("DistUpgrade.DistUpgradeController.DistUpgradeController._deb822SourceEntryDownloadable")
+    def test_disable_proposed(self, mock_deb822SourceEntryDownloadable):
+        """
+        Test that proposed is disabled when upgrading to a development
+        release.
+        """
+        v = DistUpgradeViewNonInteractive()
+        options = mock.Mock()
+        options.devel_release = True
+        d = DistUpgradeController(v, options, datadir=self.testdir)
+        d.openCache(lock=False)
+        self.prepareTestSources(
+            dist=d.fromDist,
+            default_source_uri=d.default_source_uri,
+            security_source_uri=d.security_source_uri,
+        )
+        mock_deb822SourceEntryDownloadable.return_value = (True, [])
+        res = d.updateDeb822Sources()
+        self.assertTrue(mock_deb822SourceEntryDownloadable.called)
+        self.assertTrue(res)
+        self.assertSourcesMatchExpected(
+            from_dist=d.fromDist,
+            to_dist=d.toDist,
+            default_source_uri=d.default_source_uri,
+            security_source_uri=d.security_source_uri,
+        )
+
+    def assertSourcesMatchExpected(self, **kwargs):
+        # Compare the output to the expected data corresponding to the calling
+        # test function.
+        testdata = os.path.join(self.testdir, inspect.stack()[1][3], "expect")
+
+        for expect_path in os.listdir(testdata):
+            actual_path = os.path.join(self.sourceparts_dir, expect_path)
+            expect_path = os.path.join(testdata, expect_path)
+            with open(expect_path) as e, open(actual_path) as a:
+                expect = e.read().format(**kwargs)
+                actual = a.read()
+                self.assertEqual(expect, actual,
+                                 '\n# Actual {}:\n{}'
+                                 .format(os.path.basename(actual_path), actual))
+
+    def prepareTestSources(self, **kwargs):
+        # Copy the test data from the directory corresponding to the calling
+        # test function.
+        testdata = os.path.join(self.testdir, inspect.stack()[1][3], "in")
+
+        shutil.rmtree(self.sourceparts_dir, ignore_errors=True)
+        os.mkdir(self.sourceparts_dir)
+
+        for file in os.listdir(testdata):
+            path_in = os.path.join(testdata, file)
+            path_out = os.path.join(self.sourceparts_dir, file)
+
+            with open(path_in) as fin, open(path_out, 'w') as fout:
+                fout.write(fin.read().format(**kwargs))
+
 if __name__ == "__main__":
     import sys
     for e in sys.argv:

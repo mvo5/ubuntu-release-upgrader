@@ -1,0 +1,9 @@
+Types: deb deb-src
+URIs: http://mirror.mcs.anl.gov/ubuntu
+Suites: {dist} {dist}-updates
+Components: main restricted universe multiverse
+
+Types: deb
+URIs: http://security.ubuntu.com/ubuntu
+Suites: {dist}-security
+Components: main restricted universe multiverse

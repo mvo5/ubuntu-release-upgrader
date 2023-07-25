@@ -1,0 +1,14 @@
+Types: deb
+URIs: {default_source_uri}
+Suites: {dist} {dist}-updates
+Components: main restricted
+
+Types: deb
+URIs: {security_source_uri}
+Suites: {dist}-security
+Components: main restricted
+
+Types: deb
+URIs: {default_source_uri}
+Suites: {dist}-proposed
+Components: main restricted universe multiverse

@@ -1,0 +1,25 @@
+Types: deb
+URIs: {default_source_uri}
+Suites: {to_dist}
+Components: main restricted multiverse universe
+
+Types: deb-src
+URIs: {default_source_uri}
+Suites: {to_dist}
+Components: main restricted multiverse
+
+Types: deb
+URIs: {security_source_uri}
+Suites: {to_dist}-security
+Componentes: main restricted
+
+Types: deb
+URIs: http://user:pass@private-ppa.launchpad.net/random-ppa
+Suites: {from_dist}
+Components: main
+Enabled: no
+
+Types: deb
+URIs: https://user:pass@private-ppa.launchpad.net/commercial-ppa-uploaders
+Suites: {to_dist}
+Components: main
