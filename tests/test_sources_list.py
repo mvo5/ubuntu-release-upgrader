@@ -5,6 +5,7 @@ from __future__ import print_function
 
 import apt_pkg
 import distro_info
+import glob
 import inspect
 import os
 import shutil
@@ -1030,6 +1031,247 @@ class TestDeb822SourcesUpdate(unittest.TestCase):
 
             with open(path_in) as fin, open(path_out, 'w') as fout:
                 fout.write(fin.read().format(**kwargs))
+
+
+class TestDeb822SourcesMigration(unittest.TestCase):
+
+    testdir = os.path.abspath(os.path.join(CURDIR, "data-deb822-migration-test"))
+    sourceparts_dir = os.path.join(testdir, "sources.list.d")
+    trustedparts_dir = os.path.join(testdir, "trusted.gpg.d")
+
+    def setUp(self):
+        apt_pkg.config.set("Dir::Etc", self.testdir)
+        apt_pkg.config.set("Dir::Etc::sourcelist", "sources.list")
+        apt_pkg.config.set("Dir::Etc::sourceparts", self.sourceparts_dir)
+        apt_pkg.config.set("Dir::Etc::trustedparts", self.trustedparts_dir)
+        apt_pkg.config.set("APT::Default-Release", "")
+        self.maxDiff = None
+
+    def tearDown(self):
+        shutil.rmtree(self.sourceparts_dir, ignore_errors=True)
+        shutil.rmtree(self.trustedparts_dir, ignore_errors=True)
+        for file in glob.glob("{}/sources.list*".format(self.testdir)):
+            os.remove(file)
+
+    def assertSourcesMatchExpected(self, **kwargs):
+        # Compare the output to the expected data corresponding to the calling
+        # test function.
+        testdata = os.path.join(self.testdir, inspect.stack()[1][3], "expect")
+
+        for expect_path in os.listdir(testdata):
+            if expect_path.endswith(".gpg"):
+                actual_path = os.path.join(self.trustedparts_dir, expect_path)
+            else:
+                actual_path = os.path.join(self.sourceparts_dir, expect_path)
+
+            expect_path = os.path.join(testdata, expect_path)
+
+            self.assertTrue(
+                os.path.exists(actual_path),
+                "File {} was not created during deb822 migration"
+                .format(actual_path)
+            )
+
+            with open(expect_path) as e, open(actual_path) as a:
+                expect = e.read().format(**kwargs)
+                actual = a.read()
+                self.assertEqual(expect, actual)
+                                 #'\n# Actual {}:\n{}'
+                                 #.format(os.path.basename(actual_path), actual))
+
+    def prepareTestSources(self, **kwargs):
+        # Copy the test data from the directory corresponding to the calling
+        # test function.
+        testdata = os.path.join(self.testdir, inspect.stack()[1][3], "in")
+
+        shutil.rmtree(self.sourceparts_dir, ignore_errors=True)
+        os.mkdir(self.sourceparts_dir)
+        shutil.rmtree(self.trustedparts_dir, ignore_errors=True)
+        os.mkdir(self.trustedparts_dir)
+
+        for file in os.listdir(testdata):
+            path_in = os.path.join(testdata, file)
+            in_mode = 'r'
+            out_mode = 'w'
+
+            if file == "sources.list":
+                path_out = os.path.join(self.testdir, file)
+            elif file.endswith(".gpg"):
+                path_out = os.path.join(self.trustedparts_dir, file)
+                in_mode += 'b'
+                out_mode += 'b'
+            else:
+                path_out = os.path.join(self.sourceparts_dir, file)
+
+            with open(path_in, in_mode) as fin, open(path_out, out_mode) as fout:
+                data = fin.read()
+                if isinstance(data, str):
+                    data = data.format(**kwargs)
+
+                fout.write(data)
+
+    def test_sources_list_migration(self):
+        """
+        test that the usual sources.list is migrated to an appropriate
+        ubuntu.sources
+        """
+        v = DistUpgradeViewNonInteractive()
+        d = DistUpgradeController(v, datadir=self.testdir)
+        d.openCache(lock=False)
+
+        self.prepareTestSources(
+            dist=di.devel(),
+            default_source_uri=d.default_source_uri,
+            security_source_uri=d.security_source_uri,
+        )
+        self.assertFalse(d.migratedToDeb822())
+
+        d.migrateToDeb822Sources()
+
+        self.assertTrue(d.migratedToDeb822())
+        self.assertSourcesMatchExpected(
+            dist=di.devel(),
+            default_source_uri=d.default_source_uri,
+            security_source_uri=d.security_source_uri,
+        )
+
+        # Make sure we leave behind a comment in sources.list
+        with open(os.path.join(self.testdir, "sources.list")) as f:
+            self.assertEqual(
+                f.read(),
+                "# Ubuntu sources have moved to {}/ubuntu.sources\n"
+                .format(self.sourceparts_dir)
+            )
+
+    def test_third_party_sources_migration(self):
+        """
+        test that third party sources from sources.list are moved to
+        third-party.sources.
+        """
+        v = DistUpgradeViewNonInteractive()
+        d = DistUpgradeController(v, datadir=self.testdir)
+        d.openCache(lock=False)
+
+        self.prepareTestSources(
+            dist=di.devel(),
+            default_source_uri=d.default_source_uri,
+        )
+        self.assertFalse(d.migratedToDeb822())
+
+        d.migrateToDeb822Sources()
+
+        self.assertTrue(d.migratedToDeb822())
+        self.assertSourcesMatchExpected(
+            dist=di.devel(),
+            default_source_uri=d.default_source_uri,
+        )
+
+    def test_partial_migration(self):
+        """
+        test that only .list sources are modified during migration
+        """
+        v = DistUpgradeViewNonInteractive()
+        d = DistUpgradeController(v, datadir=self.testdir)
+        d.openCache(lock=False)
+
+        self.prepareTestSources(
+            dist=di.devel(),
+            default_source_uri=d.default_source_uri,
+        )
+        self.assertFalse(d.migratedToDeb822())
+
+        d.migrateToDeb822Sources()
+
+        self.assertTrue(d.migratedToDeb822())
+        self.assertSourcesMatchExpected(
+            dist=di.devel(),
+            default_source_uri=d.default_source_uri,
+        )
+
+    def test_ppa_migration(self):
+        """
+        test that PPA sources.list.d .list files are migrated
+        """
+        v = DistUpgradeViewNonInteractive()
+        d = DistUpgradeController(v, datadir=self.testdir)
+        d.openCache(lock=False)
+
+        self.prepareTestSources()
+        self.assertFalse(d.migratedToDeb822())
+
+        d.migrateToDeb822Sources()
+
+        self.assertTrue(d.migratedToDeb822())
+        self.assertSourcesMatchExpected()
+
+    def test_consolidate_types(self):
+        """
+        test that deb and deb-src entries are consolidated when appropriate
+        """
+        v = DistUpgradeViewNonInteractive()
+        d = DistUpgradeController(v, datadir=self.testdir)
+        d.openCache(lock=False)
+
+        self.prepareTestSources(
+            dist=di.devel(),
+            default_source_uri=d.default_source_uri,
+            security_source_uri=d.security_source_uri,
+        )
+        self.assertFalse(d.migratedToDeb822())
+
+        d.migrateToDeb822Sources()
+
+        self.assertTrue(d.migratedToDeb822())
+        self.assertSourcesMatchExpected(
+            dist=di.devel(),
+            default_source_uri=d.default_source_uri,
+            security_source_uri=d.security_source_uri,
+        )
+
+    def test_consolidate_suites(self):
+        """
+        test that suites are consolidated when appropriate
+        """
+        v = DistUpgradeViewNonInteractive()
+        d = DistUpgradeController(v, datadir=self.testdir)
+        d.openCache(lock=False)
+
+        self.prepareTestSources(
+            dist=di.devel(),
+            default_source_uri=d.default_source_uri,
+        )
+        self.assertFalse(d.migratedToDeb822())
+
+        d.migrateToDeb822Sources()
+
+        self.assertTrue(d.migratedToDeb822())
+        self.assertSourcesMatchExpected(
+            dist=di.devel(),
+            default_source_uri=d.default_source_uri,
+        )
+
+    def test_consolidate_comps(self):
+        """
+        test that components are consolidated when appropriate
+        """
+        v = DistUpgradeViewNonInteractive()
+        d = DistUpgradeController(v, datadir=self.testdir)
+        d.openCache(lock=False)
+
+        self.prepareTestSources(
+            dist=di.devel(),
+            default_source_uri=d.default_source_uri,
+        )
+        self.assertFalse(d.migratedToDeb822())
+
+        d.migrateToDeb822Sources()
+
+        self.assertTrue(d.migratedToDeb822())
+        self.assertSourcesMatchExpected(
+            dist=di.devel(),
+            default_source_uri=d.default_source_uri,
+        )
+
 
 if __name__ == "__main__":
     import sys

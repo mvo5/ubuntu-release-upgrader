@@ -1,0 +1,17 @@
+deb {default_source_uri} {dist} main restricted universe
+# deb-src {default_source_uri} {dist} main restricted universe
+deb {default_source_uri} {dist}-updates main restricted universe
+# deb-src {default_source_uri} {dist}-updates main restricted
+# deb-src {default_source_uri} {dist} universe
+# deb-src {default_source_uri} {dist}-updates universe
+deb {default_source_uri} {dist} multiverse
+# deb-src {default_source_uri} {dist} multiverse
+deb {default_source_uri} {dist}-updates multiverse
+# deb-src {default_source_uri} {dist}-updates multiverse
+deb {default_source_uri} {dist}-backports main restricted multiverse universe
+# deb-src {default_source_uri} {dist}-backports main restricted universe multiverse
+deb {security_source_uri} {dist}-security main restricted universe
+# deb-src {security_source_uri} {dist}-security main restricted
+# deb-src {security_source_uri} {dist}-security universe
+deb {security_source_uri} {dist}-security multiverse
+# deb-src {security_source_uri} {dist}-security multiverse

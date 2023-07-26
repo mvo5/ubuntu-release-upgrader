@@ -1,0 +1,4 @@
+Types: deb
+URIs: http://dl.google.com/linux/chrome/deb/
+Suites: stable
+Components: main

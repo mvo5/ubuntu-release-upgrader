@@ -1,0 +1,5 @@
+deb http://dl.google.com/linux/chrome/deb/ stable main
+deb {default_source_uri} {dist} main restricted
+deb-src {default_source_uri} {dist} main restricted
+deb {default_source_uri} {dist}-updates main restricted
+deb-src {default_source_uri} {dist}-updates main restricted

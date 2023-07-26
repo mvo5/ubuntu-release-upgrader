@@ -1,0 +1,4 @@
+deb {default_source_uri} {dist} main restricted
+deb {default_source_uri} {dist} universe multiverse
+deb {default_source_uri} {dist}-updates main restricted universe
+deb {default_source_uri} {dist}-backports main

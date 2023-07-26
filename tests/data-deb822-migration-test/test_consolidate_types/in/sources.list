@@ -1,0 +1,5 @@
+deb {default_source_uri} {dist} main restricted universe multiverse
+deb-src {default_source_uri} {dist} main restricted universe multiverse
+
+deb {security_source_uri} {dist}-security main restricted universe multiverse
+deb-src {security_source_uri} {dist}-security main universe
