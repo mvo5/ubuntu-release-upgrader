@@ -1,3 +1,12 @@
+ubuntu-release-upgrader (1:23.10.4) UNRELEASED; urgency=medium
+
+  * DistUpgradeController: migrate to deb822 sources on upgrade
+  * test: add TestDeb822SourcesUpdate to test deb822 source rewrite
+  * test: add unit test for migration to deb822 sources
+  * Run pre-build.sh: updating mirrors, demotions, and translations.
+
+ -- Nick Rosbrook <nick.rosbrook@canonical.com>  Fri, 28 Jul 2023 12:57:28 -0400
+
 ubuntu-release-upgrader (1:23.10.3) mantic; urgency=medium
 
   * DistUpgradeViewKDE.py: Fix a crash when writing text on a key press event.
