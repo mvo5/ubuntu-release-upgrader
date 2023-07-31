@@ -965,7 +965,7 @@ class DistUpgradeController(object):
             filepath = entry['filepath']
 
             if filepath == os.path.join(sourceparts_dir, 'ubuntu.sources'):
-                keyring = '/usr/share/keyrings/ubuntu-archive-keyring.gpg'
+                entry['signed-by'] = ' /usr/share/keyrings/ubuntu-archive-keyring.gpg'
             else:
                 # Check if there is a ppa.gpg corresponding to ppa.list.
                 keyring = os.path.basename(os.path.splitext(filepath)[0])
@@ -978,11 +978,11 @@ class DistUpgradeController(object):
                     keyring = keyring.rsplit('-', 1)[0] + '.gpg'
                     keyring = os.path.join(trustedparts_dir, keyring)
 
-            if os.path.exists(keyring) and not entry.get('signed-by'):
-                lines = gpg_keyring_to_ascii(keyring)
-                lines = [' ' + (l if l.strip() else '.') for l in lines]
+                if os.path.exists(keyring) and not entry.get('signed-by'):
+                    lines = gpg_keyring_to_ascii(keyring)
+                    lines = [' ' + (l if l.strip() else '.') for l in lines]
 
-                entry['signed-by'] = '\n' + '\n'.join(lines)
+                    entry['signed-by'] = '\n' + '\n'.join(lines)
 
         # Generate the new .sources files. We write the files manually rather
         # than using python-apt because the currently loaded version of
@@ -1001,7 +1001,7 @@ class DistUpgradeController(object):
                 stanza += 'Components: {}\n'.format(' '.join(e['comps']))
 
                 if e.get('signed-by'):
-                    stanza += 'Signed-By: {}\n'.format(e['signed-by'])
+                    stanza += 'Signed-By:{}\n'.format(e['signed-by'])
 
                 stanzas.append(stanza)
 
@@ -1033,10 +1033,7 @@ class DistUpgradeController(object):
         )
         e.suites = sorted([self.toDist, self.toDist + '-updates'],
                           key=suite_ordering_key)
-
-        lines = gpg_keyring_to_ascii('/usr/share/keyrings/ubuntu-archive-keyring.gpg')
-        lines = [' ' + (l if l.strip() else '.') for l in lines]
-        e.section['Signed-By'] = '\n' + '\n'.join(lines)
+        e.section['Signed-By'] = '/usr/share/keyrings/ubuntu-archive-keyring.gpg'
 
     def _addSecuritySources(self):
         e = self.sources.add(
@@ -1046,9 +1043,7 @@ class DistUpgradeController(object):
             dist=self.toDist + '-security',
             orig_comps=['main', 'restricted']
         )
-        lines = gpg_keyring_to_ascii('/usr/share/keyrings/ubuntu-archive-keyring.gpg')
-        lines = [' ' + (l if l.strip() else '.') for l in lines]
-        e.section['Signed-By'] = '\n' + '\n'.join(lines)
+        e.section['Signed-By'] = '/usr/share/keyrings/ubuntu-archive-keyring.gpg'
 
     def _mirrorCheck(self):
         # skip mirror check if special environment is set
