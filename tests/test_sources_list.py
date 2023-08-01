@@ -1075,9 +1075,9 @@ class TestDeb822SourcesMigration(unittest.TestCase):
             with open(expect_path) as e, open(actual_path) as a:
                 expect = e.read().format(**kwargs)
                 actual = a.read()
-                self.assertEqual(expect, actual)
-                                 #'\n# Actual {}:\n{}'
-                                 #.format(os.path.basename(actual_path), actual))
+                self.assertEqual(expect, actual,
+                                 '\n# Actual {}:\n{}'
+                                 .format(os.path.basename(actual_path), actual))
 
     def prepareTestSources(self, **kwargs):
         # Copy the test data from the directory corresponding to the calling
