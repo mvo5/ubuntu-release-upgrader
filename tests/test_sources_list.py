@@ -1119,6 +1119,46 @@ class TestDeb822SourcesMigration(unittest.TestCase):
         d = DistUpgradeController(v, datadir=self.testdir)
         d.openCache(lock=False)
 
+        if d.default_source_uri == d.security_source_uri:
+            self.skipTest("Test requires different default and security source URIs")
+
+        self.prepareTestSources(
+            dist=di.devel(),
+            default_source_uri=d.default_source_uri,
+            security_source_uri=d.security_source_uri,
+        )
+        self.assertFalse(d.migratedToDeb822())
+
+        d.migrateToDeb822Sources()
+
+        self.assertTrue(d.migratedToDeb822())
+        self.assertSourcesMatchExpected(
+            dist=di.devel(),
+            default_source_uri=d.default_source_uri,
+            security_source_uri=d.security_source_uri,
+        )
+
+        # Make sure we leave behind a comment in sources.list
+        with open(os.path.join(self.testdir, "sources.list")) as f:
+            self.assertEqual(
+                f.read(),
+                "# Ubuntu sources have moved to {}/ubuntu.sources\n"
+                .format(self.sourceparts_dir)
+            )
+
+    @unittest.skipIf(ARCH in ('amd64', 'i386'), "test is for port arches")
+    def test_ports_sources_list_migration(self):
+        """
+        test that the usual ports sources.list is migrated to an appropriate
+        ubuntu.sources
+        """
+        v = DistUpgradeViewNonInteractive()
+        d = DistUpgradeController(v, datadir=self.testdir)
+        d.openCache(lock=False)
+
+        if d.default_source_uri != d.security_source_uri:
+            self.skipTest("Test assumes equal default and security source URIs")
+
         self.prepareTestSources(
             dist=di.devel(),
             default_source_uri=d.default_source_uri,
@@ -1211,6 +1251,9 @@ class TestDeb822SourcesMigration(unittest.TestCase):
         v = DistUpgradeViewNonInteractive()
         d = DistUpgradeController(v, datadir=self.testdir)
         d.openCache(lock=False)
+
+        if d.default_source_uri == d.security_source_uri:
+            self.skipTest("Test requires different default and security source URIs")
 
         self.prepareTestSources(
             dist=di.devel(),
