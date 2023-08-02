@@ -1,4 +1,4 @@
-ubuntu-release-upgrader (1:23.10.5) UNRELEASED; urgency=medium
+ubuntu-release-upgrader (1:23.10.5) mantic; urgency=medium
 
   * Do not embed keyring in ubuntu.sources (LP: #2029142):
     - DistUpgradeController: do not embed keyring in ubuntu.sources
@@ -6,7 +6,7 @@ ubuntu-release-upgrader (1:23.10.5) UNRELEASED; urgency=medium
   * test: fix deb822 tests on port arches
   * Run pre-build.sh: updating mirrors, demotions, and translations.
 
- -- Nick Rosbrook <nick.rosbrook@canonical.com>  Wed, 02 Aug 2023 11:17:44 -0400
+ -- Nick Rosbrook <nick.rosbrook@canonical.com>  Wed, 02 Aug 2023 11:27:57 -0400
 
 ubuntu-release-upgrader (1:23.10.4) mantic; urgency=medium
 
