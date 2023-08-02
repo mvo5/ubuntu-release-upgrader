@@ -4,12 +4,12 @@
 # Roys Hengwatanakul <roysheng@gmail.com>, 2006.
 # Theppitak Karoonboonyanan <thep@linux.thai.net>, 2009.
 #
-#: ../DistUpgrade/DistUpgradeController.py:1546
+#: ../DistUpgrade/DistUpgradeController.py:1541
 msgid ""
 msgstr ""
 "Project-Id-Version: update-manager\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2023-07-28 17:00+0000\n"
+"POT-Creation-Date: 2023-08-02 15:20+0000\n"
 "PO-Revision-Date: 2013-05-22 11:00+0000\n"
 "Last-Translator: Brian Murray <brian@ubuntu.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -305,13 +305,13 @@ msgstr "ไม่ใช่สำหรับ humans ระหว่างขั�
 msgid "disabled on upgrade to %s"
 msgstr "หยุดใช้งานเมื่อปรับปรุงเป็น %s"
 
-#: ../DistUpgrade/DistUpgradeController.py:1211
+#: ../DistUpgrade/DistUpgradeController.py:1206
 #, fuzzy
 msgid "No valid source entry found"
 msgstr "ไม่พบรายการ sources.list ที่ใช้ได้"
 
-#: ../DistUpgrade/DistUpgradeController.py:1212
-#: ../DistUpgrade/DistUpgradeController.py:1280
+#: ../DistUpgrade/DistUpgradeController.py:1207
+#: ../DistUpgrade/DistUpgradeController.py:1275
 #, python-format
 msgid ""
 "While scanning your repository information no entry about %s could be "
@@ -327,13 +327,13 @@ msgstr ""
 "\n"
 "คุณต้องการดำเนินการต่อไปหรือไม่?"
 
-#: ../DistUpgrade/DistUpgradeController.py:1222
-#: ../DistUpgrade/DistUpgradeController.py:1290
+#: ../DistUpgrade/DistUpgradeController.py:1217
+#: ../DistUpgrade/DistUpgradeController.py:1285
 msgid "No valid mirror found"
 msgstr "ไม่เจอเซิรฟ์เวอร์เสริม(mirror)"
 
-#: ../DistUpgrade/DistUpgradeController.py:1223
-#: ../DistUpgrade/DistUpgradeController.py:1291
+#: ../DistUpgrade/DistUpgradeController.py:1218
+#: ../DistUpgrade/DistUpgradeController.py:1286
 #, python-format
 msgid ""
 "While scanning your repository information no mirror entry for the upgrade "
@@ -352,12 +352,12 @@ msgstr ""
 "หากคุณเลือก 'ไม่ใช่' การอัปเกรดจะถูกยกเลิก"
 
 #. hm, still nothing useful ...
-#: ../DistUpgrade/DistUpgradeController.py:1243
-#: ../DistUpgrade/DistUpgradeController.py:1311
+#: ../DistUpgrade/DistUpgradeController.py:1238
+#: ../DistUpgrade/DistUpgradeController.py:1306
 msgid "Generate default sources?"
 msgstr "สร้าง default sources?"
 
-#: ../DistUpgrade/DistUpgradeController.py:1244
+#: ../DistUpgrade/DistUpgradeController.py:1239
 #, fuzzy, python-format
 msgid ""
 "After scanning your 'ubuntu.sources' no valid entry for '%s' was found.\n"
@@ -369,13 +369,13 @@ msgstr ""
 "\n"
 "ควรเพิ่มรายการ '%s' หรือไม่? ถ้าคุณเลือก 'ไม่' กระบวนการปรับรุ่นจะถูกยกเลิก"
 
-#: ../DistUpgrade/DistUpgradeController.py:1262
-#: ../DistUpgrade/DistUpgradeController.py:1363
+#: ../DistUpgrade/DistUpgradeController.py:1257
+#: ../DistUpgrade/DistUpgradeController.py:1358
 msgid "Third party sources disabled"
 msgstr "แหล่งอื่นๆใช้ไม่ได้"
 
-#: ../DistUpgrade/DistUpgradeController.py:1263
-#: ../DistUpgrade/DistUpgradeController.py:1364
+#: ../DistUpgrade/DistUpgradeController.py:1258
+#: ../DistUpgrade/DistUpgradeController.py:1359
 msgid ""
 "Some third party entries in your sources.list were disabled. You can re-"
 "enable them after the upgrade with the 'software-properties' tool or your "
@@ -385,11 +385,11 @@ msgstr ""
 "คุณสามารถเปลี่ยนให้ใช้ได้หลังการปรับปรุงด้วยเครื่องมือ 'software-properties' "
 "หรือด้วยโปรแกรมจัดการแพ็กเกจ"
 
-#: ../DistUpgrade/DistUpgradeController.py:1279
+#: ../DistUpgrade/DistUpgradeController.py:1274
 msgid "No valid sources.list entry found"
 msgstr "ไม่พบรายการ sources.list ที่ใช้ได้"
 
-#: ../DistUpgrade/DistUpgradeController.py:1312
+#: ../DistUpgrade/DistUpgradeController.py:1307
 #, python-format
 msgid ""
 "After scanning your 'sources.list' no valid entry for '%s' was found.\n"
@@ -401,19 +401,19 @@ msgstr ""
 "\n"
 "ควรเพิ่มรายการ '%s' หรือไม่? ถ้าคุณเลือก 'ไม่' กระบวนการปรับรุ่นจะถูกยกเลิก"
 
-#: ../DistUpgrade/DistUpgradeController.py:1347
-#: ../DistUpgrade/DistUpgradeController.py:1353
+#: ../DistUpgrade/DistUpgradeController.py:1342
+#: ../DistUpgrade/DistUpgradeController.py:1348
 msgid "Repository information invalid"
 msgstr "ข้อมูลเกี่ยวกับแหล่งเก็บข้อมูลใช้ไม่ได้"
 
-#: ../DistUpgrade/DistUpgradeController.py:1348
+#: ../DistUpgrade/DistUpgradeController.py:1343
 msgid ""
 "Upgrading the repository information resulted in a invalid file so a bug "
 "reporting process is being started."
 msgstr ""
 "การอัปเกรดข้อมูลในที่เก็บมีผลลัพธ์เป็นแฟ้มที่ไม่ถูกต้อง ดังนั้น กระบวนการรายงานปัญหาจะเริ่มขึ้นทันที"
 
-#: ../DistUpgrade/DistUpgradeController.py:1354
+#: ../DistUpgrade/DistUpgradeController.py:1349
 msgid ""
 "Upgrading the repository information resulted in a invalid file. To report a "
 "bug install apport and then execute 'apport-bug ubuntu-release-upgrader'."
@@ -421,12 +421,12 @@ msgstr ""
 "การอัปเกรดข้อมูลในที่เก็บมีผลลัพธ์เป็นแฟ้มที่ไม่ถูกต้อง เมื่อต้องการรายงานปัญหา ให้ติดตั้ง apport "
 "และเรียกใช้ 'apport-bug ubuntu-release-upgrader'"
 
-#: ../DistUpgrade/DistUpgradeController.py:1406
+#: ../DistUpgrade/DistUpgradeController.py:1401
 msgid "Package in inconsistent state"
 msgid_plural "Packages in inconsistent state"
 msgstr[0] "แพคเกจเกิดความขัดแย้ง"
 
-#: ../DistUpgrade/DistUpgradeController.py:1409
+#: ../DistUpgrade/DistUpgradeController.py:1404
 #, python-format
 msgid ""
 "The package '%s' is in an inconsistent state and needs to be reinstalled, "
@@ -440,11 +440,11 @@ msgstr[0] ""
 "แพคเกจ '%s' อยู่ในสถานะที่ไม่แน่นอนและต้องทำการติดตั้งใหม่ แต่ไม่สามารถหาข้อมูลเก่าได้ "
 "กรุณาติดตั้งใหม่อีกครั้งหรือลบออกจากระบบ"
 
-#: ../DistUpgrade/DistUpgradeController.py:1470
+#: ../DistUpgrade/DistUpgradeController.py:1465
 msgid "Error during update"
 msgstr "เกิดข้อผิดพลาดระหว่างที่อัปเดต"
 
-#: ../DistUpgrade/DistUpgradeController.py:1471
+#: ../DistUpgrade/DistUpgradeController.py:1466
 msgid ""
 "A problem occurred during the update. This is usually some sort of network "
 "problem, please check your network connection and retry."
@@ -452,12 +452,12 @@ msgstr ""
 "มีปัญหาเกิดขึ้นระหว่างที่อัปเดต โดยปกติจะเป็นปัญหาเกี่ยวกับเครือข่าย "
 "โปรดตรวจสอบการเชื่อมต่อเครือข่ายของคุณแล้วลองใหม่อีกครั้ง"
 
+#: ../DistUpgrade/DistUpgradeController.py:1509
 #: ../DistUpgrade/DistUpgradeController.py:1514
-#: ../DistUpgrade/DistUpgradeController.py:1519
 msgid "EFI System Partition (ESP) not usable"
 msgstr "ไม่สามารถใช้พาร์ทิชันระบบแบบ EFI (ESP) ได้"
 
-#: ../DistUpgrade/DistUpgradeController.py:1515
+#: ../DistUpgrade/DistUpgradeController.py:1510
 msgid ""
 "Your EFI System Partition (ESP) is not mounted at /boot/efi. Please ensure "
 "that it is properly configured and try again."
@@ -465,7 +465,7 @@ msgstr ""
 "พาร์ทิชันระบบแบบ EFI (ESP) ของคุณไม่ได้ถูกเมานท์ไว้ที่ /boot/efi "
 "โปรดตรวจสอบให้แน่ใจว่าคุณได้กำหนดค่าอย่างถูกต้องแล้วลองอีกครั้ง"
 
-#: ../DistUpgrade/DistUpgradeController.py:1520
+#: ../DistUpgrade/DistUpgradeController.py:1515
 msgid ""
 "The EFI System Partition (ESP) mounted at /boot/efi is not writable. Please "
 "mount this partition read-write and try again."
@@ -473,13 +473,13 @@ msgstr ""
 "พาร์ทิชันะบบแบบ EFI (ESP) ที่เมานท์ไว้ที่ /boot/efi ไม่สามารถเขียนได้ "
 "โปรดเมานท์พาร์ทิชันนี้เป็นแบบอ่านและเขียนแล้วลองอีกครั้ง"
 
-#: ../DistUpgrade/DistUpgradeController.py:1527
+#: ../DistUpgrade/DistUpgradeController.py:1522
 msgid "Not enough free disk space"
 msgstr "ไม่มีพื้นที่ว่างในดิสก์เพียงพอ"
 
 #. TRANSLATORS: you can change the order of the sentence,
 #. make sure to keep all {str_*} string untranslated.
-#: ../DistUpgrade/DistUpgradeController.py:1530
+#: ../DistUpgrade/DistUpgradeController.py:1525
 #, python-brace-format
 msgid ""
 "The upgrade has aborted. The upgrade needs a total of {str_total} free space "
@@ -491,12 +491,12 @@ msgstr ""
 "{str_remedy}"
 
 #. specific ways to resolve lack of free space
-#: ../DistUpgrade/DistUpgradeController.py:1535
+#: ../DistUpgrade/DistUpgradeController.py:1530
 msgid ""
 "Remove temporary packages of former installations using 'sudo apt clean'."
 msgstr "เอาแพกเกจชั่วคราวจากการติดตั้งครั้งก่อนหน้าออกโดยใช้ 'sudo apt clean'"
 
-#: ../DistUpgrade/DistUpgradeController.py:1537
+#: ../DistUpgrade/DistUpgradeController.py:1532
 msgid ""
 "You can remove old kernels using 'sudo apt autoremove' and you could also "
 "set COMPRESS=xz in /etc/initramfs-tools/initramfs.conf to reduce the size of "
@@ -506,7 +506,7 @@ msgstr ""
 "COMPRESS=xz ใน /etc/initramfs-tools/initramfs.conf เพื่อปรับลดขนาด initramfs "
 "ของคุณได้"
 
-#: ../DistUpgrade/DistUpgradeController.py:1542
+#: ../DistUpgrade/DistUpgradeController.py:1537
 msgid ""
 "Empty your trash and remove temporary packages of former installations using "
 "'sudo apt-get clean'."
@@ -514,24 +514,24 @@ msgstr ""
 "เทขยะของคุณและเอาแพกเกจชั่วคราวจากการติดตั้งครั้งก่อนหน้าออกโดยใช้คำสั่ง 'sudo apt-get "
 "clean'"
 
-#: ../DistUpgrade/DistUpgradeController.py:1545
+#: ../DistUpgrade/DistUpgradeController.py:1540
 msgid "Reboot to clean up files in /tmp."
 msgstr "รีบูตเพื่อทำความสะอาดแฟ้มใน /tmp"
 
 #. calc the dist-upgrade and see if the removals are ok/expected
 #. do the dist-upgrade
-#: ../DistUpgrade/DistUpgradeController.py:1584
-#: ../DistUpgrade/DistUpgradeController.py:2444
-#: ../DistUpgrade/DistUpgradeController.py:2496
+#: ../DistUpgrade/DistUpgradeController.py:1579
+#: ../DistUpgrade/DistUpgradeController.py:2439
+#: ../DistUpgrade/DistUpgradeController.py:2491
 msgid "Calculating the changes"
 msgstr "กำลังคำนวนปริมาณการเปลี่ยนแปลง"
 
 #. ask the user
-#: ../DistUpgrade/DistUpgradeController.py:1628
+#: ../DistUpgrade/DistUpgradeController.py:1623
 msgid "Do you want to start the upgrade?"
 msgstr "คุณต้องการที่จะเริ่มการปรับปรุงหรือไม่?"
 
-#: ../DistUpgrade/DistUpgradeController.py:1647
+#: ../DistUpgrade/DistUpgradeController.py:1642
 #, python-format
 msgid ""
 "Livepatch security updates are not available for Ubuntu %s. If you upgrade, "
@@ -540,22 +540,22 @@ msgstr ""
 "การอัปเดตด้านความปลอดภัยของ Livepatch ไม่พร้อมใช้งานสำหรับ Ubuntu %s หากคุณอัปเกรด "
 "Livepatch จะปิดการทำงาน"
 
-#: ../DistUpgrade/DistUpgradeController.py:1719
+#: ../DistUpgrade/DistUpgradeController.py:1714
 msgid "Upgrade canceled"
 msgstr "การปรับรุ่นถูกยกเลิก"
 
-#: ../DistUpgrade/DistUpgradeController.py:1720
+#: ../DistUpgrade/DistUpgradeController.py:1715
 msgid ""
 "The upgrade will cancel now and the original system state will be restored. "
 "You can resume the upgrade at a later time."
 msgstr "การปรับรุ่นจะถูกยกเลิกเดี๋ยวนี้ และระบบดังเดิมจะถูกกู้คืน คุณสามารถปรับรุ่นต่อได้ในภายหลัง"
 
-#: ../DistUpgrade/DistUpgradeController.py:1726
-#: ../DistUpgrade/DistUpgradeController.py:1871
+#: ../DistUpgrade/DistUpgradeController.py:1721
+#: ../DistUpgrade/DistUpgradeController.py:1866
 msgid "Could not download the upgrades"
 msgstr "ไม่สามารถดาวน์โหลดข้อมูลปรับปรุงรุ่น"
 
-#: ../DistUpgrade/DistUpgradeController.py:1727
+#: ../DistUpgrade/DistUpgradeController.py:1722
 msgid ""
 "The upgrade has aborted. Please check your Internet connection or "
 "installation media and try again. All files downloaded so far have been kept."
@@ -565,27 +565,27 @@ msgstr ""
 
 #. FIXME: strings are not good, but we are in string freeze
 #. currently
-#: ../DistUpgrade/DistUpgradeController.py:1820
-#: ../DistUpgrade/DistUpgradeController.py:1859
-#: ../DistUpgrade/DistUpgradeController.py:1976
+#: ../DistUpgrade/DistUpgradeController.py:1815
+#: ../DistUpgrade/DistUpgradeController.py:1854
+#: ../DistUpgrade/DistUpgradeController.py:1971
 msgid "Error during commit"
 msgstr "เกิดข้อผิดพลาดขณะแก้ไขปรับปรุง"
 
 #. generate a new cache
-#: ../DistUpgrade/DistUpgradeController.py:1822
-#: ../DistUpgrade/DistUpgradeController.py:1861
-#: ../DistUpgrade/DistUpgradeController.py:2025
+#: ../DistUpgrade/DistUpgradeController.py:1817
+#: ../DistUpgrade/DistUpgradeController.py:1856
+#: ../DistUpgrade/DistUpgradeController.py:2020
 msgid "Restoring original system state"
 msgstr "คืนระบบสู่สถานะแรกเริ่ม"
 
-#: ../DistUpgrade/DistUpgradeController.py:1823
-#: ../DistUpgrade/DistUpgradeController.py:1838
-#: ../DistUpgrade/DistUpgradeController.py:1862
+#: ../DistUpgrade/DistUpgradeController.py:1818
+#: ../DistUpgrade/DistUpgradeController.py:1833
+#: ../DistUpgrade/DistUpgradeController.py:1857
 msgid "Could not install the upgrades"
 msgstr "ไม่สามารถปรับปรุงได้"
 
 #. invoke the frontend now and show a error message
-#: ../DistUpgrade/DistUpgradeController.py:1828
+#: ../DistUpgrade/DistUpgradeController.py:1823
 msgid ""
 "The upgrade has aborted. Your system could be in an unusable state. A "
 "recovery will run now (dpkg --configure -a)."
@@ -593,7 +593,7 @@ msgstr ""
 "การอัปเกรดถูกยกเลิก ระบบของคุณอาจอยู่ในสถานะที่ใช้การไม่ได้ การกู้คืนจะเรียกใช้ตอนนี้ (dpkg --"
 "configure -a)"
 
-#: ../DistUpgrade/DistUpgradeController.py:1833
+#: ../DistUpgrade/DistUpgradeController.py:1828
 #, python-format
 msgid ""
 "\n"
@@ -610,30 +610,30 @@ msgstr ""
 "เพื่อรายงานปัญหา\n"
 "%s"
 
-#: ../DistUpgrade/DistUpgradeController.py:1872
+#: ../DistUpgrade/DistUpgradeController.py:1867
 msgid ""
 "The upgrade has aborted. Please check your Internet connection or "
 "installation media and try again. "
 msgstr "การปรับรุ่นถูกเพิกเฉย โปรดตรวจสอบการเชื่อมต่ออินเทอร์เน็ต หรือสื่อที่ใช้ติดตั้งและลองใหม่ "
 
-#: ../DistUpgrade/DistUpgradeController.py:1900
+#: ../DistUpgrade/DistUpgradeController.py:1895
 msgid "Searching for obsolete software"
 msgstr "ค้นหาซอฟแวร์ที่ล้าสมัย"
 
-#: ../DistUpgrade/DistUpgradeController.py:1964
+#: ../DistUpgrade/DistUpgradeController.py:1959
 msgid "Remove obsolete packages?"
 msgstr "ลบแพจเกจที่ล้าสมัยทิ้งหรือไม่?"
 
-#: ../DistUpgrade/DistUpgradeController.py:1965
+#: ../DistUpgrade/DistUpgradeController.py:1960
 #: ../data/gtkbuilder/DistUpgrade.ui.h:8
 msgid "_Keep"
 msgstr "คงไว้"
 
-#: ../DistUpgrade/DistUpgradeController.py:1965
+#: ../DistUpgrade/DistUpgradeController.py:1960
 msgid "_Remove"
 msgstr "เอาออก"
 
-#: ../DistUpgrade/DistUpgradeController.py:1977
+#: ../DistUpgrade/DistUpgradeController.py:1972
 msgid ""
 "A problem occurred during the clean-up. Please see the below message for "
 "more information. "
@@ -641,34 +641,34 @@ msgstr "มีปัญหาเกิดขึ้นขณะทำการเ
 
 #. FIXME: instead of error out, fetch and install it
 #. here
-#: ../DistUpgrade/DistUpgradeController.py:2063
+#: ../DistUpgrade/DistUpgradeController.py:2058
 msgid "Required depends is not installed"
 msgstr "โปรแกรมที่ต้องการไม่ได้ถูกติดตั้ง"
 
-#: ../DistUpgrade/DistUpgradeController.py:2064
+#: ../DistUpgrade/DistUpgradeController.py:2059
 #, python-format
 msgid "The required dependency '%s' is not installed. "
 msgstr "โปรแกรม '%s' ที่ต้องการไม่ได้ถูกติดตั้ง "
 
 #. coherence check (check for ubuntu-desktop, brokenCache etc)
 #. then open the cache (again)
-#: ../DistUpgrade/DistUpgradeController.py:2297
-#: ../DistUpgrade/DistUpgradeController.py:2392
+#: ../DistUpgrade/DistUpgradeController.py:2292
+#: ../DistUpgrade/DistUpgradeController.py:2387
 msgid "Checking package manager"
 msgstr "กำลังตรวจสอบโปรแกรมจัดการแพกเกจ"
 
-#: ../DistUpgrade/DistUpgradeController.py:2303
-#: ../DistUpgrade/DistUpgradeController.py:2309
+#: ../DistUpgrade/DistUpgradeController.py:2298
+#: ../DistUpgrade/DistUpgradeController.py:2304
 msgid "Preparing the upgrade failed"
 msgstr "การเตรียมการปรับปรุงรุ่นมีปัญหา"
 
-#: ../DistUpgrade/DistUpgradeController.py:2304
+#: ../DistUpgrade/DistUpgradeController.py:2299
 msgid ""
 "Preparing the system for the upgrade failed so a bug reporting process is "
 "being started."
 msgstr "การเตรียมการอัปเกรดระบบล้มเหลว ดังนั้น กระบวนการรายงานปัญหาจะเริ่มขึ้น"
 
-#: ../DistUpgrade/DistUpgradeController.py:2310
+#: ../DistUpgrade/DistUpgradeController.py:2305
 msgid ""
 "Preparing the system for the upgrade failed. To report a bug install apport "
 "and then execute 'apport-bug ubuntu-release-upgrader'."
@@ -676,12 +676,12 @@ msgstr ""
 "การเตรียมการอัปเกรดระบบล้มเหลว เมื่อต้องการรายงานปัญหา ให้ติดตั้ง apport หลังจากนั้น "
 "เรียกใช้คำสั่ง 'apport-bug ubuntu-release-upgrader'"
 
-#: ../DistUpgrade/DistUpgradeController.py:2327
-#: ../DistUpgrade/DistUpgradeController.py:2337
+#: ../DistUpgrade/DistUpgradeController.py:2322
+#: ../DistUpgrade/DistUpgradeController.py:2332
 msgid "Getting upgrade prerequisites failed"
 msgstr "เอาแพคเกจที่จำเป็นก่อนการปรับปรุงมาไม่ได้"
 
-#: ../DistUpgrade/DistUpgradeController.py:2328
+#: ../DistUpgrade/DistUpgradeController.py:2323
 msgid ""
 "The system was unable to get the prerequisites for the upgrade. The upgrade "
 "will abort now and restore the original system state.\n"
@@ -693,7 +693,7 @@ msgstr ""
 "\n"
 "นอกจากนี้ กระบวนการรายงานปัญหาก็จะเริ่มขึ้นด้วยเช่นกัน"
 
-#: ../DistUpgrade/DistUpgradeController.py:2338
+#: ../DistUpgrade/DistUpgradeController.py:2333
 msgid ""
 "The system was unable to get the prerequisites for the upgrade. The upgrade "
 "will abort now and restore the original system state.\n"
@@ -707,15 +707,15 @@ msgstr ""
 "เมื่อต้องการรายงานปัญหา ให้ติดตั้ง apport และหลังจากนั้น ให้เรียกใช้คำสั่ง 'apport-bug "
 "ubuntu-release-upgrader'"
 
-#: ../DistUpgrade/DistUpgradeController.py:2372
+#: ../DistUpgrade/DistUpgradeController.py:2367
 msgid "Updating repository information"
 msgstr "ปรับปรุงข้อมูลของแหล่งข้อมูล"
 
-#: ../DistUpgrade/DistUpgradeController.py:2421
+#: ../DistUpgrade/DistUpgradeController.py:2416
 msgid "Invalid package information"
 msgstr "ข้อมูลของแพกเกจไม่ถูกต้อง"
 
-#: ../DistUpgrade/DistUpgradeController.py:2422
+#: ../DistUpgrade/DistUpgradeController.py:2417
 #, python-format
 msgid ""
 "After updating your package information, the essential package '%s' could "
@@ -733,80 +733,80 @@ msgstr ""
 "ในกรณีที่มีการโหลดข้อมูลจากแหล่งข้อมูลมากเกินไป "
 "คุณอาจต้องการทดลองการอัปเกรดใหม่อีกครั้งในภายหลัง"
 
-#: ../DistUpgrade/DistUpgradeController.py:2451
-#: ../DistUpgrade/DistUpgradeController.py:2562
+#: ../DistUpgrade/DistUpgradeController.py:2446
+#: ../DistUpgrade/DistUpgradeController.py:2557
 msgid "Fetching"
 msgstr "กำลังดึงข้อมูล"
 
-#: ../DistUpgrade/DistUpgradeController.py:2458
-#: ../DistUpgrade/DistUpgradeController.py:2481
-#: ../DistUpgrade/DistUpgradeController.py:2511
-#: ../DistUpgrade/DistUpgradeController.py:2566
+#: ../DistUpgrade/DistUpgradeController.py:2453
+#: ../DistUpgrade/DistUpgradeController.py:2476
+#: ../DistUpgrade/DistUpgradeController.py:2506
+#: ../DistUpgrade/DistUpgradeController.py:2561
 msgid "Upgrading"
 msgstr "กำลังปรับปรุง"
 
-#: ../DistUpgrade/DistUpgradeController.py:2460
+#: ../DistUpgrade/DistUpgradeController.py:2455
 msgid "Upgrade infeasible"
 msgstr "อัปเกรดไม่ได้"
 
-#: ../DistUpgrade/DistUpgradeController.py:2461
+#: ../DistUpgrade/DistUpgradeController.py:2456
 msgid ""
 "The upgrade could not be completed, there were errors during the upgrade "
 "process."
 msgstr "ไม่สามารถดำเนินการอัปเกรดให้เสร็จสมบูรณ์ได้ เนื่องจากมีข้อผิดพลาดระหว่างการอัปเกรด"
 
 #. don't abort here, because it would restore the sources.list
-#: ../DistUpgrade/DistUpgradeController.py:2484
-#: ../DistUpgrade/DistUpgradeController.py:2500
+#: ../DistUpgrade/DistUpgradeController.py:2479
+#: ../DistUpgrade/DistUpgradeController.py:2495
 msgid "Upgrade incomplete"
 msgstr "การอัปเกรดไม่เสร็จสมบูรณ์"
 
-#: ../DistUpgrade/DistUpgradeController.py:2485
-#: ../DistUpgrade/DistUpgradeController.py:2501
+#: ../DistUpgrade/DistUpgradeController.py:2480
+#: ../DistUpgrade/DistUpgradeController.py:2496
 msgid ""
 "The upgrade has partially completed but there were errors during the upgrade "
 "process."
 msgstr "การอัปเกรดเสร็จสมบูรณ์เพียงบางส่วน แต่มีข้อผิดพลาดระหว่างการอัปเกรด"
 
 #. don't abort here, because it would restore the sources.list
-#: ../DistUpgrade/DistUpgradeController.py:2516
-#: ../DistUpgrade/DistUpgradeController.py:2568
-#: ../DistUpgrade/DistUpgradeController.py:2574
-#: ../DistUpgrade/DistUpgradeController.py:2585
+#: ../DistUpgrade/DistUpgradeController.py:2511
+#: ../DistUpgrade/DistUpgradeController.py:2563
+#: ../DistUpgrade/DistUpgradeController.py:2569
+#: ../DistUpgrade/DistUpgradeController.py:2580
 msgid "Upgrade complete"
 msgstr "ปรับปรุงเสร็จแล้ว"
 
-#: ../DistUpgrade/DistUpgradeController.py:2517
-#: ../DistUpgrade/DistUpgradeController.py:2569
-#: ../DistUpgrade/DistUpgradeController.py:2575
+#: ../DistUpgrade/DistUpgradeController.py:2512
+#: ../DistUpgrade/DistUpgradeController.py:2564
+#: ../DistUpgrade/DistUpgradeController.py:2570
 msgid ""
 "The upgrade has completed but there were errors during the upgrade process."
 msgstr "การปรับรุ่นสมบูรณ์ แต่เกิดข้อผิดพลาดในระหว่างขั้นตอนการปรับรุ่น"
 
-#: ../DistUpgrade/DistUpgradeController.py:2532
+#: ../DistUpgrade/DistUpgradeController.py:2527
 msgid "System upgrade is complete."
 msgstr "ปรับปรุงระบบเสร็จแล้ว"
 
-#: ../DistUpgrade/DistUpgradeController.py:2586
+#: ../DistUpgrade/DistUpgradeController.py:2581
 msgid "The partial upgrade was completed."
 msgstr "การปรับปรุงรุ่นบางส่วนเสร็จสมบูรณ์"
 
-#: ../DistUpgrade/DistUpgradeController.py:2607
+#: ../DistUpgrade/DistUpgradeController.py:2602
 msgid "Lock screen disabled"
 msgstr "ปิดใช้งานหน้าจอล็อกแล้ว"
 
-#: ../DistUpgrade/DistUpgradeController.py:2608
+#: ../DistUpgrade/DistUpgradeController.py:2603
 #, fuzzy
 msgid ""
 "Your lock screen has been disabled and will remain disabled during the "
 "upgrade."
 msgstr "หน้าจอล็อกของคุณจะถูกปิดใช้งานจนกว่าคุณจะบูตเครื่องใหม่"
 
-#: ../DistUpgrade/DistUpgradeController.py:2616
+#: ../DistUpgrade/DistUpgradeController.py:2611
 msgid "Unable to disable lock screen"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2617
+#: ../DistUpgrade/DistUpgradeController.py:2612
 msgid ""
 "It is highly recommended that the lock screen be disabled during the upgrade "
 "to prevent later issues. Please ensure your screen lock is disabled before "

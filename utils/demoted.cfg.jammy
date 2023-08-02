@@ -60,7 +60,6 @@ libasan6-armhf-cross
 libasan6-ppc64el-cross
 libasan6-s390x-cross
 libasound2-plugins
-libblockdev-lvm2
 libboost-filesystem-dev
 libboost-filesystem1.74-dev
 libboost-system-dev
