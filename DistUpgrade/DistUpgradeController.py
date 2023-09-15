@@ -183,6 +183,12 @@ class DistUpgradeController(object):
             self.default_source_uri = "http://ports.ubuntu.com/ubuntu-ports"
             self.security_source_uri = "http://ports.ubuntu.com/ubuntu-ports"
 
+        # The original plan was to do this by default on upgrades to 23.10.
+        # This goal has moved back, so do not migrate by default. This
+        # attribute is used so that we can easily test the migration code
+        # still.
+        self.want_deb822 = False
+
         # we run with --force-overwrite by default
         if "RELEASE_UPGRADE_NO_FORCE_OVERWRITE" not in os.environ:
             logging.debug("enable dpkg --force-overwrite")
@@ -1980,7 +1986,7 @@ class DistUpgradeController(object):
         if not self._partialUpgrade:
             self.runPostInstallScripts()
 
-        if not self.migratedToDeb822():
+        if self.want_deb822 and not self.migratedToDeb822():
             self.migrateToDeb822Sources()
 
         return True

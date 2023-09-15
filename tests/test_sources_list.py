@@ -837,6 +837,7 @@ class TestDeb822SourcesUpdate(unittest.TestCase):
 
         v = DistUpgradeViewNonInteractive()
         d = DistUpgradeController(v, datadir=self.testdir)
+        d.want_deb822 = True
         d.openCache(lock=False)
         res = d.updateDeb822Sources()
         self.assertTrue(res)
@@ -854,6 +855,7 @@ class TestDeb822SourcesUpdate(unittest.TestCase):
         v = DistUpgradeViewNonInteractive()
         d = DistUpgradeController(v, datadir=self.testdir)
         d.useNetwork = False
+        d.want_deb822 = True
         self.prepareTestSources(
             dist=d.fromDist,
             default_source_uri=d.default_source_uri,
@@ -880,6 +882,7 @@ class TestDeb822SourcesUpdate(unittest.TestCase):
         """
         v = DistUpgradeViewNonInteractive()
         d = DistUpgradeController(v, datadir=self.testdir)
+        d.want_deb822 = True
         d.config.set("Distro", "BaseMetaPkgs", "ubuntu-minimal")
         d.openCache(lock=False)
         self.prepareTestSources(dist=d.fromDist)
@@ -900,6 +903,7 @@ class TestDeb822SourcesUpdate(unittest.TestCase):
         os.environ["LANG"] = "C"
         v = DistUpgradeViewNonInteractive()
         d = DistUpgradeController(v, datadir=self.testdir)
+        d.want_deb822 = True
         d.fromDist = from_dist
         d.toDist = to_dist
         d.openCache(lock=False)
@@ -919,6 +923,7 @@ class TestDeb822SourcesUpdate(unittest.TestCase):
 
         v = DistUpgradeViewNonInteractive()
         d = DistUpgradeController(v, datadir=self.testdir)
+        d.want_deb822 = True
         d.openCache(lock=False)
         self.prepareTestSources(
             dist=d.fromDist,
@@ -944,6 +949,7 @@ class TestDeb822SourcesUpdate(unittest.TestCase):
         """
         v = DistUpgradeViewNonInteractive()
         d = DistUpgradeController(v, datadir=self.testdir)
+        d.want_deb822 = True
         d.openCache(lock=False)
         self.prepareTestSources(dist=d.fromDist)
         mock_deb822SourceEntryDownloadable.return_value = (True, [])
@@ -959,6 +965,7 @@ class TestDeb822SourcesUpdate(unittest.TestCase):
         """
         v = DistUpgradeViewNonInteractive()
         d = DistUpgradeController(v, datadir=self.testdir)
+        d.want_deb822 = True
         d.openCache(lock=False)
         self.prepareTestSources(
             dist=d.fromDist,
@@ -985,6 +992,7 @@ class TestDeb822SourcesUpdate(unittest.TestCase):
         options = mock.Mock()
         options.devel_release = True
         d = DistUpgradeController(v, options, datadir=self.testdir)
+        d.want_deb822 = True
         d.openCache(lock=False)
         self.prepareTestSources(
             dist=d.fromDist,
@@ -1117,6 +1125,7 @@ class TestDeb822SourcesMigration(unittest.TestCase):
         """
         v = DistUpgradeViewNonInteractive()
         d = DistUpgradeController(v, datadir=self.testdir)
+        d.want_deb822 = True
         d.openCache(lock=False)
 
         if d.default_source_uri == d.security_source_uri:
@@ -1154,6 +1163,7 @@ class TestDeb822SourcesMigration(unittest.TestCase):
         """
         v = DistUpgradeViewNonInteractive()
         d = DistUpgradeController(v, datadir=self.testdir)
+        d.want_deb822 = True
         d.openCache(lock=False)
 
         if d.default_source_uri != d.security_source_uri:
@@ -1190,6 +1200,7 @@ class TestDeb822SourcesMigration(unittest.TestCase):
         """
         v = DistUpgradeViewNonInteractive()
         d = DistUpgradeController(v, datadir=self.testdir)
+        d.want_deb822 = True
         d.openCache(lock=False)
 
         self.prepareTestSources(
@@ -1212,6 +1223,7 @@ class TestDeb822SourcesMigration(unittest.TestCase):
         """
         v = DistUpgradeViewNonInteractive()
         d = DistUpgradeController(v, datadir=self.testdir)
+        d.want_deb822 = True
         d.openCache(lock=False)
 
         self.prepareTestSources(
@@ -1234,6 +1246,7 @@ class TestDeb822SourcesMigration(unittest.TestCase):
         """
         v = DistUpgradeViewNonInteractive()
         d = DistUpgradeController(v, datadir=self.testdir)
+        d.want_deb822 = True
         d.openCache(lock=False)
 
         self.prepareTestSources()
@@ -1250,6 +1263,7 @@ class TestDeb822SourcesMigration(unittest.TestCase):
         """
         v = DistUpgradeViewNonInteractive()
         d = DistUpgradeController(v, datadir=self.testdir)
+        d.want_deb822 = True
         d.openCache(lock=False)
 
         if d.default_source_uri == d.security_source_uri:
@@ -1277,6 +1291,7 @@ class TestDeb822SourcesMigration(unittest.TestCase):
         """
         v = DistUpgradeViewNonInteractive()
         d = DistUpgradeController(v, datadir=self.testdir)
+        d.want_deb822 = True
         d.openCache(lock=False)
 
         self.prepareTestSources(
@@ -1299,6 +1314,7 @@ class TestDeb822SourcesMigration(unittest.TestCase):
         """
         v = DistUpgradeViewNonInteractive()
         d = DistUpgradeController(v, datadir=self.testdir)
+        d.want_deb822 = True
         d.openCache(lock=False)
 
         self.prepareTestSources(
