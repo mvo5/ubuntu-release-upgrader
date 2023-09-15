@@ -1,3 +1,10 @@
+ubuntu-release-upgrader (1:23.10.6) UNRELEASED; urgency=medium
+
+  * DistUpgrade: do not migrate to deb822 by default (LP: #2036288)
+  * Run pre-build.sh: updating mirrors, demotions, and translations.
+
+ -- Nick Rosbrook <enr0n@ubuntu.com>  Fri, 15 Sep 2023 16:03:09 -0400
+
 ubuntu-release-upgrader (1:23.10.5) mantic; urgency=medium
 
   * Do not embed keyring in ubuntu.sources (LP: #2029142):
