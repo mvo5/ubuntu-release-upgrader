@@ -4,12 +4,12 @@
 #
 # Kostas Papadimas <pkst@gnome.org>, 2005, 2006.
 # Fotis Tsamis <ftsamis@gmail.com>, 2010.
-#: ../DistUpgrade/DistUpgradeController.py:1541
+#: ../DistUpgrade/DistUpgradeController.py:1547
 msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2023-08-02 15:20+0000\n"
+"POT-Creation-Date: 2023-09-15 20:04+0000\n"
 "PO-Revision-Date: 2019-06-18 17:54+0000\n"
 "Last-Translator: Steve Langasek <steve.langasek@canonical.com>\n"
 "Language-Team: Greek <team@gnome.gr>\n"
@@ -205,11 +205,11 @@ msgstr ""
 msgid "Reading cache"
 msgstr "Ανάγνωση λανθάνουσας μνήμης"
 
-#: ../DistUpgrade/DistUpgradeController.py:264
+#: ../DistUpgrade/DistUpgradeController.py:270
 msgid "Unable to get exclusive lock"
 msgstr "Αδυναμία λήψης αποκλειστικού κλειδώματος"
 
-#: ../DistUpgrade/DistUpgradeController.py:265
+#: ../DistUpgrade/DistUpgradeController.py:271
 msgid ""
 "This usually means that another package management application (like apt-get "
 "or aptitude) already running. Please close that application first."
@@ -217,11 +217,11 @@ msgstr ""
 "Αυτό συνήθως σημαίνει ότι εκτελείται ήδη άλλη εφαρμογή διαχείρισης πακέτων "
 "(όπως η apt-get ή η aptitude). Παρακαλώ κλείστε πρώτα αυτή την εφαρμογή."
 
-#: ../DistUpgrade/DistUpgradeController.py:323
+#: ../DistUpgrade/DistUpgradeController.py:329
 msgid "Upgrading over remote connection not supported"
 msgstr "Η αναβάθμιση μέσω απομακρυσμένης σύνδεσης δεν υποστηρίζεται"
 
-#: ../DistUpgrade/DistUpgradeController.py:324
+#: ../DistUpgrade/DistUpgradeController.py:330
 msgid ""
 "You are running the upgrade over a remote ssh connection with a frontend "
 "that does not support this. Please try a text mode upgrade with 'do-release-"
@@ -235,11 +235,11 @@ msgstr ""
 "\n"
 "Η αναβάθμιση θα διακοπεί τώρα. Παρακαλούμε δοκιμάστε χωρίς ssh."
 
-#: ../DistUpgrade/DistUpgradeController.py:338
+#: ../DistUpgrade/DistUpgradeController.py:344
 msgid "Continue running under SSH?"
 msgstr "Συνέχεια εκτέλεσης μέσω SSH;"
 
-#: ../DistUpgrade/DistUpgradeController.py:339
+#: ../DistUpgrade/DistUpgradeController.py:345
 #, python-format
 msgid ""
 "This session appears to be running under ssh. It is not recommended to "
@@ -256,11 +256,11 @@ msgstr ""
 "Αν συνεχίσετε θα ξεκινήσει μια επιπλέον υπηρεσία ssh στη θύρα «%s».\n"
 "Θέλετε να συνεχίσετε;"
 
-#: ../DistUpgrade/DistUpgradeController.py:353
+#: ../DistUpgrade/DistUpgradeController.py:359
 msgid "Starting additional sshd"
 msgstr "Πραγματοποιείται εκκίνηση πρόσθετου sshd"
 
-#: ../DistUpgrade/DistUpgradeController.py:354
+#: ../DistUpgrade/DistUpgradeController.py:360
 #, python-format
 msgid ""
 "To make recovery in case of failure easier, an additional sshd will be "
@@ -272,7 +272,7 @@ msgstr ""
 "πρόβλημα στην υπάρχουσα υπηρεσία ssh, μπορείτε να χρησιμοποιήσετε την "
 "επιπρόσθετη.\n"
 
-#: ../DistUpgrade/DistUpgradeController.py:362
+#: ../DistUpgrade/DistUpgradeController.py:368
 #, python-format
 msgid ""
 "If you run a firewall, you may need to temporarily open this port. As this "
@@ -285,28 +285,28 @@ msgstr ""
 "αυτόματα. Μπορείτε να ανοίξετε τη θύρα με π.χ.:\n"
 "'%s'"
 
-#: ../DistUpgrade/DistUpgradeController.py:440
-#: ../DistUpgrade/DistUpgradeController.py:464
+#: ../DistUpgrade/DistUpgradeController.py:446
+#: ../DistUpgrade/DistUpgradeController.py:470
 msgid "Can not upgrade"
 msgstr "Δεν είναι δυνατή η αναβάθμιση"
 
-#: ../DistUpgrade/DistUpgradeController.py:441
+#: ../DistUpgrade/DistUpgradeController.py:447
 #, python-format
 msgid "An upgrade from '%s' to '%s' is not supported with this tool."
 msgstr ""
 "Η αναβάθμιση από το '%s' στο '%s' δεν υποστηρίζεται με αυτό το εργαλείο."
 
-#: ../DistUpgrade/DistUpgradeController.py:465
+#: ../DistUpgrade/DistUpgradeController.py:471
 msgid ""
 "Your python3 install is corrupted. Please fix the '/usr/bin/python3' symlink."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:494
+#: ../DistUpgrade/DistUpgradeController.py:500
 #, python-format
 msgid "Can not write to '%s'"
 msgstr "Δεν είναι δυνατή η εγγραφή στο '%s'"
 
-#: ../DistUpgrade/DistUpgradeController.py:495
+#: ../DistUpgrade/DistUpgradeController.py:501
 #, python-format
 msgid ""
 "Its not possible to write to the system directory '%s' on your system. The "
@@ -317,25 +317,25 @@ msgstr ""
 "σας. Η αναβάθμιση δε μπορεί να συνεχιστεί.\n"
 "Παρακαλώ σιγουρευτείτε ότι ο κατάλογος του συστήματος είναι εγγράψιμος."
 
-#: ../DistUpgrade/DistUpgradeController.py:705
+#: ../DistUpgrade/DistUpgradeController.py:711
 #, python-format
 msgid "Not for humans during development stage of release %s"
 msgstr ""
 "Όχι για απλούς ανθρώπους κατά τη διάρκεια του σταδίου ανάπτυξης της έκδοσης "
 "%s"
 
-#: ../DistUpgrade/DistUpgradeController.py:806
+#: ../DistUpgrade/DistUpgradeController.py:812
 #, python-format
 msgid "disabled on upgrade to %s"
 msgstr "απενεργοποιημένο κατά την αναβάθμιση σε %s"
 
-#: ../DistUpgrade/DistUpgradeController.py:1206
+#: ../DistUpgrade/DistUpgradeController.py:1212
 #, fuzzy
 msgid "No valid source entry found"
 msgstr "Δεν βρέθηκε έγκυρη καταχώριστη στο sources.list"
 
-#: ../DistUpgrade/DistUpgradeController.py:1207
-#: ../DistUpgrade/DistUpgradeController.py:1275
+#: ../DistUpgrade/DistUpgradeController.py:1213
+#: ../DistUpgrade/DistUpgradeController.py:1281
 #, python-format
 msgid ""
 "While scanning your repository information no entry about %s could be "
@@ -352,13 +352,13 @@ msgstr ""
 "\n"
 "Θέλετε να συνεχίσετε ούτως ή άλλως;"
 
-#: ../DistUpgrade/DistUpgradeController.py:1217
-#: ../DistUpgrade/DistUpgradeController.py:1285
+#: ../DistUpgrade/DistUpgradeController.py:1223
+#: ../DistUpgrade/DistUpgradeController.py:1291
 msgid "No valid mirror found"
 msgstr "Δεν βρέθηκε έγκυρη εναλλακτική τοποθεσία αρχείων"
 
-#: ../DistUpgrade/DistUpgradeController.py:1218
-#: ../DistUpgrade/DistUpgradeController.py:1286
+#: ../DistUpgrade/DistUpgradeController.py:1224
+#: ../DistUpgrade/DistUpgradeController.py:1292
 #, python-format
 msgid ""
 "While scanning your repository information no mirror entry for the upgrade "
@@ -379,12 +379,12 @@ msgstr ""
 "Αν απαντήσετε «Όχι», η αναβάθμιση θα ακυρωθεί."
 
 #. hm, still nothing useful ...
-#: ../DistUpgrade/DistUpgradeController.py:1238
-#: ../DistUpgrade/DistUpgradeController.py:1306
+#: ../DistUpgrade/DistUpgradeController.py:1244
+#: ../DistUpgrade/DistUpgradeController.py:1312
 msgid "Generate default sources?"
 msgstr "Δημιουργία προεπιλεγμένων πηγών;"
 
-#: ../DistUpgrade/DistUpgradeController.py:1239
+#: ../DistUpgrade/DistUpgradeController.py:1245
 #, fuzzy, python-format
 msgid ""
 "After scanning your 'ubuntu.sources' no valid entry for '%s' was found.\n"
@@ -398,13 +398,13 @@ msgstr ""
 "Θέλετε να προστεθούν οι προεπιλεγμένες καταχωρήσεις για '%s'; Αν επιλέξετε "
 "«Όχι», η αναβάθμιση θα ακυρωθεί."
 
-#: ../DistUpgrade/DistUpgradeController.py:1257
-#: ../DistUpgrade/DistUpgradeController.py:1358
+#: ../DistUpgrade/DistUpgradeController.py:1263
+#: ../DistUpgrade/DistUpgradeController.py:1364
 msgid "Third party sources disabled"
 msgstr "Απενεργοποιήθηκαν πηγές τρίτων"
 
-#: ../DistUpgrade/DistUpgradeController.py:1258
-#: ../DistUpgrade/DistUpgradeController.py:1359
+#: ../DistUpgrade/DistUpgradeController.py:1264
+#: ../DistUpgrade/DistUpgradeController.py:1365
 msgid ""
 "Some third party entries in your sources.list were disabled. You can re-"
 "enable them after the upgrade with the 'software-properties' tool or your "
@@ -414,11 +414,11 @@ msgstr ""
 "Μπορείτε να τις ενεργοποιήσετε μετά την αναβάθμιση με το εργαλείο 'software-"
 "properties' ή με τον διαχειριστή πακέτων σας."
 
-#: ../DistUpgrade/DistUpgradeController.py:1274
+#: ../DistUpgrade/DistUpgradeController.py:1280
 msgid "No valid sources.list entry found"
 msgstr "Δεν βρέθηκε έγκυρη καταχώριστη στο sources.list"
 
-#: ../DistUpgrade/DistUpgradeController.py:1307
+#: ../DistUpgrade/DistUpgradeController.py:1313
 #, python-format
 msgid ""
 "After scanning your 'sources.list' no valid entry for '%s' was found.\n"
@@ -432,12 +432,12 @@ msgstr ""
 "Θέλετε να προστεθούν οι προεπιλεγμένες καταχωρήσεις για '%s'; Αν επιλέξετε "
 "«Όχι», η αναβάθμιση θα ακυρωθεί."
 
-#: ../DistUpgrade/DistUpgradeController.py:1342
 #: ../DistUpgrade/DistUpgradeController.py:1348
+#: ../DistUpgrade/DistUpgradeController.py:1354
 msgid "Repository information invalid"
 msgstr "Μη έγκυρες πληροφορίες αποθετηρίου"
 
-#: ../DistUpgrade/DistUpgradeController.py:1343
+#: ../DistUpgrade/DistUpgradeController.py:1349
 msgid ""
 "Upgrading the repository information resulted in a invalid file so a bug "
 "reporting process is being started."
@@ -445,7 +445,7 @@ msgstr ""
 "Η αναβάθμιση των πληροφοριών αποθετηρίου είχε ως αποτέλεσμα ένα μη έγκυρο "
 "αρχείο, έτσι μια διαδικασία αναφοράς σφαλμάτων τίθεται σε λειτουργία."
 
-#: ../DistUpgrade/DistUpgradeController.py:1349
+#: ../DistUpgrade/DistUpgradeController.py:1355
 msgid ""
 "Upgrading the repository information resulted in a invalid file. To report a "
 "bug install apport and then execute 'apport-bug ubuntu-release-upgrader'."
@@ -454,13 +454,13 @@ msgstr ""
 "αρχείο. Για να αναφέρετε ένα σφάλμα εγκαταστήστε την εφαρμογή apport και "
 "έπειτα εκτελέστε 'apport-bug ubuntu-release-upgrader'."
 
-#: ../DistUpgrade/DistUpgradeController.py:1401
+#: ../DistUpgrade/DistUpgradeController.py:1407
 msgid "Package in inconsistent state"
 msgid_plural "Packages in inconsistent state"
 msgstr[0] "Το πακέτο βρίσκεται σε αντιφατική κατάσταση"
 msgstr[1] "Τα πακέτα βρίσκονται σε αντιφατική κατάσταση"
 
-#: ../DistUpgrade/DistUpgradeController.py:1404
+#: ../DistUpgrade/DistUpgradeController.py:1410
 #, python-format
 msgid ""
 "The package '%s' is in an inconsistent state and needs to be reinstalled, "
@@ -480,11 +480,11 @@ msgstr[1] ""
 "Παρακαλούμε να επανεγκαταστήσετε τα πακέτα χειροκίνητα ή να τα αφαρέσετε από "
 "το σύστημα."
 
-#: ../DistUpgrade/DistUpgradeController.py:1465
+#: ../DistUpgrade/DistUpgradeController.py:1471
 msgid "Error during update"
 msgstr "Σφάλμα κατά την ενημέρωση"
 
-#: ../DistUpgrade/DistUpgradeController.py:1466
+#: ../DistUpgrade/DistUpgradeController.py:1472
 msgid ""
 "A problem occurred during the update. This is usually some sort of network "
 "problem, please check your network connection and retry."
@@ -493,14 +493,14 @@ msgstr ""
 "πρόβλημα δικτύου. Παρακαλώ ελέγξτε τη σύνδεση δικτύου σας και προσπαθήστε "
 "ξανά."
 
-#: ../DistUpgrade/DistUpgradeController.py:1509
-#: ../DistUpgrade/DistUpgradeController.py:1514
+#: ../DistUpgrade/DistUpgradeController.py:1515
+#: ../DistUpgrade/DistUpgradeController.py:1520
 msgid "EFI System Partition (ESP) not usable"
 msgstr ""
 "Δεν είναι χρησιμοποιήσιμη η κατάτμηση συστήματος EFI (EFI System Partition, "
 "ESP)"
 
-#: ../DistUpgrade/DistUpgradeController.py:1510
+#: ../DistUpgrade/DistUpgradeController.py:1516
 msgid ""
 "Your EFI System Partition (ESP) is not mounted at /boot/efi. Please ensure "
 "that it is properly configured and try again."
@@ -509,7 +509,7 @@ msgstr ""
 "προσαρτημένη στο /boot/efi. Παρακαλούμε επιβεβαιώστε ότι είναι ρυθμισμένη "
 "σωστά και δοκιμάστε ξανά."
 
-#: ../DistUpgrade/DistUpgradeController.py:1515
+#: ../DistUpgrade/DistUpgradeController.py:1521
 msgid ""
 "The EFI System Partition (ESP) mounted at /boot/efi is not writable. Please "
 "mount this partition read-write and try again."
@@ -518,13 +518,13 @@ msgstr ""
 "Παρακαλούμε προσαρτήστε την κατάτμηση για ανάγνωση/εγγραφή και δοκιμάστε "
 "ξανά."
 
-#: ../DistUpgrade/DistUpgradeController.py:1522
+#: ../DistUpgrade/DistUpgradeController.py:1528
 msgid "Not enough free disk space"
 msgstr "Δεν υπάρχει αρκετός χώρος στο δίσκο"
 
 #. TRANSLATORS: you can change the order of the sentence,
 #. make sure to keep all {str_*} string untranslated.
-#: ../DistUpgrade/DistUpgradeController.py:1525
+#: ../DistUpgrade/DistUpgradeController.py:1531
 #, python-brace-format
 msgid ""
 "The upgrade has aborted. The upgrade needs a total of {str_total} free space "
@@ -536,14 +536,14 @@ msgstr ""
 "{str_needed} χώρου δίσκου από το «{str_dir}». {str_remedy}"
 
 #. specific ways to resolve lack of free space
-#: ../DistUpgrade/DistUpgradeController.py:1530
+#: ../DistUpgrade/DistUpgradeController.py:1536
 msgid ""
 "Remove temporary packages of former installations using 'sudo apt clean'."
 msgstr ""
 "Αφαιρέστε προσωρινά πακέτα από προηγούμενες εγκαταστάσεις με «sudo apt "
 "clean»."
 
-#: ../DistUpgrade/DistUpgradeController.py:1532
+#: ../DistUpgrade/DistUpgradeController.py:1538
 msgid ""
 "You can remove old kernels using 'sudo apt autoremove' and you could also "
 "set COMPRESS=xz in /etc/initramfs-tools/initramfs.conf to reduce the size of "
@@ -553,7 +553,7 @@ msgstr ""
 "ακόμα να θέσετε COMPRESS=xz στο /etc/initramfs-tools/initramfs.conf για να "
 "μειώσετε το μέγεθος του initramfs."
 
-#: ../DistUpgrade/DistUpgradeController.py:1537
+#: ../DistUpgrade/DistUpgradeController.py:1543
 msgid ""
 "Empty your trash and remove temporary packages of former installations using "
 "'sudo apt-get clean'."
@@ -561,35 +561,35 @@ msgstr ""
 "Αδειάστε τα απορρίμματα και αφαιρέστε τα προσωρινά πακέτα από προηγούμενες "
 "εγκαταστάσεις με την εντολή «sudo apt-get clean»."
 
-#: ../DistUpgrade/DistUpgradeController.py:1540
+#: ../DistUpgrade/DistUpgradeController.py:1546
 msgid "Reboot to clean up files in /tmp."
 msgstr "Επανεκκινήστε για να καθαρίσετε τα αρχεία στο /tmp."
 
 #. calc the dist-upgrade and see if the removals are ok/expected
 #. do the dist-upgrade
-#: ../DistUpgrade/DistUpgradeController.py:1579
-#: ../DistUpgrade/DistUpgradeController.py:2439
-#: ../DistUpgrade/DistUpgradeController.py:2491
+#: ../DistUpgrade/DistUpgradeController.py:1585
+#: ../DistUpgrade/DistUpgradeController.py:2445
+#: ../DistUpgrade/DistUpgradeController.py:2497
 msgid "Calculating the changes"
 msgstr "Έλεγχος αλλαγών"
 
 #. ask the user
-#: ../DistUpgrade/DistUpgradeController.py:1623
+#: ../DistUpgrade/DistUpgradeController.py:1629
 msgid "Do you want to start the upgrade?"
 msgstr "Θέλετε να ξεκινήσετε την αναβάθμιση;"
 
-#: ../DistUpgrade/DistUpgradeController.py:1642
+#: ../DistUpgrade/DistUpgradeController.py:1648
 #, python-format
 msgid ""
 "Livepatch security updates are not available for Ubuntu %s. If you upgrade, "
 "Livepatch will turn off."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:1714
+#: ../DistUpgrade/DistUpgradeController.py:1720
 msgid "Upgrade canceled"
 msgstr "Η αναβάθμιση ακυρώθηκε"
 
-#: ../DistUpgrade/DistUpgradeController.py:1715
+#: ../DistUpgrade/DistUpgradeController.py:1721
 msgid ""
 "The upgrade will cancel now and the original system state will be restored. "
 "You can resume the upgrade at a later time."
@@ -597,12 +597,12 @@ msgstr ""
 "Η αναβάθμιση θα ακυρωθεί τώρα και θα αποκατασταθεί το σύστημα στην αρχική "
 "κατάσταση. Μπορείτε να συνεχίσετε την αναβάθμιση αργότερα."
 
-#: ../DistUpgrade/DistUpgradeController.py:1721
-#: ../DistUpgrade/DistUpgradeController.py:1866
+#: ../DistUpgrade/DistUpgradeController.py:1727
+#: ../DistUpgrade/DistUpgradeController.py:1872
 msgid "Could not download the upgrades"
 msgstr "Αδυναμία λήψης αναβαθμίσεων"
 
-#: ../DistUpgrade/DistUpgradeController.py:1722
+#: ../DistUpgrade/DistUpgradeController.py:1728
 msgid ""
 "The upgrade has aborted. Please check your Internet connection or "
 "installation media and try again. All files downloaded so far have been kept."
@@ -613,27 +613,27 @@ msgstr ""
 
 #. FIXME: strings are not good, but we are in string freeze
 #. currently
-#: ../DistUpgrade/DistUpgradeController.py:1815
-#: ../DistUpgrade/DistUpgradeController.py:1854
-#: ../DistUpgrade/DistUpgradeController.py:1971
+#: ../DistUpgrade/DistUpgradeController.py:1821
+#: ../DistUpgrade/DistUpgradeController.py:1860
+#: ../DistUpgrade/DistUpgradeController.py:1977
 msgid "Error during commit"
 msgstr "Σφάλμα κατά την υποβολή"
 
 #. generate a new cache
-#: ../DistUpgrade/DistUpgradeController.py:1817
-#: ../DistUpgrade/DistUpgradeController.py:1856
-#: ../DistUpgrade/DistUpgradeController.py:2020
+#: ../DistUpgrade/DistUpgradeController.py:1823
+#: ../DistUpgrade/DistUpgradeController.py:1862
+#: ../DistUpgrade/DistUpgradeController.py:2026
 msgid "Restoring original system state"
 msgstr "Πραγματοποιείται επαναφορά της αρχικής κατάστασης συστήματος"
 
-#: ../DistUpgrade/DistUpgradeController.py:1818
-#: ../DistUpgrade/DistUpgradeController.py:1833
-#: ../DistUpgrade/DistUpgradeController.py:1857
+#: ../DistUpgrade/DistUpgradeController.py:1824
+#: ../DistUpgrade/DistUpgradeController.py:1839
+#: ../DistUpgrade/DistUpgradeController.py:1863
 msgid "Could not install the upgrades"
 msgstr "Αδυναμία εγκατάστασης αναβαθμίσεων"
 
 #. invoke the frontend now and show a error message
-#: ../DistUpgrade/DistUpgradeController.py:1823
+#: ../DistUpgrade/DistUpgradeController.py:1829
 msgid ""
 "The upgrade has aborted. Your system could be in an unusable state. A "
 "recovery will run now (dpkg --configure -a)."
@@ -641,7 +641,7 @@ msgstr ""
 "Εγκατάλειψη αναβάθμισης. Είναι πιθανόν να έχει αχρηστευθεί το σύστημά σας. "
 "Θα εκτελεστεί η εφαρμογή ανάκτησης (dpkg --configure -a)."
 
-#: ../DistUpgrade/DistUpgradeController.py:1828
+#: ../DistUpgrade/DistUpgradeController.py:1834
 #, python-format
 msgid ""
 "\n"
@@ -659,7 +659,7 @@ msgstr ""
 "var/log/dist-upgrade/ .\n"
 "%s"
 
-#: ../DistUpgrade/DistUpgradeController.py:1867
+#: ../DistUpgrade/DistUpgradeController.py:1873
 msgid ""
 "The upgrade has aborted. Please check your Internet connection or "
 "installation media and try again. "
@@ -667,24 +667,24 @@ msgstr ""
 "Εγκατάλειψη αναβάθμισης. Παρακαλώ ελέγξτε την σύνδεσή σας στο διαδίκτυο ή το "
 "μέσο εγκατάστασης και δοκιμάστε ξανά. "
 
-#: ../DistUpgrade/DistUpgradeController.py:1895
+#: ../DistUpgrade/DistUpgradeController.py:1901
 msgid "Searching for obsolete software"
 msgstr "Πραγματοποιείται αναζήτηση για παρωχημένο λογισμικό"
 
-#: ../DistUpgrade/DistUpgradeController.py:1959
+#: ../DistUpgrade/DistUpgradeController.py:1965
 msgid "Remove obsolete packages?"
 msgstr "Αφαίρεση παρωχημένων πακέτων;"
 
-#: ../DistUpgrade/DistUpgradeController.py:1960
+#: ../DistUpgrade/DistUpgradeController.py:1966
 #: ../data/gtkbuilder/DistUpgrade.ui.h:8
 msgid "_Keep"
 msgstr "_Διατήρηση"
 
-#: ../DistUpgrade/DistUpgradeController.py:1960
+#: ../DistUpgrade/DistUpgradeController.py:1966
 msgid "_Remove"
 msgstr "_Αφαίρεση"
 
-#: ../DistUpgrade/DistUpgradeController.py:1972
+#: ../DistUpgrade/DistUpgradeController.py:1978
 msgid ""
 "A problem occurred during the clean-up. Please see the below message for "
 "more information. "
@@ -694,28 +694,28 @@ msgstr ""
 
 #. FIXME: instead of error out, fetch and install it
 #. here
-#: ../DistUpgrade/DistUpgradeController.py:2058
+#: ../DistUpgrade/DistUpgradeController.py:2064
 msgid "Required depends is not installed"
 msgstr "Οι απαιτούμενες εξαρτήσεις δεν έχουν εγκατασταθεί"
 
-#: ../DistUpgrade/DistUpgradeController.py:2059
+#: ../DistUpgrade/DistUpgradeController.py:2065
 #, python-format
 msgid "The required dependency '%s' is not installed. "
 msgstr "Η απαιτούμενη εξάρτηση '%s' δεν έχει εγκατασταθεί. "
 
 #. coherence check (check for ubuntu-desktop, brokenCache etc)
 #. then open the cache (again)
-#: ../DistUpgrade/DistUpgradeController.py:2292
-#: ../DistUpgrade/DistUpgradeController.py:2387
+#: ../DistUpgrade/DistUpgradeController.py:2298
+#: ../DistUpgrade/DistUpgradeController.py:2393
 msgid "Checking package manager"
 msgstr "Έλεγχος διαχειριστή πακέτων"
 
-#: ../DistUpgrade/DistUpgradeController.py:2298
 #: ../DistUpgrade/DistUpgradeController.py:2304
+#: ../DistUpgrade/DistUpgradeController.py:2310
 msgid "Preparing the upgrade failed"
 msgstr "Απέτυχε η προετοιμασία της αναβάθμισης"
 
-#: ../DistUpgrade/DistUpgradeController.py:2299
+#: ../DistUpgrade/DistUpgradeController.py:2305
 msgid ""
 "Preparing the system for the upgrade failed so a bug reporting process is "
 "being started."
@@ -723,7 +723,7 @@ msgstr ""
 "Η προετοιμασία του συστήματος για αναβάθμιση απέτυχε οπότε εκκινείται η "
 "διαδικασία αναφοράς σφάλματος."
 
-#: ../DistUpgrade/DistUpgradeController.py:2305
+#: ../DistUpgrade/DistUpgradeController.py:2311
 msgid ""
 "Preparing the system for the upgrade failed. To report a bug install apport "
 "and then execute 'apport-bug ubuntu-release-upgrader'."
@@ -732,12 +732,12 @@ msgstr ""
 "ένα σφάλμα εγκαταστήστε την εφαρμογή apport και έπειτα εκτελέστε την εντολή "
 "«apport-bug ubuntu-release-upgrader»."
 
-#: ../DistUpgrade/DistUpgradeController.py:2322
-#: ../DistUpgrade/DistUpgradeController.py:2332
+#: ../DistUpgrade/DistUpgradeController.py:2328
+#: ../DistUpgrade/DistUpgradeController.py:2338
 msgid "Getting upgrade prerequisites failed"
 msgstr "Απέτυχε η λήψη των προαπαιτούμενων για την αναβάθμιση"
 
-#: ../DistUpgrade/DistUpgradeController.py:2323
+#: ../DistUpgrade/DistUpgradeController.py:2329
 msgid ""
 "The system was unable to get the prerequisites for the upgrade. The upgrade "
 "will abort now and restore the original system state.\n"
@@ -750,7 +750,7 @@ msgstr ""
 "\n"
 "Επιπροσθέτως, έχει ξεκινήσει η διαδικασία αναφορά του σφάλματος."
 
-#: ../DistUpgrade/DistUpgradeController.py:2333
+#: ../DistUpgrade/DistUpgradeController.py:2339
 msgid ""
 "The system was unable to get the prerequisites for the upgrade. The upgrade "
 "will abort now and restore the original system state.\n"
@@ -765,15 +765,15 @@ msgstr ""
 "Για να αναφέρετε ένα σφάλμα εγκαταστήστε το apport και έπειτα εκτελέστε την "
 "εντολή «apport-bug ubuntu-release-upgrader»."
 
-#: ../DistUpgrade/DistUpgradeController.py:2367
+#: ../DistUpgrade/DistUpgradeController.py:2373
 msgid "Updating repository information"
 msgstr "Ενημέρωση πληροφοριών αποθετηρίου"
 
-#: ../DistUpgrade/DistUpgradeController.py:2416
+#: ../DistUpgrade/DistUpgradeController.py:2422
 msgid "Invalid package information"
 msgstr "Μη έγκυρες πληροφορίες πακέτου"
 
-#: ../DistUpgrade/DistUpgradeController.py:2417
+#: ../DistUpgrade/DistUpgradeController.py:2423
 #, python-format
 msgid ""
 "After updating your package information, the essential package '%s' could "
@@ -792,81 +792,81 @@ msgstr ""
 "Σε περίπτωση προσωρινής απώλειας πρόσβασης σε πηγή, μπορείτε  να δοκιμάσετε "
 "ξανά την αναβάθμιση αργότερα."
 
-#: ../DistUpgrade/DistUpgradeController.py:2446
-#: ../DistUpgrade/DistUpgradeController.py:2557
+#: ../DistUpgrade/DistUpgradeController.py:2452
+#: ../DistUpgrade/DistUpgradeController.py:2563
 msgid "Fetching"
 msgstr "Πραγματοποιούνται λήψεις"
 
-#: ../DistUpgrade/DistUpgradeController.py:2453
-#: ../DistUpgrade/DistUpgradeController.py:2476
-#: ../DistUpgrade/DistUpgradeController.py:2506
-#: ../DistUpgrade/DistUpgradeController.py:2561
+#: ../DistUpgrade/DistUpgradeController.py:2459
+#: ../DistUpgrade/DistUpgradeController.py:2482
+#: ../DistUpgrade/DistUpgradeController.py:2512
+#: ../DistUpgrade/DistUpgradeController.py:2567
 msgid "Upgrading"
 msgstr "Πραγματοποιείται αναβάθμιση"
 
-#: ../DistUpgrade/DistUpgradeController.py:2455
+#: ../DistUpgrade/DistUpgradeController.py:2461
 msgid "Upgrade infeasible"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2456
+#: ../DistUpgrade/DistUpgradeController.py:2462
 msgid ""
 "The upgrade could not be completed, there were errors during the upgrade "
 "process."
 msgstr ""
 
 #. don't abort here, because it would restore the sources.list
-#: ../DistUpgrade/DistUpgradeController.py:2479
-#: ../DistUpgrade/DistUpgradeController.py:2495
+#: ../DistUpgrade/DistUpgradeController.py:2485
+#: ../DistUpgrade/DistUpgradeController.py:2501
 msgid "Upgrade incomplete"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2480
-#: ../DistUpgrade/DistUpgradeController.py:2496
+#: ../DistUpgrade/DistUpgradeController.py:2486
+#: ../DistUpgrade/DistUpgradeController.py:2502
 msgid ""
 "The upgrade has partially completed but there were errors during the upgrade "
 "process."
 msgstr ""
 
 #. don't abort here, because it would restore the sources.list
-#: ../DistUpgrade/DistUpgradeController.py:2511
-#: ../DistUpgrade/DistUpgradeController.py:2563
+#: ../DistUpgrade/DistUpgradeController.py:2517
 #: ../DistUpgrade/DistUpgradeController.py:2569
-#: ../DistUpgrade/DistUpgradeController.py:2580
+#: ../DistUpgrade/DistUpgradeController.py:2575
+#: ../DistUpgrade/DistUpgradeController.py:2586
 msgid "Upgrade complete"
 msgstr "Η αναβάθμιση ολοκληρώθηκε"
 
-#: ../DistUpgrade/DistUpgradeController.py:2512
-#: ../DistUpgrade/DistUpgradeController.py:2564
+#: ../DistUpgrade/DistUpgradeController.py:2518
 #: ../DistUpgrade/DistUpgradeController.py:2570
+#: ../DistUpgrade/DistUpgradeController.py:2576
 msgid ""
 "The upgrade has completed but there were errors during the upgrade process."
 msgstr ""
 "Η αναβάθμιση έχει ολοκληρωθεί αλλά υπήρξαν σφάλματα κατά τη διαδικασία "
 "αναβάθμισης."
 
-#: ../DistUpgrade/DistUpgradeController.py:2527
+#: ../DistUpgrade/DistUpgradeController.py:2533
 msgid "System upgrade is complete."
 msgstr "Η αναβάθμιση συστήματος ολοκληρώθηκε."
 
-#: ../DistUpgrade/DistUpgradeController.py:2581
+#: ../DistUpgrade/DistUpgradeController.py:2587
 msgid "The partial upgrade was completed."
 msgstr "Η μερική αναβάθμιση ολοκληρώθηκε."
 
-#: ../DistUpgrade/DistUpgradeController.py:2602
+#: ../DistUpgrade/DistUpgradeController.py:2608
 msgid "Lock screen disabled"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2603
+#: ../DistUpgrade/DistUpgradeController.py:2609
 msgid ""
 "Your lock screen has been disabled and will remain disabled during the "
 "upgrade."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2611
+#: ../DistUpgrade/DistUpgradeController.py:2617
 msgid "Unable to disable lock screen"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2612
+#: ../DistUpgrade/DistUpgradeController.py:2618
 msgid ""
 "It is highly recommended that the lock screen be disabled during the upgrade "
 "to prevent later issues. Please ensure your screen lock is disabled before "
