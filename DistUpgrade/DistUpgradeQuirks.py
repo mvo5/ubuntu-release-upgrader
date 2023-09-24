@@ -25,6 +25,7 @@ import distro_info
 import glob
 import logging
 import os
+import pwd
 import re
 import hashlib
 import subprocess
@@ -33,6 +34,8 @@ from subprocess import PIPE, Popen
 from .utils import get_arch
 
 from .DistUpgradeGettext import gettext as _
+
+from gi.repository import Gio
 
 
 class DistUpgradeQuirks(object):
@@ -157,6 +160,7 @@ class DistUpgradeQuirks(object):
     # individual quirks handler when the dpkg run is finished ---------
     def PostCleanup(self):
         " run after cleanup "
+        self._back_to_original_font()
         logging.debug("running Quirks.PostCleanup")
 
     # run right before the first packages get installed
@@ -168,6 +172,7 @@ class DistUpgradeQuirks(object):
         self._killKBluetooth()
         self._pokeScreensaver()
         self._stopDocvertConverter()
+        self._set_generic_font()
 
     # individual quirks handler that run *right before* the dist-upgrade
     # is calculated in the cache
@@ -1447,3 +1452,71 @@ class DistUpgradeQuirks(object):
         except IOError as exc:
             logging.error("unable to write new boot config to %s: %s; %s",
                           boot_config_filename, exc, failure_action)
+
+    def _set_generic_font(self):
+        """ Due to changes to the Ubuntu font we enable a generic font
+            (in practice DejaVu or Noto) during the upgrade.
+            See https://launchpad.net/bugs/2034986
+        """
+        uid = int(os.getenv("SUDO_UID") or os.getenv("PKEXEC_UID"))
+        os.setresuid(uid, uid, -1)
+        os.environ["HOME"] = pwd.getpwuid(uid).pw_dir
+        os.environ["DBUS_SESSION_BUS_ADDRESS"] = 'unix:path=/run/user/'+str(uid)+'/bus'
+
+        # set cleanup flag
+        if not os.path.isdir(os.getenv('HOME')+'/.cache/dconf'):
+            f = open('/tmp/cleandconfcacheyes', 'w')
+            f.close()
+
+        settings = Gio.Settings.new('org.gnome.desktop.interface')
+        userfont = settings.get_user_value('font-name')
+        size = '11'
+
+        if userfont:
+            userfont = str(userfont).strip("'")
+            f = open('/tmp/orig_user_font.txt', 'w')
+            f.write(userfont)
+            f.close()
+            m = re.search(r'\d+', userfont)
+            if m:
+                size = m.group()
+
+        settings.set_string('font-name', 'Sans '+size)
+
+        del os.environ["DBUS_SESSION_BUS_ADDRESS"]
+        os.environ["HOME"] = '/root'
+        os.setresuid(0, 0, -1)
+
+    def _back_to_original_font(self):
+        """ This funcion resets it to the user's original font after
+            the temporary change in _set_generic_font().
+        """
+        uid = int(os.getenv("SUDO_UID") or os.getenv("PKEXEC_UID"))
+        os.setresuid(uid, uid, -1)
+        os.environ["HOME"] = pwd.getpwuid(uid).pw_dir
+        os.environ["DBUS_SESSION_BUS_ADDRESS"] = 'unix:path=/run/user/'+str(uid)+'/bus'
+
+        settings = Gio.Settings.new('org.gnome.desktop.interface')
+
+        orig_font = '/tmp/orig_user_font.txt'
+        if os.path.isfile(orig_font):
+            f = open(orig_font, 'r')
+            userfont = f.read()
+            f.close()
+            os.remove(orig_font)
+            settings.set_string('font-name', userfont)
+        else:
+            settings.reset('font-name')
+
+        # try to clean up in HOME
+        if os.path.isfile('/tmp/cleandconfcacheyes'):
+            try:
+                os.remove(os.getenv('HOME')+'/.cache/dconf/user')
+                os.rmdir(os.getenv('HOME')+'/.cache/dconf')
+            except Exception:
+                pass
+            os.remove('/tmp/cleandconfcacheyes')
+
+        del os.environ["DBUS_SESSION_BUS_ADDRESS"]
+        os.environ["HOME"] = '/root'
+        os.setresuid(0, 0, -1)
