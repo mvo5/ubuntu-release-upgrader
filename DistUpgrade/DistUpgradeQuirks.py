@@ -741,7 +741,9 @@ class DistUpgradeQuirks(object):
         # _calculateSnapSizeRequirements call.
         for snap, snap_object in self._snap_list.items():
             command = snap_object['command']
-            if command == 'refresh':
+            if command == 'switch':
+                # TODO: This status should be updated, but the time of
+                # this change to snap switch is post-translation freeze.
                 self._view.updateStatus(_("refreshing snap %s" % snap))
                 popenargs = ["snap", command,
                              "--channel", snap_object['channel'], snap]
@@ -1198,13 +1200,13 @@ class DistUpgradeQuirks(object):
             self._view.processEvents()
             if re.search("^installed: ", snap_info[0], re.MULTILINE):
                 logging.debug("Snap %s is installed" % snap)
-                # its not tracking the release channel so don't refresh
+                # its not tracking the release channel so don't switch
                 if not re.search(r"^tracking:.*%s" % from_channel,
                                  snap_info[0], re.MULTILINE):
                     logging.debug("Snap %s is not tracking the release channel"
                                   % snap)
                     continue
-                snap_object['command'] = 'refresh'
+                snap_object['command'] = 'switch'
             else:
                 # Do not replace packages not installed
                 cache = self.controller.cache
@@ -1261,7 +1263,7 @@ class DistUpgradeQuirks(object):
                             logging.debug("Snap %s is being used by %s. "
                                           "Switching it to stable track"
                                           % (snap, plug_snap))
-                            snap_object['command'] = 'refresh'
+                            snap_object['command'] = 'switch'
                             snap_object['channel'] = 'stable'
                             break
 
