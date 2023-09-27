@@ -29,13 +29,12 @@ import pwd
 import re
 import hashlib
 import subprocess
+import pathlib
 from subprocess import PIPE, Popen
 
 from .utils import get_arch
 
 from .DistUpgradeGettext import gettext as _
-
-from gi.repository import Gio
 
 
 class DistUpgradeQuirks(object):
@@ -58,6 +57,7 @@ class DistUpgradeQuirks(object):
         self._snap_list = None
         self._from_version = None
         self._to_version = None
+        self._did_change_font = False
 
     # the quirk function have the name:
     #  $Name (e.g. PostUpgrade)
@@ -160,7 +160,6 @@ class DistUpgradeQuirks(object):
     # individual quirks handler when the dpkg run is finished ---------
     def PostCleanup(self):
         " run after cleanup "
-        self._back_to_original_font()
         logging.debug("running Quirks.PostCleanup")
 
     # run right before the first packages get installed
@@ -1458,65 +1457,97 @@ class DistUpgradeQuirks(object):
             (in practice DejaVu or Noto) during the upgrade.
             See https://launchpad.net/bugs/2034986
         """
-        uid = int(os.getenv("SUDO_UID") or os.getenv("PKEXEC_UID"))
-        os.setresuid(uid, uid, -1)
-        os.environ["HOME"] = pwd.getpwuid(uid).pw_dir
-        os.environ["DBUS_SESSION_BUS_ADDRESS"] = 'unix:path=/run/user/'+str(uid)+'/bus'
+        temp_font = 'Sans'
 
-        # set cleanup flag
-        if not os.path.isdir(os.getenv('HOME')+'/.cache/dconf'):
-            f = open('/tmp/cleandconfcacheyes', 'w')
-            f.close()
+        if self._did_change_font:
+            return
 
-        settings = Gio.Settings.new('org.gnome.desktop.interface')
-        userfont = settings.get_user_value('font-name')
-        size = '11'
+        try:
+            uid = int(os.getenv('SUDO_UID', os.getenv('PKEXEC_UID')))
+            pwuid = pwd.getpwuid(uid)
+        except ValueError:
+            logging.debug(
+                'Cannot determine non-root UID, will not change font'
+            )
+            return
 
-        if userfont:
-            userfont = str(userfont).strip("'")
-            f = open('/tmp/orig_user_font.txt', 'w')
-            f.write(userfont)
-            f.close()
-            m = re.search(r'\d+', userfont)
-            if m:
-                size = m.group()
+        r = subprocess.run(
+            ['systemd-run', '--user', '-M', f'{pwuid.pw_name}@.host',
+             '--wait', '--pipe', '-q', '--',
+             '/usr/bin/gsettings', 'get', 'org.gnome.desktop.interface', 'font-name'],
+            stdout=subprocess.PIPE,
+            encoding='utf-8',
+        )
 
-        settings.set_string('font-name', 'Sans '+size)
+        (font, _, size) = r.stdout.strip('\'\n').rpartition(' ')
+        font = font or 'Ubuntu'
+        try:
+            int(size)
+        except ValueError:
+            size = '11'
 
-        del os.environ["DBUS_SESSION_BUS_ADDRESS"]
-        os.environ["HOME"] = '/root'
-        os.setresuid(0, 0, -1)
+        logging.debug(f'Setting generic font {temp_font} {size} during the '
+                      f'upgrade. Original font is {font} {size}.')
 
-    def _back_to_original_font(self):
-        """ This funcion resets it to the user's original font after
-            the temporary change in _set_generic_font().
-        """
-        uid = int(os.getenv("SUDO_UID") or os.getenv("PKEXEC_UID"))
-        os.setresuid(uid, uid, -1)
-        os.environ["HOME"] = pwd.getpwuid(uid).pw_dir
-        os.environ["DBUS_SESSION_BUS_ADDRESS"] = 'unix:path=/run/user/'+str(uid)+'/bus'
+        r = subprocess.run([
+            'systemd-run', '--user', '-M', f'{pwuid.pw_name}@.host',
+            '--wait', '--pipe', '-q', '--',
+            '/usr/bin/gsettings', 'set', 'org.gnome.desktop.interface',
+            'font-name', f'"{temp_font} {size}"'
+        ])
+        if r.returncode != 0:
+            logging.debug(f'Failed to change font to {temp_font} {size}')
+            return
 
-        settings = Gio.Settings.new('org.gnome.desktop.interface')
+        self._did_change_font = True
 
-        orig_font = '/tmp/orig_user_font.txt'
-        if os.path.isfile(orig_font):
-            f = open(orig_font, 'r')
-            userfont = f.read()
-            f.close()
-            os.remove(orig_font)
-            settings.set_string('font-name', userfont)
-        else:
-            settings.reset('font-name')
+        # Touch a file to indiate that the font should be restored on the next
+        # boot.
+        need_font_restore_file = os.path.join(
+            pwuid.pw_dir, '.config/upgrade-need-font-restore'
+        )
+        os.makedirs(os.path.dirname(need_font_restore_file), exist_ok=True)
+        pathlib.Path(need_font_restore_file).touch(mode=0o666)
+        os.chown(need_font_restore_file, pwuid.pw_uid, pwuid.pw_gid)
 
-        # try to clean up in HOME
-        if os.path.isfile('/tmp/cleandconfcacheyes'):
-            try:
-                os.remove(os.getenv('HOME')+'/.cache/dconf/user')
-                os.rmdir(os.getenv('HOME')+'/.cache/dconf')
-            except Exception:
-                pass
-            os.remove('/tmp/cleandconfcacheyes')
+        # If we set the font back to normal before a reboot, the font will
+        # still get all messed up. To allow normal usage whether the user
+        # reboots immediately or not, create a service that will run only if a
+        # ~/.config/upgrade-need-font-restore exists, and then remove that file
+        # in ExecStart. This has the effect of creating a one-time service on
+        # the next boot.
+        unit_file = '/usr/lib/systemd/user/upgrade-restore-font.service'
+        os.makedirs(os.path.dirname(unit_file), exist_ok=True)
 
-        del os.environ["DBUS_SESSION_BUS_ADDRESS"]
-        os.environ["HOME"] = '/root'
-        os.setresuid(0, 0, -1)
+        with open(unit_file, 'w') as f:
+            f.write(
+                '# Auto-generated by ubuntu-release-upgrader\n'
+                '[Unit]\n'
+                'Description=Restore font after upgrade\n'
+                'After=graphical-session.target dconf.service\n'
+                'ConditionPathExists=%h/.config/upgrade-need-font-restore\n'
+                '\n'
+                '[Service]\n'
+                'Type=oneshot\n'
+                'ExecStart=/usr/bin/gsettings set '
+                f'org.gnome.desktop.interface font-name \'{font} {size}\'\n'
+                'ExecStart=/usr/bin/rm -f '
+                '%h/.config/upgrade-need-font-restore\n'
+                '\n'
+                '[Install]\n'
+                'WantedBy=graphical-session.target\n'
+            )
+
+        subprocess.run([
+            'systemctl',
+            '--user', '-M', f'{pwuid.pw_name}@.host',
+            'daemon-reload'
+        ])
+        r = subprocess.run([
+            'systemctl',
+            '--user', '-M', f'{pwuid.pw_name}@.host',
+            'enable', os.path.basename(unit_file)
+        ])
+        if r.returncode != 0:
+            logging.debug(f'Failed to enable {os.path.basename(unit_file)}. '
+                          'Font will not be restored on reboot')
