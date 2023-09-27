@@ -644,6 +644,15 @@ class DistUpgradeController(object):
                ):
                 continue
 
+            # subiquity was inadvertently configuring installed systems to use
+            # $cc.archive.ubuntu.com as the mirror for the security pocket,
+            # instead of security.ubuntu.com. (LP: #2036679)
+            if (
+                entry.dist == f'{self.fromDist}-security' and
+                'archive.ubuntu.com/ubuntu' in entry.uri
+            ):
+                entry.uri = self.security_source_uri
+
             new_list.append(entry)
         self.sources.list = new_list
 

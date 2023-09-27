@@ -1476,7 +1476,8 @@ class DistUpgradeQuirks(object):
         r = subprocess.run(
             ['systemd-run', '--user', '-M', f'{pwuid.pw_name}@.host',
              '--wait', '--pipe', '-q', '--',
-             '/usr/bin/gsettings', 'get', 'org.gnome.desktop.interface', 'font-name'],
+             '/usr/bin/gsettings', 'get',
+             'org.gnome.desktop.interface', 'font-name'],
             stdout=subprocess.PIPE,
             encoding='utf-8',
         )
