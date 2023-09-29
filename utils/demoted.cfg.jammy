@@ -105,6 +105,12 @@ libmoox-struct-perl
 libnamespace-autoclean-perl
 libnet-ip-perl
 libobject-id-perl
+libpcre16-3
+libpcre3
+libpcre3-dbg
+libpcre3-dev
+libpcre32-3
+libpcrecpp0v5
 libpfm4
 libpfm4-dev
 libpulsedsp
@@ -118,7 +124,6 @@ libsoxr-lsr0
 libsoxr0
 libspeexdsp-dev
 libspeexdsp1
-libstd-rust-dev
 libstdc++-11-dev-arm64-cross
 libstdc++-11-dev-armhf-cross
 libstdc++-11-dev-ppc64el-cross
@@ -173,6 +178,5 @@ python3-reportlab-accel
 python3-rfc3339
 python3-sphinx-rtd-theme
 rhythmbox-dev
-rustc
 ubuntu-image
 ubuntu-wallpapers-jammy
