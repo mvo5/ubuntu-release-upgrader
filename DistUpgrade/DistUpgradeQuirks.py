@@ -1464,6 +1464,11 @@ class DistUpgradeQuirks(object):
         if self._did_change_font:
             return
 
+        if os.getenv('XDG_SESSION_TYPE', '') in ('', 'tty'):
+            # Avoid running this on server systems or when the upgrade
+            # is done over ssh.
+            return
+
         try:
             uid = int(os.getenv('SUDO_UID', os.getenv('PKEXEC_UID')))
             pwuid = pwd.getpwuid(uid)
