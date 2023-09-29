@@ -1,4 +1,4 @@
-ubuntu-release-upgrader (1:23.10.7) UNRELEASED; urgency=medium
+ubuntu-release-upgrader (1:23.10.7) mantic; urgency=medium
 
   * DistUpgradeQuirks: Use generic font temporarily at upgrade
     (LP: #2034986)
@@ -8,7 +8,7 @@ ubuntu-release-upgrader (1:23.10.7) UNRELEASED; urgency=medium
     (LP: #2036679)
   * Run pre-build.sh: updating mirrors and demotions.
 
- -- Nick Rosbrook <enr0n@ubuntu.com>  Wed, 27 Sep 2023 15:45:14 -0400
+ -- Nick Rosbrook <enr0n@ubuntu.com>  Fri, 29 Sep 2023 14:44:34 -0400
 
 ubuntu-release-upgrader (1:23.10.6) mantic; urgency=medium
 
