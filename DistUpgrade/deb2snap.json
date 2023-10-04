@@ -5,6 +5,9 @@
             "to_channel": "stable",
             "metapkg": "ubuntu-desktop"
         },
+        "firmware-updater": {
+            "metapkg": "ubuntu-desktop-minimal"
+        },
         "gnome-42-2204": {
             "metapkg": "ubuntu-desktop"
         },
