@@ -1,6 +1,6 @@
 {
     "seeded": {
-        "core20": {
+        "core22": {
             "from_channel": "stable",
             "to_channel": "stable",
             "metapkg": "ubuntu-desktop"
