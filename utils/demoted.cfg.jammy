@@ -96,6 +96,9 @@ liblist-moreutils-perl
 liblist-moreutils-xs-perl
 libllvm13
 libllvm14
+liblua5.3-0
+liblua5.3-0-dbg
+liblua5.3-dev
 libmirserver-dev
 libmlir-13
 libmlir-13-dev
