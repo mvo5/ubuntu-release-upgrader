@@ -1,3 +1,12 @@
+ubuntu-release-upgrader (1:23.10.8) mantic; urgency=medium
+
+  * deb2snap.json: bump core20 to core22.
+  * deb2snap.json: add firmware-updater as a seeded snap.
+  * tests/test_quirks.py: update tests to reflect the core22 bump.
+  * Run pre-build.sh: updating po files, mirrors, and demotions.
+
+ -- Utkarsh Gupta <utkarsh@ubuntu.com>  Wed, 04 Oct 2023 16:56:15 +0530
+
 ubuntu-release-upgrader (1:23.10.7) mantic; urgency=medium
 
   * DistUpgradeQuirks: Use generic font temporarily at upgrade
