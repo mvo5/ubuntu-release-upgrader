@@ -791,7 +791,7 @@ class TestSnapQuirks(unittest.TestCase):
         self.maxDiff = None
         self.assertDictEqual(
             q._snap_list,
-            {'core20': {
+            {'core22': {
                 'channel': 'stable',
                 'command': 'install',
                 'deb': None, 'snap-id': '1234'},
