@@ -1,3 +1,11 @@
+ubuntu-release-upgrader (1:23.10.9) UNRELEASED; urgency=medium
+
+  [ Tim Andersson ]
+  * fix: stop TypeError traceback in DistUpgradeQuirks:_set_generic_font
+    (LP: #2038900)
+
+ -- andersson123 <tim.andersson@canonical.com>  Tue, 10 Oct 2023 10:16:48 +0100
+
 ubuntu-release-upgrader (1:23.10.8) mantic; urgency=medium
 
   * deb2snap.json: bump core20 to core22.
