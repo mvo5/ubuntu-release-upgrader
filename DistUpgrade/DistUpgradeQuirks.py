@@ -1469,6 +1469,11 @@ class DistUpgradeQuirks(object):
             # is done over ssh.
             return
 
+        if not {'SUDO_UID', 'PKEXEC_UID'}.intersection(os.environ):
+            logging.debug(
+                'Cannot determine how root privileges were gained, will not change font'
+            )
+            return
         try:
             uid = int(os.getenv('SUDO_UID', os.getenv('PKEXEC_UID')))
             pwuid = pwd.getpwuid(uid)
