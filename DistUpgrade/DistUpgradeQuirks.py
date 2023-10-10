@@ -1471,7 +1471,8 @@ class DistUpgradeQuirks(object):
 
         if not {'SUDO_UID', 'PKEXEC_UID'}.intersection(os.environ):
             logging.debug(
-                'Cannot determine how root privileges were gained, will not change font'
+                'Cannot determine how root privileges were gained, will '
+                'not change font'
             )
             return
         try:

@@ -1,10 +1,13 @@
-ubuntu-release-upgrader (1:23.10.9) UNRELEASED; urgency=medium
+ubuntu-release-upgrader (1:23.10.9) mantic; urgency=medium
 
   [ Tim Andersson ]
   * fix: stop TypeError traceback in DistUpgradeQuirks:_set_generic_font
     (LP: #2038900)
 
- -- andersson123 <tim.andersson@canonical.com>  Tue, 10 Oct 2023 10:16:48 +0100
+  [ Brian Murray ]
+  * Run pre-build.sh: updating po files, mirrors, and demotions.
+
+ -- Brian Murray <brian@ubuntu.com>  Tue, 10 Oct 2023 06:33:25 -0700
 
 ubuntu-release-upgrader (1:23.10.8) mantic; urgency=medium
 
