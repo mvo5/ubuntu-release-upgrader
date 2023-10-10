@@ -7,6 +7,9 @@ ubuntu-release-upgrader (1:23.10.9) mantic; urgency=medium
   [ Brian Murray ]
   * Run pre-build.sh: updating po files, mirrors, and demotions.
 
+  [ Gunnar Hjalmarsson ]
+  * Temporary font for Ubuntu MATE (LP: #2034986)
+
  -- Brian Murray <brian@ubuntu.com>  Tue, 10 Oct 2023 06:33:25 -0700
 
 ubuntu-release-upgrader (1:23.10.8) mantic; urgency=medium
