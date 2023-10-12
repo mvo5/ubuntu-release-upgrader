@@ -1132,7 +1132,7 @@ class TestDeb822SourcesMigration(unittest.TestCase):
             self.skipTest("Test requires different default and security source URIs")
 
         self.prepareTestSources(
-            dist=di.devel(),
+            dist=di.stable(),
             default_source_uri=d.default_source_uri,
             security_source_uri=d.security_source_uri,
         )
@@ -1142,7 +1142,7 @@ class TestDeb822SourcesMigration(unittest.TestCase):
 
         self.assertTrue(d.migratedToDeb822())
         self.assertSourcesMatchExpected(
-            dist=di.devel(),
+            dist=di.stable(),
             default_source_uri=d.default_source_uri,
             security_source_uri=d.security_source_uri,
         )
@@ -1170,7 +1170,7 @@ class TestDeb822SourcesMigration(unittest.TestCase):
             self.skipTest("Test assumes equal default and security source URIs")
 
         self.prepareTestSources(
-            dist=di.devel(),
+            dist=di.stable(),
             default_source_uri=d.default_source_uri,
             security_source_uri=d.security_source_uri,
         )
@@ -1180,7 +1180,7 @@ class TestDeb822SourcesMigration(unittest.TestCase):
 
         self.assertTrue(d.migratedToDeb822())
         self.assertSourcesMatchExpected(
-            dist=di.devel(),
+            dist=di.stable(),
             default_source_uri=d.default_source_uri,
             security_source_uri=d.security_source_uri,
         )
@@ -1204,7 +1204,7 @@ class TestDeb822SourcesMigration(unittest.TestCase):
         d.openCache(lock=False)
 
         self.prepareTestSources(
-            dist=di.devel(),
+            dist=di.stable(),
             default_source_uri=d.default_source_uri,
         )
         self.assertFalse(d.migratedToDeb822())
@@ -1213,7 +1213,7 @@ class TestDeb822SourcesMigration(unittest.TestCase):
 
         self.assertTrue(d.migratedToDeb822())
         self.assertSourcesMatchExpected(
-            dist=di.devel(),
+            dist=di.stable(),
             default_source_uri=d.default_source_uri,
         )
 
@@ -1227,7 +1227,7 @@ class TestDeb822SourcesMigration(unittest.TestCase):
         d.openCache(lock=False)
 
         self.prepareTestSources(
-            dist=di.devel(),
+            dist=di.stable(),
             default_source_uri=d.default_source_uri,
         )
         self.assertFalse(d.migratedToDeb822())
@@ -1236,7 +1236,7 @@ class TestDeb822SourcesMigration(unittest.TestCase):
 
         self.assertTrue(d.migratedToDeb822())
         self.assertSourcesMatchExpected(
-            dist=di.devel(),
+            dist=di.stable(),
             default_source_uri=d.default_source_uri,
         )
 
@@ -1270,7 +1270,7 @@ class TestDeb822SourcesMigration(unittest.TestCase):
             self.skipTest("Test requires different default and security source URIs")
 
         self.prepareTestSources(
-            dist=di.devel(),
+            dist=di.stable(),
             default_source_uri=d.default_source_uri,
             security_source_uri=d.security_source_uri,
         )
@@ -1280,7 +1280,7 @@ class TestDeb822SourcesMigration(unittest.TestCase):
 
         self.assertTrue(d.migratedToDeb822())
         self.assertSourcesMatchExpected(
-            dist=di.devel(),
+            dist=di.stable(),
             default_source_uri=d.default_source_uri,
             security_source_uri=d.security_source_uri,
         )
@@ -1295,7 +1295,7 @@ class TestDeb822SourcesMigration(unittest.TestCase):
         d.openCache(lock=False)
 
         self.prepareTestSources(
-            dist=di.devel(),
+            dist=di.stable(),
             default_source_uri=d.default_source_uri,
         )
         self.assertFalse(d.migratedToDeb822())
@@ -1304,7 +1304,7 @@ class TestDeb822SourcesMigration(unittest.TestCase):
 
         self.assertTrue(d.migratedToDeb822())
         self.assertSourcesMatchExpected(
-            dist=di.devel(),
+            dist=di.stable(),
             default_source_uri=d.default_source_uri,
         )
 
@@ -1318,7 +1318,7 @@ class TestDeb822SourcesMigration(unittest.TestCase):
         d.openCache(lock=False)
 
         self.prepareTestSources(
-            dist=di.devel(),
+            dist=di.stable(),
             default_source_uri=d.default_source_uri,
         )
         self.assertFalse(d.migratedToDeb822())
@@ -1327,7 +1327,7 @@ class TestDeb822SourcesMigration(unittest.TestCase):
 
         self.assertTrue(d.migratedToDeb822())
         self.assertSourcesMatchExpected(
-            dist=di.devel(),
+            dist=di.stable(),
             default_source_uri=d.default_source_uri,
         )
 
