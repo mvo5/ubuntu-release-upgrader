@@ -245,6 +245,7 @@ if __name__ == "__main__":
     extra_env_vars = [
         'DBUS_SESSION_BUS_ADDRESS=%s' % os.getenv('DBUS_SESSION_BUS_ADDRESS', ''),
         'XDG_SESSION_TYPE=%s' % os.getenv('XDG_SESSION_TYPE', ''),
+        'XDG_CURRENT_DESKTOP=%s' % os.getenv('XDG_CURRENT_DESKTOP', ''),
     ]
     sys.argv.append('--env=%s' % ','.join(extra_env_vars))
 
