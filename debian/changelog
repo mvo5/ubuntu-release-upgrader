@@ -1,4 +1,4 @@
-ubuntu-release-upgrader (1:23.10.12) UNRELEASED; urgency=medium
+ubuntu-release-upgrader (1:23.10.12) mantic; urgency=medium
 
   [ Gunnar Hjalmarsson ]
   * Adjustments of unreadable text workaround (LP: #2039356)
@@ -8,7 +8,7 @@ ubuntu-release-upgrader (1:23.10.12) UNRELEASED; urgency=medium
     to unblock other fixes.
   * Run pre-build.sh: updating po files, mirrors, and demotions.
 
- -- Nick Rosbrook <enr0n@ubuntu.com>  Mon, 16 Oct 2023 16:47:27 -0400
+ -- Nick Rosbrook <enr0n@ubuntu.com>  Mon, 16 Oct 2023 16:49:53 -0400
 
 ubuntu-release-upgrader (1:23.10.11) mantic; urgency=medium
 
