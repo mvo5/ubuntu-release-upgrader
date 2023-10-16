@@ -1,3 +1,15 @@
+ubuntu-release-upgrader (1:23.10.12) UNRELEASED; urgency=medium
+
+  [ Gunnar Hjalmarsson ]
+  * Adjustments of unreadable text workaround (LP: #2039356)
+
+  [ Nick Rosbrook ]
+  * Temporarily revert "do-release-upgrade: pass XDG_CURRENT_DESKTOP env var"
+    to unblock other fixes.
+  * Run pre-build.sh: updating po files, mirrors, and demotions.
+
+ -- Nick Rosbrook <enr0n@ubuntu.com>  Mon, 16 Oct 2023 16:47:27 -0400
+
 ubuntu-release-upgrader (1:23.10.11) mantic; urgency=medium
 
   * do-release-upgrade: pass XDG_CURRENT_DESKTOP env var (LP: #2034986)
