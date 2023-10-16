@@ -1475,15 +1475,6 @@ class DistUpgradeQuirks(object):
                 'not change font'
             )
             return
-
-        desktops = os.getenv('XDG_CURRENT_DESKTOP', '').split(':')
-        if 'MATE' in desktops:
-            schema = 'org.mate.interface'
-            is_mate = True
-        else:
-            schema = 'org.gnome.desktop.interface'
-            is_mate = False
-
         try:
             uid = int(os.getenv('SUDO_UID', os.getenv('PKEXEC_UID')))
             pwuid = pwd.getpwuid(uid)
@@ -1492,6 +1483,20 @@ class DistUpgradeQuirks(object):
                 'Cannot determine non-root UID, will not change font'
             )
             return
+
+        schema = 'org.gnome.desktop.interface'
+
+        desktops = os.getenv('XDG_CURRENT_DESKTOP', '').split(':')
+
+        # Some flavors use other schemas for the desktop font.
+        if 'MATE' in desktops or 'UKUI' in desktops:
+            schema = 'org.mate.interface'
+        elif 'X-Cinnamon' in desktops:
+            schema = 'org.cinnamon.desktop.interface'
+
+        # Some flavors lack the systemd integration needed for a
+        # user service, so we create an autostart file instead.
+        use_autostart = set(['Budgie', 'LXQt', 'MATE', 'UKUI', 'X-Cinnamon', 'XFCE']) & set(desktops)
 
         r = subprocess.run(
             ['systemd-run', '--user', '-M', f'{pwuid.pw_name}@.host',
@@ -1533,9 +1538,7 @@ class DistUpgradeQuirks(object):
         pathlib.Path(need_font_restore_file).touch(mode=0o666)
         os.chown(need_font_restore_file, pwuid.pw_uid, pwuid.pw_gid)
 
-        if is_mate:
-            # For MATE we create an autostart file instead of a service, since
-            # MATE hasn't enabled systemd integration.
+        if use_autostart:
             autostart_file = '/etc/xdg/autostart/upgrade-restore-font.desktop'
             os.makedirs(os.path.dirname(autostart_file), exist_ok=True)
             flag = '$HOME/.config/upgrade-need-font-restore'
