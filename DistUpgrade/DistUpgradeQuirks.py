@@ -1496,7 +1496,10 @@ class DistUpgradeQuirks(object):
 
         # Some flavors lack the systemd integration needed for a
         # user service, so we create an autostart file instead.
-        use_autostart = set(['Budgie', 'LXQt', 'MATE', 'UKUI', 'X-Cinnamon', 'XFCE']) & set(desktops)
+        use_autostart = bool(
+            set(['Budgie', 'LXQt', 'MATE', 'UKUI', 'X-Cinnamon', 'XFCE'])
+            & set(desktops)
+        )
 
         r = subprocess.run(
             ['systemd-run', '--user', '-M', f'{pwuid.pw_name}@.host',
