@@ -1,3 +1,11 @@
+ubuntu-release-upgrader (1:24.04.1) UNRELEASED; urgency=medium
+
+  * do-release-upgrade: pass XDG_CURRENT_DESKTOP env var (LP: #2034986)
+  * Update for noble
+  * Run pre-build.sh: updating po files, mirrors, and demotions.
+
+ -- Nick Rosbrook <enr0n@ubuntu.com>  Thu, 26 Oct 2023 15:23:08 -0400
+
 ubuntu-release-upgrader (1:23.10.12) mantic; urgency=medium
 
   [ Gunnar Hjalmarsson ]
