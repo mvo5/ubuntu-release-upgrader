@@ -1,3 +1,13 @@
+ubuntu-release-upgrader (1:24.04.2) UNRELEASED; urgency=medium
+
+  * DistUpgradeQuirks: prevent upgrades on some systems with XFS /boot
+    (LP: #2039172)
+  * DistUpgradeQuirks: fix whitespace
+  * DistUpgrade: indicate that noble is LTS in release annoucement
+  * Run pre-build.sh: updating po files, mirrors, and demotions.
+
+ -- Nick Rosbrook <enr0n@ubuntu.com>  Fri, 03 Nov 2023 12:16:49 -0400
+
 ubuntu-release-upgrader (1:24.04.1) noble; urgency=medium
 
   * do-release-upgrade: pass XDG_CURRENT_DESKTOP env var (LP: #2034986)
