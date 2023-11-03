@@ -1324,7 +1324,7 @@ class DistUpgradeQuirks(object):
 
     def _remove_uboot_on_rpi(self, boot_dir='/boot/firmware'):
         kernel_line = 'kernel=vmlinuz'
-        initramfs_line = 'initramfs initrd.img followkernel' 
+        initramfs_line = 'initramfs initrd.img followkernel'
         failure_action = (
             "You may need to replace u_boot_* with vmlinuz, and add "
             "{initramfs_line!r} to config.txt on your boot "
