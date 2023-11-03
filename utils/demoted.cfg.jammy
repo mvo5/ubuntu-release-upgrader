@@ -29,6 +29,7 @@ gcc-11-powerpc64le-linux-gnu
 gcc-11-powerpc64le-linux-gnu-base
 gcc-11-s390x-linux-gnu
 gcc-11-s390x-linux-gnu-base
+gcc-12-base
 gcc-12-cross-base
 gedit
 gedit-common
@@ -44,9 +45,15 @@ guile-2.2
 guile-2.2-dev
 guile-2.2-doc
 guile-2.2-libs
+lib32gcc-12-dev
 lib32gfortran-11-dev
+lib32go-12-dev
+lib32go21
 lib32stdc++-11-dev
+lib64gcc-12-dev
 lib64gfortran-11-dev
+lib64go-12-dev
+lib64go21
 lib64stdc++-11-dev
 libasan6-arm64-cross
 libasan6-armhf-cross
@@ -66,6 +73,7 @@ libdazzle-1.0-0
 libdazzle-1.0-dev
 libdazzle-common
 libdazzle-doc
+libdecor-0-plugin-1-cairo
 libebackend1.2-dev
 libebook-contacts1.2-dev
 libebook1.2-dev
@@ -78,6 +86,7 @@ libgcc-11-dev-arm64-cross
 libgcc-11-dev-armhf-cross
 libgcc-11-dev-ppc64el-cross
 libgcc-11-dev-s390x-cross
+libgcc-12-dev
 libgd-dev
 libgdk-pixbuf-xlib-2.0-0
 libgdk-pixbuf-xlib-2.0-dev
@@ -86,6 +95,8 @@ libglm-dev
 libglm-doc
 libgnome-bluetooth-dev
 libgnome-bluetooth13
+libgo-12-dev
+libgo21
 libgtksourceview-4-0
 libgtksourceview-4-common
 libgtksourceview-4-dev
@@ -121,6 +132,9 @@ libreoffice-style-breeze
 libreoffice-style-tango
 librest-dev
 librest-extras-dev
+libsmbios-c2
+libsmbios-dev
+libsmbios-doc
 libsnapd-glib-dev
 libsoxr-dev
 libsoxr-lsr0
@@ -131,6 +145,7 @@ libstdc++-11-dev-arm64-cross
 libstdc++-11-dev-armhf-cross
 libstdc++-11-dev-ppc64el-cross
 libstdc++-11-dev-s390x-cross
+libstdc++-12-doc
 libtfm-dev
 libtfm1
 libtracker-sparql-3.0-dev
@@ -144,7 +159,10 @@ libunwind-setjmp0
 libunwind-setjmp0-dev
 libwacom-bin
 libwebkit2gtk-4.0-dev
+libx32gcc-12-dev
 libx32gfortran-11-dev
+libx32go-12-dev
+libx32go21
 libx32stdc++-11-dev
 libyelp-dev
 llvm-13
@@ -168,6 +186,7 @@ python-pycryptodome-doc
 python-pysmi-doc
 python-pysnmp4-doc
 python-reportlab-doc
+python3-extras
 python3-macaroonbakery
 python3-protobuf
 python3-pycryptodome
