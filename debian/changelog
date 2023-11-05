@@ -3,7 +3,7 @@ ubuntu-release-upgrader (1:24.04.3) noble; urgency=medium
   * DistUpgradeQuirk: do not use XFS /boot quirk for arm64 UEFI
   * Run pre-build.sh: updating po files, mirrors, and demotions.
 
- -- Nick Rosbrook <enr0n@ubuntu.com>  Sun, 05 Nov 2023 01:43:34 -0400
+ -- Nick Rosbrook <enr0n@ubuntu.com>  Sun, 05 Nov 2023 01:47:58 -0400
 
 ubuntu-release-upgrader (1:24.04.2) noble; urgency=medium
 
