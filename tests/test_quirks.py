@@ -975,7 +975,7 @@ MMU             : Hash
         mock_file.assert_called_with("/proc/cpuinfo")
 
     @mock.patch('os.path.isdir')
-    def test_xfs_boot_fail(self, mock_is_dir):
+    def test_bios_with_xfs_boot_fail(self, mock_is_dir):
         proc_mounts = """\
 sysfs /sys sysfs rw,nosuid,nodev,noexec,relatime 0 0
 proc /proc proc rw,nosuid,nodev,noexec,relatime 0 0
@@ -1010,61 +1010,18 @@ cgroup2 /sys/fs/cgroup cgroup2 rw,nosuid,nodev,noexec,relatime 0 0
 
                 # UEFI
                 mock_is_dir.return_value = True  # /sys/firmware/efi
-                q._test_and_fail_xfs_boot()
+                q._test_and_fail_on_bios_with_xfs_boot()
                 self.assertEqual(len(controller.abort.mock_calls), 0)
 
                 # BIOS
                 mock_is_dir.return_value = False  # /sys/firmware/efi
-                q._test_and_fail_xfs_boot()
+                q._test_and_fail_on_bios_with_xfs_boot()
                 self.assertEqual(
                     len(controller.abort.mock_calls),
                     num_abort_calls,
                     f'root_fs = {root_fs}, boot_fs = {boot_fs}',
                 )
                 mock_file.assert_called_with('/proc/mounts')
-
-        test_table = [
-            # / fs, /boot fs, have grub-efi-arm-bin, expected abort calls
-            ('xfs', None, False, 0),
-            ('ext4', None, False, 0),
-            ('xfs', 'xfs', False, 0),
-            ('ext4', 'xfs', False, 0),
-            ('xfs', 'ext4', False, 0),
-            ('ext4', 'ext4', False, 0),
-            ('xfs', None, True, 1),
-            ('ext4', None, True, 0),
-            ('xfs', 'xfs', True, 1),
-            ('ext4', 'xfs', True, 1),
-            ('xfs', 'ext4', True, 0),
-            ('ext4', 'ext4', True, 0),
-        ]
-
-        for (root_fs, boot_fs, have_grub, num_abort_calls) in test_table:
-            boot = boot_line.format(fs=boot_fs) if boot_fs else ''
-            m = mock.mock_open(
-                read_data=proc_mounts.format(fs=root_fs, boot=boot)
-            )
-            with mock.patch('builtins.open', m) as mock_file:
-                controller = mock.Mock()
-                config = mock.Mock()
-                q = DistUpgradeQuirks(controller, config)
-                mock_cache = {
-                    'grub-efi-arm-bin': make_mock_pkg(
-                        name='grub-efi-arm-bin',
-                        is_installed=have_grub,
-                    ),
-                }
-                q.controller.cache = mock_cache
-                q.arch = 'arm64'
-
-                mock_is_dir.return_value = True  # /sys/firmware/efi
-                q._test_and_fail_xfs_boot()
-                self.assertEqual(
-                    len(controller.abort.mock_calls),
-                    num_abort_calls,
-                    f'root_fs = {root_fs}, boot_fs = {boot_fs}, '
-                    f'have_grub = {have_grub}',
-                )
 
 
 if __name__ == "__main__":

@@ -122,7 +122,7 @@ class DistUpgradeQuirks(object):
         self._test_and_fail_on_i386()
         self._test_and_fail_on_aufs()
         self._test_and_fail_on_power8()
-        self._test_and_fail_xfs_boot()
+        self._test_and_fail_on_bios_with_xfs_boot()
 
         cache = self.controller.cache
         self._test_and_warn_if_ros_installed(cache)
@@ -1601,22 +1601,14 @@ class DistUpgradeQuirks(object):
             logging.debug(f'Failed to enable {os.path.basename(unit_file)}. '
                           'Font will not be restored on reboot')
 
-    def _test_and_fail_xfs_boot(self):
+    def _test_and_fail_on_bios_with_xfs_boot(self):
         """
-        If this system is BIOS and has XFS on /boot, or grub is present on UEFI
-        arm64, do not allow the upgrade to happen (LP: #2039172).
+        If this system is BIOS and has XFS on /boot, do not allow the upgrade
+        to happen (LP: #2039172).
         """
         if os.path.isdir('/sys/firmware/efi'):
-            if self.arch != 'arm64':
-                # UEFI on non-arm64, nothing to do.
-                return
-
-            if not (
-                'grub-efi-arm-bin' in self.controller.cache and
-                self.controller.cache['grub-efi-arm-bin'].is_installed
-            ):
-                # UEFI arm64, but grub is not present.
-                return
+            # UEFI boot, nothing to do.
+            return
 
         boot_fs = None
         root_fs = None
@@ -1641,9 +1633,9 @@ class DistUpgradeQuirks(object):
                     break
 
         if boot_fs == 'xfs' or (boot_fs is None and root_fs == 'xfs'):
-            # If we got to this point, then this is a BIOS system or UEFI on
-            # arm64, and /boot is XFS or / is XFS and there is no separate
-            # /boot partition. Do not allow the upgrade to happen.
+            # If we got to this point, then this is a BIOS system, and /boot is
+            # XFS or / is XFS and there is no separate /boot partition. Do not
+            # allow the upgrade to happen.
             logging.error('Cannot upgrade system with BIOS and XFS /boot')
             self._view.error(
                 _("Cannot upgrade this system"),
