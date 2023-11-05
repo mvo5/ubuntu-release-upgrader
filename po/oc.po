@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: update-manager\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2023-11-03 12:18-0400\n"
+"POT-Creation-Date: 2023-11-05 01:46-0400\n"
 "PO-Revision-Date: 2019-06-18 17:52+0000\n"
 "Last-Translator: Cédric VALMARY (Tot en òc) <cvalmary@yahoo.fr>\n"
 "Language-Team: Occitan (post 1500) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
@@ -1291,12 +1291,12 @@ msgstr ""
 msgid "Checking for installed snaps"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1644
+#: ../DistUpgrade/DistUpgradeQuirks.py:1641
 #, fuzzy
 msgid "Cannot upgrade this system"
 msgstr "Impossible de metre a jorn"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1645
+#: ../DistUpgrade/DistUpgradeQuirks.py:1642
 msgid ""
 "Due to a bug in grub, this system cannot be safely upgraded at this time.\n"
 "\n"
