@@ -26,6 +26,7 @@ import subprocess
 from gettext import dgettext
 
 import apt
+import apt_pkg
 import os
 
 from .DistUpgradeApport import run_apport, apport_crash
@@ -82,6 +83,16 @@ class TextInstallProgress(InstallProgress):
             progress_str = dgettext(domain, "Progress: [%3i%%]") % int(percent)
             sys.stdout.write("\r\n%s\r\n" % progress_str)
             self._prev_percent = percent
+
+    def run(self):
+        # try to use APTs fancy progress directly to give a better
+        # upgrade experience
+        try:
+            progress=apt_pkg.PackageManagerProgressFancy()
+            return pm.do_install(progress=progress)
+        except AttributeError:
+            # python-apt not new enough, fallback
+            return super().run(self)
 
 
 class TextCdromProgressAdapter(apt.progress.base.CdromProgress):
